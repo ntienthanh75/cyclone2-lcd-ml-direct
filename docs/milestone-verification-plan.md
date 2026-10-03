@@ -268,8 +268,9 @@ assigned and the board is tested.
 
 The next milestone is the pipeline trade-off experiment. Preserve the
 5 MHz baseline and compare: (1) the current sequential MAC, (2) registers at
-the hidden/output layer boundary, and (3) a deeper registered MAC path. Each
-variant requires functional regression evidence before synthesis comparison.
+the hidden/output layer boundary, and (3) a serialized output-score ranking
+scan. Each variant requires functional regression evidence before synthesis
+comparison. A deeper registered MAC path is optional follow-up work.
 
 ### Pipeline experiment checkpoint
 

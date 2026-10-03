@@ -209,12 +209,13 @@ remains a separate pipeline/resource tradeoff.
 ## Seventh implementation step: pipeline trade-off experiment
 
 Keep the current `ml_inference.sv` unchanged as the baseline. Evaluate three
-separate variants using the same trained weights and 14×14 input contract:
+measured options using the same trained weights and 14×14 input contract:
 
 1. Baseline sequential MAC, constrained at 5 MHz and 10 MHz.
 2. Add registers at the hidden-layer/output-layer boundary.
-3. Add a deeper registered MAC path, accepting extra latency if timing and
-   logic/RAM/DSP use improve.
+3. Serialize the output-score ranking scan, accepting nine extra cycles if
+   timing and logic use improve. A deeper registered MAC path remains optional
+   follow-up work only if higher throughput is still required.
 
 For every variant, run the existing functional ML verification first, then
 compile at 5 MHz and 10 MHz. Record logic elements, registers, memory bits,
