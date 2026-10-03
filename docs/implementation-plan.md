@@ -297,6 +297,32 @@ the result margin. This option is rejected as the primary repair: it costs
 roughly 250–300 logic elements and one cycle while leaving the root critical
 path essentially intact. The serialized scan remains preferred.
 
+### Decision checkpoint
+
+The serialized score-scan RTL is now the preferred implementation for the
+next build. It is selected because it passes the real-weight functional test,
+uses fewer logic elements than the other measured options, and has the best
+timing margin at both 5 MHz and 10 MHz. The unchanged baseline and the
+registered-boundary control remain stored as comparison references.
+
+Checklist review:
+
+- [x] Compare baseline, registered-boundary, and serialized-score options.
+- [x] Run functional regression for each measured option.
+- [x] Store 5 MHz and 10 MHz synthesis reports.
+- [x] Commit and push the comparison results.
+- [ ] Confirm the real CoreEP2C5 clock pin.
+- [ ] Confirm XPT2046 touch IRQ, MISO, and control pin assignments.
+- [ ] Confirm the result/debug output wiring, if used.
+- [ ] Add assignments and recompile the preferred top level.
+- [ ] Download and test on the physical board.
+
+The last five items cannot be completed safely from the current repository:
+the Quartus files contain no exact pin-location assignments, and the board
+specification does not provide a verified pin table for this wiring. Therefore
+the generated SOF files remain synthesis artifacts, not hardware-approved
+images.
+
 ## F. Validation set
 
 - [ ] Collect at least 20 drawings for each digit `0..9`.

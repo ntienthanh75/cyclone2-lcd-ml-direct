@@ -293,3 +293,11 @@ before the original FINISH scan. It also passes functional verification
 5 MHz and 3,841 LEs at 10 MHz. Setup slack is only `+1.119 ns` at 10 MHz,
 because the ten-way scan remains. This variant is rejected; it is retained as
 measured evidence that a boundary register alone is not the right fix.
+
+### Current checklist status
+
+The serialized score-scan variant is the preferred RTL for the next hardware
+build. Functional and synthesis milestones are complete and pushed. Hardware
+milestones remain blocked on verified CoreEP2C5 pin assignments: clock, touch
+IRQ, touch MISO, touch CS, touch SCLK, touch MOSI, reset, and any result/debug
+outputs. No pin numbers are to be guessed from photographs.

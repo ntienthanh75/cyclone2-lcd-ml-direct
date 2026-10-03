@@ -186,6 +186,24 @@ same functional test with `digit=7` and adds one cycle, but uses 3,894 LEs at
 showing that a register boundary alone does not break the long ranking path.
 It is therefore rejected in favor of the serialized score scan.
 
+## Preferred implementation and next checklist
+
+The preferred RTL for the next build is
+[`rtl/experiments/touch_ml_scanpipe_top.sv`](rtl/experiments/touch_ml_scanpipe_top.sv)
+with [`rtl/experiments/ml_inference_scanpipe.sv`](rtl/experiments/ml_inference_scanpipe.sv).
+The original core and the registered-boundary variant are retained as
+references. The preferred version is not yet a hardware image: all exact
+CoreEP2C5 pin assignments are still absent from Quartus.
+
+Before downloading, complete these items in order:
+
+1. Confirm the real board clock pin and frequency.
+2. Confirm XPT2046 touch IRQ, MISO, CS, SCLK, MOSI, and reset wiring.
+3. Decide which result/debug outputs are physically connected.
+4. Add and review exact `set_location_assignment` entries.
+5. Recompile and inspect timing, pin, and fitter reports.
+6. Download the resulting `.sof` and perform the first board test.
+
 ## Target
 
 - Board: Waveshare/CoreEP2C5
