@@ -123,6 +123,25 @@ multipliers. At the temporary 50 MHz constraint, setup timing fails with
 `-71.005 ns` worst-case slack. The fit also reports unassigned physical pins,
 so this image is not yet a valid 50 MHz hardware download.
 
+### Frequency sweep
+
+The same RTL was compiled at three clock constraints. Only the clock period
+changed; each report is stored under
+[`synthesis/frequency-sweep`](synthesis/frequency-sweep).
+
+| Constraint | Logic elements | Memory bits | Multipliers | Slow setup slack | Slow hold slack | Calculated Fmax | Status |
+|---:|---:|---:|---:|---:|---:|---:|---|
+| 25 MHz | 3,661 (79%) | 55,888 (47%) | 5 (19%) | -50.736 ns | +0.499 ns | 11.02 MHz | FAIL |
+| 10 MHz | 3,661 (79%) | 55,888 (47%) | 5 (19%) | +5.292 ns | +0.499 ns | 10.56 MHz | PASS* |
+| 5 MHz | 3,590 (78%) | 55,888 (47%) | 5 (19%) | +70.138 ns | +0.499 ns | 7.70 MHz | PASS* |
+
+`PASS*` means timing passed the selected constraint only. It does not mean
+the board is ready: physical pins are still unassigned, and the design has
+not been downloaded or tested on hardware. The conservative choice from this
+sweep is 5 MHz; 10 MHz also passes but has only 5.292 ns of slow-corner
+margin. A later pipeline experiment is still needed if higher performance is
+required.
+
 ## Target
 
 - Board: Waveshare/CoreEP2C5

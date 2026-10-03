@@ -1,0 +1,1513 @@
+TimeQuest Timing Analyzer report for touch_ml_top
+Sat Oct 03 21:20:03 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Minimum Pulse Width: 'clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Fast Model Setup Summary
+ 20. Fast Model Hold Summary
+ 21. Fast Model Recovery Summary
+ 22. Fast Model Removal Summary
+ 23. Fast Model Minimum Pulse Width Summary
+ 24. Fast Model Setup: 'clk'
+ 25. Fast Model Hold: 'clk'
+ 26. Fast Model Minimum Pulse Width: 'clk'
+ 27. Setup Times
+ 28. Hold Times
+ 29. Clock to Output Times
+ 30. Minimum Clock to Output Times
+ 31. Multicorner Timing Analysis Summary
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Setup Transfers
+ 37. Hold Transfers
+ 38. Report TCCS
+ 39. Report RSKM
+ 40. Unconstrained Paths
+ 41. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; touch_ml_top                                                      ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5T144C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 6           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 2           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ; < 0.1%      ;
+;     Processors 3-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++------------------------------------------------------+
+; SDC File List                                        ;
++------------------+--------+--------------------------+
+; SDC File Path    ; Status ; Read at                  ;
++------------------+--------+--------------------------+
+; touch_ml_top.sdc ; OK     ; Sat Oct 03 21:20:02 2026 ;
++------------------+--------+--------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                            ;
++------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period  ; Frequency ; Rise  ; Fall    ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 200.000 ; 5.0 MHz   ; 0.000 ; 100.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+---------+-----------+-------+---------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-----------------------------------------------+
+; Slow Model Fmax Summary                       ;
++---------+-----------------+------------+------+
+; Fmax    ; Restricted Fmax ; Clock Name ; Note ;
++---------+-----------------+------------+------+
+; 7.7 MHz ; 7.7 MHz         ; clk        ;      ;
++---------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++--------------------------------+
+; Slow Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; 70.138 ; 0.000         ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.499 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; 96.933 ; 0.000                 ;
++-------+--------+-----------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                    ;
++--------+------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                          ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 70.138 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.031      ; 129.933    ;
+; 70.139 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.031      ; 129.932    ;
+; 70.491 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.036      ; 129.585    ;
+; 70.509 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.031      ; 129.562    ;
+; 70.510 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.031      ; 129.561    ;
+; 70.743 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.036      ; 129.333    ;
+; 70.744 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.036      ; 129.332    ;
+; 70.744 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.036      ; 129.332    ;
+; 70.746 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.036      ; 129.330    ;
+; 70.749 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.036      ; 129.327    ;
+; 70.862 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.036      ; 129.214    ;
+; 70.920 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.031      ; 129.151    ;
+; 70.921 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.031      ; 129.150    ;
+; 71.114 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.962    ;
+; 71.115 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.961    ;
+; 71.115 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.961    ;
+; 71.117 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.959    ;
+; 71.120 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.036      ; 128.956    ;
+; 71.138 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.919    ;
+; 71.138 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.919    ;
+; 71.138 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.919    ;
+; 71.138 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.017      ; 128.919    ;
+; 71.145 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.912    ;
+; 71.146 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.911    ;
+; 71.146 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.911    ;
+; 71.146 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.911    ;
+; 71.189 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.031      ; 128.882    ;
+; 71.190 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.031      ; 128.881    ;
+; 71.273 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.803    ;
+; 71.509 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.548    ;
+; 71.509 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.548    ;
+; 71.509 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.548    ;
+; 71.509 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.017      ; 128.548    ;
+; 71.516 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.541    ;
+; 71.517 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.540    ;
+; 71.517 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.540    ;
+; 71.517 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.540    ;
+; 71.525 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.551    ;
+; 71.526 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.550    ;
+; 71.526 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.550    ;
+; 71.528 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.548    ;
+; 71.531 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.036      ; 128.545    ;
+; 71.542 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.534    ;
+; 71.603 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.031      ; 128.468    ;
+; 71.604 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.031      ; 128.467    ;
+; 71.794 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.282    ;
+; 71.795 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.281    ;
+; 71.795 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.281    ;
+; 71.797 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.279    ;
+; 71.800 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.036      ; 128.276    ;
+; 71.920 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.137    ;
+; 71.920 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.137    ;
+; 71.920 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.137    ;
+; 71.920 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.017      ; 128.137    ;
+; 71.927 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.130    ;
+; 71.928 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.129    ;
+; 71.928 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.129    ;
+; 71.928 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.017      ; 128.129    ;
+; 71.956 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.036      ; 128.120    ;
+; 72.179 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.031      ; 127.892    ;
+; 72.180 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.031      ; 127.891    ;
+; 72.189 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.868    ;
+; 72.189 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.868    ;
+; 72.189 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.868    ;
+; 72.189 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.017      ; 127.868    ;
+; 72.196 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.861    ;
+; 72.197 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.860    ;
+; 72.197 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.860    ;
+; 72.197 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.860    ;
+; 72.208 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.036      ; 127.868    ;
+; 72.209 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.036      ; 127.867    ;
+; 72.209 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.036      ; 127.867    ;
+; 72.211 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.036      ; 127.865    ;
+; 72.214 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.036      ; 127.862    ;
+; 72.532 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.036      ; 127.544    ;
+; 72.603 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.454    ;
+; 72.603 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.454    ;
+; 72.603 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.454    ;
+; 72.603 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.017      ; 127.454    ;
+; 72.610 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.447    ;
+; 72.611 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.446    ;
+; 72.611 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.446    ;
+; 72.611 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.017      ; 127.446    ;
+; 72.784 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.036      ; 127.292    ;
+; 72.785 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.036      ; 127.291    ;
+; 72.785 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.036      ; 127.291    ;
+; 72.787 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.036      ; 127.289    ;
+; 72.790 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.036      ; 127.286    ;
+; 72.804 ; ml_inference:ml_path|scores[1][11] ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.006      ; 127.242    ;
+; 72.805 ; ml_inference:ml_path|scores[1][11] ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.006      ; 127.241    ;
+; 72.906 ; ml_inference:ml_path|scores[1][3]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.031      ; 127.165    ;
+; 72.907 ; ml_inference:ml_path|scores[1][3]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.031      ; 127.164    ;
+; 72.957 ; ml_inference:ml_path|scores[1][10] ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.009      ; 127.092    ;
+; 72.958 ; ml_inference:ml_path|scores[1][10] ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.009      ; 127.091    ;
+; 72.980 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_accepted   ; clk          ; clk         ; 200.000      ; 0.015      ; 127.075    ;
+; 73.078 ; ml_inference:ml_path|scores[0][14] ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.019      ; 126.981    ;
+; 73.079 ; ml_inference:ml_path|scores[0][14] ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.019      ; 126.980    ;
+; 73.131 ; ml_inference:ml_path|scores[0][10] ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.006      ; 126.915    ;
+; 73.132 ; ml_inference:ml_path|scores[0][10] ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.006      ; 126.914    ;
+; 73.157 ; ml_inference:ml_path|scores[1][11] ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.011      ; 126.894    ;
++--------+------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                                                                                    ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                            ; To Node                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|stream_busy   ; touch_capture_top:touch_path|touch_frame_adapter:frame|stream_busy   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|state.IDLE                                      ; ml_inference:ml_path|state.IDLE                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|state.LOAD                                      ; ml_inference:ml_path|state.LOAD                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|pixel_idx[2]                                    ; ml_inference:ml_path|pixel_idx[2]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|pixel_idx[4]                                    ; ml_inference:ml_path|pixel_idx[4]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|pixel_idx[3]                                    ; ml_inference:ml_path|pixel_idx[3]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|pixel_idx[1]                                    ; ml_inference:ml_path|pixel_idx[1]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[3]                                       ; ml_inference:ml_path|neuron[3]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[1]                                       ; ml_inference:ml_path|neuron[1]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[2]                                       ; ml_inference:ml_path|neuron[2]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[4]                                       ; ml_inference:ml_path|neuron[4]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[0]                                       ; ml_inference:ml_path|neuron[0]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[5]                                       ; ml_inference:ml_path|neuron[5]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[6]                                       ; ml_inference:ml_path|neuron[6]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[7]                                       ; ml_inference:ml_path|neuron[7]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[8]                                       ; ml_inference:ml_path|neuron[8]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[9]                                       ; ml_inference:ml_path|neuron[9]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[10]                                      ; ml_inference:ml_path|neuron[10]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[11]                                      ; ml_inference:ml_path|neuron[11]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[12]                                      ; ml_inference:ml_path|neuron[12]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[13]                                      ; ml_inference:ml_path|neuron[13]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[14]                                      ; ml_inference:ml_path|neuron[14]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[15]                                      ; ml_inference:ml_path|neuron[15]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[16]                                      ; ml_inference:ml_path|neuron[16]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[17]                                      ; ml_inference:ml_path|neuron[17]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[18]                                      ; ml_inference:ml_path|neuron[18]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[19]                                      ; ml_inference:ml_path|neuron[19]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[20]                                      ; ml_inference:ml_path|neuron[20]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[21]                                      ; ml_inference:ml_path|neuron[21]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[22]                                      ; ml_inference:ml_path|neuron[22]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[23]                                      ; ml_inference:ml_path|neuron[23]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[24]                                      ; ml_inference:ml_path|neuron[24]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[25]                                      ; ml_inference:ml_path|neuron[25]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[26]                                      ; ml_inference:ml_path|neuron[26]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[27]                                      ; ml_inference:ml_path|neuron[27]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[28]                                      ; ml_inference:ml_path|neuron[28]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[29]                                      ; ml_inference:ml_path|neuron[29]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[30]                                      ; ml_inference:ml_path|neuron[30]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; ml_inference:ml_path|neuron[31]                                      ; ml_inference:ml_path|neuron[31]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_GAP       ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_GAP       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_IDLE      ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_IDLE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_SPI       ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_SPI       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[0]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[1]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[2]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[3]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[4]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[5]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[6]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[7]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[8]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[9]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[10]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[11]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[12]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[13]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[13]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[14]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[14]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[15]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[15]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|touch_sclk        ; touch_capture_top:touch_path|xpt2046_reader:reader|touch_sclk        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[0]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[1]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[2]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[3]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[4]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|xpt2046_reader:reader|axis_y            ; touch_capture_top:touch_path|xpt2046_reader:reader|axis_y            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[193][3] ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[193][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[192][3] ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[192][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[194][3] ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[194][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[195][3] ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[195][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[38][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[38][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[36][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[36][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[37][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[37][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[39][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[39][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[35][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[33][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[33][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[34][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[34][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[32][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[32][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[42][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[42][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[40][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[40][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[43][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[43][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[41][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[41][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[47][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[47][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[46][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[46][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[44][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[44][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[45][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[45][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[20][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[20][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[16][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[16][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[28][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[28][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[24][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[24][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[21][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[21][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[29][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[29][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[25][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[25][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[17][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[17][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[19][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[19][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[27][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[27][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[23][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[23][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[31][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[31][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[26][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[22][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[18][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[18][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------------------------------------+
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg10 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg10 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg11 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg11 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg12 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg12 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg13 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg13 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg14 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg14 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg15 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg15 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg16 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg16 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg17 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg17 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg18 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg18 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg19 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg19 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg20 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg20 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg21 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg21 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg22 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg22 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg23 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg23 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg24 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg24 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg25 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg25 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg26 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg26 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg27 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg27 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg28 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg28 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg29 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg29 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg30 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg30 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg31 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg31 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg4  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg4  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg5  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg5  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg6  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg6  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg7  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg7  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg8  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg8  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg9  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg9  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_we_reg       ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_we_reg       ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg1 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg1 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg2 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg2 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg3 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg3 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg4 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg4 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a10~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a10~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a11~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a11~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a12~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a12~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a13~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a13~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a14~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a14~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a15~porta_memory_reg0 ;
+; 96.933 ; 100.000      ; 3.067          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a15~porta_memory_reg0 ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; clear_frame  ; clk        ; 4.645  ; 4.645  ; Rise       ; clk             ;
+; reset_n      ; clk        ; 10.483 ; 10.483 ; Rise       ; clk             ;
+; start_stream ; clk        ; 3.359  ; 3.359  ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 4.313  ; 4.313  ; Rise       ; clk             ;
+; touch_miso   ; clk        ; 0.414  ; 0.414  ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; clear_frame  ; clk        ; -0.931 ; -0.931 ; Rise       ; clk             ;
+; reset_n      ; clk        ; -0.187 ; -0.187 ; Rise       ; clk             ;
+; start_stream ; clk        ; -1.095 ; -1.095 ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; -0.548 ; -0.548 ; Rise       ; clk             ;
+; touch_miso   ; clk        ; -0.148 ; -0.148 ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; ml_busy               ; clk        ; 9.098 ; 9.098 ; Rise       ; clk             ;
+; result_accepted       ; clk        ; 7.518 ; 7.518 ; Rise       ; clk             ;
+; result_confidence[*]  ; clk        ; 7.653 ; 7.653 ; Rise       ; clk             ;
+;  result_confidence[0] ; clk        ; 7.493 ; 7.493 ; Rise       ; clk             ;
+;  result_confidence[1] ; clk        ; 7.653 ; 7.653 ; Rise       ; clk             ;
+;  result_confidence[2] ; clk        ; 7.537 ; 7.537 ; Rise       ; clk             ;
+;  result_confidence[3] ; clk        ; 7.308 ; 7.308 ; Rise       ; clk             ;
+;  result_confidence[4] ; clk        ; 7.529 ; 7.529 ; Rise       ; clk             ;
+;  result_confidence[5] ; clk        ; 6.822 ; 6.822 ; Rise       ; clk             ;
+;  result_confidence[6] ; clk        ; 7.301 ; 7.301 ; Rise       ; clk             ;
+;  result_confidence[7] ; clk        ; 7.308 ; 7.308 ; Rise       ; clk             ;
+; result_cycles[*]      ; clk        ; 9.148 ; 9.148 ; Rise       ; clk             ;
+;  result_cycles[0]     ; clk        ; 7.243 ; 7.243 ; Rise       ; clk             ;
+;  result_cycles[1]     ; clk        ; 8.012 ; 8.012 ; Rise       ; clk             ;
+;  result_cycles[2]     ; clk        ; 8.122 ; 8.122 ; Rise       ; clk             ;
+;  result_cycles[3]     ; clk        ; 7.244 ; 7.244 ; Rise       ; clk             ;
+;  result_cycles[4]     ; clk        ; 7.534 ; 7.534 ; Rise       ; clk             ;
+;  result_cycles[5]     ; clk        ; 7.230 ; 7.230 ; Rise       ; clk             ;
+;  result_cycles[6]     ; clk        ; 9.148 ; 9.148 ; Rise       ; clk             ;
+;  result_cycles[7]     ; clk        ; 8.231 ; 8.231 ; Rise       ; clk             ;
+;  result_cycles[8]     ; clk        ; 7.563 ; 7.563 ; Rise       ; clk             ;
+;  result_cycles[9]     ; clk        ; 8.940 ; 8.940 ; Rise       ; clk             ;
+;  result_cycles[10]    ; clk        ; 7.236 ; 7.236 ; Rise       ; clk             ;
+;  result_cycles[11]    ; clk        ; 7.195 ; 7.195 ; Rise       ; clk             ;
+;  result_cycles[12]    ; clk        ; 8.869 ; 8.869 ; Rise       ; clk             ;
+;  result_cycles[13]    ; clk        ; 7.916 ; 7.916 ; Rise       ; clk             ;
+;  result_cycles[14]    ; clk        ; 8.016 ; 8.016 ; Rise       ; clk             ;
+;  result_cycles[15]    ; clk        ; 8.018 ; 8.018 ; Rise       ; clk             ;
+;  result_cycles[16]    ; clk        ; 8.325 ; 8.325 ; Rise       ; clk             ;
+;  result_cycles[17]    ; clk        ; 7.536 ; 7.536 ; Rise       ; clk             ;
+;  result_cycles[18]    ; clk        ; 7.939 ; 7.939 ; Rise       ; clk             ;
+;  result_cycles[19]    ; clk        ; 6.819 ; 6.819 ; Rise       ; clk             ;
+;  result_cycles[20]    ; clk        ; 8.100 ; 8.100 ; Rise       ; clk             ;
+;  result_cycles[21]    ; clk        ; 8.360 ; 8.360 ; Rise       ; clk             ;
+;  result_cycles[22]    ; clk        ; 7.526 ; 7.526 ; Rise       ; clk             ;
+;  result_cycles[23]    ; clk        ; 6.814 ; 6.814 ; Rise       ; clk             ;
+;  result_cycles[24]    ; clk        ; 7.231 ; 7.231 ; Rise       ; clk             ;
+;  result_cycles[25]    ; clk        ; 7.203 ; 7.203 ; Rise       ; clk             ;
+;  result_cycles[26]    ; clk        ; 7.233 ; 7.233 ; Rise       ; clk             ;
+;  result_cycles[27]    ; clk        ; 8.032 ; 8.032 ; Rise       ; clk             ;
+;  result_cycles[28]    ; clk        ; 7.530 ; 7.530 ; Rise       ; clk             ;
+;  result_cycles[29]    ; clk        ; 7.572 ; 7.572 ; Rise       ; clk             ;
+;  result_cycles[30]    ; clk        ; 8.015 ; 8.015 ; Rise       ; clk             ;
+;  result_cycles[31]    ; clk        ; 7.244 ; 7.244 ; Rise       ; clk             ;
+; result_digit[*]       ; clk        ; 7.628 ; 7.628 ; Rise       ; clk             ;
+;  result_digit[0]      ; clk        ; 7.604 ; 7.604 ; Rise       ; clk             ;
+;  result_digit[1]      ; clk        ; 7.236 ; 7.236 ; Rise       ; clk             ;
+;  result_digit[2]      ; clk        ; 7.628 ; 7.628 ; Rise       ; clk             ;
+;  result_digit[3]      ; clk        ; 7.599 ; 7.599 ; Rise       ; clk             ;
+; result_margin[*]      ; clk        ; 7.734 ; 7.734 ; Rise       ; clk             ;
+;  result_margin[0]     ; clk        ; 7.153 ; 7.153 ; Rise       ; clk             ;
+;  result_margin[1]     ; clk        ; 7.689 ; 7.689 ; Rise       ; clk             ;
+;  result_margin[2]     ; clk        ; 7.426 ; 7.426 ; Rise       ; clk             ;
+;  result_margin[3]     ; clk        ; 7.173 ; 7.173 ; Rise       ; clk             ;
+;  result_margin[4]     ; clk        ; 7.732 ; 7.732 ; Rise       ; clk             ;
+;  result_margin[5]     ; clk        ; 7.200 ; 7.200 ; Rise       ; clk             ;
+;  result_margin[6]     ; clk        ; 7.224 ; 7.224 ; Rise       ; clk             ;
+;  result_margin[7]     ; clk        ; 7.734 ; 7.734 ; Rise       ; clk             ;
+;  result_margin[8]     ; clk        ; 7.190 ; 7.190 ; Rise       ; clk             ;
+;  result_margin[9]     ; clk        ; 7.607 ; 7.607 ; Rise       ; clk             ;
+;  result_margin[10]    ; clk        ; 7.672 ; 7.672 ; Rise       ; clk             ;
+;  result_margin[11]    ; clk        ; 7.193 ; 7.193 ; Rise       ; clk             ;
+;  result_margin[12]    ; clk        ; 7.429 ; 7.429 ; Rise       ; clk             ;
+;  result_margin[13]    ; clk        ; 6.827 ; 6.827 ; Rise       ; clk             ;
+;  result_margin[14]    ; clk        ; 7.267 ; 7.267 ; Rise       ; clk             ;
+;  result_margin[15]    ; clk        ; 6.827 ; 6.827 ; Rise       ; clk             ;
+; result_valid          ; clk        ; 6.816 ; 6.816 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 7.593 ; 7.593 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 7.240 ; 7.240 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 7.234 ; 7.234 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                     ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; ml_busy               ; clk        ; 8.725 ; 8.725 ; Rise       ; clk             ;
+; result_accepted       ; clk        ; 7.518 ; 7.518 ; Rise       ; clk             ;
+; result_confidence[*]  ; clk        ; 6.822 ; 6.822 ; Rise       ; clk             ;
+;  result_confidence[0] ; clk        ; 7.493 ; 7.493 ; Rise       ; clk             ;
+;  result_confidence[1] ; clk        ; 7.653 ; 7.653 ; Rise       ; clk             ;
+;  result_confidence[2] ; clk        ; 7.537 ; 7.537 ; Rise       ; clk             ;
+;  result_confidence[3] ; clk        ; 7.308 ; 7.308 ; Rise       ; clk             ;
+;  result_confidence[4] ; clk        ; 7.529 ; 7.529 ; Rise       ; clk             ;
+;  result_confidence[5] ; clk        ; 6.822 ; 6.822 ; Rise       ; clk             ;
+;  result_confidence[6] ; clk        ; 7.301 ; 7.301 ; Rise       ; clk             ;
+;  result_confidence[7] ; clk        ; 7.308 ; 7.308 ; Rise       ; clk             ;
+; result_cycles[*]      ; clk        ; 6.814 ; 6.814 ; Rise       ; clk             ;
+;  result_cycles[0]     ; clk        ; 7.243 ; 7.243 ; Rise       ; clk             ;
+;  result_cycles[1]     ; clk        ; 8.012 ; 8.012 ; Rise       ; clk             ;
+;  result_cycles[2]     ; clk        ; 8.122 ; 8.122 ; Rise       ; clk             ;
+;  result_cycles[3]     ; clk        ; 7.244 ; 7.244 ; Rise       ; clk             ;
+;  result_cycles[4]     ; clk        ; 7.534 ; 7.534 ; Rise       ; clk             ;
+;  result_cycles[5]     ; clk        ; 7.230 ; 7.230 ; Rise       ; clk             ;
+;  result_cycles[6]     ; clk        ; 9.148 ; 9.148 ; Rise       ; clk             ;
+;  result_cycles[7]     ; clk        ; 8.231 ; 8.231 ; Rise       ; clk             ;
+;  result_cycles[8]     ; clk        ; 7.563 ; 7.563 ; Rise       ; clk             ;
+;  result_cycles[9]     ; clk        ; 8.940 ; 8.940 ; Rise       ; clk             ;
+;  result_cycles[10]    ; clk        ; 7.236 ; 7.236 ; Rise       ; clk             ;
+;  result_cycles[11]    ; clk        ; 7.195 ; 7.195 ; Rise       ; clk             ;
+;  result_cycles[12]    ; clk        ; 8.869 ; 8.869 ; Rise       ; clk             ;
+;  result_cycles[13]    ; clk        ; 7.916 ; 7.916 ; Rise       ; clk             ;
+;  result_cycles[14]    ; clk        ; 8.016 ; 8.016 ; Rise       ; clk             ;
+;  result_cycles[15]    ; clk        ; 8.018 ; 8.018 ; Rise       ; clk             ;
+;  result_cycles[16]    ; clk        ; 8.325 ; 8.325 ; Rise       ; clk             ;
+;  result_cycles[17]    ; clk        ; 7.536 ; 7.536 ; Rise       ; clk             ;
+;  result_cycles[18]    ; clk        ; 7.939 ; 7.939 ; Rise       ; clk             ;
+;  result_cycles[19]    ; clk        ; 6.819 ; 6.819 ; Rise       ; clk             ;
+;  result_cycles[20]    ; clk        ; 8.100 ; 8.100 ; Rise       ; clk             ;
+;  result_cycles[21]    ; clk        ; 8.360 ; 8.360 ; Rise       ; clk             ;
+;  result_cycles[22]    ; clk        ; 7.526 ; 7.526 ; Rise       ; clk             ;
+;  result_cycles[23]    ; clk        ; 6.814 ; 6.814 ; Rise       ; clk             ;
+;  result_cycles[24]    ; clk        ; 7.231 ; 7.231 ; Rise       ; clk             ;
+;  result_cycles[25]    ; clk        ; 7.203 ; 7.203 ; Rise       ; clk             ;
+;  result_cycles[26]    ; clk        ; 7.233 ; 7.233 ; Rise       ; clk             ;
+;  result_cycles[27]    ; clk        ; 8.032 ; 8.032 ; Rise       ; clk             ;
+;  result_cycles[28]    ; clk        ; 7.530 ; 7.530 ; Rise       ; clk             ;
+;  result_cycles[29]    ; clk        ; 7.572 ; 7.572 ; Rise       ; clk             ;
+;  result_cycles[30]    ; clk        ; 8.015 ; 8.015 ; Rise       ; clk             ;
+;  result_cycles[31]    ; clk        ; 7.244 ; 7.244 ; Rise       ; clk             ;
+; result_digit[*]       ; clk        ; 7.236 ; 7.236 ; Rise       ; clk             ;
+;  result_digit[0]      ; clk        ; 7.604 ; 7.604 ; Rise       ; clk             ;
+;  result_digit[1]      ; clk        ; 7.236 ; 7.236 ; Rise       ; clk             ;
+;  result_digit[2]      ; clk        ; 7.628 ; 7.628 ; Rise       ; clk             ;
+;  result_digit[3]      ; clk        ; 7.599 ; 7.599 ; Rise       ; clk             ;
+; result_margin[*]      ; clk        ; 6.827 ; 6.827 ; Rise       ; clk             ;
+;  result_margin[0]     ; clk        ; 7.153 ; 7.153 ; Rise       ; clk             ;
+;  result_margin[1]     ; clk        ; 7.689 ; 7.689 ; Rise       ; clk             ;
+;  result_margin[2]     ; clk        ; 7.426 ; 7.426 ; Rise       ; clk             ;
+;  result_margin[3]     ; clk        ; 7.173 ; 7.173 ; Rise       ; clk             ;
+;  result_margin[4]     ; clk        ; 7.732 ; 7.732 ; Rise       ; clk             ;
+;  result_margin[5]     ; clk        ; 7.200 ; 7.200 ; Rise       ; clk             ;
+;  result_margin[6]     ; clk        ; 7.224 ; 7.224 ; Rise       ; clk             ;
+;  result_margin[7]     ; clk        ; 7.734 ; 7.734 ; Rise       ; clk             ;
+;  result_margin[8]     ; clk        ; 7.190 ; 7.190 ; Rise       ; clk             ;
+;  result_margin[9]     ; clk        ; 7.607 ; 7.607 ; Rise       ; clk             ;
+;  result_margin[10]    ; clk        ; 7.672 ; 7.672 ; Rise       ; clk             ;
+;  result_margin[11]    ; clk        ; 7.193 ; 7.193 ; Rise       ; clk             ;
+;  result_margin[12]    ; clk        ; 7.429 ; 7.429 ; Rise       ; clk             ;
+;  result_margin[13]    ; clk        ; 6.827 ; 6.827 ; Rise       ; clk             ;
+;  result_margin[14]    ; clk        ; 7.267 ; 7.267 ; Rise       ; clk             ;
+;  result_margin[15]    ; clk        ; 6.827 ; 6.827 ; Rise       ; clk             ;
+; result_valid          ; clk        ; 6.816 ; 6.816 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 7.593 ; 7.593 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 7.240 ; 7.240 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 7.234 ; 7.234 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++---------------------------------+
+; Fast Model Setup Summary        ;
++-------+---------+---------------+
+; Clock ; Slack   ; End Point TNS ;
++-------+---------+---------------+
+; clk   ; 160.773 ; 0.000         ;
++-------+---------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+--------+-----------------------+
+; Clock ; Slack  ; End Point TNS         ;
++-------+--------+-----------------------+
+; clk   ; 97.873 ; 0.000                 ;
++-------+--------+-----------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                     ;
++---------+------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack   ; From Node                          ; To Node                                ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++---------+------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 160.773 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.028      ; 39.287     ;
+; 160.773 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.028      ; 39.287     ;
+; 160.856 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.210     ;
+; 160.868 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.028      ; 39.192     ;
+; 160.868 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.028      ; 39.192     ;
+; 160.920 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.146     ;
+; 160.921 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.145     ;
+; 160.922 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.144     ;
+; 160.923 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.143     ;
+; 160.928 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.034      ; 39.138     ;
+; 160.951 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.115     ;
+; 160.976 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.014      ; 39.070     ;
+; 160.987 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.028      ; 39.073     ;
+; 160.987 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.028      ; 39.073     ;
+; 161.001 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.014      ; 39.045     ;
+; 161.007 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.014      ; 39.039     ;
+; 161.015 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.051     ;
+; 161.016 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.050     ;
+; 161.017 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.049     ;
+; 161.018 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.034      ; 39.048     ;
+; 161.022 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.028      ; 39.038     ;
+; 161.022 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.028      ; 39.038     ;
+; 161.023 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.034      ; 39.043     ;
+; 161.038 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.014      ; 39.008     ;
+; 161.045 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.014      ; 39.001     ;
+; 161.052 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.994     ;
+; 161.052 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.994     ;
+; 161.053 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.993     ;
+; 161.070 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.996     ;
+; 161.071 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.975     ;
+; 161.096 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.950     ;
+; 161.102 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.944     ;
+; 161.105 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.961     ;
+; 161.133 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.014      ; 38.913     ;
+; 161.134 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.932     ;
+; 161.135 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.931     ;
+; 161.136 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.930     ;
+; 161.137 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.929     ;
+; 161.140 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.906     ;
+; 161.142 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.034      ; 38.924     ;
+; 161.147 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.899     ;
+; 161.147 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.899     ;
+; 161.148 ; ml_inference:ml_path|scores[1][1]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.898     ;
+; 161.169 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.897     ;
+; 161.170 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.896     ;
+; 161.171 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.895     ;
+; 161.172 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.894     ;
+; 161.177 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.034      ; 38.889     ;
+; 161.182 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.028      ; 38.878     ;
+; 161.182 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.028      ; 38.878     ;
+; 161.190 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.856     ;
+; 161.215 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.831     ;
+; 161.221 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.825     ;
+; 161.225 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.821     ;
+; 161.250 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.796     ;
+; 161.252 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.014      ; 38.794     ;
+; 161.256 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.790     ;
+; 161.259 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.787     ;
+; 161.265 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.801     ;
+; 161.266 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.780     ;
+; 161.266 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.780     ;
+; 161.267 ; ml_inference:ml_path|scores[0][0]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.779     ;
+; 161.287 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.014      ; 38.759     ;
+; 161.294 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.752     ;
+; 161.301 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.745     ;
+; 161.301 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.745     ;
+; 161.302 ; ml_inference:ml_path|scores[0][1]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.744     ;
+; 161.304 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.028      ; 38.756     ;
+; 161.304 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.028      ; 38.756     ;
+; 161.329 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.737     ;
+; 161.330 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.736     ;
+; 161.331 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.735     ;
+; 161.332 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.734     ;
+; 161.337 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.034      ; 38.729     ;
+; 161.385 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.661     ;
+; 161.387 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[10] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.679     ;
+; 161.410 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.636     ;
+; 161.416 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.630     ;
+; 161.447 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[11] ; clk          ; clk         ; 200.000      ; 0.014      ; 38.599     ;
+; 161.451 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[12] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.615     ;
+; 161.452 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[13] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.614     ;
+; 161.453 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[14] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.613     ;
+; 161.454 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[15] ; clk          ; clk         ; 200.000      ; 0.034      ; 38.612     ;
+; 161.454 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[9]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.592     ;
+; 161.459 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[2]  ; clk          ; clk         ; 200.000      ; 0.034      ; 38.607     ;
+; 161.461 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[1]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.585     ;
+; 161.461 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[5]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.585     ;
+; 161.462 ; ml_inference:ml_path|scores[1][2]  ; ml_inference:ml_path|result_margin[6]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.584     ;
+; 161.485 ; ml_inference:ml_path|scores[1][0]  ; ml_inference:ml_path|result_accepted   ; clk          ; clk         ; 200.000      ; 0.014      ; 38.561     ;
+; 161.507 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[8]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.539     ;
+; 161.520 ; ml_inference:ml_path|scores[1][11] ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.002      ; 38.514     ;
+; 161.520 ; ml_inference:ml_path|scores[1][11] ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.002      ; 38.514     ;
+; 161.532 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[3]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.514     ;
+; 161.538 ; ml_inference:ml_path|scores[0][2]  ; ml_inference:ml_path|result_margin[7]  ; clk          ; clk         ; 200.000      ; 0.014      ; 38.508     ;
+; 161.552 ; ml_inference:ml_path|scores[1][3]  ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.028      ; 38.508     ;
+; 161.552 ; ml_inference:ml_path|scores[1][3]  ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.028      ; 38.508     ;
+; 161.555 ; ml_inference:ml_path|scores[0][14] ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.016      ; 38.493     ;
+; 161.555 ; ml_inference:ml_path|scores[0][14] ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.016      ; 38.493     ;
+; 161.563 ; ml_inference:ml_path|scores[1][10] ; ml_inference:ml_path|result_margin[0]  ; clk          ; clk         ; 200.000      ; 0.004      ; 38.473     ;
+; 161.563 ; ml_inference:ml_path|scores[1][10] ; ml_inference:ml_path|result_margin[4]  ; clk          ; clk         ; 200.000      ; 0.004      ; 38.473     ;
++---------+------------------------------------+----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                                                                                    ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                                            ; To Node                                                              ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|stream_busy   ; touch_capture_top:touch_path|touch_frame_adapter:frame|stream_busy   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|state.IDLE                                      ; ml_inference:ml_path|state.IDLE                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|state.LOAD                                      ; ml_inference:ml_path|state.LOAD                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|pixel_idx[2]                                    ; ml_inference:ml_path|pixel_idx[2]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|pixel_idx[4]                                    ; ml_inference:ml_path|pixel_idx[4]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|pixel_idx[3]                                    ; ml_inference:ml_path|pixel_idx[3]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|pixel_idx[1]                                    ; ml_inference:ml_path|pixel_idx[1]                                    ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[3]                                       ; ml_inference:ml_path|neuron[3]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[1]                                       ; ml_inference:ml_path|neuron[1]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[2]                                       ; ml_inference:ml_path|neuron[2]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[4]                                       ; ml_inference:ml_path|neuron[4]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[0]                                       ; ml_inference:ml_path|neuron[0]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[5]                                       ; ml_inference:ml_path|neuron[5]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[6]                                       ; ml_inference:ml_path|neuron[6]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[7]                                       ; ml_inference:ml_path|neuron[7]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[8]                                       ; ml_inference:ml_path|neuron[8]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[9]                                       ; ml_inference:ml_path|neuron[9]                                       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[10]                                      ; ml_inference:ml_path|neuron[10]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[11]                                      ; ml_inference:ml_path|neuron[11]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[12]                                      ; ml_inference:ml_path|neuron[12]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[13]                                      ; ml_inference:ml_path|neuron[13]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[14]                                      ; ml_inference:ml_path|neuron[14]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[15]                                      ; ml_inference:ml_path|neuron[15]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[16]                                      ; ml_inference:ml_path|neuron[16]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[17]                                      ; ml_inference:ml_path|neuron[17]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[18]                                      ; ml_inference:ml_path|neuron[18]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[19]                                      ; ml_inference:ml_path|neuron[19]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[20]                                      ; ml_inference:ml_path|neuron[20]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[21]                                      ; ml_inference:ml_path|neuron[21]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[22]                                      ; ml_inference:ml_path|neuron[22]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[23]                                      ; ml_inference:ml_path|neuron[23]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[24]                                      ; ml_inference:ml_path|neuron[24]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[25]                                      ; ml_inference:ml_path|neuron[25]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[26]                                      ; ml_inference:ml_path|neuron[26]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[27]                                      ; ml_inference:ml_path|neuron[27]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[28]                                      ; ml_inference:ml_path|neuron[28]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[29]                                      ; ml_inference:ml_path|neuron[29]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[30]                                      ; ml_inference:ml_path|neuron[30]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; ml_inference:ml_path|neuron[31]                                      ; ml_inference:ml_path|neuron[31]                                      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_GAP       ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_GAP       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_IDLE      ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_IDLE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_SPI       ; touch_capture_top:touch_path|xpt2046_reader:reader|state.S_SPI       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[0]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[1]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[2]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[3]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[4]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[5]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[6]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[7]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[8]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[9]        ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[10]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[11]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[12]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[13]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[13]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[14]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[14]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[15]       ; touch_capture_top:touch_path|xpt2046_reader:reader|divider[15]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|touch_sclk        ; touch_capture_top:touch_path|xpt2046_reader:reader|touch_sclk        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[0]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[1]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[2]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[3]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[4]      ; touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|xpt2046_reader:reader|axis_y            ; touch_capture_top:touch_path|xpt2046_reader:reader|axis_y            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[193][3] ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[193][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[192][3] ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[192][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[194][3] ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[194][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[195][3] ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[195][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[38][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[38][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[36][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[36][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[37][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[37][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[39][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[39][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[35][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[33][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[33][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[34][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[34][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[32][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[32][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[42][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[42][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[40][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[40][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[43][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[43][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[41][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[41][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[47][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[47][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[46][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[46][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[44][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[44][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[45][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[45][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[20][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[20][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[16][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[16][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[28][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[28][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[24][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[24][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[21][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[21][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[29][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[29][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[25][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[25][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[17][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[17][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[19][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[19][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[27][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[27][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[23][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[23][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[31][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[31][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[26][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[22][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[18][0]  ; touch_capture_top:touch_path|touch_frame_adapter:frame|frame[18][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
++-------+----------------------------------------------------------------------+----------------------------------------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                                                                                        ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------------------------------------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                                                                                      ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------------------------------------+
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg1 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg2 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg3 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_address_reg4 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg0  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg1  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg10 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg10 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg11 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg11 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg12 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg12 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg13 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg13 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg14 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg14 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg15 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg15 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg16 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg16 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg17 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg17 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg18 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg18 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg19 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg19 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg2  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg20 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg20 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg21 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg21 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg22 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg22 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg23 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg23 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg24 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg24 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg25 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg25 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg26 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg26 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg27 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg27 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg28 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg28 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg29 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg29 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg3  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg30 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg30 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg31 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg31 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg4  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg4  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg5  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg5  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg6  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg6  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg7  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg7  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg8  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg8  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg9  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_datain_reg9  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_memory_reg0  ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_we_reg       ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~porta_we_reg       ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg1 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg1 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg2 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg2 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg3 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg3 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg4 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a0~portb_address_reg4 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a10~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a10~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a11~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a11~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a12~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a12~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a13~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a13~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a14~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a14~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; High Pulse Width ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a15~porta_memory_reg0 ;
+; 97.873 ; 100.000      ; 2.127          ; Low Pulse Width  ; clk   ; Rise       ; ml_inference:ml_path|altsyncram:hidden_rtl_0|altsyncram_sng1:auto_generated|ram_block1a15~porta_memory_reg0 ;
++--------+--------------+----------------+------------------+-------+------------+-------------------------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; clear_frame  ; clk        ; 1.127  ; 1.127  ; Rise       ; clk             ;
+; reset_n      ; clk        ; 3.037  ; 3.037  ; Rise       ; clk             ;
+; start_stream ; clk        ; 0.757  ; 0.757  ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 1.077  ; 1.077  ; Rise       ; clk             ;
+; touch_miso   ; clk        ; -0.168 ; -0.168 ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; clear_frame  ; clk        ; 0.038  ; 0.038  ; Rise       ; clk             ;
+; reset_n      ; clk        ; 0.220  ; 0.220  ; Rise       ; clk             ;
+; start_stream ; clk        ; -0.023 ; -0.023 ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 0.170  ; 0.170  ; Rise       ; clk             ;
+; touch_miso   ; clk        ; 0.288  ; 0.288  ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; ml_busy               ; clk        ; 4.012 ; 4.012 ; Rise       ; clk             ;
+; result_accepted       ; clk        ; 3.468 ; 3.468 ; Rise       ; clk             ;
+; result_confidence[*]  ; clk        ; 3.581 ; 3.581 ; Rise       ; clk             ;
+;  result_confidence[0] ; clk        ; 3.445 ; 3.445 ; Rise       ; clk             ;
+;  result_confidence[1] ; clk        ; 3.581 ; 3.581 ; Rise       ; clk             ;
+;  result_confidence[2] ; clk        ; 3.469 ; 3.469 ; Rise       ; clk             ;
+;  result_confidence[3] ; clk        ; 3.486 ; 3.486 ; Rise       ; clk             ;
+;  result_confidence[4] ; clk        ; 3.460 ; 3.460 ; Rise       ; clk             ;
+;  result_confidence[5] ; clk        ; 3.258 ; 3.258 ; Rise       ; clk             ;
+;  result_confidence[6] ; clk        ; 3.482 ; 3.482 ; Rise       ; clk             ;
+;  result_confidence[7] ; clk        ; 3.485 ; 3.485 ; Rise       ; clk             ;
+; result_cycles[*]      ; clk        ; 4.039 ; 4.039 ; Rise       ; clk             ;
+;  result_cycles[0]     ; clk        ; 3.447 ; 3.447 ; Rise       ; clk             ;
+;  result_cycles[1]     ; clk        ; 3.785 ; 3.785 ; Rise       ; clk             ;
+;  result_cycles[2]     ; clk        ; 3.816 ; 3.816 ; Rise       ; clk             ;
+;  result_cycles[3]     ; clk        ; 3.448 ; 3.448 ; Rise       ; clk             ;
+;  result_cycles[4]     ; clk        ; 3.560 ; 3.560 ; Rise       ; clk             ;
+;  result_cycles[5]     ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  result_cycles[6]     ; clk        ; 4.039 ; 4.039 ; Rise       ; clk             ;
+;  result_cycles[7]     ; clk        ; 3.782 ; 3.782 ; Rise       ; clk             ;
+;  result_cycles[8]     ; clk        ; 3.578 ; 3.578 ; Rise       ; clk             ;
+;  result_cycles[9]     ; clk        ; 4.030 ; 4.030 ; Rise       ; clk             ;
+;  result_cycles[10]    ; clk        ; 3.439 ; 3.439 ; Rise       ; clk             ;
+;  result_cycles[11]    ; clk        ; 3.373 ; 3.373 ; Rise       ; clk             ;
+;  result_cycles[12]    ; clk        ; 3.988 ; 3.988 ; Rise       ; clk             ;
+;  result_cycles[13]    ; clk        ; 3.631 ; 3.631 ; Rise       ; clk             ;
+;  result_cycles[14]    ; clk        ; 3.788 ; 3.788 ; Rise       ; clk             ;
+;  result_cycles[15]    ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  result_cycles[16]    ; clk        ; 3.765 ; 3.765 ; Rise       ; clk             ;
+;  result_cycles[17]    ; clk        ; 3.557 ; 3.557 ; Rise       ; clk             ;
+;  result_cycles[18]    ; clk        ; 3.695 ; 3.695 ; Rise       ; clk             ;
+;  result_cycles[19]    ; clk        ; 3.254 ; 3.254 ; Rise       ; clk             ;
+;  result_cycles[20]    ; clk        ; 3.805 ; 3.805 ; Rise       ; clk             ;
+;  result_cycles[21]    ; clk        ; 3.887 ; 3.887 ; Rise       ; clk             ;
+;  result_cycles[22]    ; clk        ; 3.553 ; 3.553 ; Rise       ; clk             ;
+;  result_cycles[23]    ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_cycles[24]    ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  result_cycles[25]    ; clk        ; 3.381 ; 3.381 ; Rise       ; clk             ;
+;  result_cycles[26]    ; clk        ; 3.437 ; 3.437 ; Rise       ; clk             ;
+;  result_cycles[27]    ; clk        ; 3.795 ; 3.795 ; Rise       ; clk             ;
+;  result_cycles[28]    ; clk        ; 3.560 ; 3.560 ; Rise       ; clk             ;
+;  result_cycles[29]    ; clk        ; 3.544 ; 3.544 ; Rise       ; clk             ;
+;  result_cycles[30]    ; clk        ; 3.787 ; 3.787 ; Rise       ; clk             ;
+;  result_cycles[31]    ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+; result_digit[*]       ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  result_digit[0]      ; clk        ; 3.549 ; 3.549 ; Rise       ; clk             ;
+;  result_digit[1]      ; clk        ; 3.437 ; 3.437 ; Rise       ; clk             ;
+;  result_digit[2]      ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  result_digit[3]      ; clk        ; 3.546 ; 3.546 ; Rise       ; clk             ;
+; result_margin[*]      ; clk        ; 3.627 ; 3.627 ; Rise       ; clk             ;
+;  result_margin[0]     ; clk        ; 3.345 ; 3.345 ; Rise       ; clk             ;
+;  result_margin[1]     ; clk        ; 3.595 ; 3.595 ; Rise       ; clk             ;
+;  result_margin[2]     ; clk        ; 3.523 ; 3.523 ; Rise       ; clk             ;
+;  result_margin[3]     ; clk        ; 3.342 ; 3.342 ; Rise       ; clk             ;
+;  result_margin[4]     ; clk        ; 3.626 ; 3.626 ; Rise       ; clk             ;
+;  result_margin[5]     ; clk        ; 3.367 ; 3.367 ; Rise       ; clk             ;
+;  result_margin[6]     ; clk        ; 3.375 ; 3.375 ; Rise       ; clk             ;
+;  result_margin[7]     ; clk        ; 3.627 ; 3.627 ; Rise       ; clk             ;
+;  result_margin[8]     ; clk        ; 3.360 ; 3.360 ; Rise       ; clk             ;
+;  result_margin[9]     ; clk        ; 3.505 ; 3.505 ; Rise       ; clk             ;
+;  result_margin[10]    ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  result_margin[11]    ; clk        ; 3.358 ; 3.358 ; Rise       ; clk             ;
+;  result_margin[12]    ; clk        ; 3.525 ; 3.525 ; Rise       ; clk             ;
+;  result_margin[13]    ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_margin[14]    ; clk        ; 3.415 ; 3.415 ; Rise       ; clk             ;
+;  result_margin[15]    ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+; result_valid          ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 3.541 ; 3.541 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 3.438 ; 3.438 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                     ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; ml_busy               ; clk        ; 3.910 ; 3.910 ; Rise       ; clk             ;
+; result_accepted       ; clk        ; 3.468 ; 3.468 ; Rise       ; clk             ;
+; result_confidence[*]  ; clk        ; 3.258 ; 3.258 ; Rise       ; clk             ;
+;  result_confidence[0] ; clk        ; 3.445 ; 3.445 ; Rise       ; clk             ;
+;  result_confidence[1] ; clk        ; 3.581 ; 3.581 ; Rise       ; clk             ;
+;  result_confidence[2] ; clk        ; 3.469 ; 3.469 ; Rise       ; clk             ;
+;  result_confidence[3] ; clk        ; 3.486 ; 3.486 ; Rise       ; clk             ;
+;  result_confidence[4] ; clk        ; 3.460 ; 3.460 ; Rise       ; clk             ;
+;  result_confidence[5] ; clk        ; 3.258 ; 3.258 ; Rise       ; clk             ;
+;  result_confidence[6] ; clk        ; 3.482 ; 3.482 ; Rise       ; clk             ;
+;  result_confidence[7] ; clk        ; 3.485 ; 3.485 ; Rise       ; clk             ;
+; result_cycles[*]      ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_cycles[0]     ; clk        ; 3.447 ; 3.447 ; Rise       ; clk             ;
+;  result_cycles[1]     ; clk        ; 3.785 ; 3.785 ; Rise       ; clk             ;
+;  result_cycles[2]     ; clk        ; 3.816 ; 3.816 ; Rise       ; clk             ;
+;  result_cycles[3]     ; clk        ; 3.448 ; 3.448 ; Rise       ; clk             ;
+;  result_cycles[4]     ; clk        ; 3.560 ; 3.560 ; Rise       ; clk             ;
+;  result_cycles[5]     ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  result_cycles[6]     ; clk        ; 4.039 ; 4.039 ; Rise       ; clk             ;
+;  result_cycles[7]     ; clk        ; 3.782 ; 3.782 ; Rise       ; clk             ;
+;  result_cycles[8]     ; clk        ; 3.578 ; 3.578 ; Rise       ; clk             ;
+;  result_cycles[9]     ; clk        ; 4.030 ; 4.030 ; Rise       ; clk             ;
+;  result_cycles[10]    ; clk        ; 3.439 ; 3.439 ; Rise       ; clk             ;
+;  result_cycles[11]    ; clk        ; 3.373 ; 3.373 ; Rise       ; clk             ;
+;  result_cycles[12]    ; clk        ; 3.988 ; 3.988 ; Rise       ; clk             ;
+;  result_cycles[13]    ; clk        ; 3.631 ; 3.631 ; Rise       ; clk             ;
+;  result_cycles[14]    ; clk        ; 3.788 ; 3.788 ; Rise       ; clk             ;
+;  result_cycles[15]    ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  result_cycles[16]    ; clk        ; 3.765 ; 3.765 ; Rise       ; clk             ;
+;  result_cycles[17]    ; clk        ; 3.557 ; 3.557 ; Rise       ; clk             ;
+;  result_cycles[18]    ; clk        ; 3.695 ; 3.695 ; Rise       ; clk             ;
+;  result_cycles[19]    ; clk        ; 3.254 ; 3.254 ; Rise       ; clk             ;
+;  result_cycles[20]    ; clk        ; 3.805 ; 3.805 ; Rise       ; clk             ;
+;  result_cycles[21]    ; clk        ; 3.887 ; 3.887 ; Rise       ; clk             ;
+;  result_cycles[22]    ; clk        ; 3.553 ; 3.553 ; Rise       ; clk             ;
+;  result_cycles[23]    ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_cycles[24]    ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  result_cycles[25]    ; clk        ; 3.381 ; 3.381 ; Rise       ; clk             ;
+;  result_cycles[26]    ; clk        ; 3.437 ; 3.437 ; Rise       ; clk             ;
+;  result_cycles[27]    ; clk        ; 3.795 ; 3.795 ; Rise       ; clk             ;
+;  result_cycles[28]    ; clk        ; 3.560 ; 3.560 ; Rise       ; clk             ;
+;  result_cycles[29]    ; clk        ; 3.544 ; 3.544 ; Rise       ; clk             ;
+;  result_cycles[30]    ; clk        ; 3.787 ; 3.787 ; Rise       ; clk             ;
+;  result_cycles[31]    ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+; result_digit[*]       ; clk        ; 3.437 ; 3.437 ; Rise       ; clk             ;
+;  result_digit[0]      ; clk        ; 3.549 ; 3.549 ; Rise       ; clk             ;
+;  result_digit[1]      ; clk        ; 3.437 ; 3.437 ; Rise       ; clk             ;
+;  result_digit[2]      ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  result_digit[3]      ; clk        ; 3.546 ; 3.546 ; Rise       ; clk             ;
+; result_margin[*]      ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_margin[0]     ; clk        ; 3.345 ; 3.345 ; Rise       ; clk             ;
+;  result_margin[1]     ; clk        ; 3.595 ; 3.595 ; Rise       ; clk             ;
+;  result_margin[2]     ; clk        ; 3.523 ; 3.523 ; Rise       ; clk             ;
+;  result_margin[3]     ; clk        ; 3.342 ; 3.342 ; Rise       ; clk             ;
+;  result_margin[4]     ; clk        ; 3.626 ; 3.626 ; Rise       ; clk             ;
+;  result_margin[5]     ; clk        ; 3.367 ; 3.367 ; Rise       ; clk             ;
+;  result_margin[6]     ; clk        ; 3.375 ; 3.375 ; Rise       ; clk             ;
+;  result_margin[7]     ; clk        ; 3.627 ; 3.627 ; Rise       ; clk             ;
+;  result_margin[8]     ; clk        ; 3.360 ; 3.360 ; Rise       ; clk             ;
+;  result_margin[9]     ; clk        ; 3.505 ; 3.505 ; Rise       ; clk             ;
+;  result_margin[10]    ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  result_margin[11]    ; clk        ; 3.358 ; 3.358 ; Rise       ; clk             ;
+;  result_margin[12]    ; clk        ; 3.525 ; 3.525 ; Rise       ; clk             ;
+;  result_margin[13]    ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_margin[14]    ; clk        ; 3.415 ; 3.415 ; Rise       ; clk             ;
+;  result_margin[15]    ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+; result_valid          ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 3.541 ; 3.541 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 3.438 ; 3.438 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++------------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                          ;
++------------------+--------+-------+----------+---------+---------------------+
+; Clock            ; Setup  ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+--------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 70.138 ; 0.215 ; N/A      ; N/A     ; 96.933              ;
+;  clk             ; 70.138 ; 0.215 ; N/A      ; N/A     ; 96.933              ;
+; Design-wide TNS  ; 0.0    ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  clk             ; 0.000  ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+--------+-------+----------+---------+---------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; clear_frame  ; clk        ; 4.645  ; 4.645  ; Rise       ; clk             ;
+; reset_n      ; clk        ; 10.483 ; 10.483 ; Rise       ; clk             ;
+; start_stream ; clk        ; 3.359  ; 3.359  ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 4.313  ; 4.313  ; Rise       ; clk             ;
+; touch_miso   ; clk        ; 0.414  ; 0.414  ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; clear_frame  ; clk        ; 0.038  ; 0.038  ; Rise       ; clk             ;
+; reset_n      ; clk        ; 0.220  ; 0.220  ; Rise       ; clk             ;
+; start_stream ; clk        ; -0.023 ; -0.023 ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 0.170  ; 0.170  ; Rise       ; clk             ;
+; touch_miso   ; clk        ; 0.288  ; 0.288  ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; ml_busy               ; clk        ; 9.098 ; 9.098 ; Rise       ; clk             ;
+; result_accepted       ; clk        ; 7.518 ; 7.518 ; Rise       ; clk             ;
+; result_confidence[*]  ; clk        ; 7.653 ; 7.653 ; Rise       ; clk             ;
+;  result_confidence[0] ; clk        ; 7.493 ; 7.493 ; Rise       ; clk             ;
+;  result_confidence[1] ; clk        ; 7.653 ; 7.653 ; Rise       ; clk             ;
+;  result_confidence[2] ; clk        ; 7.537 ; 7.537 ; Rise       ; clk             ;
+;  result_confidence[3] ; clk        ; 7.308 ; 7.308 ; Rise       ; clk             ;
+;  result_confidence[4] ; clk        ; 7.529 ; 7.529 ; Rise       ; clk             ;
+;  result_confidence[5] ; clk        ; 6.822 ; 6.822 ; Rise       ; clk             ;
+;  result_confidence[6] ; clk        ; 7.301 ; 7.301 ; Rise       ; clk             ;
+;  result_confidence[7] ; clk        ; 7.308 ; 7.308 ; Rise       ; clk             ;
+; result_cycles[*]      ; clk        ; 9.148 ; 9.148 ; Rise       ; clk             ;
+;  result_cycles[0]     ; clk        ; 7.243 ; 7.243 ; Rise       ; clk             ;
+;  result_cycles[1]     ; clk        ; 8.012 ; 8.012 ; Rise       ; clk             ;
+;  result_cycles[2]     ; clk        ; 8.122 ; 8.122 ; Rise       ; clk             ;
+;  result_cycles[3]     ; clk        ; 7.244 ; 7.244 ; Rise       ; clk             ;
+;  result_cycles[4]     ; clk        ; 7.534 ; 7.534 ; Rise       ; clk             ;
+;  result_cycles[5]     ; clk        ; 7.230 ; 7.230 ; Rise       ; clk             ;
+;  result_cycles[6]     ; clk        ; 9.148 ; 9.148 ; Rise       ; clk             ;
+;  result_cycles[7]     ; clk        ; 8.231 ; 8.231 ; Rise       ; clk             ;
+;  result_cycles[8]     ; clk        ; 7.563 ; 7.563 ; Rise       ; clk             ;
+;  result_cycles[9]     ; clk        ; 8.940 ; 8.940 ; Rise       ; clk             ;
+;  result_cycles[10]    ; clk        ; 7.236 ; 7.236 ; Rise       ; clk             ;
+;  result_cycles[11]    ; clk        ; 7.195 ; 7.195 ; Rise       ; clk             ;
+;  result_cycles[12]    ; clk        ; 8.869 ; 8.869 ; Rise       ; clk             ;
+;  result_cycles[13]    ; clk        ; 7.916 ; 7.916 ; Rise       ; clk             ;
+;  result_cycles[14]    ; clk        ; 8.016 ; 8.016 ; Rise       ; clk             ;
+;  result_cycles[15]    ; clk        ; 8.018 ; 8.018 ; Rise       ; clk             ;
+;  result_cycles[16]    ; clk        ; 8.325 ; 8.325 ; Rise       ; clk             ;
+;  result_cycles[17]    ; clk        ; 7.536 ; 7.536 ; Rise       ; clk             ;
+;  result_cycles[18]    ; clk        ; 7.939 ; 7.939 ; Rise       ; clk             ;
+;  result_cycles[19]    ; clk        ; 6.819 ; 6.819 ; Rise       ; clk             ;
+;  result_cycles[20]    ; clk        ; 8.100 ; 8.100 ; Rise       ; clk             ;
+;  result_cycles[21]    ; clk        ; 8.360 ; 8.360 ; Rise       ; clk             ;
+;  result_cycles[22]    ; clk        ; 7.526 ; 7.526 ; Rise       ; clk             ;
+;  result_cycles[23]    ; clk        ; 6.814 ; 6.814 ; Rise       ; clk             ;
+;  result_cycles[24]    ; clk        ; 7.231 ; 7.231 ; Rise       ; clk             ;
+;  result_cycles[25]    ; clk        ; 7.203 ; 7.203 ; Rise       ; clk             ;
+;  result_cycles[26]    ; clk        ; 7.233 ; 7.233 ; Rise       ; clk             ;
+;  result_cycles[27]    ; clk        ; 8.032 ; 8.032 ; Rise       ; clk             ;
+;  result_cycles[28]    ; clk        ; 7.530 ; 7.530 ; Rise       ; clk             ;
+;  result_cycles[29]    ; clk        ; 7.572 ; 7.572 ; Rise       ; clk             ;
+;  result_cycles[30]    ; clk        ; 8.015 ; 8.015 ; Rise       ; clk             ;
+;  result_cycles[31]    ; clk        ; 7.244 ; 7.244 ; Rise       ; clk             ;
+; result_digit[*]       ; clk        ; 7.628 ; 7.628 ; Rise       ; clk             ;
+;  result_digit[0]      ; clk        ; 7.604 ; 7.604 ; Rise       ; clk             ;
+;  result_digit[1]      ; clk        ; 7.236 ; 7.236 ; Rise       ; clk             ;
+;  result_digit[2]      ; clk        ; 7.628 ; 7.628 ; Rise       ; clk             ;
+;  result_digit[3]      ; clk        ; 7.599 ; 7.599 ; Rise       ; clk             ;
+; result_margin[*]      ; clk        ; 7.734 ; 7.734 ; Rise       ; clk             ;
+;  result_margin[0]     ; clk        ; 7.153 ; 7.153 ; Rise       ; clk             ;
+;  result_margin[1]     ; clk        ; 7.689 ; 7.689 ; Rise       ; clk             ;
+;  result_margin[2]     ; clk        ; 7.426 ; 7.426 ; Rise       ; clk             ;
+;  result_margin[3]     ; clk        ; 7.173 ; 7.173 ; Rise       ; clk             ;
+;  result_margin[4]     ; clk        ; 7.732 ; 7.732 ; Rise       ; clk             ;
+;  result_margin[5]     ; clk        ; 7.200 ; 7.200 ; Rise       ; clk             ;
+;  result_margin[6]     ; clk        ; 7.224 ; 7.224 ; Rise       ; clk             ;
+;  result_margin[7]     ; clk        ; 7.734 ; 7.734 ; Rise       ; clk             ;
+;  result_margin[8]     ; clk        ; 7.190 ; 7.190 ; Rise       ; clk             ;
+;  result_margin[9]     ; clk        ; 7.607 ; 7.607 ; Rise       ; clk             ;
+;  result_margin[10]    ; clk        ; 7.672 ; 7.672 ; Rise       ; clk             ;
+;  result_margin[11]    ; clk        ; 7.193 ; 7.193 ; Rise       ; clk             ;
+;  result_margin[12]    ; clk        ; 7.429 ; 7.429 ; Rise       ; clk             ;
+;  result_margin[13]    ; clk        ; 6.827 ; 6.827 ; Rise       ; clk             ;
+;  result_margin[14]    ; clk        ; 7.267 ; 7.267 ; Rise       ; clk             ;
+;  result_margin[15]    ; clk        ; 6.827 ; 6.827 ; Rise       ; clk             ;
+; result_valid          ; clk        ; 6.816 ; 6.816 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 7.593 ; 7.593 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 7.240 ; 7.240 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 7.234 ; 7.234 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                     ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; ml_busy               ; clk        ; 3.910 ; 3.910 ; Rise       ; clk             ;
+; result_accepted       ; clk        ; 3.468 ; 3.468 ; Rise       ; clk             ;
+; result_confidence[*]  ; clk        ; 3.258 ; 3.258 ; Rise       ; clk             ;
+;  result_confidence[0] ; clk        ; 3.445 ; 3.445 ; Rise       ; clk             ;
+;  result_confidence[1] ; clk        ; 3.581 ; 3.581 ; Rise       ; clk             ;
+;  result_confidence[2] ; clk        ; 3.469 ; 3.469 ; Rise       ; clk             ;
+;  result_confidence[3] ; clk        ; 3.486 ; 3.486 ; Rise       ; clk             ;
+;  result_confidence[4] ; clk        ; 3.460 ; 3.460 ; Rise       ; clk             ;
+;  result_confidence[5] ; clk        ; 3.258 ; 3.258 ; Rise       ; clk             ;
+;  result_confidence[6] ; clk        ; 3.482 ; 3.482 ; Rise       ; clk             ;
+;  result_confidence[7] ; clk        ; 3.485 ; 3.485 ; Rise       ; clk             ;
+; result_cycles[*]      ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_cycles[0]     ; clk        ; 3.447 ; 3.447 ; Rise       ; clk             ;
+;  result_cycles[1]     ; clk        ; 3.785 ; 3.785 ; Rise       ; clk             ;
+;  result_cycles[2]     ; clk        ; 3.816 ; 3.816 ; Rise       ; clk             ;
+;  result_cycles[3]     ; clk        ; 3.448 ; 3.448 ; Rise       ; clk             ;
+;  result_cycles[4]     ; clk        ; 3.560 ; 3.560 ; Rise       ; clk             ;
+;  result_cycles[5]     ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  result_cycles[6]     ; clk        ; 4.039 ; 4.039 ; Rise       ; clk             ;
+;  result_cycles[7]     ; clk        ; 3.782 ; 3.782 ; Rise       ; clk             ;
+;  result_cycles[8]     ; clk        ; 3.578 ; 3.578 ; Rise       ; clk             ;
+;  result_cycles[9]     ; clk        ; 4.030 ; 4.030 ; Rise       ; clk             ;
+;  result_cycles[10]    ; clk        ; 3.439 ; 3.439 ; Rise       ; clk             ;
+;  result_cycles[11]    ; clk        ; 3.373 ; 3.373 ; Rise       ; clk             ;
+;  result_cycles[12]    ; clk        ; 3.988 ; 3.988 ; Rise       ; clk             ;
+;  result_cycles[13]    ; clk        ; 3.631 ; 3.631 ; Rise       ; clk             ;
+;  result_cycles[14]    ; clk        ; 3.788 ; 3.788 ; Rise       ; clk             ;
+;  result_cycles[15]    ; clk        ; 3.789 ; 3.789 ; Rise       ; clk             ;
+;  result_cycles[16]    ; clk        ; 3.765 ; 3.765 ; Rise       ; clk             ;
+;  result_cycles[17]    ; clk        ; 3.557 ; 3.557 ; Rise       ; clk             ;
+;  result_cycles[18]    ; clk        ; 3.695 ; 3.695 ; Rise       ; clk             ;
+;  result_cycles[19]    ; clk        ; 3.254 ; 3.254 ; Rise       ; clk             ;
+;  result_cycles[20]    ; clk        ; 3.805 ; 3.805 ; Rise       ; clk             ;
+;  result_cycles[21]    ; clk        ; 3.887 ; 3.887 ; Rise       ; clk             ;
+;  result_cycles[22]    ; clk        ; 3.553 ; 3.553 ; Rise       ; clk             ;
+;  result_cycles[23]    ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_cycles[24]    ; clk        ; 3.436 ; 3.436 ; Rise       ; clk             ;
+;  result_cycles[25]    ; clk        ; 3.381 ; 3.381 ; Rise       ; clk             ;
+;  result_cycles[26]    ; clk        ; 3.437 ; 3.437 ; Rise       ; clk             ;
+;  result_cycles[27]    ; clk        ; 3.795 ; 3.795 ; Rise       ; clk             ;
+;  result_cycles[28]    ; clk        ; 3.560 ; 3.560 ; Rise       ; clk             ;
+;  result_cycles[29]    ; clk        ; 3.544 ; 3.544 ; Rise       ; clk             ;
+;  result_cycles[30]    ; clk        ; 3.787 ; 3.787 ; Rise       ; clk             ;
+;  result_cycles[31]    ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+; result_digit[*]       ; clk        ; 3.437 ; 3.437 ; Rise       ; clk             ;
+;  result_digit[0]      ; clk        ; 3.549 ; 3.549 ; Rise       ; clk             ;
+;  result_digit[1]      ; clk        ; 3.437 ; 3.437 ; Rise       ; clk             ;
+;  result_digit[2]      ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  result_digit[3]      ; clk        ; 3.546 ; 3.546 ; Rise       ; clk             ;
+; result_margin[*]      ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_margin[0]     ; clk        ; 3.345 ; 3.345 ; Rise       ; clk             ;
+;  result_margin[1]     ; clk        ; 3.595 ; 3.595 ; Rise       ; clk             ;
+;  result_margin[2]     ; clk        ; 3.523 ; 3.523 ; Rise       ; clk             ;
+;  result_margin[3]     ; clk        ; 3.342 ; 3.342 ; Rise       ; clk             ;
+;  result_margin[4]     ; clk        ; 3.626 ; 3.626 ; Rise       ; clk             ;
+;  result_margin[5]     ; clk        ; 3.367 ; 3.367 ; Rise       ; clk             ;
+;  result_margin[6]     ; clk        ; 3.375 ; 3.375 ; Rise       ; clk             ;
+;  result_margin[7]     ; clk        ; 3.627 ; 3.627 ; Rise       ; clk             ;
+;  result_margin[8]     ; clk        ; 3.360 ; 3.360 ; Rise       ; clk             ;
+;  result_margin[9]     ; clk        ; 3.505 ; 3.505 ; Rise       ; clk             ;
+;  result_margin[10]    ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  result_margin[11]    ; clk        ; 3.358 ; 3.358 ; Rise       ; clk             ;
+;  result_margin[12]    ; clk        ; 3.525 ; 3.525 ; Rise       ; clk             ;
+;  result_margin[13]    ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+;  result_margin[14]    ; clk        ; 3.415 ; 3.415 ; Rise       ; clk             ;
+;  result_margin[15]    ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+; result_valid          ; clk        ; 3.253 ; 3.253 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 3.541 ; 3.541 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 3.444 ; 3.444 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 3.438 ; 3.438 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Setup Transfers                                                       ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-----------------------------------------------------------------------+
+; Hold Transfers                                                        ;
++------------+----------+--------------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths     ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+--------------+----------+----------+----------+
+; clk        ; clk      ; > 2147483647 ; 0        ; 0        ; 0        ;
++------------+----------+--------------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 1135  ; 1135 ;
+; Unconstrained Output Ports      ; 66    ; 66   ;
+; Unconstrained Output Port Paths ; 67    ; 67   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Oct 03 21:20:01 2026
+Info: Command: quartus_sta touch_ml_top -c touch_ml_top
+Info: qsta_default_script.tcl version: #1
+Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (332104): Reading SDC File: 'touch_ml_top.sdc'
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 70.138
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    70.138         0.000 clk 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 96.933
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    96.933         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 160.773
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):   160.773         0.000 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 97.873
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    97.873         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4648 megabytes
+    Info: Processing ended: Sat Oct 03 21:20:03 2026
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

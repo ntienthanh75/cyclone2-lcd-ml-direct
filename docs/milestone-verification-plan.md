@@ -253,6 +253,15 @@ multipliers, but 50 MHz timing is **NO-GO** because setup slack is
 missing, so no hardware download or board result has been claimed.
 
 Before the next milestone, check this file and record the timing-repair
-choice. The next task is first to sweep the unchanged design at 25 MHz,
-10 MHz, and 5 MHz, then compare the timing margin and resource use. Only
-after that comparison should a frequency or pipeline change be selected.
+choice. The required unchanged-design sweep at 25 MHz, 10 MHz, and 5 MHz is
+recorded below; only after that comparison should a frequency or pipeline
+change be selected.
+
+The frequency sweep is now complete. At 25 MHz the design fails with
+`-50.736 ns` setup slack. At 10 MHz it passes with `+5.292 ns`, and at 5 MHz
+it passes with `+70.138 ns`. Resource use is approximately constant, so the
+frequency does not materially reduce the design size. The provisional choice
+is 5 MHz for margin; 10 MHz is the fastest tested passing constraint. Before
+the next milestone, check this result and decide whether to keep 5 MHz or
+start a pipelined ML experiment. Hardware remains NO-GO until pins are
+assigned and the board is tested.

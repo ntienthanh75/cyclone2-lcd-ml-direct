@@ -15,7 +15,7 @@ one reusable classifier boundary.
 - [x] Implement and verify a standalone raw-to-LCD calibration block.
 - [x] Connect the raw reader and calibrator to the frame adapter.
 - [x] Connect the stream to the reusable ML core boundary.
-- [ ] Sweep the integrated design at 25 MHz, 10 MHz, and 5 MHz and record
+- [x] Sweep the integrated design at 25 MHz, 10 MHz, and 5 MHz and record
       resource/timing results before choosing an operating point.
 
 ## Verification rule for each implementation step
@@ -203,6 +203,20 @@ that only the clock period changes. Store each report under
 multipliers, setup slack, hold slack, and Fmax. A lower frequency may make the
 design usable, but it does not repair the long combinational ML path; that
 remains a separate pipeline/resource tradeoff.
+
+### Sweep result
+
+| Constraint | Logic elements | Memory bits | Multipliers | Slow setup | Slow hold | Fmax | Result |
+|---:|---:|---:|---:|---:|---:|---:|---|
+| 25 MHz | 3,661 | 55,888 | 5 | -50.736 ns | +0.499 ns | 11.02 MHz | Fail |
+| 10 MHz | 3,661 | 55,888 | 5 | +5.292 ns | +0.499 ns | 10.56 MHz | Pass |
+| 5 MHz | 3,590 | 55,888 | 5 | +70.138 ns | +0.499 ns | 7.70 MHz | Pass |
+
+The 5 MHz fit used fewer logic elements because Quartus made a different
+placement/optimization choice; the memory and multiplier use are unchanged.
+The sweep selects 5 MHz as the safer provisional clock, while 10 MHz is the
+fastest tested passing constraint. Neither is a hardware sign-off because the
+pin table remains unresolved.
 
 ## F. Validation set
 
