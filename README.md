@@ -87,6 +87,16 @@ which passes low, middle, and high coordinate checks. Quartus synthesis uses
 129 logic cells. The block is verified in isolation and is not yet connected
 to the board-level touch reader or frame adapter.
 
+## Fourth implementation milestone: integrated capture boundary
+
+[`rtl/touch_capture_top.sv`](rtl/touch_capture_top.sv) connects the raw
+XPT2046 reader, calibrator, and 14×14 frame adapter. Its self-checking test
+[`verification/touch_capture_top_tb.sv`](verification/touch_capture_top_tb.sv)
+passes known X/Y response words and verifies the ordered 196-pixel stream.
+Quartus synthesis uses 824 logic cells with +3.349 ns worst-case setup slack
+at 50 MHz. The top level still has no physical pin assignments, so it has not
+been downloaded to the board.
+
 ## Target
 
 - Board: Waveshare/CoreEP2C5

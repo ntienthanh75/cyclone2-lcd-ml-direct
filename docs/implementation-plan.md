@@ -13,7 +13,7 @@ one reusable classifier boundary.
 - [x] Implement a standalone Nios-free XPT2046 raw SPI reader.
 - [x] Add a self-checking XPT2046 protocol testbench with known X/Y response words.
 - [x] Implement and verify a standalone raw-to-LCD calibration block.
-- [ ] Connect the raw reader and calibrator to the frame adapter.
+- [x] Connect the raw reader and calibrator to the frame adapter.
 - [ ] Connect the stream to the reusable ML core.
 
 ## Verification rule for each implementation step
@@ -32,7 +32,7 @@ The current evidence is:
 | 1 | Coordinate to 14×14 adapter | `verification/touch_frame_adapter_tb.sv` plus Quartus fit/timing | Complete |
 | 2 | Threshold mapping replaces division | Quartus resource/timing comparison | Complete |
 | 3 | Raw XPT2046 SPI reader | `verification/xpt2046_reader_tb.sv` plus standalone Quartus fit/timing | Complete: simulation and synthesis pass |
-| 4 | Calibration and frame connection | Test raw-to-screen mapping and streamed pixels | Calibration block complete; wiring to adapter pending |
+| 4 | Calibration and frame connection | Test raw-to-screen mapping and streamed pixels | Complete in simulation/synthesis; board pins pending |
 | 5 | ML-core connection | End-to-end known-frame prediction test | Not started |
 
 ## A. Confirm the touch source
@@ -140,6 +140,22 @@ assignments and must not be downloaded as a board design.
 LCD drawing/viewer UI remains separate from classifier RTL. Reading arbitrary
 pixels already displayed by the LCD is not assumed: touchscreen strokes are
 coordinate input, while LCD GRAM readback requires a separate controller.
+
+## Fourth implementation step: integrated touch capture boundary
+
+`rtl/touch_capture_top.sv` now connects the existing raw reader, calibrator,
+and 14×14 frame adapter. It exposes the reader pins plus the ML pixel stream,
+and includes raw X/Y and sample-valid debug outputs. The standalone Quartus
+project is `rtl/touch_capture_top.qsf`; physical pin assignments remain
+intentionally absent.
+
+The end-to-end self-checking test is
+`verification/touch_capture_top_tb.sv`. It injects known X/Y response words,
+checks the converted raw values, and counts exactly 196 streamed pixels.
+ModelSim passes the integration test. Quartus synthesis for EP2C5T144C8 uses
+824 logic cells and reports +3.349 ns worst-case setup slack at 50 MHz.
+The design still has unassigned top-level pins, so this remains a
+simulation/synthesis milestone and is not a hardware-download image.
 
 ## F. Validation set
 

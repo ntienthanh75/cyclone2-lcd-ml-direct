@@ -1,0 +1,1380 @@
+TimeQuest Timing Analyzer report for touch_capture_top
+Sat Oct 03 19:56:09 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Parallel Compilation
+  4. SDC File List
+  5. Clocks
+  6. Slow Model Fmax Summary
+  7. Slow Model Setup Summary
+  8. Slow Model Hold Summary
+  9. Slow Model Recovery Summary
+ 10. Slow Model Removal Summary
+ 11. Slow Model Minimum Pulse Width Summary
+ 12. Slow Model Setup: 'clk'
+ 13. Slow Model Hold: 'clk'
+ 14. Slow Model Minimum Pulse Width: 'clk'
+ 15. Setup Times
+ 16. Hold Times
+ 17. Clock to Output Times
+ 18. Minimum Clock to Output Times
+ 19. Fast Model Setup Summary
+ 20. Fast Model Hold Summary
+ 21. Fast Model Recovery Summary
+ 22. Fast Model Removal Summary
+ 23. Fast Model Minimum Pulse Width Summary
+ 24. Fast Model Setup: 'clk'
+ 25. Fast Model Hold: 'clk'
+ 26. Fast Model Minimum Pulse Width: 'clk'
+ 27. Setup Times
+ 28. Hold Times
+ 29. Clock to Output Times
+ 30. Minimum Clock to Output Times
+ 31. Multicorner Timing Analysis Summary
+ 32. Setup Times
+ 33. Hold Times
+ 34. Clock to Output Times
+ 35. Minimum Clock to Output Times
+ 36. Setup Transfers
+ 37. Hold Transfers
+ 38. Report TCCS
+ 39. Report RSKM
+ 40. Unconstrained Paths
+ 41. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                      ;
++--------------------+-------------------------------------------------------------------+
+; Quartus II Version ; Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition ;
+; Revision Name      ; touch_capture_top                                                 ;
+; Device Family      ; Cyclone II                                                        ;
+; Device Name        ; EP2C5T144C8                                                       ;
+; Timing Models      ; Final                                                             ;
+; Delay Model        ; Combined                                                          ;
+; Rise/Fall Delays   ; Unavailable                                                       ;
++--------------------+-------------------------------------------------------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------+
+; SDC File List                                             ;
++-----------------------+--------+--------------------------+
+; SDC File Path         ; Status ; Read at                  ;
++-----------------------+--------+--------------------------+
+; touch_capture_top.sdc ; OK     ; Sat Oct 03 19:56:09 2026 ;
++-----------------------+--------+--------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                          ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; Clock Name ; Type ; Period ; Frequency ; Rise  ; Fall   ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+; clk        ; Base ; 20.000 ; 50.0 MHz  ; 0.000 ; 10.000 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk } ;
++------------+------+--------+-----------+-------+--------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+---------+
+
+
++-------------------------------------------------+
+; Slow Model Fmax Summary                         ;
++-----------+-----------------+------------+------+
+; Fmax      ; Restricted Fmax ; Clock Name ; Note ;
++-----------+-----------------+------------+------+
+; 60.06 MHz ; 60.06 MHz       ; clk        ;      ;
++-----------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++-------------------------------+
+; Slow Model Setup Summary      ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 3.349 ; 0.000         ;
++-------+-------+---------------+
+
+
++-------------------------------+
+; Slow Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.499 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Slow Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Slow Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Slow Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; clk   ; 8.758 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Setup: 'clk'                                                                                                                                          ;
++-------+------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                                ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 3.349 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[66][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.680     ;
+; 3.357 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.672     ;
+; 3.365 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[82][0]  ; clk          ; clk         ; 20.000       ; -0.009     ; 16.666     ;
+; 3.373 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[98][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.656     ;
+; 3.381 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.648     ;
+; 3.407 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[12][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 16.625     ;
+; 3.410 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 20.000       ; -0.031     ; 16.599     ;
+; 3.410 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 20.000       ; -0.031     ; 16.599     ;
+; 3.430 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 20.000       ; -0.035     ; 16.575     ;
+; 3.513 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[122][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 16.509     ;
+; 3.515 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[106][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 16.507     ;
+; 3.537 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[77][0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 16.497     ;
+; 3.543 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[75][0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 16.491     ;
+; 3.587 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[178][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 16.437     ;
+; 3.590 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[162][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 16.434     ;
+; 3.608 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[0][0]   ; clk          ; clk         ; 20.000       ; -0.006     ; 16.426     ;
+; 3.609 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[8][0]   ; clk          ; clk         ; 20.000       ; -0.030     ; 16.401     ;
+; 3.619 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[192][3] ; clk          ; clk         ; 20.000       ; -0.026     ; 16.395     ;
+; 3.629 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[155][0] ; clk          ; clk         ; 20.000       ; -0.017     ; 16.394     ;
+; 3.629 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[152][0] ; clk          ; clk         ; 20.000       ; -0.017     ; 16.394     ;
+; 3.650 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[133][0] ; clk          ; clk         ; 20.000       ; -0.008     ; 16.382     ;
+; 3.659 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[132][0] ; clk          ; clk         ; 20.000       ; -0.008     ; 16.373     ;
+; 3.681 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[66][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.348     ;
+; 3.688 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[2][0]   ; clk          ; clk         ; 20.000       ; -0.006     ; 16.346     ;
+; 3.689 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.340     ;
+; 3.697 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[82][0]  ; clk          ; clk         ; 20.000       ; -0.009     ; 16.334     ;
+; 3.705 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[164][0] ; clk          ; clk         ; 20.000       ; -0.006     ; 16.329     ;
+; 3.705 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[98][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.324     ;
+; 3.711 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[159][0] ; clk          ; clk         ; 20.000       ; -0.030     ; 16.299     ;
+; 3.713 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.316     ;
+; 3.725 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[194][3] ; clk          ; clk         ; 20.000       ; -0.026     ; 16.289     ;
+; 3.730 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[18][0]  ; clk          ; clk         ; 20.000       ; -0.035     ; 16.275     ;
+; 3.739 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[12][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 16.293     ;
+; 3.742 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 20.000       ; -0.031     ; 16.267     ;
+; 3.742 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 20.000       ; -0.031     ; 16.267     ;
+; 3.743 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[163][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 16.281     ;
+; 3.748 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[66][0]  ; clk          ; clk         ; 20.000       ; -0.009     ; 16.283     ;
+; 3.756 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 20.000       ; -0.009     ; 16.275     ;
+; 3.762 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 20.000       ; -0.035     ; 16.243     ;
+; 3.763 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[130][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 16.261     ;
+; 3.764 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[82][0]  ; clk          ; clk         ; 20.000       ; -0.007     ; 16.269     ;
+; 3.772 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[98][0]  ; clk          ; clk         ; 20.000       ; -0.009     ; 16.259     ;
+; 3.780 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 20.000       ; -0.009     ; 16.251     ;
+; 3.789 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[139][0] ; clk          ; clk         ; 20.000       ; -0.030     ; 16.221     ;
+; 3.806 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[12][0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 16.228     ;
+; 3.809 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 20.000       ; -0.029     ; 16.202     ;
+; 3.809 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 20.000       ; -0.029     ; 16.202     ;
+; 3.811 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[187][0] ; clk          ; clk         ; 20.000       ; -0.006     ; 16.223     ;
+; 3.814 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[135][0] ; clk          ; clk         ; 20.000       ; -0.006     ; 16.220     ;
+; 3.818 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[7][0]   ; clk          ; clk         ; 20.000       ; -0.006     ; 16.216     ;
+; 3.821 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[66][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.208     ;
+; 3.829 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.200     ;
+; 3.829 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 20.000       ; -0.033     ; 16.178     ;
+; 3.837 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[82][0]  ; clk          ; clk         ; 20.000       ; -0.009     ; 16.194     ;
+; 3.841 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[137][0] ; clk          ; clk         ; 20.000       ; 0.008      ; 16.207     ;
+; 3.845 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[98][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.184     ;
+; 3.845 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[122][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 16.177     ;
+; 3.847 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[106][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 16.175     ;
+; 3.853 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.176     ;
+; 3.869 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[77][0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 16.165     ;
+; 3.875 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[75][0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 16.159     ;
+; 3.879 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[12][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 16.153     ;
+; 3.882 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 20.000       ; -0.031     ; 16.127     ;
+; 3.882 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 20.000       ; -0.031     ; 16.127     ;
+; 3.885 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[13][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 16.147     ;
+; 3.900 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[158][0] ; clk          ; clk         ; 20.000       ; -0.030     ; 16.110     ;
+; 3.902 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 20.000       ; -0.035     ; 16.103     ;
+; 3.905 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[138][0] ; clk          ; clk         ; 20.000       ; -0.030     ; 16.105     ;
+; 3.912 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[122][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 16.112     ;
+; 3.914 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[106][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 16.110     ;
+; 3.919 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[178][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 16.105     ;
+; 3.922 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[162][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 16.102     ;
+; 3.935 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[185][0] ; clk          ; clk         ; 20.000       ; 0.008      ; 16.113     ;
+; 3.936 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[77][0]  ; clk          ; clk         ; 20.000       ; -0.004     ; 16.100     ;
+; 3.940 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[0][0]   ; clk          ; clk         ; 20.000       ; -0.006     ; 16.094     ;
+; 3.941 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[8][0]   ; clk          ; clk         ; 20.000       ; -0.030     ; 16.069     ;
+; 3.942 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[75][0]  ; clk          ; clk         ; 20.000       ; -0.004     ; 16.094     ;
+; 3.943 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[104][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 16.079     ;
+; 3.948 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[120][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 16.074     ;
+; 3.948 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[90][0]  ; clk          ; clk         ; 20.000       ; -0.018     ; 16.074     ;
+; 3.951 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[74][0]  ; clk          ; clk         ; 20.000       ; -0.018     ; 16.071     ;
+; 3.951 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[192][3] ; clk          ; clk         ; 20.000       ; -0.026     ; 16.063     ;
+; 3.961 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[155][0] ; clk          ; clk         ; 20.000       ; -0.017     ; 16.062     ;
+; 3.961 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[152][0] ; clk          ; clk         ; 20.000       ; -0.017     ; 16.062     ;
+; 3.982 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[133][0] ; clk          ; clk         ; 20.000       ; -0.008     ; 16.050     ;
+; 3.985 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[122][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 16.037     ;
+; 3.986 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[178][0] ; clk          ; clk         ; 20.000       ; -0.014     ; 16.040     ;
+; 3.987 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[34][0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 16.047     ;
+; 3.987 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[106][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 16.035     ;
+; 3.989 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[162][0] ; clk          ; clk         ; 20.000       ; -0.014     ; 16.037     ;
+; 3.991 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[132][0] ; clk          ; clk         ; 20.000       ; -0.008     ; 16.041     ;
+; 3.992 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[101][0] ; clk          ; clk         ; 20.000       ; -0.006     ; 16.042     ;
+; 3.993 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[117][0] ; clk          ; clk         ; 20.000       ; -0.006     ; 16.041     ;
+; 4.002 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[36][0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 16.032     ;
+; 4.005 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[31][0]  ; clk          ; clk         ; 20.000       ; -0.011     ; 16.024     ;
+; 4.007 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[0][0]   ; clk          ; clk         ; 20.000       ; -0.004     ; 16.029     ;
+; 4.008 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[146][0] ; clk          ; clk         ; 20.000       ; -0.030     ; 16.002     ;
+; 4.008 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[8][0]   ; clk          ; clk         ; 20.000       ; -0.028     ; 16.004     ;
+; 4.009 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[77][0]  ; clk          ; clk         ; 20.000       ; -0.006     ; 16.025     ;
+; 4.010 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[6][0]   ; clk          ; clk         ; 20.000       ; -0.006     ; 16.024     ;
++-------+------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Hold: 'clk'                                                                                                                                          ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.499 ; touch_frame_adapter:frame|stream_busy   ; touch_frame_adapter:frame|stream_busy   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|state.S_GAP       ; xpt2046_reader:reader|state.S_GAP       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|state.S_IDLE      ; xpt2046_reader:reader|state.S_IDLE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|state.S_SPI       ; xpt2046_reader:reader|state.S_SPI       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[0]        ; xpt2046_reader:reader|divider[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[1]        ; xpt2046_reader:reader|divider[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[2]        ; xpt2046_reader:reader|divider[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[3]        ; xpt2046_reader:reader|divider[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[4]        ; xpt2046_reader:reader|divider[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[5]        ; xpt2046_reader:reader|divider[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[6]        ; xpt2046_reader:reader|divider[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[7]        ; xpt2046_reader:reader|divider[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[8]        ; xpt2046_reader:reader|divider[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[9]        ; xpt2046_reader:reader|divider[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[10]       ; xpt2046_reader:reader|divider[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[11]       ; xpt2046_reader:reader|divider[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[12]       ; xpt2046_reader:reader|divider[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[13]       ; xpt2046_reader:reader|divider[13]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[14]       ; xpt2046_reader:reader|divider[14]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|divider[15]       ; xpt2046_reader:reader|divider[15]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|touch_sclk        ; xpt2046_reader:reader|touch_sclk        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|bit_index[0]      ; xpt2046_reader:reader|bit_index[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|bit_index[1]      ; xpt2046_reader:reader|bit_index[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|bit_index[2]      ; xpt2046_reader:reader|bit_index[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|bit_index[3]      ; xpt2046_reader:reader|bit_index[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|bit_index[4]      ; xpt2046_reader:reader|bit_index[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; xpt2046_reader:reader|axis_y            ; xpt2046_reader:reader|axis_y            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[193][3] ; touch_frame_adapter:frame|frame[193][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[192][3] ; touch_frame_adapter:frame|frame[192][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[195][3] ; touch_frame_adapter:frame|frame[195][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[194][3] ; touch_frame_adapter:frame|frame[194][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[59][0]  ; touch_frame_adapter:frame|frame[59][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[51][0]  ; touch_frame_adapter:frame|frame[51][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[57][0]  ; touch_frame_adapter:frame|frame[57][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[49][0]  ; touch_frame_adapter:frame|frame[49][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[56][0]  ; touch_frame_adapter:frame|frame[56][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[48][0]  ; touch_frame_adapter:frame|frame[48][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[58][0]  ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[50][0]  ; touch_frame_adapter:frame|frame[50][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[43][0]  ; touch_frame_adapter:frame|frame[43][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[40][0]  ; touch_frame_adapter:frame|frame[40][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[42][0]  ; touch_frame_adapter:frame|frame[42][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[41][0]  ; touch_frame_adapter:frame|frame[41][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[37][0]  ; touch_frame_adapter:frame|frame[37][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[36][0]  ; touch_frame_adapter:frame|frame[36][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[33][0]  ; touch_frame_adapter:frame|frame[33][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[35][0]  ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[34][0]  ; touch_frame_adapter:frame|frame[34][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[32][0]  ; touch_frame_adapter:frame|frame[32][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[14][0]  ; touch_frame_adapter:frame|frame[14][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[15][0]  ; touch_frame_adapter:frame|frame[15][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[10][0]  ; touch_frame_adapter:frame|frame[10][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[9][0]   ; touch_frame_adapter:frame|frame[9][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[8][0]   ; touch_frame_adapter:frame|frame[8][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[11][0]  ; touch_frame_adapter:frame|frame[11][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[3][0]   ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[1][0]   ; touch_frame_adapter:frame|frame[1][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[0][0]   ; touch_frame_adapter:frame|frame[0][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[2][0]   ; touch_frame_adapter:frame|frame[2][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[6][0]   ; touch_frame_adapter:frame|frame[6][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[4][0]   ; touch_frame_adapter:frame|frame[4][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[7][0]   ; touch_frame_adapter:frame|frame[7][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[5][0]   ; touch_frame_adapter:frame|frame[5][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[30][0]  ; touch_frame_adapter:frame|frame[30][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[18][0]  ; touch_frame_adapter:frame|frame[18][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[22][0]  ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[26][0]  ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[24][0]  ; touch_frame_adapter:frame|frame[24][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[16][0]  ; touch_frame_adapter:frame|frame[16][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[25][0]  ; touch_frame_adapter:frame|frame[25][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[17][0]  ; touch_frame_adapter:frame|frame[17][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[31][0]  ; touch_frame_adapter:frame|frame[31][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[19][0]  ; touch_frame_adapter:frame|frame[19][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[27][0]  ; touch_frame_adapter:frame|frame[27][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[23][0]  ; touch_frame_adapter:frame|frame[23][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[67][0]  ; touch_frame_adapter:frame|frame[67][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[99][0]  ; touch_frame_adapter:frame|frame[99][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[115][0] ; touch_frame_adapter:frame|frame[115][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[83][0]  ; touch_frame_adapter:frame|frame[83][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[71][0]  ; touch_frame_adapter:frame|frame[71][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[87][0]  ; touch_frame_adapter:frame|frame[87][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[91][0]  ; touch_frame_adapter:frame|frame[91][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[75][0]  ; touch_frame_adapter:frame|frame[75][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[107][0] ; touch_frame_adapter:frame|frame[107][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[123][0] ; touch_frame_adapter:frame|frame[123][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[95][0]  ; touch_frame_adapter:frame|frame[95][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[79][0]  ; touch_frame_adapter:frame|frame[79][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[76][0]  ; touch_frame_adapter:frame|frame[76][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[92][0]  ; touch_frame_adapter:frame|frame[92][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[124][0] ; touch_frame_adapter:frame|frame[124][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[108][0] ; touch_frame_adapter:frame|frame[108][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[88][0]  ; touch_frame_adapter:frame|frame[88][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[72][0]  ; touch_frame_adapter:frame|frame[72][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[104][0] ; touch_frame_adapter:frame|frame[104][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[120][0] ; touch_frame_adapter:frame|frame[120][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[112][0] ; touch_frame_adapter:frame|frame[112][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[80][0]  ; touch_frame_adapter:frame|frame[80][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[64][0]  ; touch_frame_adapter:frame|frame[64][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[96][0]  ; touch_frame_adapter:frame|frame[96][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
+; 0.499 ; touch_frame_adapter:frame|frame[68][0]  ; touch_frame_adapter:frame|frame[68][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.805      ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Slow Model Minimum Pulse Width: 'clk'                                                                                   ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                  ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[0][0]   ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[0][0]   ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[100][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[100][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[101][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[101][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[102][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[102][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[103][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[103][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[104][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[104][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[105][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[105][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[106][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[106][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[107][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[107][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[108][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[108][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[109][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[109][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[10][0]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[10][0]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[110][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[110][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[111][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[111][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[112][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[112][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[113][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[113][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[114][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[114][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[115][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[115][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[116][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[116][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[117][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[117][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[118][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[118][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[119][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[119][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[11][0]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[11][0]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[120][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[120][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[121][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[121][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[122][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[122][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[123][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[123][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[124][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[124][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[125][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[125][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[126][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[126][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[127][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[127][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[128][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[128][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[129][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[129][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[12][0]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[12][0]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[130][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[130][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[131][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[131][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[132][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[132][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[133][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[133][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[134][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[134][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[135][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[135][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[136][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[136][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[137][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[137][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[138][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[138][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[139][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[139][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[13][0]  ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[13][0]  ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[140][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[140][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[141][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[141][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[142][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[142][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[143][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[143][0] ;
+; 8.758 ; 10.000       ; 1.242          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[144][0] ;
+; 8.758 ; 10.000       ; 1.242          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[144][0] ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; clear_frame  ; clk        ; 7.381 ; 7.381 ; Rise       ; clk             ;
+; reset_n      ; clk        ; 4.608 ; 4.608 ; Rise       ; clk             ;
+; start_stream ; clk        ; 2.970 ; 2.970 ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 5.493 ; 5.493 ; Rise       ; clk             ;
+; touch_miso   ; clk        ; 0.363 ; 0.363 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++----------------------------------------------------------------------------+
+; Hold Times                                                                 ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; clear_frame  ; clk        ; -0.463 ; -0.463 ; Rise       ; clk             ;
+; reset_n      ; clk        ; -0.261 ; -0.261 ; Rise       ; clk             ;
+; start_stream ; clk        ; 0.055  ; 0.055  ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; -0.383 ; -0.383 ; Rise       ; clk             ;
+; touch_miso   ; clk        ; -0.097 ; -0.097 ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; input_frame_last      ; clk        ; 7.670 ; 7.670 ; Rise       ; clk             ;
+; input_frame_valid     ; clk        ; 8.636 ; 8.636 ; Rise       ; clk             ;
+; input_pixel[*]        ; clk        ; 8.024 ; 8.024 ; Rise       ; clk             ;
+;  input_pixel[0]       ; clk        ; 8.014 ; 8.014 ; Rise       ; clk             ;
+;  input_pixel[1]       ; clk        ; 8.006 ; 8.006 ; Rise       ; clk             ;
+;  input_pixel[2]       ; clk        ; 8.024 ; 8.024 ; Rise       ; clk             ;
+;  input_pixel[3]       ; clk        ; 8.014 ; 8.014 ; Rise       ; clk             ;
+; input_pixel_index[*]  ; clk        ; 8.408 ; 8.408 ; Rise       ; clk             ;
+;  input_pixel_index[0] ; clk        ; 8.018 ; 8.018 ; Rise       ; clk             ;
+;  input_pixel_index[1] ; clk        ; 8.045 ; 8.045 ; Rise       ; clk             ;
+;  input_pixel_index[2] ; clk        ; 8.094 ; 8.094 ; Rise       ; clk             ;
+;  input_pixel_index[3] ; clk        ; 8.023 ; 8.023 ; Rise       ; clk             ;
+;  input_pixel_index[4] ; clk        ; 8.359 ; 8.359 ; Rise       ; clk             ;
+;  input_pixel_index[5] ; clk        ; 8.261 ; 8.261 ; Rise       ; clk             ;
+;  input_pixel_index[6] ; clk        ; 8.288 ; 8.288 ; Rise       ; clk             ;
+;  input_pixel_index[7] ; clk        ; 8.408 ; 8.408 ; Rise       ; clk             ;
+; raw_x_debug[*]        ; clk        ; 8.394 ; 8.394 ; Rise       ; clk             ;
+;  raw_x_debug[0]       ; clk        ; 8.394 ; 8.394 ; Rise       ; clk             ;
+;  raw_x_debug[1]       ; clk        ; 7.689 ; 7.689 ; Rise       ; clk             ;
+;  raw_x_debug[2]       ; clk        ; 7.319 ; 7.319 ; Rise       ; clk             ;
+;  raw_x_debug[3]       ; clk        ; 8.022 ; 8.022 ; Rise       ; clk             ;
+;  raw_x_debug[4]       ; clk        ; 7.981 ; 7.981 ; Rise       ; clk             ;
+;  raw_x_debug[5]       ; clk        ; 7.314 ; 7.314 ; Rise       ; clk             ;
+;  raw_x_debug[6]       ; clk        ; 8.025 ; 8.025 ; Rise       ; clk             ;
+;  raw_x_debug[7]       ; clk        ; 8.031 ; 8.031 ; Rise       ; clk             ;
+;  raw_x_debug[8]       ; clk        ; 8.365 ; 8.365 ; Rise       ; clk             ;
+;  raw_x_debug[9]       ; clk        ; 7.935 ; 7.935 ; Rise       ; clk             ;
+;  raw_x_debug[10]      ; clk        ; 7.805 ; 7.805 ; Rise       ; clk             ;
+;  raw_x_debug[11]      ; clk        ; 7.310 ; 7.310 ; Rise       ; clk             ;
+; raw_y_debug[*]        ; clk        ; 8.498 ; 8.498 ; Rise       ; clk             ;
+;  raw_y_debug[0]       ; clk        ; 7.637 ; 7.637 ; Rise       ; clk             ;
+;  raw_y_debug[1]       ; clk        ; 8.414 ; 8.414 ; Rise       ; clk             ;
+;  raw_y_debug[2]       ; clk        ; 8.279 ; 8.279 ; Rise       ; clk             ;
+;  raw_y_debug[3]       ; clk        ; 7.731 ; 7.731 ; Rise       ; clk             ;
+;  raw_y_debug[4]       ; clk        ; 7.862 ; 7.862 ; Rise       ; clk             ;
+;  raw_y_debug[5]       ; clk        ; 8.455 ; 8.455 ; Rise       ; clk             ;
+;  raw_y_debug[6]       ; clk        ; 8.345 ; 8.345 ; Rise       ; clk             ;
+;  raw_y_debug[7]       ; clk        ; 8.498 ; 8.498 ; Rise       ; clk             ;
+;  raw_y_debug[8]       ; clk        ; 7.667 ; 7.667 ; Rise       ; clk             ;
+;  raw_y_debug[9]       ; clk        ; 7.660 ; 7.660 ; Rise       ; clk             ;
+;  raw_y_debug[10]      ; clk        ; 8.398 ; 8.398 ; Rise       ; clk             ;
+;  raw_y_debug[11]      ; clk        ; 7.972 ; 7.972 ; Rise       ; clk             ;
+; sample_valid_debug    ; clk        ; 8.221 ; 8.221 ; Rise       ; clk             ;
+; stream_busy           ; clk        ; 8.093 ; 8.093 ; Rise       ; clk             ;
+; stream_done           ; clk        ; 7.650 ; 7.650 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 7.545 ; 7.545 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 7.497 ; 7.497 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 8.241 ; 8.241 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                     ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; input_frame_last      ; clk        ; 7.670 ; 7.670 ; Rise       ; clk             ;
+; input_frame_valid     ; clk        ; 8.636 ; 8.636 ; Rise       ; clk             ;
+; input_pixel[*]        ; clk        ; 8.006 ; 8.006 ; Rise       ; clk             ;
+;  input_pixel[0]       ; clk        ; 8.014 ; 8.014 ; Rise       ; clk             ;
+;  input_pixel[1]       ; clk        ; 8.006 ; 8.006 ; Rise       ; clk             ;
+;  input_pixel[2]       ; clk        ; 8.024 ; 8.024 ; Rise       ; clk             ;
+;  input_pixel[3]       ; clk        ; 8.014 ; 8.014 ; Rise       ; clk             ;
+; input_pixel_index[*]  ; clk        ; 8.018 ; 8.018 ; Rise       ; clk             ;
+;  input_pixel_index[0] ; clk        ; 8.018 ; 8.018 ; Rise       ; clk             ;
+;  input_pixel_index[1] ; clk        ; 8.045 ; 8.045 ; Rise       ; clk             ;
+;  input_pixel_index[2] ; clk        ; 8.094 ; 8.094 ; Rise       ; clk             ;
+;  input_pixel_index[3] ; clk        ; 8.023 ; 8.023 ; Rise       ; clk             ;
+;  input_pixel_index[4] ; clk        ; 8.359 ; 8.359 ; Rise       ; clk             ;
+;  input_pixel_index[5] ; clk        ; 8.261 ; 8.261 ; Rise       ; clk             ;
+;  input_pixel_index[6] ; clk        ; 8.288 ; 8.288 ; Rise       ; clk             ;
+;  input_pixel_index[7] ; clk        ; 8.408 ; 8.408 ; Rise       ; clk             ;
+; raw_x_debug[*]        ; clk        ; 7.310 ; 7.310 ; Rise       ; clk             ;
+;  raw_x_debug[0]       ; clk        ; 8.394 ; 8.394 ; Rise       ; clk             ;
+;  raw_x_debug[1]       ; clk        ; 7.689 ; 7.689 ; Rise       ; clk             ;
+;  raw_x_debug[2]       ; clk        ; 7.319 ; 7.319 ; Rise       ; clk             ;
+;  raw_x_debug[3]       ; clk        ; 8.022 ; 8.022 ; Rise       ; clk             ;
+;  raw_x_debug[4]       ; clk        ; 7.981 ; 7.981 ; Rise       ; clk             ;
+;  raw_x_debug[5]       ; clk        ; 7.314 ; 7.314 ; Rise       ; clk             ;
+;  raw_x_debug[6]       ; clk        ; 8.025 ; 8.025 ; Rise       ; clk             ;
+;  raw_x_debug[7]       ; clk        ; 8.031 ; 8.031 ; Rise       ; clk             ;
+;  raw_x_debug[8]       ; clk        ; 8.365 ; 8.365 ; Rise       ; clk             ;
+;  raw_x_debug[9]       ; clk        ; 7.935 ; 7.935 ; Rise       ; clk             ;
+;  raw_x_debug[10]      ; clk        ; 7.805 ; 7.805 ; Rise       ; clk             ;
+;  raw_x_debug[11]      ; clk        ; 7.310 ; 7.310 ; Rise       ; clk             ;
+; raw_y_debug[*]        ; clk        ; 7.637 ; 7.637 ; Rise       ; clk             ;
+;  raw_y_debug[0]       ; clk        ; 7.637 ; 7.637 ; Rise       ; clk             ;
+;  raw_y_debug[1]       ; clk        ; 8.414 ; 8.414 ; Rise       ; clk             ;
+;  raw_y_debug[2]       ; clk        ; 8.279 ; 8.279 ; Rise       ; clk             ;
+;  raw_y_debug[3]       ; clk        ; 7.731 ; 7.731 ; Rise       ; clk             ;
+;  raw_y_debug[4]       ; clk        ; 7.862 ; 7.862 ; Rise       ; clk             ;
+;  raw_y_debug[5]       ; clk        ; 8.455 ; 8.455 ; Rise       ; clk             ;
+;  raw_y_debug[6]       ; clk        ; 8.345 ; 8.345 ; Rise       ; clk             ;
+;  raw_y_debug[7]       ; clk        ; 8.498 ; 8.498 ; Rise       ; clk             ;
+;  raw_y_debug[8]       ; clk        ; 7.667 ; 7.667 ; Rise       ; clk             ;
+;  raw_y_debug[9]       ; clk        ; 7.660 ; 7.660 ; Rise       ; clk             ;
+;  raw_y_debug[10]      ; clk        ; 8.398 ; 8.398 ; Rise       ; clk             ;
+;  raw_y_debug[11]      ; clk        ; 7.972 ; 7.972 ; Rise       ; clk             ;
+; sample_valid_debug    ; clk        ; 8.221 ; 8.221 ; Rise       ; clk             ;
+; stream_busy           ; clk        ; 8.093 ; 8.093 ; Rise       ; clk             ;
+; stream_done           ; clk        ; 7.650 ; 7.650 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 7.545 ; 7.545 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 7.497 ; 7.497 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 8.241 ; 8.241 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------+
+; Fast Model Setup Summary       ;
++-------+--------+---------------+
+; Clock ; Slack  ; End Point TNS ;
++-------+--------+---------------+
+; clk   ; 14.872 ; 0.000         ;
++-------+--------+---------------+
+
+
++-------------------------------+
+; Fast Model Hold Summary       ;
++-------+-------+---------------+
+; Clock ; Slack ; End Point TNS ;
++-------+-------+---------------+
+; clk   ; 0.215 ; 0.000         ;
++-------+-------+---------------+
+
+
+-------------------------------
+; Fast Model Recovery Summary ;
+-------------------------------
+No paths to report.
+
+
+------------------------------
+; Fast Model Removal Summary ;
+------------------------------
+No paths to report.
+
+
++----------------------------------------+
+; Fast Model Minimum Pulse Width Summary ;
++-------+-------+------------------------+
+; Clock ; Slack ; End Point TNS          ;
++-------+-------+------------------------+
+; clk   ; 9.000 ; 0.000                  ;
++-------+-------+------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Setup: 'clk'                                                                                                                                           ;
++--------+------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack  ; From Node                                ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++--------+------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 14.872 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 20.000       ; -0.032     ; 5.128      ;
+; 14.903 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[66][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 5.119      ;
+; 14.907 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 5.115      ;
+; 14.911 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[82][0]  ; clk          ; clk         ; 20.000       ; -0.003     ; 5.118      ;
+; 14.914 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[122][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 5.100      ;
+; 14.917 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[98][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 5.105      ;
+; 14.917 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[106][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 5.097      ;
+; 14.920 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 5.102      ;
+; 14.941 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[178][0] ; clk          ; clk         ; 20.000       ; -0.010     ; 5.081      ;
+; 14.944 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[139][0] ; clk          ; clk         ; 20.000       ; -0.025     ; 5.063      ;
+; 14.944 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[162][0] ; clk          ; clk         ; 20.000       ; -0.010     ; 5.078      ;
+; 14.956 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 20.000       ; -0.032     ; 5.044      ;
+; 14.961 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 20.000       ; -0.030     ; 5.041      ;
+; 14.962 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 20.000       ; -0.030     ; 5.040      ;
+; 14.984 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[8][0]   ; clk          ; clk         ; 20.000       ; -0.025     ; 5.023      ;
+; 14.985 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[159][0] ; clk          ; clk         ; 20.000       ; -0.024     ; 5.023      ;
+; 14.987 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[66][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 5.035      ;
+; 14.991 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 5.031      ;
+; 14.992 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[155][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 5.024      ;
+; 14.992 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[152][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 5.024      ;
+; 14.995 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[82][0]  ; clk          ; clk         ; 20.000       ; -0.003     ; 5.034      ;
+; 14.998 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[122][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 5.016      ;
+; 15.000 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 20.000       ; -0.030     ; 5.002      ;
+; 15.001 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[98][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 5.021      ;
+; 15.001 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[106][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 5.013      ;
+; 15.004 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 5.018      ;
+; 15.005 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[137][0] ; clk          ; clk         ; 20.000       ; 0.009      ; 5.036      ;
+; 15.005 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[158][0] ; clk          ; clk         ; 20.000       ; -0.024     ; 5.003      ;
+; 15.010 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[192][3] ; clk          ; clk         ; 20.000       ; -0.026     ; 4.996      ;
+; 15.015 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[0][0]   ; clk          ; clk         ; 20.000       ; 0.000      ; 5.017      ;
+; 15.017 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[12][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 5.007      ;
+; 15.019 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 20.000       ; -0.032     ; 4.981      ;
+; 15.022 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[90][0]  ; clk          ; clk         ; 20.000       ; -0.018     ; 4.992      ;
+; 15.023 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[2][0]   ; clk          ; clk         ; 20.000       ; 0.000      ; 5.009      ;
+; 15.025 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[178][0] ; clk          ; clk         ; 20.000       ; -0.010     ; 4.997      ;
+; 15.027 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[74][0]  ; clk          ; clk         ; 20.000       ; -0.018     ; 4.987      ;
+; 15.028 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[139][0] ; clk          ; clk         ; 20.000       ; -0.025     ; 4.979      ;
+; 15.028 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[162][0] ; clk          ; clk         ; 20.000       ; -0.010     ; 4.994      ;
+; 15.030 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[194][3] ; clk          ; clk         ; 20.000       ; -0.026     ; 4.976      ;
+; 15.031 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[66][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 4.993      ;
+; 15.034 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[18][0]  ; clk          ; clk         ; 20.000       ; -0.032     ; 4.966      ;
+; 15.035 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 4.989      ;
+; 15.038 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[34][0]  ; clk          ; clk         ; 20.000       ; 0.000      ; 4.994      ;
+; 15.039 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[82][0]  ; clk          ; clk         ; 20.000       ; -0.001     ; 4.992      ;
+; 15.042 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[122][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 4.974      ;
+; 15.045 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[98][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 4.979      ;
+; 15.045 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[106][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 4.971      ;
+; 15.045 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 20.000       ; -0.030     ; 4.957      ;
+; 15.046 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 20.000       ; -0.030     ; 4.956      ;
+; 15.048 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[130][0] ; clk          ; clk         ; 20.000       ; -0.010     ; 4.974      ;
+; 15.048 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 4.976      ;
+; 15.049 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[135][0] ; clk          ; clk         ; 20.000       ; 0.000      ; 4.983      ;
+; 15.050 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[77][0]  ; clk          ; clk         ; 20.000       ; -0.005     ; 4.977      ;
+; 15.050 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[66][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 4.972      ;
+; 15.052 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[7][0]   ; clk          ; clk         ; 20.000       ; 0.000      ; 4.980      ;
+; 15.054 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 4.968      ;
+; 15.055 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[75][0]  ; clk          ; clk         ; 20.000       ; -0.005     ; 4.972      ;
+; 15.058 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[82][0]  ; clk          ; clk         ; 20.000       ; -0.003     ; 4.971      ;
+; 15.061 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[122][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 4.953      ;
+; 15.062 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[104][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 4.952      ;
+; 15.064 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[98][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 4.958      ;
+; 15.064 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[106][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 4.950      ;
+; 15.067 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[120][0] ; clk          ; clk         ; 20.000       ; -0.018     ; 4.947      ;
+; 15.067 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 20.000       ; -0.010     ; 4.955      ;
+; 15.068 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[8][0]   ; clk          ; clk         ; 20.000       ; -0.025     ; 4.939      ;
+; 15.069 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[178][0] ; clk          ; clk         ; 20.000       ; -0.008     ; 4.955      ;
+; 15.069 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[159][0] ; clk          ; clk         ; 20.000       ; -0.024     ; 4.939      ;
+; 15.072 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[139][0] ; clk          ; clk         ; 20.000       ; -0.023     ; 4.937      ;
+; 15.072 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[162][0] ; clk          ; clk         ; 20.000       ; -0.008     ; 4.952      ;
+; 15.076 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[185][0] ; clk          ; clk         ; 20.000       ; 0.009      ; 4.965      ;
+; 15.076 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[155][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 4.940      ;
+; 15.076 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[152][0] ; clk          ; clk         ; 20.000       ; -0.016     ; 4.940      ;
+; 15.078 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[133][0] ; clk          ; clk         ; 20.000       ; -0.008     ; 4.946      ;
+; 15.085 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[132][0] ; clk          ; clk         ; 20.000       ; -0.008     ; 4.939      ;
+; 15.087 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[141][0] ; clk          ; clk         ; 20.000       ; -0.032     ; 4.913      ;
+; 15.088 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[140][0] ; clk          ; clk         ; 20.000       ; -0.032     ; 4.912      ;
+; 15.088 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[178][0] ; clk          ; clk         ; 20.000       ; -0.010     ; 4.934      ;
+; 15.089 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[138][0] ; clk          ; clk         ; 20.000       ; -0.025     ; 4.918      ;
+; 15.089 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 20.000       ; -0.028     ; 4.915      ;
+; 15.089 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[137][0] ; clk          ; clk         ; 20.000       ; 0.009      ; 4.952      ;
+; 15.089 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[158][0] ; clk          ; clk         ; 20.000       ; -0.024     ; 4.919      ;
+; 15.090 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 20.000       ; -0.028     ; 4.914      ;
+; 15.091 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[139][0] ; clk          ; clk         ; 20.000       ; -0.025     ; 4.916      ;
+; 15.091 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[162][0] ; clk          ; clk         ; 20.000       ; -0.010     ; 4.931      ;
+; 15.094 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[192][3] ; clk          ; clk         ; 20.000       ; -0.026     ; 4.912      ;
+; 15.099 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[0][0]   ; clk          ; clk         ; 20.000       ; 0.000      ; 4.933      ;
+; 15.101 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[12][0]  ; clk          ; clk         ; 20.000       ; -0.008     ; 4.923      ;
+; 15.102 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[187][0] ; clk          ; clk         ; 20.000       ; -0.005     ; 4.925      ;
+; 15.104 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[164][0] ; clk          ; clk         ; 20.000       ; -0.005     ; 4.923      ;
+; 15.106 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[90][0]  ; clk          ; clk         ; 20.000       ; -0.018     ; 4.908      ;
+; 15.107 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[2][0]   ; clk          ; clk         ; 20.000       ; 0.000      ; 4.925      ;
+; 15.108 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 20.000       ; -0.030     ; 4.894      ;
+; 15.109 ; xpt2046_calibrator:calibrator|point_y[1] ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 20.000       ; -0.030     ; 4.893      ;
+; 15.111 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[74][0]  ; clk          ; clk         ; 20.000       ; -0.018     ; 4.903      ;
+; 15.112 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[8][0]   ; clk          ; clk         ; 20.000       ; -0.023     ; 4.897      ;
+; 15.113 ; xpt2046_calibrator:calibrator|point_y[0] ; touch_frame_adapter:frame|frame[159][0] ; clk          ; clk         ; 20.000       ; -0.022     ; 4.897      ;
+; 15.114 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[194][3] ; clk          ; clk         ; 20.000       ; -0.026     ; 4.892      ;
+; 15.116 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[163][0] ; clk          ; clk         ; 20.000       ; -0.010     ; 4.906      ;
+; 15.117 ; xpt2046_calibrator:calibrator|point_y[4] ; touch_frame_adapter:frame|frame[146][0] ; clk          ; clk         ; 20.000       ; -0.024     ; 4.891      ;
+; 15.118 ; xpt2046_calibrator:calibrator|point_y[2] ; touch_frame_adapter:frame|frame[18][0]  ; clk          ; clk         ; 20.000       ; -0.032     ; 4.882      ;
++--------+------------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Hold: 'clk'                                                                                                                                          ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; Slack ; From Node                               ; To Node                                 ; Launch Clock ; Latch Clock ; Relationship ; Clock Skew ; Data Delay ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+; 0.215 ; touch_frame_adapter:frame|stream_busy   ; touch_frame_adapter:frame|stream_busy   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|state.S_GAP       ; xpt2046_reader:reader|state.S_GAP       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|state.S_IDLE      ; xpt2046_reader:reader|state.S_IDLE      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|state.S_SPI       ; xpt2046_reader:reader|state.S_SPI       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[0]        ; xpt2046_reader:reader|divider[0]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[1]        ; xpt2046_reader:reader|divider[1]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[2]        ; xpt2046_reader:reader|divider[2]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[3]        ; xpt2046_reader:reader|divider[3]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[4]        ; xpt2046_reader:reader|divider[4]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[5]        ; xpt2046_reader:reader|divider[5]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[6]        ; xpt2046_reader:reader|divider[6]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[7]        ; xpt2046_reader:reader|divider[7]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[8]        ; xpt2046_reader:reader|divider[8]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[9]        ; xpt2046_reader:reader|divider[9]        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[10]       ; xpt2046_reader:reader|divider[10]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[11]       ; xpt2046_reader:reader|divider[11]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[12]       ; xpt2046_reader:reader|divider[12]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[13]       ; xpt2046_reader:reader|divider[13]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[14]       ; xpt2046_reader:reader|divider[14]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|divider[15]       ; xpt2046_reader:reader|divider[15]       ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|touch_sclk        ; xpt2046_reader:reader|touch_sclk        ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|bit_index[0]      ; xpt2046_reader:reader|bit_index[0]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|bit_index[1]      ; xpt2046_reader:reader|bit_index[1]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|bit_index[2]      ; xpt2046_reader:reader|bit_index[2]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|bit_index[3]      ; xpt2046_reader:reader|bit_index[3]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|bit_index[4]      ; xpt2046_reader:reader|bit_index[4]      ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; xpt2046_reader:reader|axis_y            ; xpt2046_reader:reader|axis_y            ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[193][3] ; touch_frame_adapter:frame|frame[193][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[192][3] ; touch_frame_adapter:frame|frame[192][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[195][3] ; touch_frame_adapter:frame|frame[195][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[194][3] ; touch_frame_adapter:frame|frame[194][3] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[59][0]  ; touch_frame_adapter:frame|frame[59][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[51][0]  ; touch_frame_adapter:frame|frame[51][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[57][0]  ; touch_frame_adapter:frame|frame[57][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[49][0]  ; touch_frame_adapter:frame|frame[49][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[56][0]  ; touch_frame_adapter:frame|frame[56][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[48][0]  ; touch_frame_adapter:frame|frame[48][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[58][0]  ; touch_frame_adapter:frame|frame[58][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[50][0]  ; touch_frame_adapter:frame|frame[50][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[43][0]  ; touch_frame_adapter:frame|frame[43][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[40][0]  ; touch_frame_adapter:frame|frame[40][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[42][0]  ; touch_frame_adapter:frame|frame[42][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[41][0]  ; touch_frame_adapter:frame|frame[41][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[37][0]  ; touch_frame_adapter:frame|frame[37][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[36][0]  ; touch_frame_adapter:frame|frame[36][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[33][0]  ; touch_frame_adapter:frame|frame[33][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[35][0]  ; touch_frame_adapter:frame|frame[35][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[34][0]  ; touch_frame_adapter:frame|frame[34][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[32][0]  ; touch_frame_adapter:frame|frame[32][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[14][0]  ; touch_frame_adapter:frame|frame[14][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[15][0]  ; touch_frame_adapter:frame|frame[15][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[10][0]  ; touch_frame_adapter:frame|frame[10][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[9][0]   ; touch_frame_adapter:frame|frame[9][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[8][0]   ; touch_frame_adapter:frame|frame[8][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[11][0]  ; touch_frame_adapter:frame|frame[11][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[3][0]   ; touch_frame_adapter:frame|frame[3][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[1][0]   ; touch_frame_adapter:frame|frame[1][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[0][0]   ; touch_frame_adapter:frame|frame[0][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[2][0]   ; touch_frame_adapter:frame|frame[2][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[6][0]   ; touch_frame_adapter:frame|frame[6][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[4][0]   ; touch_frame_adapter:frame|frame[4][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[7][0]   ; touch_frame_adapter:frame|frame[7][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[5][0]   ; touch_frame_adapter:frame|frame[5][0]   ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[30][0]  ; touch_frame_adapter:frame|frame[30][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[18][0]  ; touch_frame_adapter:frame|frame[18][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[22][0]  ; touch_frame_adapter:frame|frame[22][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[26][0]  ; touch_frame_adapter:frame|frame[26][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[24][0]  ; touch_frame_adapter:frame|frame[24][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[16][0]  ; touch_frame_adapter:frame|frame[16][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[25][0]  ; touch_frame_adapter:frame|frame[25][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[17][0]  ; touch_frame_adapter:frame|frame[17][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[31][0]  ; touch_frame_adapter:frame|frame[31][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[19][0]  ; touch_frame_adapter:frame|frame[19][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[27][0]  ; touch_frame_adapter:frame|frame[27][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[23][0]  ; touch_frame_adapter:frame|frame[23][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[67][0]  ; touch_frame_adapter:frame|frame[67][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[99][0]  ; touch_frame_adapter:frame|frame[99][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[115][0] ; touch_frame_adapter:frame|frame[115][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[83][0]  ; touch_frame_adapter:frame|frame[83][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[71][0]  ; touch_frame_adapter:frame|frame[71][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[87][0]  ; touch_frame_adapter:frame|frame[87][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[91][0]  ; touch_frame_adapter:frame|frame[91][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[75][0]  ; touch_frame_adapter:frame|frame[75][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[107][0] ; touch_frame_adapter:frame|frame[107][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[123][0] ; touch_frame_adapter:frame|frame[123][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[95][0]  ; touch_frame_adapter:frame|frame[95][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[79][0]  ; touch_frame_adapter:frame|frame[79][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[76][0]  ; touch_frame_adapter:frame|frame[76][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[92][0]  ; touch_frame_adapter:frame|frame[92][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[124][0] ; touch_frame_adapter:frame|frame[124][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[108][0] ; touch_frame_adapter:frame|frame[108][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[88][0]  ; touch_frame_adapter:frame|frame[88][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[72][0]  ; touch_frame_adapter:frame|frame[72][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[104][0] ; touch_frame_adapter:frame|frame[104][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[120][0] ; touch_frame_adapter:frame|frame[120][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[112][0] ; touch_frame_adapter:frame|frame[112][0] ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[80][0]  ; touch_frame_adapter:frame|frame[80][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[64][0]  ; touch_frame_adapter:frame|frame[64][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[96][0]  ; touch_frame_adapter:frame|frame[96][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
+; 0.215 ; touch_frame_adapter:frame|frame[68][0]  ; touch_frame_adapter:frame|frame[68][0]  ; clk          ; clk         ; 0.000        ; 0.000      ; 0.367      ;
++-------+-----------------------------------------+-----------------------------------------+--------------+-------------+--------------+------------+------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------+
+; Fast Model Minimum Pulse Width: 'clk'                                                                                   ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; Slack ; Actual Width ; Required Width ; Type             ; Clock ; Clock Edge ; Target                                  ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[0][0]   ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[0][0]   ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[100][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[100][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[101][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[101][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[102][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[102][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[103][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[103][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[104][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[104][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[105][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[105][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[106][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[106][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[107][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[107][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[108][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[108][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[109][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[109][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[10][0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[10][0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[110][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[110][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[111][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[111][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[112][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[112][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[113][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[113][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[114][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[114][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[115][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[115][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[116][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[116][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[117][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[117][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[118][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[118][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[119][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[119][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[11][0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[11][0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[120][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[120][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[121][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[121][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[122][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[122][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[123][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[123][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[124][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[124][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[125][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[125][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[126][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[126][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[127][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[127][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[128][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[128][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[129][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[129][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[12][0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[12][0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[130][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[130][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[131][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[131][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[132][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[132][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[133][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[133][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[134][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[134][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[135][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[135][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[136][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[136][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[137][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[137][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[138][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[138][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[139][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[139][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[13][0]  ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[13][0]  ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[140][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[140][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[141][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[141][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[142][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[142][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[143][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[143][0] ;
+; 9.000 ; 10.000       ; 1.000          ; High Pulse Width ; clk   ; Rise       ; touch_frame_adapter:frame|frame[144][0] ;
+; 9.000 ; 10.000       ; 1.000          ; Low Pulse Width  ; clk   ; Rise       ; touch_frame_adapter:frame|frame[144][0] ;
++-------+--------------+----------------+------------------+-------+------------+-----------------------------------------+
+
+
++----------------------------------------------------------------------------+
+; Setup Times                                                                ;
++--------------+------------+--------+--------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise   ; Fall   ; Clock Edge ; Clock Reference ;
++--------------+------------+--------+--------+------------+-----------------+
+; clear_frame  ; clk        ; 2.088  ; 2.088  ; Rise       ; clk             ;
+; reset_n      ; clk        ; 1.312  ; 1.312  ; Rise       ; clk             ;
+; start_stream ; clk        ; 0.654  ; 0.654  ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 1.374  ; 1.374  ; Rise       ; clk             ;
+; touch_miso   ; clk        ; -0.212 ; -0.212 ; Rise       ; clk             ;
++--------------+------------+--------+--------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; clear_frame  ; clk        ; 0.219 ; 0.219 ; Rise       ; clk             ;
+; reset_n      ; clk        ; 0.232 ; 0.232 ; Rise       ; clk             ;
+; start_stream ; clk        ; 0.378 ; 0.378 ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 0.283 ; 0.283 ; Rise       ; clk             ;
+; touch_miso   ; clk        ; 0.332 ; 0.332 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; input_frame_last      ; clk        ; 3.583 ; 3.583 ; Rise       ; clk             ;
+; input_frame_valid     ; clk        ; 3.806 ; 3.806 ; Rise       ; clk             ;
+; input_pixel[*]        ; clk        ; 3.693 ; 3.693 ; Rise       ; clk             ;
+;  input_pixel[0]       ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+;  input_pixel[1]       ; clk        ; 3.678 ; 3.678 ; Rise       ; clk             ;
+;  input_pixel[2]       ; clk        ; 3.693 ; 3.693 ; Rise       ; clk             ;
+;  input_pixel[3]       ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+; input_pixel_index[*]  ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
+;  input_pixel_index[0] ; clk        ; 3.682 ; 3.682 ; Rise       ; clk             ;
+;  input_pixel_index[1] ; clk        ; 3.700 ; 3.700 ; Rise       ; clk             ;
+;  input_pixel_index[2] ; clk        ; 3.724 ; 3.724 ; Rise       ; clk             ;
+;  input_pixel_index[3] ; clk        ; 3.685 ; 3.685 ; Rise       ; clk             ;
+;  input_pixel_index[4] ; clk        ; 3.778 ; 3.778 ; Rise       ; clk             ;
+;  input_pixel_index[5] ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
+;  input_pixel_index[6] ; clk        ; 3.691 ; 3.691 ; Rise       ; clk             ;
+;  input_pixel_index[7] ; clk        ; 3.804 ; 3.804 ; Rise       ; clk             ;
+; raw_x_debug[*]        ; clk        ; 3.776 ; 3.776 ; Rise       ; clk             ;
+;  raw_x_debug[0]       ; clk        ; 3.776 ; 3.776 ; Rise       ; clk             ;
+;  raw_x_debug[1]       ; clk        ; 3.599 ; 3.599 ; Rise       ; clk             ;
+;  raw_x_debug[2]       ; clk        ; 3.485 ; 3.485 ; Rise       ; clk             ;
+;  raw_x_debug[3]       ; clk        ; 3.694 ; 3.694 ; Rise       ; clk             ;
+;  raw_x_debug[4]       ; clk        ; 3.607 ; 3.607 ; Rise       ; clk             ;
+;  raw_x_debug[5]       ; clk        ; 3.479 ; 3.479 ; Rise       ; clk             ;
+;  raw_x_debug[6]       ; clk        ; 3.695 ; 3.695 ; Rise       ; clk             ;
+;  raw_x_debug[7]       ; clk        ; 3.698 ; 3.698 ; Rise       ; clk             ;
+;  raw_x_debug[8]       ; clk        ; 3.743 ; 3.743 ; Rise       ; clk             ;
+;  raw_x_debug[9]       ; clk        ; 3.583 ; 3.583 ; Rise       ; clk             ;
+;  raw_x_debug[10]      ; clk        ; 3.522 ; 3.522 ; Rise       ; clk             ;
+;  raw_x_debug[11]      ; clk        ; 3.481 ; 3.481 ; Rise       ; clk             ;
+; raw_y_debug[*]        ; clk        ; 3.841 ; 3.841 ; Rise       ; clk             ;
+;  raw_y_debug[0]       ; clk        ; 3.569 ; 3.569 ; Rise       ; clk             ;
+;  raw_y_debug[1]       ; clk        ; 3.797 ; 3.797 ; Rise       ; clk             ;
+;  raw_y_debug[2]       ; clk        ; 3.694 ; 3.694 ; Rise       ; clk             ;
+;  raw_y_debug[3]       ; clk        ; 3.620 ; 3.620 ; Rise       ; clk             ;
+;  raw_y_debug[4]       ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  raw_y_debug[5]       ; clk        ; 3.840 ; 3.840 ; Rise       ; clk             ;
+;  raw_y_debug[6]       ; clk        ; 3.734 ; 3.734 ; Rise       ; clk             ;
+;  raw_y_debug[7]       ; clk        ; 3.841 ; 3.841 ; Rise       ; clk             ;
+;  raw_y_debug[8]       ; clk        ; 3.586 ; 3.586 ; Rise       ; clk             ;
+;  raw_y_debug[9]       ; clk        ; 3.580 ; 3.580 ; Rise       ; clk             ;
+;  raw_y_debug[10]      ; clk        ; 3.804 ; 3.804 ; Rise       ; clk             ;
+;  raw_y_debug[11]      ; clk        ; 3.663 ; 3.663 ; Rise       ; clk             ;
+; sample_valid_debug    ; clk        ; 3.666 ; 3.666 ; Rise       ; clk             ;
+; stream_busy           ; clk        ; 3.719 ; 3.719 ; Rise       ; clk             ;
+; stream_done           ; clk        ; 3.563 ; 3.563 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 3.467 ; 3.467 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 3.443 ; 3.443 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 3.678 ; 3.678 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                     ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; input_frame_last      ; clk        ; 3.583 ; 3.583 ; Rise       ; clk             ;
+; input_frame_valid     ; clk        ; 3.806 ; 3.806 ; Rise       ; clk             ;
+; input_pixel[*]        ; clk        ; 3.678 ; 3.678 ; Rise       ; clk             ;
+;  input_pixel[0]       ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+;  input_pixel[1]       ; clk        ; 3.678 ; 3.678 ; Rise       ; clk             ;
+;  input_pixel[2]       ; clk        ; 3.693 ; 3.693 ; Rise       ; clk             ;
+;  input_pixel[3]       ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+; input_pixel_index[*]  ; clk        ; 3.682 ; 3.682 ; Rise       ; clk             ;
+;  input_pixel_index[0] ; clk        ; 3.682 ; 3.682 ; Rise       ; clk             ;
+;  input_pixel_index[1] ; clk        ; 3.700 ; 3.700 ; Rise       ; clk             ;
+;  input_pixel_index[2] ; clk        ; 3.724 ; 3.724 ; Rise       ; clk             ;
+;  input_pixel_index[3] ; clk        ; 3.685 ; 3.685 ; Rise       ; clk             ;
+;  input_pixel_index[4] ; clk        ; 3.778 ; 3.778 ; Rise       ; clk             ;
+;  input_pixel_index[5] ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
+;  input_pixel_index[6] ; clk        ; 3.691 ; 3.691 ; Rise       ; clk             ;
+;  input_pixel_index[7] ; clk        ; 3.804 ; 3.804 ; Rise       ; clk             ;
+; raw_x_debug[*]        ; clk        ; 3.479 ; 3.479 ; Rise       ; clk             ;
+;  raw_x_debug[0]       ; clk        ; 3.776 ; 3.776 ; Rise       ; clk             ;
+;  raw_x_debug[1]       ; clk        ; 3.599 ; 3.599 ; Rise       ; clk             ;
+;  raw_x_debug[2]       ; clk        ; 3.485 ; 3.485 ; Rise       ; clk             ;
+;  raw_x_debug[3]       ; clk        ; 3.694 ; 3.694 ; Rise       ; clk             ;
+;  raw_x_debug[4]       ; clk        ; 3.607 ; 3.607 ; Rise       ; clk             ;
+;  raw_x_debug[5]       ; clk        ; 3.479 ; 3.479 ; Rise       ; clk             ;
+;  raw_x_debug[6]       ; clk        ; 3.695 ; 3.695 ; Rise       ; clk             ;
+;  raw_x_debug[7]       ; clk        ; 3.698 ; 3.698 ; Rise       ; clk             ;
+;  raw_x_debug[8]       ; clk        ; 3.743 ; 3.743 ; Rise       ; clk             ;
+;  raw_x_debug[9]       ; clk        ; 3.583 ; 3.583 ; Rise       ; clk             ;
+;  raw_x_debug[10]      ; clk        ; 3.522 ; 3.522 ; Rise       ; clk             ;
+;  raw_x_debug[11]      ; clk        ; 3.481 ; 3.481 ; Rise       ; clk             ;
+; raw_y_debug[*]        ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  raw_y_debug[0]       ; clk        ; 3.569 ; 3.569 ; Rise       ; clk             ;
+;  raw_y_debug[1]       ; clk        ; 3.797 ; 3.797 ; Rise       ; clk             ;
+;  raw_y_debug[2]       ; clk        ; 3.694 ; 3.694 ; Rise       ; clk             ;
+;  raw_y_debug[3]       ; clk        ; 3.620 ; 3.620 ; Rise       ; clk             ;
+;  raw_y_debug[4]       ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  raw_y_debug[5]       ; clk        ; 3.840 ; 3.840 ; Rise       ; clk             ;
+;  raw_y_debug[6]       ; clk        ; 3.734 ; 3.734 ; Rise       ; clk             ;
+;  raw_y_debug[7]       ; clk        ; 3.841 ; 3.841 ; Rise       ; clk             ;
+;  raw_y_debug[8]       ; clk        ; 3.586 ; 3.586 ; Rise       ; clk             ;
+;  raw_y_debug[9]       ; clk        ; 3.580 ; 3.580 ; Rise       ; clk             ;
+;  raw_y_debug[10]      ; clk        ; 3.804 ; 3.804 ; Rise       ; clk             ;
+;  raw_y_debug[11]      ; clk        ; 3.663 ; 3.663 ; Rise       ; clk             ;
+; sample_valid_debug    ; clk        ; 3.666 ; 3.666 ; Rise       ; clk             ;
+; stream_busy           ; clk        ; 3.719 ; 3.719 ; Rise       ; clk             ;
+; stream_done           ; clk        ; 3.563 ; 3.563 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 3.467 ; 3.467 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 3.443 ; 3.443 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 3.678 ; 3.678 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------+
+; Multicorner Timing Analysis Summary                                         ;
++------------------+-------+-------+----------+---------+---------------------+
+; Clock            ; Setup ; Hold  ; Recovery ; Removal ; Minimum Pulse Width ;
++------------------+-------+-------+----------+---------+---------------------+
+; Worst-case Slack ; 3.349 ; 0.215 ; N/A      ; N/A     ; 8.758               ;
+;  clk             ; 3.349 ; 0.215 ; N/A      ; N/A     ; 8.758               ;
+; Design-wide TNS  ; 0.0   ; 0.0   ; 0.0      ; 0.0     ; 0.0                 ;
+;  clk             ; 0.000 ; 0.000 ; N/A      ; N/A     ; 0.000               ;
++------------------+-------+-------+----------+---------+---------------------+
+
+
++--------------------------------------------------------------------------+
+; Setup Times                                                              ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; clear_frame  ; clk        ; 7.381 ; 7.381 ; Rise       ; clk             ;
+; reset_n      ; clk        ; 4.608 ; 4.608 ; Rise       ; clk             ;
+; start_stream ; clk        ; 2.970 ; 2.970 ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 5.493 ; 5.493 ; Rise       ; clk             ;
+; touch_miso   ; clk        ; 0.363 ; 0.363 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++--------------------------------------------------------------------------+
+; Hold Times                                                               ;
++--------------+------------+-------+-------+------------+-----------------+
+; Data Port    ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++--------------+------------+-------+-------+------------+-----------------+
+; clear_frame  ; clk        ; 0.219 ; 0.219 ; Rise       ; clk             ;
+; reset_n      ; clk        ; 0.232 ; 0.232 ; Rise       ; clk             ;
+; start_stream ; clk        ; 0.378 ; 0.378 ; Rise       ; clk             ;
+; touch_irq_n  ; clk        ; 0.283 ; 0.283 ; Rise       ; clk             ;
+; touch_miso   ; clk        ; 0.332 ; 0.332 ; Rise       ; clk             ;
++--------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Clock to Output Times                                                             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; input_frame_last      ; clk        ; 7.670 ; 7.670 ; Rise       ; clk             ;
+; input_frame_valid     ; clk        ; 8.636 ; 8.636 ; Rise       ; clk             ;
+; input_pixel[*]        ; clk        ; 8.024 ; 8.024 ; Rise       ; clk             ;
+;  input_pixel[0]       ; clk        ; 8.014 ; 8.014 ; Rise       ; clk             ;
+;  input_pixel[1]       ; clk        ; 8.006 ; 8.006 ; Rise       ; clk             ;
+;  input_pixel[2]       ; clk        ; 8.024 ; 8.024 ; Rise       ; clk             ;
+;  input_pixel[3]       ; clk        ; 8.014 ; 8.014 ; Rise       ; clk             ;
+; input_pixel_index[*]  ; clk        ; 8.408 ; 8.408 ; Rise       ; clk             ;
+;  input_pixel_index[0] ; clk        ; 8.018 ; 8.018 ; Rise       ; clk             ;
+;  input_pixel_index[1] ; clk        ; 8.045 ; 8.045 ; Rise       ; clk             ;
+;  input_pixel_index[2] ; clk        ; 8.094 ; 8.094 ; Rise       ; clk             ;
+;  input_pixel_index[3] ; clk        ; 8.023 ; 8.023 ; Rise       ; clk             ;
+;  input_pixel_index[4] ; clk        ; 8.359 ; 8.359 ; Rise       ; clk             ;
+;  input_pixel_index[5] ; clk        ; 8.261 ; 8.261 ; Rise       ; clk             ;
+;  input_pixel_index[6] ; clk        ; 8.288 ; 8.288 ; Rise       ; clk             ;
+;  input_pixel_index[7] ; clk        ; 8.408 ; 8.408 ; Rise       ; clk             ;
+; raw_x_debug[*]        ; clk        ; 8.394 ; 8.394 ; Rise       ; clk             ;
+;  raw_x_debug[0]       ; clk        ; 8.394 ; 8.394 ; Rise       ; clk             ;
+;  raw_x_debug[1]       ; clk        ; 7.689 ; 7.689 ; Rise       ; clk             ;
+;  raw_x_debug[2]       ; clk        ; 7.319 ; 7.319 ; Rise       ; clk             ;
+;  raw_x_debug[3]       ; clk        ; 8.022 ; 8.022 ; Rise       ; clk             ;
+;  raw_x_debug[4]       ; clk        ; 7.981 ; 7.981 ; Rise       ; clk             ;
+;  raw_x_debug[5]       ; clk        ; 7.314 ; 7.314 ; Rise       ; clk             ;
+;  raw_x_debug[6]       ; clk        ; 8.025 ; 8.025 ; Rise       ; clk             ;
+;  raw_x_debug[7]       ; clk        ; 8.031 ; 8.031 ; Rise       ; clk             ;
+;  raw_x_debug[8]       ; clk        ; 8.365 ; 8.365 ; Rise       ; clk             ;
+;  raw_x_debug[9]       ; clk        ; 7.935 ; 7.935 ; Rise       ; clk             ;
+;  raw_x_debug[10]      ; clk        ; 7.805 ; 7.805 ; Rise       ; clk             ;
+;  raw_x_debug[11]      ; clk        ; 7.310 ; 7.310 ; Rise       ; clk             ;
+; raw_y_debug[*]        ; clk        ; 8.498 ; 8.498 ; Rise       ; clk             ;
+;  raw_y_debug[0]       ; clk        ; 7.637 ; 7.637 ; Rise       ; clk             ;
+;  raw_y_debug[1]       ; clk        ; 8.414 ; 8.414 ; Rise       ; clk             ;
+;  raw_y_debug[2]       ; clk        ; 8.279 ; 8.279 ; Rise       ; clk             ;
+;  raw_y_debug[3]       ; clk        ; 7.731 ; 7.731 ; Rise       ; clk             ;
+;  raw_y_debug[4]       ; clk        ; 7.862 ; 7.862 ; Rise       ; clk             ;
+;  raw_y_debug[5]       ; clk        ; 8.455 ; 8.455 ; Rise       ; clk             ;
+;  raw_y_debug[6]       ; clk        ; 8.345 ; 8.345 ; Rise       ; clk             ;
+;  raw_y_debug[7]       ; clk        ; 8.498 ; 8.498 ; Rise       ; clk             ;
+;  raw_y_debug[8]       ; clk        ; 7.667 ; 7.667 ; Rise       ; clk             ;
+;  raw_y_debug[9]       ; clk        ; 7.660 ; 7.660 ; Rise       ; clk             ;
+;  raw_y_debug[10]      ; clk        ; 8.398 ; 8.398 ; Rise       ; clk             ;
+;  raw_y_debug[11]      ; clk        ; 7.972 ; 7.972 ; Rise       ; clk             ;
+; sample_valid_debug    ; clk        ; 8.221 ; 8.221 ; Rise       ; clk             ;
+; stream_busy           ; clk        ; 8.093 ; 8.093 ; Rise       ; clk             ;
+; stream_done           ; clk        ; 7.650 ; 7.650 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 7.545 ; 7.545 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 7.497 ; 7.497 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 8.241 ; 8.241 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------------------+
+; Minimum Clock to Output Times                                                     ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; Data Port             ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------------------+------------+-------+-------+------------+-----------------+
+; input_frame_last      ; clk        ; 3.583 ; 3.583 ; Rise       ; clk             ;
+; input_frame_valid     ; clk        ; 3.806 ; 3.806 ; Rise       ; clk             ;
+; input_pixel[*]        ; clk        ; 3.678 ; 3.678 ; Rise       ; clk             ;
+;  input_pixel[0]       ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+;  input_pixel[1]       ; clk        ; 3.678 ; 3.678 ; Rise       ; clk             ;
+;  input_pixel[2]       ; clk        ; 3.693 ; 3.693 ; Rise       ; clk             ;
+;  input_pixel[3]       ; clk        ; 3.683 ; 3.683 ; Rise       ; clk             ;
+; input_pixel_index[*]  ; clk        ; 3.682 ; 3.682 ; Rise       ; clk             ;
+;  input_pixel_index[0] ; clk        ; 3.682 ; 3.682 ; Rise       ; clk             ;
+;  input_pixel_index[1] ; clk        ; 3.700 ; 3.700 ; Rise       ; clk             ;
+;  input_pixel_index[2] ; clk        ; 3.724 ; 3.724 ; Rise       ; clk             ;
+;  input_pixel_index[3] ; clk        ; 3.685 ; 3.685 ; Rise       ; clk             ;
+;  input_pixel_index[4] ; clk        ; 3.778 ; 3.778 ; Rise       ; clk             ;
+;  input_pixel_index[5] ; clk        ; 3.827 ; 3.827 ; Rise       ; clk             ;
+;  input_pixel_index[6] ; clk        ; 3.691 ; 3.691 ; Rise       ; clk             ;
+;  input_pixel_index[7] ; clk        ; 3.804 ; 3.804 ; Rise       ; clk             ;
+; raw_x_debug[*]        ; clk        ; 3.479 ; 3.479 ; Rise       ; clk             ;
+;  raw_x_debug[0]       ; clk        ; 3.776 ; 3.776 ; Rise       ; clk             ;
+;  raw_x_debug[1]       ; clk        ; 3.599 ; 3.599 ; Rise       ; clk             ;
+;  raw_x_debug[2]       ; clk        ; 3.485 ; 3.485 ; Rise       ; clk             ;
+;  raw_x_debug[3]       ; clk        ; 3.694 ; 3.694 ; Rise       ; clk             ;
+;  raw_x_debug[4]       ; clk        ; 3.607 ; 3.607 ; Rise       ; clk             ;
+;  raw_x_debug[5]       ; clk        ; 3.479 ; 3.479 ; Rise       ; clk             ;
+;  raw_x_debug[6]       ; clk        ; 3.695 ; 3.695 ; Rise       ; clk             ;
+;  raw_x_debug[7]       ; clk        ; 3.698 ; 3.698 ; Rise       ; clk             ;
+;  raw_x_debug[8]       ; clk        ; 3.743 ; 3.743 ; Rise       ; clk             ;
+;  raw_x_debug[9]       ; clk        ; 3.583 ; 3.583 ; Rise       ; clk             ;
+;  raw_x_debug[10]      ; clk        ; 3.522 ; 3.522 ; Rise       ; clk             ;
+;  raw_x_debug[11]      ; clk        ; 3.481 ; 3.481 ; Rise       ; clk             ;
+; raw_y_debug[*]        ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  raw_y_debug[0]       ; clk        ; 3.569 ; 3.569 ; Rise       ; clk             ;
+;  raw_y_debug[1]       ; clk        ; 3.797 ; 3.797 ; Rise       ; clk             ;
+;  raw_y_debug[2]       ; clk        ; 3.694 ; 3.694 ; Rise       ; clk             ;
+;  raw_y_debug[3]       ; clk        ; 3.620 ; 3.620 ; Rise       ; clk             ;
+;  raw_y_debug[4]       ; clk        ; 3.559 ; 3.559 ; Rise       ; clk             ;
+;  raw_y_debug[5]       ; clk        ; 3.840 ; 3.840 ; Rise       ; clk             ;
+;  raw_y_debug[6]       ; clk        ; 3.734 ; 3.734 ; Rise       ; clk             ;
+;  raw_y_debug[7]       ; clk        ; 3.841 ; 3.841 ; Rise       ; clk             ;
+;  raw_y_debug[8]       ; clk        ; 3.586 ; 3.586 ; Rise       ; clk             ;
+;  raw_y_debug[9]       ; clk        ; 3.580 ; 3.580 ; Rise       ; clk             ;
+;  raw_y_debug[10]      ; clk        ; 3.804 ; 3.804 ; Rise       ; clk             ;
+;  raw_y_debug[11]      ; clk        ; 3.663 ; 3.663 ; Rise       ; clk             ;
+; sample_valid_debug    ; clk        ; 3.666 ; 3.666 ; Rise       ; clk             ;
+; stream_busy           ; clk        ; 3.719 ; 3.719 ; Rise       ; clk             ;
+; stream_done           ; clk        ; 3.563 ; 3.563 ; Rise       ; clk             ;
+; touch_cs_n            ; clk        ; 3.467 ; 3.467 ; Rise       ; clk             ;
+; touch_mosi            ; clk        ; 3.443 ; 3.443 ; Rise       ; clk             ;
+; touch_sclk            ; clk        ; 3.678 ; 3.678 ; Rise       ; clk             ;
++-----------------------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 4874084  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk        ; clk      ; 4874084  ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 5     ; 5    ;
+; Unconstrained Input Port Paths  ; 551   ; 551  ;
+; Unconstrained Output Ports      ; 44    ; 44   ;
+; Unconstrained Output Port Paths ; 44    ; 44   ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Oct 03 19:56:07 2026
+Info: Command: quartus_sta touch_capture_top -c touch_capture_top
+Info: qsta_default_script.tcl version: #1
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (332104): Reading SDC File: 'touch_capture_top.sdc'
+Info: Found TIMEQUEST_REPORT_SCRIPT_INCLUDE_DEFAULT_ANALYSIS = ON
+Info: Analyzing Slow Model
+Info (332146): Worst-case setup slack is 3.349
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     3.349         0.000 clk 
+Info (332146): Worst-case hold slack is 0.499
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.499         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 8.758
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     8.758         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info: Analyzing Fast Model
+Info (332146): Worst-case setup slack is 14.872
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):    14.872         0.000 clk 
+Info (332146): Worst-case hold slack is 0.215
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     0.215         0.000 clk 
+Info (332140): No Recovery paths to report
+Info (332140): No Removal paths to report
+Info (332146): Worst-case minimum pulse width slack is 9.000
+    Info (332119):     Slack End Point TNS Clock 
+    Info (332119): ========= ============= =====================
+    Info (332119):     9.000         0.000 clk 
+Info (332001): The selected device family is not supported by the report_metastability command.
+Info (332102): Design is not fully constrained for setup requirements
+Info (332102): Design is not fully constrained for hold requirements
+Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4571 megabytes
+    Info: Processing ended: Sat Oct 03 19:56:09 2026
+    Info: Elapsed time: 00:00:02
+    Info: Total CPU time (on all processors): 00:00:02
+
+

@@ -235,6 +235,13 @@ top-level pin table has been reviewed against the actual CoreEP2C5 wiring.
 
 ## Current position
 
-Milestones 1–3 are implemented. Milestones 1 and 2 are verified. Milestone 3
-now passes the ModelSim protocol test and Quartus synthesis, but remains
-simulation-only until Milestone 4 assigns and validates the physical pins.
+Milestones 1–4 have simulation and synthesis evidence. Milestone 4 uses
+`touch_capture_top.sv`; its ModelSim integration test passes the X/Y response
+path and all 196 streamed pixels, and Quartus reports 824 logic cells with
++3.349 ns setup slack at 50 MHz. It remains simulation/synthesis-only because
+the real CoreEP2C5 pin table has not yet been assigned and no hardware test
+has been run.
+
+Milestone 4 status: **NO-GO for hardware**, **GO for the next RTL milestone**.
+The next task is to review the actual board pin table and add the ML-core
+boundary, while preserving the existing integration test as a regression.

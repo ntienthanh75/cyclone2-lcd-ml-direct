@@ -1,0 +1,963 @@
+Analysis & Synthesis report for touch_capture_top
+Sat Oct 03 19:55:59 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. State Machine - |touch_capture_top|xpt2046_reader:reader|state
+  9. Registers Removed During Synthesis
+ 10. General Register Statistics
+ 11. Inverted Register Statistics
+ 12. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 13. Parameter Settings for User Entity Instance: Top-level Entity: |touch_capture_top
+ 14. Parameter Settings for User Entity Instance: xpt2046_reader:reader
+ 15. Port Connectivity Checks: "xpt2046_reader:reader"
+ 16. Elapsed Time Per Partition
+ 17. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Oct 03 19:55:58 2026           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; touch_capture_top                               ;
+; Top-level Entity Name              ; touch_capture_top                               ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 823                                             ;
+;     Total combinational functions  ; 795                                             ;
+;     Dedicated logic registers      ; 307                                             ;
+; Total registers                    ; 307                                             ;
+; Total pins                         ; 50                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP2C5T144C8        ;                    ;
+; Top-level entity name                                                      ; touch_capture_top  ; touch_capture_top  ;
+; Family name                                                                ; Cyclone II         ; Cyclone IV GX      ;
+; Maximum processors allowed for parallel compilation                        ; 2                  ;                    ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                ; Off                ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; Off                ; Off                ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; PowerPlay Power Optimization                                               ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
+; Synthesis Seed                                                             ; 1                  ; 1                  ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; touch_capture_top.sv             ; yes             ; User SystemVerilog HDL File  ; D:/fpga/cyclone2-lcd-ml-direct/rtl/touch_capture_top.sv   ;         ;
+; xpt2046_reader.sv                ; yes             ; User SystemVerilog HDL File  ; D:/fpga/cyclone2-lcd-ml-direct/rtl/xpt2046_reader.sv      ;         ;
+; xpt2046_calibrator.sv            ; yes             ; User SystemVerilog HDL File  ; D:/fpga/cyclone2-lcd-ml-direct/rtl/xpt2046_calibrator.sv  ;         ;
+; touch_frame_adapter.sv           ; yes             ; User SystemVerilog HDL File  ; D:/fpga/cyclone2-lcd-ml-direct/rtl/touch_frame_adapter.sv ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+
+
++-----------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary         ;
++---------------------------------------------+-------+
+; Resource                                    ; Usage ;
++---------------------------------------------+-------+
+; Estimated Total logic elements              ; 823   ;
+;                                             ;       ;
+; Total combinational functions               ; 795   ;
+; Logic element usage by number of LUT inputs ;       ;
+;     -- 4 input functions                    ; 585   ;
+;     -- 3 input functions                    ; 120   ;
+;     -- <=2 input functions                  ; 90    ;
+;                                             ;       ;
+; Logic elements by mode                      ;       ;
+;     -- normal mode                          ; 759   ;
+;     -- arithmetic mode                      ; 36    ;
+;                                             ;       ;
+; Total registers                             ; 307   ;
+;     -- Dedicated logic registers            ; 307   ;
+;     -- I/O registers                        ; 0     ;
+;                                             ;       ;
+; I/O pins                                    ; 50    ;
+; Embedded Multiplier 9-bit elements          ; 0     ;
+; Maximum fan-out node                        ; clk   ;
+; Maximum fan-out                             ; 307   ;
+; Total fan-out                               ; 4095  ;
+; Average fan-out                             ; 3.55  ;
++---------------------------------------------+-------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                              ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; Compilation Hierarchy Node         ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                              ; Library Name ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+; |touch_capture_top                 ; 795 (1)           ; 307 (0)      ; 0           ; 0            ; 0       ; 0         ; 50   ; 0            ; |touch_capture_top                               ; work         ;
+;    |touch_frame_adapter:frame|     ; 576 (576)         ; 217 (217)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |touch_capture_top|touch_frame_adapter:frame     ; work         ;
+;    |xpt2046_calibrator:calibrator| ; 123 (123)         ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |touch_capture_top|xpt2046_calibrator:calibrator ; work         ;
+;    |xpt2046_reader:reader|         ; 95 (95)           ; 72 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |touch_capture_top|xpt2046_reader:reader         ; work         ;
++------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------+
+; State Machine - |touch_capture_top|xpt2046_reader:reader|state                              ;
++-----------------+-------------+--------------+-------------+--------------+-----------------+
+; Name            ; state.S_GAP ; state.S_WAIT ; state.S_SPI ; state.S_IDLE ; state.S_START_Y ;
++-----------------+-------------+--------------+-------------+--------------+-----------------+
+; state.S_IDLE    ; 0           ; 0            ; 0           ; 0            ; 0               ;
+; state.S_SPI     ; 0           ; 0            ; 1           ; 1            ; 0               ;
+; state.S_WAIT    ; 0           ; 1            ; 0           ; 1            ; 0               ;
+; state.S_GAP     ; 1           ; 0            ; 0           ; 1            ; 0               ;
+; state.S_START_Y ; 0           ; 0            ; 0           ; 1            ; 1               ;
++-----------------+-------------+--------------+-------------+--------------+-----------------+
+
+
++----------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                 ;
++---------------------------------------------+------------------------------------------------------+
+; Register name                               ; Reason for Removal                                   ;
++---------------------------------------------+------------------------------------------------------+
+; touch_frame_adapter:frame|frame[191][1]     ; Merged with touch_frame_adapter:frame|frame[191][2]  ;
+; touch_frame_adapter:frame|frame[192][1]     ; Merged with touch_frame_adapter:frame|frame[192][2]  ;
+; touch_frame_adapter:frame|frame[193][0]     ; Merged with touch_frame_adapter:frame|frame[193][2]  ;
+; touch_frame_adapter:frame|frame[194][0]     ; Merged with touch_frame_adapter:frame|frame[194][2]  ;
+; touch_frame_adapter:frame|frame[195][0]     ; Merged with touch_frame_adapter:frame|frame[195][2]  ;
+; touch_frame_adapter:frame|frame[190][3]     ; Merged with touch_frame_adapter:frame|frame[190][0]  ;
+; touch_frame_adapter:frame|frame[189][1]     ; Merged with touch_frame_adapter:frame|frame[189][0]  ;
+; touch_frame_adapter:frame|frame[189][3]     ; Merged with touch_frame_adapter:frame|frame[189][0]  ;
+; touch_frame_adapter:frame|frame[188][3]     ; Merged with touch_frame_adapter:frame|frame[188][1]  ;
+; touch_frame_adapter:frame|frame[187][3]     ; Merged with touch_frame_adapter:frame|frame[187][1]  ;
+; touch_frame_adapter:frame|frame[186][3]     ; Merged with touch_frame_adapter:frame|frame[186][1]  ;
+; touch_frame_adapter:frame|frame[185][3]     ; Merged with touch_frame_adapter:frame|frame[185][1]  ;
+; touch_frame_adapter:frame|frame[184][3]     ; Merged with touch_frame_adapter:frame|frame[184][1]  ;
+; touch_frame_adapter:frame|frame[183][2]     ; Merged with touch_frame_adapter:frame|frame[183][1]  ;
+; touch_frame_adapter:frame|frame[182][2]     ; Merged with touch_frame_adapter:frame|frame[182][0]  ;
+; touch_frame_adapter:frame|frame[182][3]     ; Merged with touch_frame_adapter:frame|frame[182][1]  ;
+; touch_frame_adapter:frame|frame[181][2]     ; Merged with touch_frame_adapter:frame|frame[181][0]  ;
+; touch_frame_adapter:frame|frame[181][3]     ; Merged with touch_frame_adapter:frame|frame[181][1]  ;
+; touch_frame_adapter:frame|frame[180][1]     ; Merged with touch_frame_adapter:frame|frame[180][0]  ;
+; touch_frame_adapter:frame|frame[179][3]     ; Merged with touch_frame_adapter:frame|frame[179][1]  ;
+; touch_frame_adapter:frame|frame[178][3]     ; Merged with touch_frame_adapter:frame|frame[178][1]  ;
+; touch_frame_adapter:frame|frame[177][3]     ; Merged with touch_frame_adapter:frame|frame[177][1]  ;
+; touch_frame_adapter:frame|frame[176][3]     ; Merged with touch_frame_adapter:frame|frame[176][1]  ;
+; touch_frame_adapter:frame|frame[175][3]     ; Merged with touch_frame_adapter:frame|frame[175][1]  ;
+; touch_frame_adapter:frame|frame[174][3]     ; Merged with touch_frame_adapter:frame|frame[174][1]  ;
+; touch_frame_adapter:frame|frame[173][3]     ; Merged with touch_frame_adapter:frame|frame[173][1]  ;
+; touch_frame_adapter:frame|frame[172][3]     ; Merged with touch_frame_adapter:frame|frame[172][1]  ;
+; touch_frame_adapter:frame|frame[171][3]     ; Merged with touch_frame_adapter:frame|frame[171][0]  ;
+; touch_frame_adapter:frame|frame[170][3]     ; Merged with touch_frame_adapter:frame|frame[170][1]  ;
+; touch_frame_adapter:frame|frame[169][3]     ; Merged with touch_frame_adapter:frame|frame[169][1]  ;
+; touch_frame_adapter:frame|frame[168][3]     ; Merged with touch_frame_adapter:frame|frame[168][1]  ;
+; touch_frame_adapter:frame|frame[167][3]     ; Merged with touch_frame_adapter:frame|frame[167][1]  ;
+; touch_frame_adapter:frame|frame[166][2]     ; Merged with touch_frame_adapter:frame|frame[166][0]  ;
+; touch_frame_adapter:frame|frame[166][3]     ; Merged with touch_frame_adapter:frame|frame[166][1]  ;
+; touch_frame_adapter:frame|frame[165][2]     ; Merged with touch_frame_adapter:frame|frame[165][1]  ;
+; touch_frame_adapter:frame|frame[165][3]     ; Merged with touch_frame_adapter:frame|frame[165][1]  ;
+; touch_frame_adapter:frame|frame[164][3]     ; Merged with touch_frame_adapter:frame|frame[164][0]  ;
+; touch_frame_adapter:frame|frame[164][2]     ; Merged with touch_frame_adapter:frame|frame[164][1]  ;
+; touch_frame_adapter:frame|frame[163][3]     ; Merged with touch_frame_adapter:frame|frame[163][1]  ;
+; touch_frame_adapter:frame|frame[162][3]     ; Merged with touch_frame_adapter:frame|frame[162][1]  ;
+; touch_frame_adapter:frame|frame[161][3]     ; Merged with touch_frame_adapter:frame|frame[161][1]  ;
+; touch_frame_adapter:frame|frame[160][3]     ; Merged with touch_frame_adapter:frame|frame[160][1]  ;
+; touch_frame_adapter:frame|frame[159][3]     ; Merged with touch_frame_adapter:frame|frame[159][1]  ;
+; touch_frame_adapter:frame|frame[158][3]     ; Merged with touch_frame_adapter:frame|frame[158][1]  ;
+; touch_frame_adapter:frame|frame[157][3]     ; Merged with touch_frame_adapter:frame|frame[157][1]  ;
+; touch_frame_adapter:frame|frame[156][3]     ; Merged with touch_frame_adapter:frame|frame[156][1]  ;
+; touch_frame_adapter:frame|frame[155][3]     ; Merged with touch_frame_adapter:frame|frame[155][1]  ;
+; touch_frame_adapter:frame|frame[154][3]     ; Merged with touch_frame_adapter:frame|frame[154][1]  ;
+; touch_frame_adapter:frame|frame[153][3]     ; Merged with touch_frame_adapter:frame|frame[153][1]  ;
+; touch_frame_adapter:frame|frame[152][3]     ; Merged with touch_frame_adapter:frame|frame[152][1]  ;
+; touch_frame_adapter:frame|frame[151][3]     ; Merged with touch_frame_adapter:frame|frame[151][1]  ;
+; touch_frame_adapter:frame|frame[150][3]     ; Merged with touch_frame_adapter:frame|frame[150][1]  ;
+; touch_frame_adapter:frame|frame[149][3]     ; Merged with touch_frame_adapter:frame|frame[149][1]  ;
+; touch_frame_adapter:frame|frame[148][3]     ; Merged with touch_frame_adapter:frame|frame[148][1]  ;
+; touch_frame_adapter:frame|frame[147][3]     ; Merged with touch_frame_adapter:frame|frame[147][0]  ;
+; touch_frame_adapter:frame|frame[146][1]     ; Merged with touch_frame_adapter:frame|frame[146][0]  ;
+; touch_frame_adapter:frame|frame[145][3]     ; Merged with touch_frame_adapter:frame|frame[145][1]  ;
+; touch_frame_adapter:frame|frame[144][3]     ; Merged with touch_frame_adapter:frame|frame[144][1]  ;
+; touch_frame_adapter:frame|frame[143][3]     ; Merged with touch_frame_adapter:frame|frame[143][1]  ;
+; touch_frame_adapter:frame|frame[142][3]     ; Merged with touch_frame_adapter:frame|frame[142][1]  ;
+; touch_frame_adapter:frame|frame[141][3]     ; Merged with touch_frame_adapter:frame|frame[141][1]  ;
+; touch_frame_adapter:frame|frame[140][3]     ; Merged with touch_frame_adapter:frame|frame[140][1]  ;
+; touch_frame_adapter:frame|frame[139][3]     ; Merged with touch_frame_adapter:frame|frame[139][1]  ;
+; touch_frame_adapter:frame|frame[138][3]     ; Merged with touch_frame_adapter:frame|frame[138][1]  ;
+; touch_frame_adapter:frame|frame[137][2]     ; Merged with touch_frame_adapter:frame|frame[137][0]  ;
+; touch_frame_adapter:frame|frame[137][3]     ; Merged with touch_frame_adapter:frame|frame[137][1]  ;
+; touch_frame_adapter:frame|frame[136][2]     ; Merged with touch_frame_adapter:frame|frame[136][0]  ;
+; touch_frame_adapter:frame|frame[136][3]     ; Merged with touch_frame_adapter:frame|frame[136][1]  ;
+; touch_frame_adapter:frame|frame[135][2]     ; Merged with touch_frame_adapter:frame|frame[135][0]  ;
+; touch_frame_adapter:frame|frame[135][3]     ; Merged with touch_frame_adapter:frame|frame[135][1]  ;
+; touch_frame_adapter:frame|frame[134][2]     ; Merged with touch_frame_adapter:frame|frame[134][0]  ;
+; touch_frame_adapter:frame|frame[134][1]     ; Merged with touch_frame_adapter:frame|frame[134][0]  ;
+; touch_frame_adapter:frame|frame[133][1]     ; Merged with touch_frame_adapter:frame|frame[133][0]  ;
+; touch_frame_adapter:frame|frame[133][2]     ; Merged with touch_frame_adapter:frame|frame[133][0]  ;
+; touch_frame_adapter:frame|frame[132][1]     ; Merged with touch_frame_adapter:frame|frame[132][0]  ;
+; touch_frame_adapter:frame|frame[132][2]     ; Merged with touch_frame_adapter:frame|frame[132][0]  ;
+; touch_frame_adapter:frame|frame[131][3]     ; Merged with touch_frame_adapter:frame|frame[131][1]  ;
+; touch_frame_adapter:frame|frame[130][3]     ; Merged with touch_frame_adapter:frame|frame[130][1]  ;
+; touch_frame_adapter:frame|frame[129][3]     ; Merged with touch_frame_adapter:frame|frame[129][1]  ;
+; touch_frame_adapter:frame|frame[128][3]     ; Merged with touch_frame_adapter:frame|frame[128][1]  ;
+; touch_frame_adapter:frame|frame[127][3]     ; Merged with touch_frame_adapter:frame|frame[127][1]  ;
+; touch_frame_adapter:frame|frame[126][3]     ; Merged with touch_frame_adapter:frame|frame[126][1]  ;
+; touch_frame_adapter:frame|frame[125][3]     ; Merged with touch_frame_adapter:frame|frame[125][1]  ;
+; touch_frame_adapter:frame|frame[124][3]     ; Merged with touch_frame_adapter:frame|frame[124][1]  ;
+; touch_frame_adapter:frame|frame[123][3]     ; Merged with touch_frame_adapter:frame|frame[123][1]  ;
+; touch_frame_adapter:frame|frame[122][3]     ; Merged with touch_frame_adapter:frame|frame[122][1]  ;
+; touch_frame_adapter:frame|frame[121][3]     ; Merged with touch_frame_adapter:frame|frame[121][1]  ;
+; touch_frame_adapter:frame|frame[120][3]     ; Merged with touch_frame_adapter:frame|frame[120][1]  ;
+; touch_frame_adapter:frame|frame[119][3]     ; Merged with touch_frame_adapter:frame|frame[119][1]  ;
+; touch_frame_adapter:frame|frame[118][3]     ; Merged with touch_frame_adapter:frame|frame[118][1]  ;
+; touch_frame_adapter:frame|frame[117][3]     ; Merged with touch_frame_adapter:frame|frame[117][1]  ;
+; touch_frame_adapter:frame|frame[116][3]     ; Merged with touch_frame_adapter:frame|frame[116][1]  ;
+; touch_frame_adapter:frame|frame[115][3]     ; Merged with touch_frame_adapter:frame|frame[115][1]  ;
+; touch_frame_adapter:frame|frame[114][3]     ; Merged with touch_frame_adapter:frame|frame[114][1]  ;
+; touch_frame_adapter:frame|frame[113][3]     ; Merged with touch_frame_adapter:frame|frame[113][1]  ;
+; touch_frame_adapter:frame|frame[112][3]     ; Merged with touch_frame_adapter:frame|frame[112][1]  ;
+; touch_frame_adapter:frame|frame[111][3]     ; Merged with touch_frame_adapter:frame|frame[111][1]  ;
+; touch_frame_adapter:frame|frame[110][3]     ; Merged with touch_frame_adapter:frame|frame[110][1]  ;
+; touch_frame_adapter:frame|frame[109][3]     ; Merged with touch_frame_adapter:frame|frame[109][1]  ;
+; touch_frame_adapter:frame|frame[108][3]     ; Merged with touch_frame_adapter:frame|frame[108][1]  ;
+; touch_frame_adapter:frame|frame[107][3]     ; Merged with touch_frame_adapter:frame|frame[107][1]  ;
+; touch_frame_adapter:frame|frame[106][3]     ; Merged with touch_frame_adapter:frame|frame[106][1]  ;
+; touch_frame_adapter:frame|frame[105][3]     ; Merged with touch_frame_adapter:frame|frame[105][1]  ;
+; touch_frame_adapter:frame|frame[104][3]     ; Merged with touch_frame_adapter:frame|frame[104][1]  ;
+; touch_frame_adapter:frame|frame[103][3]     ; Merged with touch_frame_adapter:frame|frame[103][1]  ;
+; touch_frame_adapter:frame|frame[102][3]     ; Merged with touch_frame_adapter:frame|frame[102][1]  ;
+; touch_frame_adapter:frame|frame[101][3]     ; Merged with touch_frame_adapter:frame|frame[101][1]  ;
+; touch_frame_adapter:frame|frame[100][3]     ; Merged with touch_frame_adapter:frame|frame[100][1]  ;
+; touch_frame_adapter:frame|frame[99][3]      ; Merged with touch_frame_adapter:frame|frame[99][1]   ;
+; touch_frame_adapter:frame|frame[98][3]      ; Merged with touch_frame_adapter:frame|frame[98][0]   ;
+; touch_frame_adapter:frame|frame[97][2]      ; Merged with touch_frame_adapter:frame|frame[97][0]   ;
+; touch_frame_adapter:frame|frame[97][3]      ; Merged with touch_frame_adapter:frame|frame[97][1]   ;
+; touch_frame_adapter:frame|frame[96][1]      ; Merged with touch_frame_adapter:frame|frame[96][0]   ;
+; touch_frame_adapter:frame|frame[95][2]      ; Merged with touch_frame_adapter:frame|frame[95][0]   ;
+; touch_frame_adapter:frame|frame[95][3]      ; Merged with touch_frame_adapter:frame|frame[95][1]   ;
+; touch_frame_adapter:frame|frame[94][3]      ; Merged with touch_frame_adapter:frame|frame[94][1]   ;
+; touch_frame_adapter:frame|frame[93][3]      ; Merged with touch_frame_adapter:frame|frame[93][1]   ;
+; touch_frame_adapter:frame|frame[92][1]      ; Merged with touch_frame_adapter:frame|frame[92][0]   ;
+; touch_frame_adapter:frame|frame[91][3]      ; Merged with touch_frame_adapter:frame|frame[91][1]   ;
+; touch_frame_adapter:frame|frame[90][3]      ; Merged with touch_frame_adapter:frame|frame[90][1]   ;
+; touch_frame_adapter:frame|frame[89][3]      ; Merged with touch_frame_adapter:frame|frame[89][1]   ;
+; touch_frame_adapter:frame|frame[88][3]      ; Merged with touch_frame_adapter:frame|frame[88][1]   ;
+; touch_frame_adapter:frame|frame[87][3]      ; Merged with touch_frame_adapter:frame|frame[87][1]   ;
+; touch_frame_adapter:frame|frame[86][3]      ; Merged with touch_frame_adapter:frame|frame[86][1]   ;
+; touch_frame_adapter:frame|frame[85][3]      ; Merged with touch_frame_adapter:frame|frame[85][1]   ;
+; touch_frame_adapter:frame|frame[84][3]      ; Merged with touch_frame_adapter:frame|frame[84][1]   ;
+; touch_frame_adapter:frame|frame[83][3]      ; Merged with touch_frame_adapter:frame|frame[83][1]   ;
+; touch_frame_adapter:frame|frame[82][3]      ; Merged with touch_frame_adapter:frame|frame[82][1]   ;
+; touch_frame_adapter:frame|frame[81][3]      ; Merged with touch_frame_adapter:frame|frame[81][1]   ;
+; touch_frame_adapter:frame|frame[80][3]      ; Merged with touch_frame_adapter:frame|frame[80][1]   ;
+; touch_frame_adapter:frame|frame[79][3]      ; Merged with touch_frame_adapter:frame|frame[79][1]   ;
+; touch_frame_adapter:frame|frame[78][2]      ; Merged with touch_frame_adapter:frame|frame[78][0]   ;
+; touch_frame_adapter:frame|frame[78][3]      ; Merged with touch_frame_adapter:frame|frame[78][1]   ;
+; touch_frame_adapter:frame|frame[77][2]      ; Merged with touch_frame_adapter:frame|frame[77][0]   ;
+; touch_frame_adapter:frame|frame[77][3]      ; Merged with touch_frame_adapter:frame|frame[77][1]   ;
+; touch_frame_adapter:frame|frame[76][2]      ; Merged with touch_frame_adapter:frame|frame[76][0]   ;
+; touch_frame_adapter:frame|frame[76][3]      ; Merged with touch_frame_adapter:frame|frame[76][1]   ;
+; touch_frame_adapter:frame|frame[75][2]      ; Merged with touch_frame_adapter:frame|frame[75][0]   ;
+; touch_frame_adapter:frame|frame[75][3]      ; Merged with touch_frame_adapter:frame|frame[75][1]   ;
+; touch_frame_adapter:frame|frame[74][2]      ; Merged with touch_frame_adapter:frame|frame[74][0]   ;
+; touch_frame_adapter:frame|frame[74][3]      ; Merged with touch_frame_adapter:frame|frame[74][1]   ;
+; touch_frame_adapter:frame|frame[73][2]      ; Merged with touch_frame_adapter:frame|frame[73][1]   ;
+; touch_frame_adapter:frame|frame[73][3]      ; Merged with touch_frame_adapter:frame|frame[73][1]   ;
+; touch_frame_adapter:frame|frame[72][2]      ; Merged with touch_frame_adapter:frame|frame[72][0]   ;
+; touch_frame_adapter:frame|frame[72][1]      ; Merged with touch_frame_adapter:frame|frame[72][0]   ;
+; touch_frame_adapter:frame|frame[72][3]      ; Merged with touch_frame_adapter:frame|frame[72][0]   ;
+; touch_frame_adapter:frame|frame[71][1]      ; Merged with touch_frame_adapter:frame|frame[71][0]   ;
+; touch_frame_adapter:frame|frame[71][2]      ; Merged with touch_frame_adapter:frame|frame[71][0]   ;
+; touch_frame_adapter:frame|frame[71][3]      ; Merged with touch_frame_adapter:frame|frame[71][0]   ;
+; touch_frame_adapter:frame|frame[70][1]      ; Merged with touch_frame_adapter:frame|frame[70][0]   ;
+; touch_frame_adapter:frame|frame[70][2]      ; Merged with touch_frame_adapter:frame|frame[70][0]   ;
+; touch_frame_adapter:frame|frame[69][1]      ; Merged with touch_frame_adapter:frame|frame[69][0]   ;
+; touch_frame_adapter:frame|frame[69][2]      ; Merged with touch_frame_adapter:frame|frame[69][0]   ;
+; touch_frame_adapter:frame|frame[69][3]      ; Merged with touch_frame_adapter:frame|frame[69][0]   ;
+; touch_frame_adapter:frame|frame[68][1]      ; Merged with touch_frame_adapter:frame|frame[68][0]   ;
+; touch_frame_adapter:frame|frame[68][2]      ; Merged with touch_frame_adapter:frame|frame[68][0]   ;
+; touch_frame_adapter:frame|frame[67][3]      ; Merged with touch_frame_adapter:frame|frame[67][1]   ;
+; touch_frame_adapter:frame|frame[66][3]      ; Merged with touch_frame_adapter:frame|frame[66][1]   ;
+; touch_frame_adapter:frame|frame[65][3]      ; Merged with touch_frame_adapter:frame|frame[65][1]   ;
+; touch_frame_adapter:frame|frame[64][3]      ; Merged with touch_frame_adapter:frame|frame[64][1]   ;
+; touch_frame_adapter:frame|frame[63][3]      ; Merged with touch_frame_adapter:frame|frame[63][1]   ;
+; touch_frame_adapter:frame|frame[62][3]      ; Merged with touch_frame_adapter:frame|frame[62][1]   ;
+; touch_frame_adapter:frame|frame[61][3]      ; Merged with touch_frame_adapter:frame|frame[61][1]   ;
+; touch_frame_adapter:frame|frame[60][3]      ; Merged with touch_frame_adapter:frame|frame[60][1]   ;
+; touch_frame_adapter:frame|frame[59][3]      ; Merged with touch_frame_adapter:frame|frame[59][1]   ;
+; touch_frame_adapter:frame|frame[58][3]      ; Merged with touch_frame_adapter:frame|frame[58][1]   ;
+; touch_frame_adapter:frame|frame[57][3]      ; Merged with touch_frame_adapter:frame|frame[57][1]   ;
+; touch_frame_adapter:frame|frame[56][3]      ; Merged with touch_frame_adapter:frame|frame[56][1]   ;
+; touch_frame_adapter:frame|frame[55][3]      ; Merged with touch_frame_adapter:frame|frame[55][1]   ;
+; touch_frame_adapter:frame|frame[54][3]      ; Merged with touch_frame_adapter:frame|frame[54][1]   ;
+; touch_frame_adapter:frame|frame[53][3]      ; Merged with touch_frame_adapter:frame|frame[53][1]   ;
+; touch_frame_adapter:frame|frame[52][3]      ; Merged with touch_frame_adapter:frame|frame[52][1]   ;
+; touch_frame_adapter:frame|frame[51][3]      ; Merged with touch_frame_adapter:frame|frame[51][1]   ;
+; touch_frame_adapter:frame|frame[50][3]      ; Merged with touch_frame_adapter:frame|frame[50][1]   ;
+; touch_frame_adapter:frame|frame[49][3]      ; Merged with touch_frame_adapter:frame|frame[49][1]   ;
+; touch_frame_adapter:frame|frame[48][3]      ; Merged with touch_frame_adapter:frame|frame[48][1]   ;
+; touch_frame_adapter:frame|frame[47][3]      ; Merged with touch_frame_adapter:frame|frame[47][1]   ;
+; touch_frame_adapter:frame|frame[46][3]      ; Merged with touch_frame_adapter:frame|frame[46][1]   ;
+; touch_frame_adapter:frame|frame[45][3]      ; Merged with touch_frame_adapter:frame|frame[45][1]   ;
+; touch_frame_adapter:frame|frame[44][3]      ; Merged with touch_frame_adapter:frame|frame[44][1]   ;
+; touch_frame_adapter:frame|frame[43][3]      ; Merged with touch_frame_adapter:frame|frame[43][1]   ;
+; touch_frame_adapter:frame|frame[42][3]      ; Merged with touch_frame_adapter:frame|frame[42][1]   ;
+; touch_frame_adapter:frame|frame[41][3]      ; Merged with touch_frame_adapter:frame|frame[41][1]   ;
+; touch_frame_adapter:frame|frame[40][3]      ; Merged with touch_frame_adapter:frame|frame[40][1]   ;
+; touch_frame_adapter:frame|frame[39][3]      ; Merged with touch_frame_adapter:frame|frame[39][1]   ;
+; touch_frame_adapter:frame|frame[38][3]      ; Merged with touch_frame_adapter:frame|frame[38][1]   ;
+; touch_frame_adapter:frame|frame[37][3]      ; Merged with touch_frame_adapter:frame|frame[37][1]   ;
+; touch_frame_adapter:frame|frame[36][3]      ; Merged with touch_frame_adapter:frame|frame[36][1]   ;
+; touch_frame_adapter:frame|frame[35][3]      ; Merged with touch_frame_adapter:frame|frame[35][1]   ;
+; touch_frame_adapter:frame|frame[34][3]      ; Merged with touch_frame_adapter:frame|frame[34][1]   ;
+; touch_frame_adapter:frame|frame[33][3]      ; Merged with touch_frame_adapter:frame|frame[33][1]   ;
+; touch_frame_adapter:frame|frame[32][3]      ; Merged with touch_frame_adapter:frame|frame[32][1]   ;
+; touch_frame_adapter:frame|frame[31][3]      ; Merged with touch_frame_adapter:frame|frame[31][1]   ;
+; touch_frame_adapter:frame|frame[30][3]      ; Merged with touch_frame_adapter:frame|frame[30][1]   ;
+; touch_frame_adapter:frame|frame[29][3]      ; Merged with touch_frame_adapter:frame|frame[29][1]   ;
+; touch_frame_adapter:frame|frame[28][3]      ; Merged with touch_frame_adapter:frame|frame[28][1]   ;
+; touch_frame_adapter:frame|frame[27][3]      ; Merged with touch_frame_adapter:frame|frame[27][1]   ;
+; touch_frame_adapter:frame|frame[26][3]      ; Merged with touch_frame_adapter:frame|frame[26][1]   ;
+; touch_frame_adapter:frame|frame[25][3]      ; Merged with touch_frame_adapter:frame|frame[25][1]   ;
+; touch_frame_adapter:frame|frame[24][3]      ; Merged with touch_frame_adapter:frame|frame[24][1]   ;
+; touch_frame_adapter:frame|frame[23][3]      ; Merged with touch_frame_adapter:frame|frame[23][1]   ;
+; touch_frame_adapter:frame|frame[22][3]      ; Merged with touch_frame_adapter:frame|frame[22][1]   ;
+; touch_frame_adapter:frame|frame[21][3]      ; Merged with touch_frame_adapter:frame|frame[21][1]   ;
+; touch_frame_adapter:frame|frame[20][3]      ; Merged with touch_frame_adapter:frame|frame[20][1]   ;
+; touch_frame_adapter:frame|frame[19][3]      ; Merged with touch_frame_adapter:frame|frame[19][1]   ;
+; touch_frame_adapter:frame|frame[18][3]      ; Merged with touch_frame_adapter:frame|frame[18][1]   ;
+; touch_frame_adapter:frame|frame[17][3]      ; Merged with touch_frame_adapter:frame|frame[17][1]   ;
+; touch_frame_adapter:frame|frame[16][3]      ; Merged with touch_frame_adapter:frame|frame[16][1]   ;
+; touch_frame_adapter:frame|frame[15][3]      ; Merged with touch_frame_adapter:frame|frame[15][1]   ;
+; touch_frame_adapter:frame|frame[14][3]      ; Merged with touch_frame_adapter:frame|frame[14][1]   ;
+; touch_frame_adapter:frame|frame[13][3]      ; Merged with touch_frame_adapter:frame|frame[13][1]   ;
+; touch_frame_adapter:frame|frame[12][3]      ; Merged with touch_frame_adapter:frame|frame[12][1]   ;
+; touch_frame_adapter:frame|frame[11][3]      ; Merged with touch_frame_adapter:frame|frame[11][1]   ;
+; touch_frame_adapter:frame|frame[10][3]      ; Merged with touch_frame_adapter:frame|frame[10][1]   ;
+; touch_frame_adapter:frame|frame[9][3]       ; Merged with touch_frame_adapter:frame|frame[9][1]    ;
+; touch_frame_adapter:frame|frame[8][3]       ; Merged with touch_frame_adapter:frame|frame[8][1]    ;
+; touch_frame_adapter:frame|frame[7][3]       ; Merged with touch_frame_adapter:frame|frame[7][1]    ;
+; touch_frame_adapter:frame|frame[6][3]       ; Merged with touch_frame_adapter:frame|frame[6][1]    ;
+; touch_frame_adapter:frame|frame[5][3]       ; Merged with touch_frame_adapter:frame|frame[5][1]    ;
+; touch_frame_adapter:frame|frame[4][3]       ; Merged with touch_frame_adapter:frame|frame[4][1]    ;
+; touch_frame_adapter:frame|frame[3][3]       ; Merged with touch_frame_adapter:frame|frame[3][1]    ;
+; touch_frame_adapter:frame|frame[2][3]       ; Merged with touch_frame_adapter:frame|frame[2][1]    ;
+; touch_frame_adapter:frame|frame[1][3]       ; Merged with touch_frame_adapter:frame|frame[1][1]    ;
+; touch_frame_adapter:frame|frame[0][3]       ; Merged with touch_frame_adapter:frame|frame[0][1]    ;
+; touch_frame_adapter:frame|frame[191][0]     ; Merged with touch_frame_adapter:frame|frame[191][2]  ;
+; touch_frame_adapter:frame|frame[193][1]     ; Merged with touch_frame_adapter:frame|frame[193][3]  ;
+; touch_frame_adapter:frame|frame[194][1]     ; Merged with touch_frame_adapter:frame|frame[194][3]  ;
+; touch_frame_adapter:frame|frame[195][1]     ; Merged with touch_frame_adapter:frame|frame[195][2]  ;
+; touch_frame_adapter:frame|frame[190][2]     ; Merged with touch_frame_adapter:frame|frame[190][1]  ;
+; touch_frame_adapter:frame|frame[187][2]     ; Merged with touch_frame_adapter:frame|frame[187][0]  ;
+; touch_frame_adapter:frame|frame[185][2]     ; Merged with touch_frame_adapter:frame|frame[185][0]  ;
+; touch_frame_adapter:frame|frame[185][1]     ; Merged with touch_frame_adapter:frame|frame[185][0]  ;
+; touch_frame_adapter:frame|frame[184][2]     ; Merged with touch_frame_adapter:frame|frame[184][1]  ;
+; touch_frame_adapter:frame|frame[183][1]     ; Merged with touch_frame_adapter:frame|frame[183][0]  ;
+; touch_frame_adapter:frame|frame[180][3]     ; Merged with touch_frame_adapter:frame|frame[180][0]  ;
+; touch_frame_adapter:frame|frame[179][2]     ; Merged with touch_frame_adapter:frame|frame[179][0]  ;
+; touch_frame_adapter:frame|frame[178][2]     ; Merged with touch_frame_adapter:frame|frame[178][0]  ;
+; touch_frame_adapter:frame|frame[177][2]     ; Merged with touch_frame_adapter:frame|frame[177][0]  ;
+; touch_frame_adapter:frame|frame[175][2]     ; Merged with touch_frame_adapter:frame|frame[175][0]  ;
+; touch_frame_adapter:frame|frame[174][2]     ; Merged with touch_frame_adapter:frame|frame[174][1]  ;
+; touch_frame_adapter:frame|frame[173][2]     ; Merged with touch_frame_adapter:frame|frame[173][0]  ;
+; touch_frame_adapter:frame|frame[170][2]     ; Merged with touch_frame_adapter:frame|frame[170][0]  ;
+; touch_frame_adapter:frame|frame[169][2]     ; Merged with touch_frame_adapter:frame|frame[169][0]  ;
+; touch_frame_adapter:frame|frame[167][2]     ; Merged with touch_frame_adapter:frame|frame[167][0]  ;
+; touch_frame_adapter:frame|frame[163][2]     ; Merged with touch_frame_adapter:frame|frame[163][0]  ;
+; touch_frame_adapter:frame|frame[162][2]     ; Merged with touch_frame_adapter:frame|frame[162][0]  ;
+; touch_frame_adapter:frame|frame[161][2]     ; Merged with touch_frame_adapter:frame|frame[161][0]  ;
+; touch_frame_adapter:frame|frame[160][2]     ; Merged with touch_frame_adapter:frame|frame[160][0]  ;
+; touch_frame_adapter:frame|frame[158][2]     ; Merged with touch_frame_adapter:frame|frame[158][0]  ;
+; touch_frame_adapter:frame|frame[156][2]     ; Merged with touch_frame_adapter:frame|frame[156][0]  ;
+; touch_frame_adapter:frame|frame[154][2]     ; Merged with touch_frame_adapter:frame|frame[154][0]  ;
+; touch_frame_adapter:frame|frame[153][2]     ; Merged with touch_frame_adapter:frame|frame[153][0]  ;
+; touch_frame_adapter:frame|frame[152][1]     ; Merged with touch_frame_adapter:frame|frame[152][0]  ;
+; touch_frame_adapter:frame|frame[152][2]     ; Merged with touch_frame_adapter:frame|frame[152][0]  ;
+; touch_frame_adapter:frame|frame[151][1]     ; Merged with touch_frame_adapter:frame|frame[151][0]  ;
+; touch_frame_adapter:frame|frame[150][2]     ; Merged with touch_frame_adapter:frame|frame[150][0]  ;
+; touch_frame_adapter:frame|frame[148][2]     ; Merged with touch_frame_adapter:frame|frame[148][0]  ;
+; touch_frame_adapter:frame|frame[147][2]     ; Merged with touch_frame_adapter:frame|frame[147][1]  ;
+; touch_frame_adapter:frame|frame[145][1]     ; Merged with touch_frame_adapter:frame|frame[145][0]  ;
+; touch_frame_adapter:frame|frame[144][2]     ; Merged with touch_frame_adapter:frame|frame[144][0]  ;
+; touch_frame_adapter:frame|frame[142][2]     ; Merged with touch_frame_adapter:frame|frame[142][0]  ;
+; touch_frame_adapter:frame|frame[140][2]     ; Merged with touch_frame_adapter:frame|frame[140][0]  ;
+; touch_frame_adapter:frame|frame[139][2]     ; Merged with touch_frame_adapter:frame|frame[139][0]  ;
+; touch_frame_adapter:frame|frame[138][2]     ; Merged with touch_frame_adapter:frame|frame[138][0]  ;
+; touch_frame_adapter:frame|frame[130][2]     ; Merged with touch_frame_adapter:frame|frame[130][0]  ;
+; touch_frame_adapter:frame|frame[129][2]     ; Merged with touch_frame_adapter:frame|frame[129][0]  ;
+; touch_frame_adapter:frame|frame[128][2]     ; Merged with touch_frame_adapter:frame|frame[128][0]  ;
+; touch_frame_adapter:frame|frame[127][2]     ; Merged with touch_frame_adapter:frame|frame[127][0]  ;
+; touch_frame_adapter:frame|frame[126][2]     ; Merged with touch_frame_adapter:frame|frame[126][0]  ;
+; touch_frame_adapter:frame|frame[124][2]     ; Merged with touch_frame_adapter:frame|frame[124][0]  ;
+; touch_frame_adapter:frame|frame[122][2]     ; Merged with touch_frame_adapter:frame|frame[122][0]  ;
+; touch_frame_adapter:frame|frame[120][2]     ; Merged with touch_frame_adapter:frame|frame[120][0]  ;
+; touch_frame_adapter:frame|frame[118][2]     ; Merged with touch_frame_adapter:frame|frame[118][0]  ;
+; touch_frame_adapter:frame|frame[116][2]     ; Merged with touch_frame_adapter:frame|frame[116][0]  ;
+; touch_frame_adapter:frame|frame[114][2]     ; Merged with touch_frame_adapter:frame|frame[114][0]  ;
+; touch_frame_adapter:frame|frame[113][2]     ; Merged with touch_frame_adapter:frame|frame[113][0]  ;
+; touch_frame_adapter:frame|frame[112][2]     ; Merged with touch_frame_adapter:frame|frame[112][0]  ;
+; touch_frame_adapter:frame|frame[111][2]     ; Merged with touch_frame_adapter:frame|frame[111][0]  ;
+; touch_frame_adapter:frame|frame[110][2]     ; Merged with touch_frame_adapter:frame|frame[110][0]  ;
+; touch_frame_adapter:frame|frame[109][2]     ; Merged with touch_frame_adapter:frame|frame[109][1]  ;
+; touch_frame_adapter:frame|frame[108][1]     ; Merged with touch_frame_adapter:frame|frame[108][0]  ;
+; touch_frame_adapter:frame|frame[108][2]     ; Merged with touch_frame_adapter:frame|frame[108][0]  ;
+; touch_frame_adapter:frame|frame[107][1]     ; Merged with touch_frame_adapter:frame|frame[107][0]  ;
+; touch_frame_adapter:frame|frame[107][2]     ; Merged with touch_frame_adapter:frame|frame[107][0]  ;
+; touch_frame_adapter:frame|frame[106][2]     ; Merged with touch_frame_adapter:frame|frame[106][0]  ;
+; touch_frame_adapter:frame|frame[104][2]     ; Merged with touch_frame_adapter:frame|frame[104][0]  ;
+; touch_frame_adapter:frame|frame[102][2]     ; Merged with touch_frame_adapter:frame|frame[102][0]  ;
+; touch_frame_adapter:frame|frame[100][2]     ; Merged with touch_frame_adapter:frame|frame[100][0]  ;
+; touch_frame_adapter:frame|frame[98][2]      ; Merged with touch_frame_adapter:frame|frame[98][0]   ;
+; touch_frame_adapter:frame|frame[96][2]      ; Merged with touch_frame_adapter:frame|frame[96][0]   ;
+; touch_frame_adapter:frame|frame[94][2]      ; Merged with touch_frame_adapter:frame|frame[94][0]   ;
+; touch_frame_adapter:frame|frame[92][3]      ; Merged with touch_frame_adapter:frame|frame[92][0]   ;
+; touch_frame_adapter:frame|frame[91][2]      ; Merged with touch_frame_adapter:frame|frame[91][0]   ;
+; touch_frame_adapter:frame|frame[90][2]      ; Merged with touch_frame_adapter:frame|frame[90][0]   ;
+; touch_frame_adapter:frame|frame[89][2]      ; Merged with touch_frame_adapter:frame|frame[89][0]   ;
+; touch_frame_adapter:frame|frame[88][2]      ; Merged with touch_frame_adapter:frame|frame[88][0]   ;
+; touch_frame_adapter:frame|frame[86][2]      ; Merged with touch_frame_adapter:frame|frame[86][0]   ;
+; touch_frame_adapter:frame|frame[85][1]      ; Merged with touch_frame_adapter:frame|frame[85][0]   ;
+; touch_frame_adapter:frame|frame[84][2]      ; Merged with touch_frame_adapter:frame|frame[84][0]   ;
+; touch_frame_adapter:frame|frame[83][2]      ; Merged with touch_frame_adapter:frame|frame[83][0]   ;
+; touch_frame_adapter:frame|frame[82][2]      ; Merged with touch_frame_adapter:frame|frame[82][0]   ;
+; touch_frame_adapter:frame|frame[81][2]      ; Merged with touch_frame_adapter:frame|frame[81][0]   ;
+; touch_frame_adapter:frame|frame[80][2]      ; Merged with touch_frame_adapter:frame|frame[80][0]   ;
+; touch_frame_adapter:frame|frame[66][2]      ; Merged with touch_frame_adapter:frame|frame[66][0]   ;
+; touch_frame_adapter:frame|frame[65][2]      ; Merged with touch_frame_adapter:frame|frame[65][0]   ;
+; touch_frame_adapter:frame|frame[64][2]      ; Merged with touch_frame_adapter:frame|frame[64][0]   ;
+; touch_frame_adapter:frame|frame[63][2]      ; Merged with touch_frame_adapter:frame|frame[63][0]   ;
+; touch_frame_adapter:frame|frame[62][2]      ; Merged with touch_frame_adapter:frame|frame[62][0]   ;
+; touch_frame_adapter:frame|frame[60][2]      ; Merged with touch_frame_adapter:frame|frame[60][0]   ;
+; touch_frame_adapter:frame|frame[58][2]      ; Merged with touch_frame_adapter:frame|frame[58][0]   ;
+; touch_frame_adapter:frame|frame[57][2]      ; Merged with touch_frame_adapter:frame|frame[57][0]   ;
+; touch_frame_adapter:frame|frame[56][2]      ; Merged with touch_frame_adapter:frame|frame[56][0]   ;
+; touch_frame_adapter:frame|frame[55][2]      ; Merged with touch_frame_adapter:frame|frame[55][0]   ;
+; touch_frame_adapter:frame|frame[54][2]      ; Merged with touch_frame_adapter:frame|frame[54][0]   ;
+; touch_frame_adapter:frame|frame[52][2]      ; Merged with touch_frame_adapter:frame|frame[52][0]   ;
+; touch_frame_adapter:frame|frame[50][2]      ; Merged with touch_frame_adapter:frame|frame[50][0]   ;
+; touch_frame_adapter:frame|frame[48][2]      ; Merged with touch_frame_adapter:frame|frame[48][0]   ;
+; touch_frame_adapter:frame|frame[46][2]      ; Merged with touch_frame_adapter:frame|frame[46][0]   ;
+; touch_frame_adapter:frame|frame[44][2]      ; Merged with touch_frame_adapter:frame|frame[44][0]   ;
+; touch_frame_adapter:frame|frame[42][2]      ; Merged with touch_frame_adapter:frame|frame[42][0]   ;
+; touch_frame_adapter:frame|frame[40][2]      ; Merged with touch_frame_adapter:frame|frame[40][0]   ;
+; touch_frame_adapter:frame|frame[38][2]      ; Merged with touch_frame_adapter:frame|frame[38][0]   ;
+; touch_frame_adapter:frame|frame[36][2]      ; Merged with touch_frame_adapter:frame|frame[36][0]   ;
+; touch_frame_adapter:frame|frame[34][2]      ; Merged with touch_frame_adapter:frame|frame[34][0]   ;
+; touch_frame_adapter:frame|frame[32][2]      ; Merged with touch_frame_adapter:frame|frame[32][0]   ;
+; touch_frame_adapter:frame|frame[30][2]      ; Merged with touch_frame_adapter:frame|frame[30][0]   ;
+; touch_frame_adapter:frame|frame[29][2]      ; Merged with touch_frame_adapter:frame|frame[29][0]   ;
+; touch_frame_adapter:frame|frame[28][2]      ; Merged with touch_frame_adapter:frame|frame[28][0]   ;
+; touch_frame_adapter:frame|frame[27][2]      ; Merged with touch_frame_adapter:frame|frame[27][0]   ;
+; touch_frame_adapter:frame|frame[26][2]      ; Merged with touch_frame_adapter:frame|frame[26][0]   ;
+; touch_frame_adapter:frame|frame[25][2]      ; Merged with touch_frame_adapter:frame|frame[25][0]   ;
+; touch_frame_adapter:frame|frame[24][2]      ; Merged with touch_frame_adapter:frame|frame[24][0]   ;
+; touch_frame_adapter:frame|frame[23][2]      ; Merged with touch_frame_adapter:frame|frame[23][0]   ;
+; touch_frame_adapter:frame|frame[22][2]      ; Merged with touch_frame_adapter:frame|frame[22][0]   ;
+; touch_frame_adapter:frame|frame[21][2]      ; Merged with touch_frame_adapter:frame|frame[21][1]   ;
+; touch_frame_adapter:frame|frame[20][1]      ; Merged with touch_frame_adapter:frame|frame[20][0]   ;
+; touch_frame_adapter:frame|frame[20][2]      ; Merged with touch_frame_adapter:frame|frame[20][0]   ;
+; touch_frame_adapter:frame|frame[19][1]      ; Merged with touch_frame_adapter:frame|frame[19][0]   ;
+; touch_frame_adapter:frame|frame[19][2]      ; Merged with touch_frame_adapter:frame|frame[19][0]   ;
+; touch_frame_adapter:frame|frame[18][1]      ; Merged with touch_frame_adapter:frame|frame[18][0]   ;
+; touch_frame_adapter:frame|frame[18][2]      ; Merged with touch_frame_adapter:frame|frame[18][0]   ;
+; touch_frame_adapter:frame|frame[17][1]      ; Merged with touch_frame_adapter:frame|frame[17][0]   ;
+; touch_frame_adapter:frame|frame[17][2]      ; Merged with touch_frame_adapter:frame|frame[17][0]   ;
+; touch_frame_adapter:frame|frame[16][2]      ; Merged with touch_frame_adapter:frame|frame[16][0]   ;
+; touch_frame_adapter:frame|frame[16][1]      ; Merged with touch_frame_adapter:frame|frame[16][0]   ;
+; touch_frame_adapter:frame|frame[14][2]      ; Merged with touch_frame_adapter:frame|frame[14][0]   ;
+; touch_frame_adapter:frame|frame[12][2]      ; Merged with touch_frame_adapter:frame|frame[12][0]   ;
+; touch_frame_adapter:frame|frame[10][2]      ; Merged with touch_frame_adapter:frame|frame[10][0]   ;
+; touch_frame_adapter:frame|frame[8][2]       ; Merged with touch_frame_adapter:frame|frame[8][0]    ;
+; touch_frame_adapter:frame|frame[6][2]       ; Merged with touch_frame_adapter:frame|frame[6][0]    ;
+; touch_frame_adapter:frame|frame[4][2]       ; Merged with touch_frame_adapter:frame|frame[4][0]    ;
+; touch_frame_adapter:frame|frame[2][2]       ; Merged with touch_frame_adapter:frame|frame[2][0]    ;
+; touch_frame_adapter:frame|frame[0][2]       ; Merged with touch_frame_adapter:frame|frame[0][0]    ;
+; touch_frame_adapter:frame|frame[189][2]     ; Merged with touch_frame_adapter:frame|frame[189][0]  ;
+; touch_frame_adapter:frame|frame[188][2]     ; Merged with touch_frame_adapter:frame|frame[188][0]  ;
+; touch_frame_adapter:frame|frame[176][2]     ; Merged with touch_frame_adapter:frame|frame[176][0]  ;
+; touch_frame_adapter:frame|frame[172][2]     ; Merged with touch_frame_adapter:frame|frame[172][0]  ;
+; touch_frame_adapter:frame|frame[171][2]     ; Merged with touch_frame_adapter:frame|frame[171][1]  ;
+; touch_frame_adapter:frame|frame[170][1]     ; Merged with touch_frame_adapter:frame|frame[170][0]  ;
+; touch_frame_adapter:frame|frame[169][1]     ; Merged with touch_frame_adapter:frame|frame[169][0]  ;
+; touch_frame_adapter:frame|frame[168][2]     ; Merged with touch_frame_adapter:frame|frame[168][1]  ;
+; touch_frame_adapter:frame|frame[157][2]     ; Merged with touch_frame_adapter:frame|frame[157][0]  ;
+; touch_frame_adapter:frame|frame[155][2]     ; Merged with touch_frame_adapter:frame|frame[155][0]  ;
+; touch_frame_adapter:frame|frame[146][2]     ; Merged with touch_frame_adapter:frame|frame[146][0]  ;
+; touch_frame_adapter:frame|frame[146][3]     ; Merged with touch_frame_adapter:frame|frame[146][0]  ;
+; touch_frame_adapter:frame|frame[143][2]     ; Merged with touch_frame_adapter:frame|frame[143][0]  ;
+; touch_frame_adapter:frame|frame[142][1]     ; Merged with touch_frame_adapter:frame|frame[142][0]  ;
+; touch_frame_adapter:frame|frame[141][1]     ; Merged with touch_frame_adapter:frame|frame[141][0]  ;
+; touch_frame_adapter:frame|frame[141][2]     ; Merged with touch_frame_adapter:frame|frame[141][0]  ;
+; touch_frame_adapter:frame|frame[140][1]     ; Merged with touch_frame_adapter:frame|frame[140][0]  ;
+; touch_frame_adapter:frame|frame[139][1]     ; Merged with touch_frame_adapter:frame|frame[139][0]  ;
+; touch_frame_adapter:frame|frame[125][2]     ; Merged with touch_frame_adapter:frame|frame[125][0]  ;
+; touch_frame_adapter:frame|frame[121][2]     ; Merged with touch_frame_adapter:frame|frame[121][0]  ;
+; touch_frame_adapter:frame|frame[119][2]     ; Merged with touch_frame_adapter:frame|frame[119][0]  ;
+; touch_frame_adapter:frame|frame[117][2]     ; Merged with touch_frame_adapter:frame|frame[117][0]  ;
+; touch_frame_adapter:frame|frame[115][2]     ; Merged with touch_frame_adapter:frame|frame[115][0]  ;
+; touch_frame_adapter:frame|frame[105][2]     ; Merged with touch_frame_adapter:frame|frame[105][0]  ;
+; touch_frame_adapter:frame|frame[101][2]     ; Merged with touch_frame_adapter:frame|frame[101][0]  ;
+; touch_frame_adapter:frame|frame[95][1]      ; Merged with touch_frame_adapter:frame|frame[95][0]   ;
+; touch_frame_adapter:frame|frame[93][2]      ; Merged with touch_frame_adapter:frame|frame[93][0]   ;
+; touch_frame_adapter:frame|frame[89][1]      ; Merged with touch_frame_adapter:frame|frame[89][0]   ;
+; touch_frame_adapter:frame|frame[88][1]      ; Merged with touch_frame_adapter:frame|frame[88][0]   ;
+; touch_frame_adapter:frame|frame[87][1]      ; Merged with touch_frame_adapter:frame|frame[87][0]   ;
+; touch_frame_adapter:frame|frame[87][2]      ; Merged with touch_frame_adapter:frame|frame[87][0]   ;
+; touch_frame_adapter:frame|frame[86][1]      ; Merged with touch_frame_adapter:frame|frame[86][0]   ;
+; touch_frame_adapter:frame|frame[85][2]      ; Merged with touch_frame_adapter:frame|frame[85][0]   ;
+; touch_frame_adapter:frame|frame[83][1]      ; Merged with touch_frame_adapter:frame|frame[83][0]   ;
+; touch_frame_adapter:frame|frame[82][1]      ; Merged with touch_frame_adapter:frame|frame[82][0]   ;
+; touch_frame_adapter:frame|frame[81][1]      ; Merged with touch_frame_adapter:frame|frame[81][0]   ;
+; touch_frame_adapter:frame|frame[80][1]      ; Merged with touch_frame_adapter:frame|frame[80][0]   ;
+; touch_frame_adapter:frame|frame[79][2]      ; Merged with touch_frame_adapter:frame|frame[79][0]   ;
+; touch_frame_adapter:frame|frame[67][2]      ; Merged with touch_frame_adapter:frame|frame[67][0]   ;
+; touch_frame_adapter:frame|frame[61][2]      ; Merged with touch_frame_adapter:frame|frame[61][0]   ;
+; touch_frame_adapter:frame|frame[59][2]      ; Merged with touch_frame_adapter:frame|frame[59][0]   ;
+; touch_frame_adapter:frame|frame[51][2]      ; Merged with touch_frame_adapter:frame|frame[51][0]   ;
+; touch_frame_adapter:frame|frame[47][2]      ; Merged with touch_frame_adapter:frame|frame[47][0]   ;
+; touch_frame_adapter:frame|frame[45][2]      ; Merged with touch_frame_adapter:frame|frame[45][0]   ;
+; touch_frame_adapter:frame|frame[43][2]      ; Merged with touch_frame_adapter:frame|frame[43][0]   ;
+; touch_frame_adapter:frame|frame[41][2]      ; Merged with touch_frame_adapter:frame|frame[41][0]   ;
+; touch_frame_adapter:frame|frame[39][2]      ; Merged with touch_frame_adapter:frame|frame[39][0]   ;
+; touch_frame_adapter:frame|frame[35][2]      ; Merged with touch_frame_adapter:frame|frame[35][0]   ;
+; touch_frame_adapter:frame|frame[31][2]      ; Merged with touch_frame_adapter:frame|frame[31][0]   ;
+; touch_frame_adapter:frame|frame[15][2]      ; Merged with touch_frame_adapter:frame|frame[15][0]   ;
+; touch_frame_adapter:frame|frame[11][2]      ; Merged with touch_frame_adapter:frame|frame[11][0]   ;
+; touch_frame_adapter:frame|frame[7][2]       ; Merged with touch_frame_adapter:frame|frame[7][0]    ;
+; touch_frame_adapter:frame|frame[3][2]       ; Merged with touch_frame_adapter:frame|frame[3][0]    ;
+; touch_frame_adapter:frame|frame[191][2]     ; Merged with touch_frame_adapter:frame|frame[191][3]  ;
+; touch_frame_adapter:frame|frame[186][2]     ; Merged with touch_frame_adapter:frame|frame[186][0]  ;
+; touch_frame_adapter:frame|frame[172][1]     ; Merged with touch_frame_adapter:frame|frame[172][0]  ;
+; touch_frame_adapter:frame|frame[165][1]     ; Merged with touch_frame_adapter:frame|frame[165][0]  ;
+; touch_frame_adapter:frame|frame[164][1]     ; Merged with touch_frame_adapter:frame|frame[164][0]  ;
+; touch_frame_adapter:frame|frame[149][2]     ; Merged with touch_frame_adapter:frame|frame[149][0]  ;
+; touch_frame_adapter:frame|frame[147][1]     ; Merged with touch_frame_adapter:frame|frame[147][0]  ;
+; touch_frame_adapter:frame|frame[145][2]     ; Merged with touch_frame_adapter:frame|frame[145][0]  ;
+; touch_frame_adapter:frame|frame[134][3]     ; Merged with touch_frame_adapter:frame|frame[134][0]  ;
+; touch_frame_adapter:frame|frame[133][3]     ; Merged with touch_frame_adapter:frame|frame[133][0]  ;
+; touch_frame_adapter:frame|frame[132][3]     ; Merged with touch_frame_adapter:frame|frame[132][0]  ;
+; touch_frame_adapter:frame|frame[131][1]     ; Merged with touch_frame_adapter:frame|frame[131][0]  ;
+; touch_frame_adapter:frame|frame[131][2]     ; Merged with touch_frame_adapter:frame|frame[131][0]  ;
+; touch_frame_adapter:frame|frame[130][1]     ; Merged with touch_frame_adapter:frame|frame[130][0]  ;
+; touch_frame_adapter:frame|frame[123][2]     ; Merged with touch_frame_adapter:frame|frame[123][0]  ;
+; touch_frame_adapter:frame|frame[103][2]     ; Merged with touch_frame_adapter:frame|frame[103][0]  ;
+; touch_frame_adapter:frame|frame[99][2]      ; Merged with touch_frame_adapter:frame|frame[99][1]   ;
+; touch_frame_adapter:frame|frame[97][1]      ; Merged with touch_frame_adapter:frame|frame[97][0]   ;
+; touch_frame_adapter:frame|frame[93][1]      ; Merged with touch_frame_adapter:frame|frame[93][0]   ;
+; touch_frame_adapter:frame|frame[70][3]      ; Merged with touch_frame_adapter:frame|frame[70][0]   ;
+; touch_frame_adapter:frame|frame[68][3]      ; Merged with touch_frame_adapter:frame|frame[68][0]   ;
+; touch_frame_adapter:frame|frame[67][1]      ; Merged with touch_frame_adapter:frame|frame[67][0]   ;
+; touch_frame_adapter:frame|frame[66][1]      ; Merged with touch_frame_adapter:frame|frame[66][0]   ;
+; touch_frame_adapter:frame|frame[65][1]      ; Merged with touch_frame_adapter:frame|frame[65][0]   ;
+; touch_frame_adapter:frame|frame[63][1]      ; Merged with touch_frame_adapter:frame|frame[63][0]   ;
+; touch_frame_adapter:frame|frame[62][1]      ; Merged with touch_frame_adapter:frame|frame[62][0]   ;
+; touch_frame_adapter:frame|frame[61][1]      ; Merged with touch_frame_adapter:frame|frame[61][0]   ;
+; touch_frame_adapter:frame|frame[60][1]      ; Merged with touch_frame_adapter:frame|frame[60][0]   ;
+; touch_frame_adapter:frame|frame[53][2]      ; Merged with touch_frame_adapter:frame|frame[53][0]   ;
+; touch_frame_adapter:frame|frame[37][2]      ; Merged with touch_frame_adapter:frame|frame[37][0]   ;
+; touch_frame_adapter:frame|frame[13][2]      ; Merged with touch_frame_adapter:frame|frame[13][0]   ;
+; touch_frame_adapter:frame|frame[9][2]       ; Merged with touch_frame_adapter:frame|frame[9][0]    ;
+; touch_frame_adapter:frame|frame[1][2]       ; Merged with touch_frame_adapter:frame|frame[1][0]    ;
+; touch_frame_adapter:frame|frame[192][0]     ; Merged with touch_frame_adapter:frame|frame[192][3]  ;
+; touch_frame_adapter:frame|frame[192][2]     ; Merged with touch_frame_adapter:frame|frame[192][3]  ;
+; touch_frame_adapter:frame|frame[193][2]     ; Merged with touch_frame_adapter:frame|frame[193][3]  ;
+; touch_frame_adapter:frame|frame[194][2]     ; Merged with touch_frame_adapter:frame|frame[194][3]  ;
+; touch_frame_adapter:frame|frame[195][2]     ; Merged with touch_frame_adapter:frame|frame[195][3]  ;
+; touch_frame_adapter:frame|frame[180][2]     ; Merged with touch_frame_adapter:frame|frame[180][0]  ;
+; touch_frame_adapter:frame|frame[173][1]     ; Merged with touch_frame_adapter:frame|frame[173][0]  ;
+; touch_frame_adapter:frame|frame[163][1]     ; Merged with touch_frame_adapter:frame|frame[163][0]  ;
+; touch_frame_adapter:frame|frame[162][1]     ; Merged with touch_frame_adapter:frame|frame[162][0]  ;
+; touch_frame_adapter:frame|frame[161][1]     ; Merged with touch_frame_adapter:frame|frame[161][0]  ;
+; touch_frame_adapter:frame|frame[159][2]     ; Merged with touch_frame_adapter:frame|frame[159][0]  ;
+; touch_frame_adapter:frame|frame[148][1]     ; Merged with touch_frame_adapter:frame|frame[148][0]  ;
+; touch_frame_adapter:frame|frame[144][1]     ; Merged with touch_frame_adapter:frame|frame[144][0]  ;
+; touch_frame_adapter:frame|frame[128][1]     ; Merged with touch_frame_adapter:frame|frame[128][0]  ;
+; touch_frame_adapter:frame|frame[127][1]     ; Merged with touch_frame_adapter:frame|frame[127][0]  ;
+; touch_frame_adapter:frame|frame[126][1]     ; Merged with touch_frame_adapter:frame|frame[126][0]  ;
+; touch_frame_adapter:frame|frame[125][1]     ; Merged with touch_frame_adapter:frame|frame[125][0]  ;
+; touch_frame_adapter:frame|frame[124][1]     ; Merged with touch_frame_adapter:frame|frame[124][0]  ;
+; touch_frame_adapter:frame|frame[123][1]     ; Merged with touch_frame_adapter:frame|frame[123][0]  ;
+; touch_frame_adapter:frame|frame[98][1]      ; Merged with touch_frame_adapter:frame|frame[98][0]   ;
+; touch_frame_adapter:frame|frame[96][3]      ; Merged with touch_frame_adapter:frame|frame[96][0]   ;
+; touch_frame_adapter:frame|frame[94][1]      ; Merged with touch_frame_adapter:frame|frame[94][0]   ;
+; touch_frame_adapter:frame|frame[91][1]      ; Merged with touch_frame_adapter:frame|frame[91][0]   ;
+; touch_frame_adapter:frame|frame[56][1]      ; Merged with touch_frame_adapter:frame|frame[56][0]   ;
+; touch_frame_adapter:frame|frame[55][1]      ; Merged with touch_frame_adapter:frame|frame[55][0]   ;
+; touch_frame_adapter:frame|frame[54][1]      ; Merged with touch_frame_adapter:frame|frame[54][0]   ;
+; touch_frame_adapter:frame|frame[53][1]      ; Merged with touch_frame_adapter:frame|frame[53][0]   ;
+; touch_frame_adapter:frame|frame[52][1]      ; Merged with touch_frame_adapter:frame|frame[52][0]   ;
+; touch_frame_adapter:frame|frame[51][1]      ; Merged with touch_frame_adapter:frame|frame[51][0]   ;
+; touch_frame_adapter:frame|frame[50][1]      ; Merged with touch_frame_adapter:frame|frame[50][0]   ;
+; touch_frame_adapter:frame|frame[49][1]      ; Merged with touch_frame_adapter:frame|frame[49][0]   ;
+; touch_frame_adapter:frame|frame[49][2]      ; Merged with touch_frame_adapter:frame|frame[49][0]   ;
+; touch_frame_adapter:frame|frame[48][1]      ; Merged with touch_frame_adapter:frame|frame[48][0]   ;
+; touch_frame_adapter:frame|frame[47][1]      ; Merged with touch_frame_adapter:frame|frame[47][0]   ;
+; touch_frame_adapter:frame|frame[33][2]      ; Merged with touch_frame_adapter:frame|frame[33][0]   ;
+; touch_frame_adapter:frame|frame[183][3]     ; Merged with touch_frame_adapter:frame|frame[183][0]  ;
+; touch_frame_adapter:frame|frame[177][1]     ; Merged with touch_frame_adapter:frame|frame[177][0]  ;
+; touch_frame_adapter:frame|frame[176][1]     ; Merged with touch_frame_adapter:frame|frame[176][0]  ;
+; touch_frame_adapter:frame|frame[171][1]     ; Merged with touch_frame_adapter:frame|frame[171][0]  ;
+; touch_frame_adapter:frame|frame[167][1]     ; Merged with touch_frame_adapter:frame|frame[167][0]  ;
+; touch_frame_adapter:frame|frame[158][1]     ; Merged with touch_frame_adapter:frame|frame[158][0]  ;
+; touch_frame_adapter:frame|frame[157][1]     ; Merged with touch_frame_adapter:frame|frame[157][0]  ;
+; touch_frame_adapter:frame|frame[156][1]     ; Merged with touch_frame_adapter:frame|frame[156][0]  ;
+; touch_frame_adapter:frame|frame[138][1]     ; Merged with touch_frame_adapter:frame|frame[138][0]  ;
+; touch_frame_adapter:frame|frame[136][1]     ; Merged with touch_frame_adapter:frame|frame[136][0]  ;
+; touch_frame_adapter:frame|frame[118][1]     ; Merged with touch_frame_adapter:frame|frame[118][0]  ;
+; touch_frame_adapter:frame|frame[117][1]     ; Merged with touch_frame_adapter:frame|frame[117][0]  ;
+; touch_frame_adapter:frame|frame[116][1]     ; Merged with touch_frame_adapter:frame|frame[116][0]  ;
+; touch_frame_adapter:frame|frame[115][1]     ; Merged with touch_frame_adapter:frame|frame[115][0]  ;
+; touch_frame_adapter:frame|frame[114][1]     ; Merged with touch_frame_adapter:frame|frame[114][0]  ;
+; touch_frame_adapter:frame|frame[113][1]     ; Merged with touch_frame_adapter:frame|frame[113][0]  ;
+; touch_frame_adapter:frame|frame[92][2]      ; Merged with touch_frame_adapter:frame|frame[92][0]   ;
+; touch_frame_adapter:frame|frame[90][1]      ; Merged with touch_frame_adapter:frame|frame[90][0]   ;
+; touch_frame_adapter:frame|frame[79][1]      ; Merged with touch_frame_adapter:frame|frame[79][0]   ;
+; touch_frame_adapter:frame|frame[77][1]      ; Merged with touch_frame_adapter:frame|frame[77][0]   ;
+; touch_frame_adapter:frame|frame[75][1]      ; Merged with touch_frame_adapter:frame|frame[75][0]   ;
+; touch_frame_adapter:frame|frame[73][1]      ; Merged with touch_frame_adapter:frame|frame[73][0]   ;
+; touch_frame_adapter:frame|frame[39][1]      ; Merged with touch_frame_adapter:frame|frame[39][0]   ;
+; touch_frame_adapter:frame|frame[38][1]      ; Merged with touch_frame_adapter:frame|frame[38][0]   ;
+; touch_frame_adapter:frame|frame[37][1]      ; Merged with touch_frame_adapter:frame|frame[37][0]   ;
+; touch_frame_adapter:frame|frame[36][1]      ; Merged with touch_frame_adapter:frame|frame[36][0]   ;
+; touch_frame_adapter:frame|frame[35][1]      ; Merged with touch_frame_adapter:frame|frame[35][0]   ;
+; touch_frame_adapter:frame|frame[34][1]      ; Merged with touch_frame_adapter:frame|frame[34][0]   ;
+; touch_frame_adapter:frame|frame[33][1]      ; Merged with touch_frame_adapter:frame|frame[33][0]   ;
+; touch_frame_adapter:frame|frame[32][1]      ; Merged with touch_frame_adapter:frame|frame[32][0]   ;
+; touch_frame_adapter:frame|frame[31][1]      ; Merged with touch_frame_adapter:frame|frame[31][0]   ;
+; touch_frame_adapter:frame|frame[30][1]      ; Merged with touch_frame_adapter:frame|frame[30][0]   ;
+; touch_frame_adapter:frame|frame[29][1]      ; Merged with touch_frame_adapter:frame|frame[29][0]   ;
+; touch_frame_adapter:frame|frame[5][2]       ; Merged with touch_frame_adapter:frame|frame[5][0]    ;
+; touch_frame_adapter:frame|frame[190][1]     ; Merged with touch_frame_adapter:frame|frame[190][0]  ;
+; touch_frame_adapter:frame|frame[188][1]     ; Merged with touch_frame_adapter:frame|frame[188][0]  ;
+; touch_frame_adapter:frame|frame[184][1]     ; Merged with touch_frame_adapter:frame|frame[184][0]  ;
+; touch_frame_adapter:frame|frame[181][1]     ; Merged with touch_frame_adapter:frame|frame[181][0]  ;
+; touch_frame_adapter:frame|frame[179][1]     ; Merged with touch_frame_adapter:frame|frame[179][0]  ;
+; touch_frame_adapter:frame|frame[178][1]     ; Merged with touch_frame_adapter:frame|frame[178][0]  ;
+; touch_frame_adapter:frame|frame[175][1]     ; Merged with touch_frame_adapter:frame|frame[175][0]  ;
+; touch_frame_adapter:frame|frame[154][1]     ; Merged with touch_frame_adapter:frame|frame[154][0]  ;
+; touch_frame_adapter:frame|frame[153][1]     ; Merged with touch_frame_adapter:frame|frame[153][0]  ;
+; touch_frame_adapter:frame|frame[151][2]     ; Merged with touch_frame_adapter:frame|frame[151][0]  ;
+; touch_frame_adapter:frame|frame[137][1]     ; Merged with touch_frame_adapter:frame|frame[137][0]  ;
+; touch_frame_adapter:frame|frame[135][1]     ; Merged with touch_frame_adapter:frame|frame[135][0]  ;
+; touch_frame_adapter:frame|frame[110][1]     ; Merged with touch_frame_adapter:frame|frame[110][0]  ;
+; touch_frame_adapter:frame|frame[109][1]     ; Merged with touch_frame_adapter:frame|frame[109][0]  ;
+; touch_frame_adapter:frame|frame[106][1]     ; Merged with touch_frame_adapter:frame|frame[106][0]  ;
+; touch_frame_adapter:frame|frame[105][1]     ; Merged with touch_frame_adapter:frame|frame[105][0]  ;
+; touch_frame_adapter:frame|frame[104][1]     ; Merged with touch_frame_adapter:frame|frame[104][0]  ;
+; touch_frame_adapter:frame|frame[99][1]      ; Merged with touch_frame_adapter:frame|frame[99][0]   ;
+; touch_frame_adapter:frame|frame[84][1]      ; Merged with touch_frame_adapter:frame|frame[84][0]   ;
+; touch_frame_adapter:frame|frame[78][1]      ; Merged with touch_frame_adapter:frame|frame[78][0]   ;
+; touch_frame_adapter:frame|frame[64][1]      ; Merged with touch_frame_adapter:frame|frame[64][0]   ;
+; touch_frame_adapter:frame|frame[58][1]      ; Merged with touch_frame_adapter:frame|frame[58][0]   ;
+; touch_frame_adapter:frame|frame[23][1]      ; Merged with touch_frame_adapter:frame|frame[23][0]   ;
+; touch_frame_adapter:frame|frame[22][1]      ; Merged with touch_frame_adapter:frame|frame[22][0]   ;
+; touch_frame_adapter:frame|frame[21][1]      ; Merged with touch_frame_adapter:frame|frame[21][0]   ;
+; touch_frame_adapter:frame|frame[15][1]      ; Merged with touch_frame_adapter:frame|frame[15][0]   ;
+; touch_frame_adapter:frame|frame[14][1]      ; Merged with touch_frame_adapter:frame|frame[14][0]   ;
+; touch_frame_adapter:frame|frame[13][1]      ; Merged with touch_frame_adapter:frame|frame[13][0]   ;
+; touch_frame_adapter:frame|frame[12][1]      ; Merged with touch_frame_adapter:frame|frame[12][0]   ;
+; touch_frame_adapter:frame|frame[11][1]      ; Merged with touch_frame_adapter:frame|frame[11][0]   ;
+; touch_frame_adapter:frame|frame[10][1]      ; Merged with touch_frame_adapter:frame|frame[10][0]   ;
+; touch_frame_adapter:frame|frame[187][1]     ; Merged with touch_frame_adapter:frame|frame[187][0]  ;
+; touch_frame_adapter:frame|frame[159][1]     ; Merged with touch_frame_adapter:frame|frame[159][0]  ;
+; touch_frame_adapter:frame|frame[143][1]     ; Merged with touch_frame_adapter:frame|frame[143][0]  ;
+; touch_frame_adapter:frame|frame[121][1]     ; Merged with touch_frame_adapter:frame|frame[121][0]  ;
+; touch_frame_adapter:frame|frame[119][1]     ; Merged with touch_frame_adapter:frame|frame[119][0]  ;
+; touch_frame_adapter:frame|frame[101][1]     ; Merged with touch_frame_adapter:frame|frame[101][0]  ;
+; touch_frame_adapter:frame|frame[100][1]     ; Merged with touch_frame_adapter:frame|frame[100][0]  ;
+; touch_frame_adapter:frame|frame[57][1]      ; Merged with touch_frame_adapter:frame|frame[57][0]   ;
+; touch_frame_adapter:frame|frame[46][1]      ; Merged with touch_frame_adapter:frame|frame[46][0]   ;
+; touch_frame_adapter:frame|frame[44][1]      ; Merged with touch_frame_adapter:frame|frame[44][0]   ;
+; touch_frame_adapter:frame|frame[42][1]      ; Merged with touch_frame_adapter:frame|frame[42][0]   ;
+; touch_frame_adapter:frame|frame[40][1]      ; Merged with touch_frame_adapter:frame|frame[40][0]   ;
+; touch_frame_adapter:frame|frame[5][1]       ; Merged with touch_frame_adapter:frame|frame[5][0]    ;
+; touch_frame_adapter:frame|frame[4][1]       ; Merged with touch_frame_adapter:frame|frame[4][0]    ;
+; touch_frame_adapter:frame|frame[3][1]       ; Merged with touch_frame_adapter:frame|frame[3][0]    ;
+; touch_frame_adapter:frame|frame[2][1]       ; Merged with touch_frame_adapter:frame|frame[2][0]    ;
+; touch_frame_adapter:frame|frame[1][1]       ; Merged with touch_frame_adapter:frame|frame[1][0]    ;
+; touch_frame_adapter:frame|frame[0][1]       ; Merged with touch_frame_adapter:frame|frame[0][0]    ;
+; touch_frame_adapter:frame|frame[174][1]     ; Merged with touch_frame_adapter:frame|frame[174][0]  ;
+; touch_frame_adapter:frame|frame[160][1]     ; Merged with touch_frame_adapter:frame|frame[160][0]  ;
+; touch_frame_adapter:frame|frame[129][1]     ; Merged with touch_frame_adapter:frame|frame[129][0]  ;
+; touch_frame_adapter:frame|frame[122][1]     ; Merged with touch_frame_adapter:frame|frame[122][0]  ;
+; touch_frame_adapter:frame|frame[112][1]     ; Merged with touch_frame_adapter:frame|frame[112][0]  ;
+; touch_frame_adapter:frame|frame[76][1]      ; Merged with touch_frame_adapter:frame|frame[76][0]   ;
+; touch_frame_adapter:frame|frame[43][1]      ; Merged with touch_frame_adapter:frame|frame[43][0]   ;
+; touch_frame_adapter:frame|frame[41][1]      ; Merged with touch_frame_adapter:frame|frame[41][0]   ;
+; touch_frame_adapter:frame|frame[27][1]      ; Merged with touch_frame_adapter:frame|frame[27][0]   ;
+; touch_frame_adapter:frame|frame[25][1]      ; Merged with touch_frame_adapter:frame|frame[25][0]   ;
+; touch_frame_adapter:frame|frame[168][1]     ; Merged with touch_frame_adapter:frame|frame[168][0]  ;
+; touch_frame_adapter:frame|frame[166][1]     ; Merged with touch_frame_adapter:frame|frame[166][0]  ;
+; touch_frame_adapter:frame|frame[155][1]     ; Merged with touch_frame_adapter:frame|frame[155][0]  ;
+; touch_frame_adapter:frame|frame[149][1]     ; Merged with touch_frame_adapter:frame|frame[149][0]  ;
+; touch_frame_adapter:frame|frame[111][1]     ; Merged with touch_frame_adapter:frame|frame[111][0]  ;
+; touch_frame_adapter:frame|frame[74][1]      ; Merged with touch_frame_adapter:frame|frame[74][0]   ;
+; touch_frame_adapter:frame|frame[59][1]      ; Merged with touch_frame_adapter:frame|frame[59][0]   ;
+; touch_frame_adapter:frame|frame[45][1]      ; Merged with touch_frame_adapter:frame|frame[45][0]   ;
+; touch_frame_adapter:frame|frame[26][1]      ; Merged with touch_frame_adapter:frame|frame[26][0]   ;
+; touch_frame_adapter:frame|frame[24][1]      ; Merged with touch_frame_adapter:frame|frame[24][0]   ;
+; touch_frame_adapter:frame|frame[182][1]     ; Merged with touch_frame_adapter:frame|frame[182][0]  ;
+; touch_frame_adapter:frame|frame[150][1]     ; Merged with touch_frame_adapter:frame|frame[150][0]  ;
+; touch_frame_adapter:frame|frame[103][1]     ; Merged with touch_frame_adapter:frame|frame[103][0]  ;
+; touch_frame_adapter:frame|frame[8][1]       ; Merged with touch_frame_adapter:frame|frame[8][0]    ;
+; touch_frame_adapter:frame|frame[6][1]       ; Merged with touch_frame_adapter:frame|frame[6][0]    ;
+; touch_frame_adapter:frame|frame[120][1]     ; Merged with touch_frame_adapter:frame|frame[120][0]  ;
+; touch_frame_adapter:frame|frame[102][1]     ; Merged with touch_frame_adapter:frame|frame[102][0]  ;
+; touch_frame_adapter:frame|frame[28][1]      ; Merged with touch_frame_adapter:frame|frame[28][0]   ;
+; touch_frame_adapter:frame|frame[9][1]       ; Merged with touch_frame_adapter:frame|frame[9][0]    ;
+; touch_frame_adapter:frame|frame[7][1]       ; Merged with touch_frame_adapter:frame|frame[7][0]    ;
+; touch_frame_adapter:frame|frame[186][1]     ; Merged with touch_frame_adapter:frame|frame[186][0]  ;
+; touch_frame_adapter:frame|input_pixel[1..3] ; Merged with touch_frame_adapter:frame|input_pixel[0] ;
+; xpt2046_reader:reader|command[7]            ; Merged with xpt2046_reader:reader|command[4]         ;
+; xpt2046_reader:reader|command[1..3,5]       ; Merged with xpt2046_reader:reader|command[0]         ;
+; xpt2046_calibrator:calibrator|point_y[8]    ; Stuck at GND due to stuck port data_in               ;
+; xpt2046_reader:reader|command[0]            ; Stuck at GND due to stuck port data_in               ;
+; xpt2046_reader:reader|state~9               ; Lost fanout                                          ;
+; xpt2046_reader:reader|state~10              ; Lost fanout                                          ;
+; Total Number of Removed Registers = 600     ;                                                      ;
++---------------------------------------------+------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 307   ;
+; Number of registers using Synchronous Clear  ; 220   ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 72    ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 270   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------+
+; Inverted Register Statistics                     ;
++----------------------------------------+---------+
+; Inverted Register                      ; Fan out ;
++----------------------------------------+---------+
+; xpt2046_reader:reader|touch_cs_n       ; 2       ;
+; Total number of inverted registers = 1 ;         ;
++----------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                        ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |touch_capture_top|xpt2046_calibrator:calibrator|point_x[5]       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |touch_capture_top|touch_frame_adapter:frame|input_pixel_index[6] ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |touch_capture_top|touch_frame_adapter:frame|stream_index[3]      ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; Yes        ; |touch_capture_top|xpt2046_reader:reader|command[0]               ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |touch_capture_top|xpt2046_reader:reader|bit_index[0]             ;
+; 9:1                ; 15 bits   ; 90 LEs        ; 15 LEs               ; 75 LEs                 ; Yes        ; |touch_capture_top|xpt2046_reader:reader|rx_shift[9]              ;
+; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |touch_capture_top|xpt2046_reader:reader|Selector52               ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |touch_capture_top|xpt2046_reader:reader|Selector53               ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |touch_capture_top|touch_frame_adapter:frame|mapped_x[2]          ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |touch_capture_top|xpt2046_calibrator:calibrator|raw_to_cell      ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |touch_capture_top|xpt2046_calibrator:calibrator|raw_to_cell      ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |touch_capture_top|touch_frame_adapter:frame|mapped_y[2]          ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+-------------------------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |touch_capture_top ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; CLOCK_DIV      ; 25    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: xpt2046_reader:reader ;
++----------------+-------+-------------------------------------------+
+; Parameter Name ; Value ; Type                                      ;
++----------------+-------+-------------------------------------------+
+; CLOCK_DIV      ; 25    ; Signed Integer                            ;
++----------------+-------+-------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "xpt2046_reader:reader"                                                              ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+; busy ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:03     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Oct 03 19:55:53 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off touch_capture_top -c touch_capture_top
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (12021): Found 1 design units, including 1 entities, in source file touch_capture_top.sv
+    Info (12023): Found entity 1: touch_capture_top
+Info (12021): Found 1 design units, including 1 entities, in source file xpt2046_reader.sv
+    Info (12023): Found entity 1: xpt2046_reader
+Info (12021): Found 1 design units, including 1 entities, in source file xpt2046_calibrator.sv
+    Info (12023): Found entity 1: xpt2046_calibrator
+Info (12021): Found 1 design units, including 1 entities, in source file touch_frame_adapter.sv
+    Info (12023): Found entity 1: touch_frame_adapter
+Info (12127): Elaborating entity "touch_capture_top" for the top level hierarchy
+Info (12128): Elaborating entity "xpt2046_reader" for hierarchy "xpt2046_reader:reader"
+Info (12128): Elaborating entity "xpt2046_calibrator" for hierarchy "xpt2046_calibrator:calibrator"
+Info (12128): Elaborating entity "touch_frame_adapter" for hierarchy "touch_frame_adapter:frame"
+Info (13000): Registers with preset signals will power-up high
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Info (17049): 2 registers lost all their fanouts during netlist optimizations.
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 874 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 6 input pins
+    Info (21059): Implemented 44 output pins
+    Info (21061): Implemented 824 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4594 megabytes
+    Info: Processing ended: Sat Oct 03 19:55:59 2026
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:05
+
+
