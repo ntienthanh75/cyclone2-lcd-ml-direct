@@ -253,5 +253,6 @@ multipliers, but 50 MHz timing is **NO-GO** because setup slack is
 missing, so no hardware download or board result has been claimed.
 
 Before the next milestone, check this file and record the timing-repair
-choice. The next task is to reduce or pipeline the ML critical path, rerun the
-same integration test, and repeat synthesis/timing at the selected clock.
+choice. The next task is first to sweep the unchanged design at 25 MHz,
+10 MHz, and 5 MHz, then compare the timing margin and resource use. Only
+after that comparison should a frequency or pipeline change be selected.

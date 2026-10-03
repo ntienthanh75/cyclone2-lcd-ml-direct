@@ -15,6 +15,8 @@ one reusable classifier boundary.
 - [x] Implement and verify a standalone raw-to-LCD calibration block.
 - [x] Connect the raw reader and calibrator to the frame adapter.
 - [x] Connect the stream to the reusable ML core boundary.
+- [ ] Sweep the integrated design at 25 MHz, 10 MHz, and 5 MHz and record
+      resource/timing results before choosing an operating point.
 
 ## Verification rule for each implementation step
 
@@ -191,6 +193,16 @@ at 50 MHz and must not be downloaded as a claimed working hardware image.
 The next design milestone is to reduce or pipeline the ML critical path and
 repeat timing at the selected clock, while keeping the passing functional
 integration test unchanged.
+
+## Sixth implementation step: frequency sweep
+
+Before changing RTL, run the same integrated design at 25 MHz, 10 MHz, and
+5 MHz. The sweep must preserve the source, device, and synthesis options so
+that only the clock period changes. Store each report under
+`synthesis/frequency-sweep/<frequency>/` and compare logic elements, memory,
+multipliers, setup slack, hold slack, and Fmax. A lower frequency may make the
+design usable, but it does not repair the long combinational ML path; that
+remains a separate pipeline/resource tradeoff.
 
 ## F. Validation set
 
