@@ -270,3 +270,18 @@ The next milestone is the pipeline trade-off experiment. Preserve the
 5 MHz baseline and compare: (1) the current sequential MAC, (2) registers at
 the hidden/output layer boundary, and (3) a deeper registered MAC path. Each
 variant requires functional regression evidence before synthesis comparison.
+
+### Pipeline experiment checkpoint
+
+The first measured variant is the serialized score-ranking scan. It targets
+the actual critical path found in the baseline timing report: the combinational
+comparison of all ten output scores in one FINISH clock. The experiment adds
+`SCAN_INIT`, `SCAN_STEP`, and `SCAN_FINISH` states and compares one score per
+clock. It does not change the production core.
+
+Verification result: PASS with real trained MIF files, digit 7, confidence 71,
+margin 25, 13,420 cycles. Synthesis result: 2,267 logic elements, 55,888
+memory bits, and 5 multipliers at both 5 MHz and 10 MHz; setup slack is
+`+172.323 ns` at 5 MHz and `+70.647 ns` at 10 MHz. The baseline remains stored
+under `synthesis/frequency-sweep/` for comparison. The scan-pipeline variant
+is not hardware-approved because pin assignments remain unresolved.

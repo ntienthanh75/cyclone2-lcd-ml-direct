@@ -235,6 +235,44 @@ The sweep selects 5 MHz as the safer provisional clock, while 10 MHz is the
 fastest tested passing constraint. Neither is a hardware sign-off because the
 pin table remains unresolved.
 
+### Pipeline experiment result 1: serialized score ranking
+
+The timing report identified the original FINISH state's ten-score winner and
+runner-up scan as the dominant combinational path. The isolated experiment in
+`rtl/experiments/ml_inference_scanpipe.sv` keeps the MAC schedule and trained
+weights unchanged, but compares one score per clock in `SCAN_STEP` and
+publishes the result in `SCAN_FINISH`. The production `ml_inference.sv` is not
+replaced.
+
+Functional verification passed with the real MIF weights:
+
+```text
+PASS: touch-to-ML integration; digit=7 confidence=71 margin=25 cycles=13420 accepted=1
+```
+
+The extra nine cycles are the cost of replacing the one-cycle ten-score scan
+with nine registered comparisons. At 5 MHz this adds about 1.8 microseconds;
+the dominant ML latency remains about 2.68 milliseconds.
+
+| Variant / constraint | Logic elements | Memory bits | Multipliers | Setup slack | Hold slack | Approx. Fmax | Result |
+|---|---:|---:|---:|---:|---:|---:|---|
+| Baseline, 5 MHz | 3,590 (78%) | 55,888 (47%) | 5 (19%) | +70.138 ns | +0.499 ns | 7.70 MHz reported | PASS |
+| Serialized scan, 5 MHz | 2,267 (49%) | 55,888 (47%) | 5 (19%) | +172.323 ns | +0.499 ns | ~36.1 MHz path limit | PASS |
+| Baseline, 10 MHz | 3,661 (79%) | 55,888 (47%) | 5 (19%) | +5.292 ns | +0.499 ns | 10.56 MHz reported | PASS* |
+| Serialized scan, 10 MHz | 2,267 (49%) | 55,888 (47%) | 5 (19%) | +70.647 ns | +0.499 ns | ~34.1 MHz path limit | PASS* |
+
+`PASS*` still means timing-only: exact board pin assignments and a hardware
+test are missing. The serialized scan is currently the preferred repair
+candidate because it removes the measured critical path without adding DSP or
+RAM blocks. A deeper MAC pipeline remains a separate experiment if more
+throughput is required.
+
+The complete synthesis projects and reports are stored under
+`synthesis/pipeline-experiments/scanpipe-5MHz/` and
+`synthesis/pipeline-experiments/scanpipe-10MHz/`. The dedicated regression is
+`verification/touch_ml_scanpipe_top_tb.sv`, run by
+`verification/scanpipe_run.do`.
+
 ## F. Validation set
 
 - [ ] Collect at least 20 drawings for each digit `0..9`.

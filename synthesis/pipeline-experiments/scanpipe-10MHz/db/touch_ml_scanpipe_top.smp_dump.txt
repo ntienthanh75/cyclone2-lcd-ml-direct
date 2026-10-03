@@ -1,0 +1,23 @@
+
+State Machine - |touch_ml_scanpipe_top|ml_inference_scanpipe:ml_path|state
+Name state.SCAN_FINISH state.SCAN_STEP state.SCAN_INIT state.REJECT_FRAME state.FINISH state.O_MAC state.O_SETUP state.H_NEXT state.H_MAC state.H_SETUP state.LOAD state.IDLE 
+state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 
+state.LOAD 0 0 0 0 0 0 0 0 0 0 1 1 
+state.H_SETUP 0 0 0 0 0 0 0 0 0 1 0 1 
+state.H_MAC 0 0 0 0 0 0 0 0 1 0 0 1 
+state.H_NEXT 0 0 0 0 0 0 0 1 0 0 0 1 
+state.O_SETUP 0 0 0 0 0 0 1 0 0 0 0 1 
+state.O_MAC 0 0 0 0 0 1 0 0 0 0 0 1 
+state.FINISH 0 0 0 0 1 0 0 0 0 0 0 1 
+state.REJECT_FRAME 0 0 0 1 0 0 0 0 0 0 0 1 
+state.SCAN_INIT 0 0 1 0 0 0 0 0 0 0 0 1 
+state.SCAN_STEP 0 1 0 0 0 0 0 0 0 0 0 1 
+state.SCAN_FINISH 1 0 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |touch_ml_scanpipe_top|touch_capture_top:touch_path|xpt2046_reader:reader|state
+Name state.S_GAP state.S_WAIT state.S_SPI state.S_IDLE state.S_START_Y 
+state.S_IDLE 0 0 0 0 0 
+state.S_SPI 0 0 1 1 0 
+state.S_WAIT 0 1 0 1 0 
+state.S_GAP 1 0 0 1 0 
+state.S_START_Y 0 0 0 1 1 

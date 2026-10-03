@@ -142,6 +142,42 @@ sweep is 5 MHz; 10 MHz also passes but has only 5.292 ns of slow-corner
 margin. A later pipeline experiment is still needed if higher performance is
 required.
 
+### Timing-repair experiment: serialized score scan
+
+The baseline timing failure was traced to the `FINISH` state in the shared ML
+core. It compared all ten output scores, selected the best digit and second
+best score, and calculated the margin in one combinational path. Adding a
+register only at the hidden/output boundary would not remove that path.
+
+The isolated experiment
+[`rtl/experiments/ml_inference_scanpipe.sv`](rtl/experiments/ml_inference_scanpipe.sv)
+keeps the MAC operations and weights unchanged. It compares one score per
+clock, then registers the result. Its wrapper is
+[`rtl/experiments/touch_ml_scanpipe_top.sv`](rtl/experiments/touch_ml_scanpipe_top.sv).
+The production core is unchanged.
+
+| Build | Logic elements | Memory bits | Multipliers | Setup slack | Functional result |
+|---|---:|---:|---:|---:|---|
+| Baseline 5 MHz | 3,590 (78%) | 55,888 (47%) | 5 (19%) | +70.138 ns | digit 7, 13,411 cycles |
+| Scan-pipeline 5 MHz | 2,267 (49%) | 55,888 (47%) | 5 (19%) | +172.323 ns | digit 7, 13,420 cycles |
+| Baseline 10 MHz | 3,661 (79%) | 55,888 (47%) | 5 (19%) | +5.292 ns | timing PASS* |
+| Scan-pipeline 10 MHz | 2,267 (49%) | 55,888 (47%) | 5 (19%) | +70.647 ns | timing PASS* |
+
+The scan pipeline adds nine cycles, about 1.8 microseconds at 5 MHz, but
+removes the long score-ranking path. The real-weight regression output is:
+
+```text
+PASS: touch-to-ML integration; digit=7 confidence=71 margin=25 cycles=13420 accepted=1
+```
+
+Reports are stored in
+[`synthesis/pipeline-experiments`](synthesis/pipeline-experiments), and the
+dedicated test is
+[`verification/touch_ml_scanpipe_top_tb.sv`](verification/touch_ml_scanpipe_top_tb.sv)
+using [`verification/scanpipe_run.do`](verification/scanpipe_run.do).
+This is still simulation/synthesis evidence only; do not download it until
+the actual EP2C5T144C8 pin table is assigned and reviewed.
+
 ## Target
 
 - Board: Waveshare/CoreEP2C5
