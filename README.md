@@ -188,20 +188,28 @@ It is therefore rejected in favor of the serialized score scan.
 
 ## Preferred implementation and next checklist
 
-The preferred RTL for the next build is
+The board-level wrapper milestone is documented in
+[`docs/hardware-wrapper-milestone.md`](docs/hardware-wrapper-milestone.md).
+It records the exact CoreEP2C5 pin assignments, the real 50 MHz input clock,
+the derived 5 MHz processing clock, and the Quartus timing/resource results.
+
+The preferred RTL for the direct path is
 [`rtl/experiments/touch_ml_scanpipe_top.sv`](rtl/experiments/touch_ml_scanpipe_top.sv)
 with [`rtl/experiments/ml_inference_scanpipe.sv`](rtl/experiments/ml_inference_scanpipe.sv).
 The original core and the registered-boundary variant are retained as
-references. The preferred version is not yet a hardware image: all exact
-CoreEP2C5 pin assignments are still absent from Quartus.
+references. The board-level wrapper is
+[`rtl/cyclone2_lcd_ml_hw.sv`](rtl/cyclone2_lcd_ml_hw.sv), with exact
+CoreEP2C5 assignments in `rtl/cyclone2_lcd_ml_hw.qsf`. Its fitted SOF is a
+hardware candidate; physical touch and LED verification remain outstanding.
 
 Before downloading, complete these items in order:
 
 1. Confirm the real board clock pin and frequency.
 2. Confirm XPT2046 touch IRQ, MISO, CS, SCLK, MOSI, and reset wiring.
 3. Decide which result/debug outputs are physically connected.
-4. Add and review exact `set_location_assignment` entries.
-5. Recompile and inspect timing, pin, and fitter reports.
+4. Review the exact `set_location_assignment` entries in the board wrapper.
+5. Recompile and inspect timing, pin, and fitter reports. **Done for the
+   current wrapper.**
 6. Download the resulting `.sof` and perform the first board test.
 
 ## Target
