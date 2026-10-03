@@ -1,0 +1,875 @@
+Analysis & Synthesis report for touch_frame_adapter
+Sat Oct 03 15:39:50 2026
+Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Registers Removed During Synthesis
+  9. General Register Statistics
+ 10. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2013 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sat Oct 03 15:39:50 2026           ;
+; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
+; Revision Name                      ; touch_frame_adapter                             ;
+; Top-level Entity Name              ; touch_frame_adapter                             ;
+; Family                             ; Cyclone II                                      ;
+; Total logic elements               ; 576                                             ;
+;     Total combinational functions  ; 574                                             ;
+;     Dedicated logic registers      ; 217                                             ;
+; Total registers                    ; 217                                             ;
+; Total pins                         ; 39                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                          ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+; Option                                                                     ; Setting             ; Default Value       ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+; Device                                                                     ; EP2C5T144C8         ;                     ;
+; Top-level entity name                                                      ; touch_frame_adapter ; touch_frame_adapter ;
+; Family name                                                                ; Cyclone II          ; Cyclone IV GX       ;
+; Maximum processors allowed for parallel compilation                        ; 2                   ;                     ;
+; Use smart compilation                                                      ; Off                 ; Off                 ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                  ; On                  ;
+; Enable compact report table                                                ; Off                 ; Off                 ;
+; Restructure Multiplexers                                                   ; Auto                ; Auto                ;
+; Create Debugging Nodes for IP Cores                                        ; Off                 ; Off                 ;
+; Preserve fewer node names                                                  ; On                  ; On                  ;
+; Disable OpenCore Plus hardware evaluation                                  ; Off                 ; Off                 ;
+; Verilog Version                                                            ; Verilog_2001        ; Verilog_2001        ;
+; VHDL Version                                                               ; VHDL_1993           ; VHDL_1993           ;
+; State Machine Processing                                                   ; Auto                ; Auto                ;
+; Safe State Machine                                                         ; Off                 ; Off                 ;
+; Extract Verilog State Machines                                             ; On                  ; On                  ;
+; Extract VHDL State Machines                                                ; On                  ; On                  ;
+; Ignore Verilog initial constructs                                          ; Off                 ; Off                 ;
+; Iteration limit for constant Verilog loops                                 ; 5000                ; 5000                ;
+; Iteration limit for non-constant Verilog loops                             ; 250                 ; 250                 ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                  ; On                  ;
+; Infer RAMs from Raw Logic                                                  ; On                  ; On                  ;
+; Parallel Synthesis                                                         ; On                  ; On                  ;
+; DSP Block Balancing                                                        ; Auto                ; Auto                ;
+; NOT Gate Push-Back                                                         ; On                  ; On                  ;
+; Power-Up Don't Care                                                        ; On                  ; On                  ;
+; Remove Redundant Logic Cells                                               ; Off                 ; Off                 ;
+; Remove Duplicate Registers                                                 ; On                  ; On                  ;
+; Ignore CARRY Buffers                                                       ; Off                 ; Off                 ;
+; Ignore CASCADE Buffers                                                     ; Off                 ; Off                 ;
+; Ignore GLOBAL Buffers                                                      ; Off                 ; Off                 ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                 ; Off                 ;
+; Ignore LCELL Buffers                                                       ; Off                 ; Off                 ;
+; Ignore SOFT Buffers                                                        ; On                  ; On                  ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                 ; Off                 ;
+; Optimization Technique                                                     ; Balanced            ; Balanced            ;
+; Carry Chain Length                                                         ; 70                  ; 70                  ;
+; Auto Carry Chains                                                          ; On                  ; On                  ;
+; Auto Open-Drain Pins                                                       ; On                  ; On                  ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                 ; Off                 ;
+; Auto ROM Replacement                                                       ; On                  ; On                  ;
+; Auto RAM Replacement                                                       ; On                  ; On                  ;
+; Auto Shift Register Replacement                                            ; Auto                ; Auto                ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto                ; Auto                ;
+; Auto Clock Enable Replacement                                              ; On                  ; On                  ;
+; Strict RAM Replacement                                                     ; Off                 ; Off                 ;
+; Allow Synchronous Control Signals                                          ; On                  ; On                  ;
+; Force Use of Synchronous Clear Signals                                     ; Off                 ; Off                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                 ; Off                 ;
+; Auto Resource Sharing                                                      ; Off                 ; Off                 ;
+; Allow Any RAM Size For Recognition                                         ; Off                 ; Off                 ;
+; Allow Any ROM Size For Recognition                                         ; Off                 ; Off                 ;
+; Allow Any Shift Register Size For Recognition                              ; Off                 ; Off                 ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                  ; On                  ;
+; Ignore translate_off and synthesis_off directives                          ; Off                 ; Off                 ;
+; Timing-Driven Synthesis                                                    ; Off                 ; Off                 ;
+; Report Parameter Settings                                                  ; On                  ; On                  ;
+; Report Source Assignments                                                  ; On                  ; On                  ;
+; Report Connectivity Checks                                                 ; On                  ; On                  ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                 ; Off                 ;
+; Synchronization Register Chain Length                                      ; 2                   ; 2                   ;
+; PowerPlay Power Optimization                                               ; Normal compilation  ; Normal compilation  ;
+; HDL message level                                                          ; Level2              ; Level2              ;
+; Suppress Register Optimization Related Messages                            ; Off                 ; Off                 ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000                ; 5000                ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000                ; 5000                ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                 ; 100                 ;
+; Clock MUX Protection                                                       ; On                  ; On                  ;
+; Auto Gated Clock Conversion                                                ; Off                 ; Off                 ;
+; Block Design Naming                                                        ; Auto                ; Auto                ;
+; SDC constraint protection                                                  ; Off                 ; Off                 ;
+; Synthesis Effort                                                           ; Auto                ; Auto                ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                  ; On                  ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                 ; Off                 ;
+; Analysis & Synthesis Message Level                                         ; Medium              ; Medium              ;
+; Disable Register Merging Across Hierarchies                                ; Auto                ; Auto                ;
+; Resource Aware Inference For Block RAM                                     ; On                  ; On                  ;
+; Synthesis Seed                                                             ; 1                   ; 1                   ;
++----------------------------------------------------------------------------+---------------------+---------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 6           ;
+; Maximum allowed            ; 2           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processors 2-6         ;   0.0%      ;
++----------------------------+-------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                  ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                              ; Library ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+; touch_frame_adapter.sv           ; yes             ; User SystemVerilog HDL File  ; D:/fpga/cyclone2-lcd-ml-direct/rtl/touch_frame_adapter.sv ;         ;
++----------------------------------+-----------------+------------------------------+-----------------------------------------------------------+---------+
+
+
++-------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary           ;
++---------------------------------------------+---------+
+; Resource                                    ; Usage   ;
++---------------------------------------------+---------+
+; Estimated Total logic elements              ; 576     ;
+;                                             ;         ;
+; Total combinational functions               ; 574     ;
+; Logic element usage by number of LUT inputs ;         ;
+;     -- 4 input functions                    ; 442     ;
+;     -- 3 input functions                    ; 38      ;
+;     -- <=2 input functions                  ; 94      ;
+;                                             ;         ;
+; Logic elements by mode                      ;         ;
+;     -- normal mode                          ; 553     ;
+;     -- arithmetic mode                      ; 21      ;
+;                                             ;         ;
+; Total registers                             ; 217     ;
+;     -- Dedicated logic registers            ; 217     ;
+;     -- I/O registers                        ; 0       ;
+;                                             ;         ;
+; I/O pins                                    ; 39      ;
+; Embedded Multiplier 9-bit elements          ; 0       ;
+; Maximum fan-out node                        ; reset_n ;
+; Maximum fan-out                             ; 229     ;
+; Total fan-out                               ; 2937    ;
+; Average fan-out                             ; 3.54    ;
++---------------------------------------------+---------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                          ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
+; Compilation Hierarchy Node ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name  ; Library Name ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
+; |touch_frame_adapter       ; 574 (574)         ; 217 (217)    ; 0           ; 0            ; 0       ; 0         ; 39   ; 0            ; |touch_frame_adapter ; work         ;
++----------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+----------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++---------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                        ;
++-----------------------------------------+---------------------------------+
+; Register name                           ; Reason for Removal              ;
++-----------------------------------------+---------------------------------+
+; frame[192][2]                           ; Merged with frame[192][3]       ;
+; frame[193][0]                           ; Merged with frame[193][2]       ;
+; frame[194][0]                           ; Merged with frame[194][2]       ;
+; frame[195][0]                           ; Merged with frame[195][2]       ;
+; frame[190][3]                           ; Merged with frame[190][0]       ;
+; frame[189][1]                           ; Merged with frame[189][0]       ;
+; frame[189][3]                           ; Merged with frame[189][0]       ;
+; frame[188][3]                           ; Merged with frame[188][1]       ;
+; frame[187][3]                           ; Merged with frame[187][1]       ;
+; frame[186][3]                           ; Merged with frame[186][1]       ;
+; frame[185][3]                           ; Merged with frame[185][1]       ;
+; frame[184][3]                           ; Merged with frame[184][1]       ;
+; frame[183][3]                           ; Merged with frame[183][0]       ;
+; frame[183][2]                           ; Merged with frame[183][1]       ;
+; frame[182][3]                           ; Merged with frame[182][1]       ;
+; frame[181][3]                           ; Merged with frame[181][1]       ;
+; frame[180][3]                           ; Merged with frame[180][1]       ;
+; frame[179][3]                           ; Merged with frame[179][1]       ;
+; frame[178][3]                           ; Merged with frame[178][1]       ;
+; frame[177][3]                           ; Merged with frame[177][1]       ;
+; frame[176][3]                           ; Merged with frame[176][1]       ;
+; frame[175][3]                           ; Merged with frame[175][1]       ;
+; frame[174][3]                           ; Merged with frame[174][1]       ;
+; frame[173][3]                           ; Merged with frame[173][1]       ;
+; frame[172][3]                           ; Merged with frame[172][1]       ;
+; frame[171][3]                           ; Merged with frame[171][0]       ;
+; frame[170][3]                           ; Merged with frame[170][1]       ;
+; frame[169][3]                           ; Merged with frame[169][1]       ;
+; frame[168][3]                           ; Merged with frame[168][1]       ;
+; frame[167][3]                           ; Merged with frame[167][1]       ;
+; frame[166][3]                           ; Merged with frame[166][1]       ;
+; frame[165][3]                           ; Merged with frame[165][1]       ;
+; frame[164][3]                           ; Merged with frame[164][1]       ;
+; frame[163][3]                           ; Merged with frame[163][1]       ;
+; frame[162][3]                           ; Merged with frame[162][1]       ;
+; frame[161][3]                           ; Merged with frame[161][1]       ;
+; frame[160][3]                           ; Merged with frame[160][1]       ;
+; frame[159][3]                           ; Merged with frame[159][1]       ;
+; frame[158][3]                           ; Merged with frame[158][1]       ;
+; frame[157][3]                           ; Merged with frame[157][1]       ;
+; frame[156][3]                           ; Merged with frame[156][1]       ;
+; frame[155][3]                           ; Merged with frame[155][1]       ;
+; frame[154][3]                           ; Merged with frame[154][1]       ;
+; frame[153][3]                           ; Merged with frame[153][1]       ;
+; frame[152][3]                           ; Merged with frame[152][1]       ;
+; frame[151][3]                           ; Merged with frame[151][1]       ;
+; frame[150][3]                           ; Merged with frame[150][1]       ;
+; frame[149][3]                           ; Merged with frame[149][1]       ;
+; frame[148][3]                           ; Merged with frame[148][1]       ;
+; frame[147][3]                           ; Merged with frame[147][1]       ;
+; frame[146][1]                           ; Merged with frame[146][0]       ;
+; frame[146][3]                           ; Merged with frame[146][0]       ;
+; frame[145][3]                           ; Merged with frame[145][1]       ;
+; frame[144][3]                           ; Merged with frame[144][1]       ;
+; frame[143][3]                           ; Merged with frame[143][1]       ;
+; frame[142][3]                           ; Merged with frame[142][1]       ;
+; frame[141][3]                           ; Merged with frame[141][1]       ;
+; frame[140][3]                           ; Merged with frame[140][1]       ;
+; frame[139][3]                           ; Merged with frame[139][1]       ;
+; frame[138][3]                           ; Merged with frame[138][1]       ;
+; frame[137][3]                           ; Merged with frame[137][1]       ;
+; frame[136][3]                           ; Merged with frame[136][1]       ;
+; frame[135][3]                           ; Merged with frame[135][1]       ;
+; frame[134][3]                           ; Merged with frame[134][1]       ;
+; frame[133][3]                           ; Merged with frame[133][1]       ;
+; frame[132][3]                           ; Merged with frame[132][1]       ;
+; frame[131][3]                           ; Merged with frame[131][1]       ;
+; frame[130][3]                           ; Merged with frame[130][1]       ;
+; frame[129][3]                           ; Merged with frame[129][1]       ;
+; frame[128][3]                           ; Merged with frame[128][1]       ;
+; frame[127][3]                           ; Merged with frame[127][1]       ;
+; frame[126][3]                           ; Merged with frame[126][1]       ;
+; frame[125][3]                           ; Merged with frame[125][1]       ;
+; frame[124][3]                           ; Merged with frame[124][1]       ;
+; frame[123][3]                           ; Merged with frame[123][1]       ;
+; frame[122][3]                           ; Merged with frame[122][1]       ;
+; frame[121][3]                           ; Merged with frame[121][1]       ;
+; frame[120][3]                           ; Merged with frame[120][1]       ;
+; frame[119][3]                           ; Merged with frame[119][1]       ;
+; frame[118][3]                           ; Merged with frame[118][1]       ;
+; frame[117][3]                           ; Merged with frame[117][1]       ;
+; frame[116][3]                           ; Merged with frame[116][1]       ;
+; frame[115][3]                           ; Merged with frame[115][1]       ;
+; frame[114][3]                           ; Merged with frame[114][1]       ;
+; frame[113][3]                           ; Merged with frame[113][1]       ;
+; frame[112][3]                           ; Merged with frame[112][1]       ;
+; frame[111][3]                           ; Merged with frame[111][1]       ;
+; frame[110][3]                           ; Merged with frame[110][1]       ;
+; frame[109][3]                           ; Merged with frame[109][1]       ;
+; frame[108][3]                           ; Merged with frame[108][1]       ;
+; frame[107][3]                           ; Merged with frame[107][1]       ;
+; frame[106][3]                           ; Merged with frame[106][1]       ;
+; frame[105][3]                           ; Merged with frame[105][1]       ;
+; frame[104][3]                           ; Merged with frame[104][1]       ;
+; frame[103][3]                           ; Merged with frame[103][1]       ;
+; frame[102][3]                           ; Merged with frame[102][1]       ;
+; frame[101][3]                           ; Merged with frame[101][1]       ;
+; frame[100][3]                           ; Merged with frame[100][1]       ;
+; frame[99][3]                            ; Merged with frame[99][1]        ;
+; frame[98][3]                            ; Merged with frame[98][0]        ;
+; frame[97][2]                            ; Merged with frame[97][0]        ;
+; frame[97][3]                            ; Merged with frame[97][1]        ;
+; frame[96][3]                            ; Merged with frame[96][1]        ;
+; frame[95][2]                            ; Merged with frame[95][0]        ;
+; frame[95][3]                            ; Merged with frame[95][1]        ;
+; frame[94][3]                            ; Merged with frame[94][1]        ;
+; frame[93][3]                            ; Merged with frame[93][1]        ;
+; frame[92][3]                            ; Merged with frame[92][1]        ;
+; frame[91][3]                            ; Merged with frame[91][1]        ;
+; frame[90][3]                            ; Merged with frame[90][1]        ;
+; frame[89][3]                            ; Merged with frame[89][1]        ;
+; frame[88][3]                            ; Merged with frame[88][1]        ;
+; frame[87][3]                            ; Merged with frame[87][1]        ;
+; frame[86][3]                            ; Merged with frame[86][1]        ;
+; frame[85][3]                            ; Merged with frame[85][1]        ;
+; frame[84][3]                            ; Merged with frame[84][1]        ;
+; frame[83][3]                            ; Merged with frame[83][1]        ;
+; frame[82][3]                            ; Merged with frame[82][1]        ;
+; frame[81][3]                            ; Merged with frame[81][1]        ;
+; frame[80][3]                            ; Merged with frame[80][1]        ;
+; frame[79][3]                            ; Merged with frame[79][1]        ;
+; frame[78][3]                            ; Merged with frame[78][1]        ;
+; frame[77][3]                            ; Merged with frame[77][1]        ;
+; frame[76][3]                            ; Merged with frame[76][1]        ;
+; frame[75][3]                            ; Merged with frame[75][1]        ;
+; frame[74][3]                            ; Merged with frame[74][1]        ;
+; frame[73][3]                            ; Merged with frame[73][1]        ;
+; frame[72][3]                            ; Merged with frame[72][1]        ;
+; frame[71][3]                            ; Merged with frame[71][1]        ;
+; frame[70][3]                            ; Merged with frame[70][1]        ;
+; frame[69][3]                            ; Merged with frame[69][1]        ;
+; frame[68][3]                            ; Merged with frame[68][1]        ;
+; frame[67][3]                            ; Merged with frame[67][1]        ;
+; frame[66][3]                            ; Merged with frame[66][1]        ;
+; frame[65][3]                            ; Merged with frame[65][1]        ;
+; frame[64][3]                            ; Merged with frame[64][1]        ;
+; frame[63][3]                            ; Merged with frame[63][1]        ;
+; frame[62][3]                            ; Merged with frame[62][1]        ;
+; frame[61][3]                            ; Merged with frame[61][1]        ;
+; frame[60][3]                            ; Merged with frame[60][1]        ;
+; frame[59][3]                            ; Merged with frame[59][1]        ;
+; frame[58][3]                            ; Merged with frame[58][1]        ;
+; frame[57][3]                            ; Merged with frame[57][1]        ;
+; frame[56][3]                            ; Merged with frame[56][1]        ;
+; frame[55][3]                            ; Merged with frame[55][1]        ;
+; frame[54][3]                            ; Merged with frame[54][1]        ;
+; frame[53][3]                            ; Merged with frame[53][1]        ;
+; frame[52][3]                            ; Merged with frame[52][1]        ;
+; frame[51][3]                            ; Merged with frame[51][1]        ;
+; frame[50][3]                            ; Merged with frame[50][1]        ;
+; frame[49][3]                            ; Merged with frame[49][1]        ;
+; frame[48][3]                            ; Merged with frame[48][1]        ;
+; frame[47][3]                            ; Merged with frame[47][1]        ;
+; frame[46][3]                            ; Merged with frame[46][1]        ;
+; frame[45][3]                            ; Merged with frame[45][1]        ;
+; frame[44][3]                            ; Merged with frame[44][1]        ;
+; frame[43][3]                            ; Merged with frame[43][1]        ;
+; frame[42][3]                            ; Merged with frame[42][1]        ;
+; frame[41][3]                            ; Merged with frame[41][1]        ;
+; frame[40][3]                            ; Merged with frame[40][1]        ;
+; frame[39][3]                            ; Merged with frame[39][1]        ;
+; frame[38][3]                            ; Merged with frame[38][1]        ;
+; frame[37][3]                            ; Merged with frame[37][1]        ;
+; frame[36][3]                            ; Merged with frame[36][1]        ;
+; frame[35][3]                            ; Merged with frame[35][1]        ;
+; frame[34][3]                            ; Merged with frame[34][1]        ;
+; frame[33][3]                            ; Merged with frame[33][1]        ;
+; frame[32][3]                            ; Merged with frame[32][1]        ;
+; frame[31][3]                            ; Merged with frame[31][1]        ;
+; frame[30][3]                            ; Merged with frame[30][1]        ;
+; frame[29][3]                            ; Merged with frame[29][1]        ;
+; frame[28][3]                            ; Merged with frame[28][1]        ;
+; frame[27][3]                            ; Merged with frame[27][1]        ;
+; frame[26][3]                            ; Merged with frame[26][1]        ;
+; frame[25][3]                            ; Merged with frame[25][1]        ;
+; frame[24][3]                            ; Merged with frame[24][1]        ;
+; frame[23][3]                            ; Merged with frame[23][1]        ;
+; frame[22][3]                            ; Merged with frame[22][1]        ;
+; frame[21][3]                            ; Merged with frame[21][1]        ;
+; frame[20][3]                            ; Merged with frame[20][1]        ;
+; frame[19][3]                            ; Merged with frame[19][1]        ;
+; frame[18][3]                            ; Merged with frame[18][1]        ;
+; frame[17][3]                            ; Merged with frame[17][1]        ;
+; frame[16][3]                            ; Merged with frame[16][1]        ;
+; frame[15][3]                            ; Merged with frame[15][1]        ;
+; frame[14][3]                            ; Merged with frame[14][1]        ;
+; frame[13][3]                            ; Merged with frame[13][1]        ;
+; frame[12][3]                            ; Merged with frame[12][1]        ;
+; frame[11][3]                            ; Merged with frame[11][1]        ;
+; frame[10][3]                            ; Merged with frame[10][1]        ;
+; frame[9][3]                             ; Merged with frame[9][1]         ;
+; frame[8][3]                             ; Merged with frame[8][1]         ;
+; frame[7][3]                             ; Merged with frame[7][1]         ;
+; frame[6][3]                             ; Merged with frame[6][1]         ;
+; frame[5][3]                             ; Merged with frame[5][1]         ;
+; frame[4][3]                             ; Merged with frame[4][1]         ;
+; frame[3][3]                             ; Merged with frame[3][1]         ;
+; frame[2][3]                             ; Merged with frame[2][1]         ;
+; frame[1][3]                             ; Merged with frame[1][1]         ;
+; frame[0][3]                             ; Merged with frame[0][1]         ;
+; frame[191][0]                           ; Merged with frame[191][2]       ;
+; frame[193][2]                           ; Merged with frame[193][3]       ;
+; frame[195][1]                           ; Merged with frame[195][3]       ;
+; frame[190][1]                           ; Merged with frame[190][0]       ;
+; frame[188][2]                           ; Merged with frame[188][0]       ;
+; frame[187][2]                           ; Merged with frame[187][0]       ;
+; frame[186][2]                           ; Merged with frame[186][0]       ;
+; frame[185][1]                           ; Merged with frame[185][0]       ;
+; frame[184][2]                           ; Merged with frame[184][1]       ;
+; frame[181][2]                           ; Merged with frame[181][0]       ;
+; frame[179][2]                           ; Merged with frame[179][0]       ;
+; frame[177][2]                           ; Merged with frame[177][0]       ;
+; frame[175][2]                           ; Merged with frame[175][0]       ;
+; frame[174][1]                           ; Merged with frame[174][0]       ;
+; frame[173][2]                           ; Merged with frame[173][0]       ;
+; frame[171][2]                           ; Merged with frame[171][1]       ;
+; frame[170][1]                           ; Merged with frame[170][0]       ;
+; frame[169][2]                           ; Merged with frame[169][0]       ;
+; frame[168][2]                           ; Merged with frame[168][0]       ;
+; frame[167][2]                           ; Merged with frame[167][0]       ;
+; frame[165][2]                           ; Merged with frame[165][0]       ;
+; frame[163][2]                           ; Merged with frame[163][0]       ;
+; frame[161][2]                           ; Merged with frame[161][0]       ;
+; frame[159][2]                           ; Merged with frame[159][0]       ;
+; frame[157][2]                           ; Merged with frame[157][0]       ;
+; frame[155][2]                           ; Merged with frame[155][0]       ;
+; frame[153][2]                           ; Merged with frame[153][0]       ;
+; frame[153][1]                           ; Merged with frame[153][0]       ;
+; frame[151][2]                           ; Merged with frame[151][0]       ;
+; frame[149][2]                           ; Merged with frame[149][0]       ;
+; frame[147][2]                           ; Merged with frame[147][1]       ;
+; frame[145][1]                           ; Merged with frame[145][0]       ;
+; frame[144][2]                           ; Merged with frame[144][0]       ;
+; frame[143][2]                           ; Merged with frame[143][0]       ;
+; frame[142][2]                           ; Merged with frame[142][0]       ;
+; frame[141][2]                           ; Merged with frame[141][0]       ;
+; frame[140][2]                           ; Merged with frame[140][0]       ;
+; frame[138][2]                           ; Merged with frame[138][0]       ;
+; frame[136][2]                           ; Merged with frame[136][0]       ;
+; frame[135][2]                           ; Merged with frame[135][0]       ;
+; frame[134][2]                           ; Merged with frame[134][0]       ;
+; frame[133][2]                           ; Merged with frame[133][0]       ;
+; frame[132][2]                           ; Merged with frame[132][0]       ;
+; frame[130][2]                           ; Merged with frame[130][0]       ;
+; frame[128][2]                           ; Merged with frame[128][0]       ;
+; frame[126][2]                           ; Merged with frame[126][0]       ;
+; frame[124][2]                           ; Merged with frame[124][0]       ;
+; frame[122][2]                           ; Merged with frame[122][0]       ;
+; frame[120][2]                           ; Merged with frame[120][0]       ;
+; frame[118][2]                           ; Merged with frame[118][0]       ;
+; frame[116][2]                           ; Merged with frame[116][0]       ;
+; frame[114][2]                           ; Merged with frame[114][0]       ;
+; frame[112][2]                           ; Merged with frame[112][0]       ;
+; frame[110][2]                           ; Merged with frame[110][0]       ;
+; frame[110][1]                           ; Merged with frame[110][0]       ;
+; frame[108][2]                           ; Merged with frame[108][0]       ;
+; frame[106][2]                           ; Merged with frame[106][0]       ;
+; frame[104][2]                           ; Merged with frame[104][0]       ;
+; frame[102][2]                           ; Merged with frame[102][0]       ;
+; frame[100][2]                           ; Merged with frame[100][0]       ;
+; frame[94][2]                            ; Merged with frame[94][0]        ;
+; frame[92][2]                            ; Merged with frame[92][0]        ;
+; frame[90][2]                            ; Merged with frame[90][0]        ;
+; frame[89][2]                            ; Merged with frame[89][0]        ;
+; frame[88][2]                            ; Merged with frame[88][0]        ;
+; frame[87][2]                            ; Merged with frame[87][0]        ;
+; frame[86][2]                            ; Merged with frame[86][0]        ;
+; frame[84][2]                            ; Merged with frame[84][0]        ;
+; frame[82][2]                            ; Merged with frame[82][0]        ;
+; frame[81][2]                            ; Merged with frame[81][0]        ;
+; frame[80][2]                            ; Merged with frame[80][0]        ;
+; frame[79][2]                            ; Merged with frame[79][0]        ;
+; frame[78][2]                            ; Merged with frame[78][0]        ;
+; frame[76][2]                            ; Merged with frame[76][0]        ;
+; frame[74][2]                            ; Merged with frame[74][0]        ;
+; frame[73][2]                            ; Merged with frame[73][0]        ;
+; frame[72][2]                            ; Merged with frame[72][0]        ;
+; frame[71][2]                            ; Merged with frame[71][0]        ;
+; frame[70][2]                            ; Merged with frame[70][0]        ;
+; frame[68][2]                            ; Merged with frame[68][0]        ;
+; frame[66][2]                            ; Merged with frame[66][0]        ;
+; frame[65][2]                            ; Merged with frame[65][0]        ;
+; frame[64][2]                            ; Merged with frame[64][0]        ;
+; frame[63][2]                            ; Merged with frame[63][0]        ;
+; frame[62][2]                            ; Merged with frame[62][0]        ;
+; frame[60][2]                            ; Merged with frame[60][0]        ;
+; frame[58][2]                            ; Merged with frame[58][0]        ;
+; frame[56][2]                            ; Merged with frame[56][0]        ;
+; frame[54][2]                            ; Merged with frame[54][0]        ;
+; frame[52][2]                            ; Merged with frame[52][0]        ;
+; frame[50][2]                            ; Merged with frame[50][0]        ;
+; frame[48][2]                            ; Merged with frame[48][0]        ;
+; frame[46][2]                            ; Merged with frame[46][0]        ;
+; frame[44][2]                            ; Merged with frame[44][0]        ;
+; frame[42][2]                            ; Merged with frame[42][0]        ;
+; frame[40][2]                            ; Merged with frame[40][0]        ;
+; frame[38][2]                            ; Merged with frame[38][0]        ;
+; frame[36][2]                            ; Merged with frame[36][0]        ;
+; frame[34][2]                            ; Merged with frame[34][0]        ;
+; frame[32][2]                            ; Merged with frame[32][0]        ;
+; frame[30][2]                            ; Merged with frame[30][0]        ;
+; frame[28][2]                            ; Merged with frame[28][0]        ;
+; frame[26][2]                            ; Merged with frame[26][0]        ;
+; frame[24][2]                            ; Merged with frame[24][0]        ;
+; frame[24][1]                            ; Merged with frame[24][0]        ;
+; frame[22][2]                            ; Merged with frame[22][0]        ;
+; frame[20][2]                            ; Merged with frame[20][0]        ;
+; frame[18][2]                            ; Merged with frame[18][0]        ;
+; frame[16][2]                            ; Merged with frame[16][0]        ;
+; frame[14][2]                            ; Merged with frame[14][0]        ;
+; frame[12][2]                            ; Merged with frame[12][0]        ;
+; frame[10][2]                            ; Merged with frame[10][0]        ;
+; frame[8][2]                             ; Merged with frame[8][0]         ;
+; frame[6][2]                             ; Merged with frame[6][0]         ;
+; frame[4][2]                             ; Merged with frame[4][0]         ;
+; frame[2][2]                             ; Merged with frame[2][0]         ;
+; frame[0][2]                             ; Merged with frame[0][0]         ;
+; frame[191][1]                           ; Merged with frame[191][3]       ;
+; frame[193][1]                           ; Merged with frame[193][3]       ;
+; frame[194][1]                           ; Merged with frame[194][3]       ;
+; frame[183][1]                           ; Merged with frame[183][0]       ;
+; frame[180][2]                           ; Merged with frame[180][0]       ;
+; frame[178][2]                           ; Merged with frame[178][0]       ;
+; frame[172][2]                           ; Merged with frame[172][0]       ;
+; frame[170][2]                           ; Merged with frame[170][0]       ;
+; frame[169][1]                           ; Merged with frame[169][0]       ;
+; frame[166][2]                           ; Merged with frame[166][0]       ;
+; frame[164][2]                           ; Merged with frame[164][0]       ;
+; frame[160][2]                           ; Merged with frame[160][0]       ;
+; frame[156][2]                           ; Merged with frame[156][0]       ;
+; frame[154][2]                           ; Merged with frame[154][0]       ;
+; frame[150][2]                           ; Merged with frame[150][0]       ;
+; frame[146][2]                           ; Merged with frame[146][0]       ;
+; frame[143][1]                           ; Merged with frame[143][0]       ;
+; frame[139][2]                           ; Merged with frame[139][0]       ;
+; frame[131][2]                           ; Merged with frame[131][0]       ;
+; frame[129][2]                           ; Merged with frame[129][0]       ;
+; frame[127][2]                           ; Merged with frame[127][0]       ;
+; frame[125][2]                           ; Merged with frame[125][0]       ;
+; frame[123][2]                           ; Merged with frame[123][0]       ;
+; frame[119][2]                           ; Merged with frame[119][0]       ;
+; frame[115][2]                           ; Merged with frame[115][0]       ;
+; frame[113][2]                           ; Merged with frame[113][0]       ;
+; frame[111][2]                           ; Merged with frame[111][0]       ;
+; frame[109][2]                           ; Merged with frame[109][0]       ;
+; frame[105][2]                           ; Merged with frame[105][0]       ;
+; frame[101][2]                           ; Merged with frame[101][0]       ;
+; frame[98][2]                            ; Merged with frame[98][0]        ;
+; frame[97][1]                            ; Merged with frame[97][0]        ;
+; frame[96][2]                            ; Merged with frame[96][0]        ;
+; frame[93][2]                            ; Merged with frame[93][0]        ;
+; frame[91][2]                            ; Merged with frame[91][0]        ;
+; frame[85][2]                            ; Merged with frame[85][0]        ;
+; frame[83][2]                            ; Merged with frame[83][0]        ;
+; frame[77][2]                            ; Merged with frame[77][0]        ;
+; frame[75][2]                            ; Merged with frame[75][0]        ;
+; frame[69][2]                            ; Merged with frame[69][0]        ;
+; frame[61][2]                            ; Merged with frame[61][0]        ;
+; frame[57][2]                            ; Merged with frame[57][0]        ;
+; frame[55][2]                            ; Merged with frame[55][0]        ;
+; frame[53][2]                            ; Merged with frame[53][0]        ;
+; frame[51][2]                            ; Merged with frame[51][0]        ;
+; frame[49][2]                            ; Merged with frame[49][0]        ;
+; frame[45][2]                            ; Merged with frame[45][0]        ;
+; frame[41][2]                            ; Merged with frame[41][0]        ;
+; frame[39][2]                            ; Merged with frame[39][0]        ;
+; frame[37][2]                            ; Merged with frame[37][0]        ;
+; frame[35][2]                            ; Merged with frame[35][0]        ;
+; frame[33][2]                            ; Merged with frame[33][0]        ;
+; frame[29][2]                            ; Merged with frame[29][0]        ;
+; frame[25][2]                            ; Merged with frame[25][0]        ;
+; frame[23][2]                            ; Merged with frame[23][0]        ;
+; frame[19][2]                            ; Merged with frame[19][0]        ;
+; frame[15][2]                            ; Merged with frame[15][0]        ;
+; frame[11][2]                            ; Merged with frame[11][0]        ;
+; frame[7][2]                             ; Merged with frame[7][0]         ;
+; frame[3][2]                             ; Merged with frame[3][0]         ;
+; frame[192][0]                           ; Merged with frame[192][3]       ;
+; frame[190][2]                           ; Merged with frame[190][0]       ;
+; frame[182][2]                           ; Merged with frame[182][0]       ;
+; frame[162][2]                           ; Merged with frame[162][0]       ;
+; frame[158][2]                           ; Merged with frame[158][0]       ;
+; frame[148][2]                           ; Merged with frame[148][0]       ;
+; frame[145][2]                           ; Merged with frame[145][0]       ;
+; frame[142][1]                           ; Merged with frame[142][0]       ;
+; frame[137][2]                           ; Merged with frame[137][0]       ;
+; frame[121][2]                           ; Merged with frame[121][0]       ;
+; frame[107][2]                           ; Merged with frame[107][0]       ;
+; frame[103][2]                           ; Merged with frame[103][0]       ;
+; frame[67][2]                            ; Merged with frame[67][0]        ;
+; frame[59][2]                            ; Merged with frame[59][0]        ;
+; frame[43][2]                            ; Merged with frame[43][0]        ;
+; frame[31][2]                            ; Merged with frame[31][0]        ;
+; frame[27][2]                            ; Merged with frame[27][0]        ;
+; frame[21][2]                            ; Merged with frame[21][0]        ;
+; frame[13][2]                            ; Merged with frame[13][0]        ;
+; frame[9][2]                             ; Merged with frame[9][0]         ;
+; frame[5][2]                             ; Merged with frame[5][0]         ;
+; frame[176][2]                           ; Merged with frame[176][0]       ;
+; frame[171][1]                           ; Merged with frame[171][0]       ;
+; frame[152][2]                           ; Merged with frame[152][0]       ;
+; frame[144][1]                           ; Merged with frame[144][0]       ;
+; frame[99][2]                            ; Merged with frame[99][0]        ;
+; frame[95][1]                            ; Merged with frame[95][0]        ;
+; frame[93][1]                            ; Merged with frame[93][0]        ;
+; frame[47][2]                            ; Merged with frame[47][0]        ;
+; frame[1][2]                             ; Merged with frame[1][0]         ;
+; frame[191][2]                           ; Merged with frame[191][3]       ;
+; frame[182][1]                           ; Merged with frame[182][0]       ;
+; frame[168][1]                           ; Merged with frame[168][0]       ;
+; frame[117][2]                           ; Merged with frame[117][0]       ;
+; frame[94][1]                            ; Merged with frame[94][0]        ;
+; frame[92][1]                            ; Merged with frame[92][0]        ;
+; frame[90][1]                            ; Merged with frame[90][0]        ;
+; frame[88][1]                            ; Merged with frame[88][0]        ;
+; frame[192][1]                           ; Merged with frame[192][3]       ;
+; frame[194][2]                           ; Merged with frame[194][3]       ;
+; frame[195][2]                           ; Merged with frame[195][3]       ;
+; frame[188][1]                           ; Merged with frame[188][0]       ;
+; frame[181][1]                           ; Merged with frame[181][0]       ;
+; frame[167][1]                           ; Merged with frame[167][0]       ;
+; frame[141][1]                           ; Merged with frame[141][0]       ;
+; frame[138][1]                           ; Merged with frame[138][0]       ;
+; frame[91][1]                            ; Merged with frame[91][0]        ;
+; frame[86][1]                            ; Merged with frame[86][0]        ;
+; frame[84][1]                            ; Merged with frame[84][0]        ;
+; frame[189][2]                           ; Merged with frame[189][0]       ;
+; frame[186][1]                           ; Merged with frame[186][0]       ;
+; frame[179][1]                           ; Merged with frame[179][0]       ;
+; frame[175][1]                           ; Merged with frame[175][0]       ;
+; frame[165][1]                           ; Merged with frame[165][0]       ;
+; frame[164][1]                           ; Merged with frame[164][0]       ;
+; frame[140][1]                           ; Merged with frame[140][0]       ;
+; frame[139][1]                           ; Merged with frame[139][0]       ;
+; frame[136][1]                           ; Merged with frame[136][0]       ;
+; frame[134][1]                           ; Merged with frame[134][0]       ;
+; frame[87][1]                            ; Merged with frame[87][0]        ;
+; frame[85][1]                            ; Merged with frame[85][0]        ;
+; frame[82][1]                            ; Merged with frame[82][0]        ;
+; frame[80][1]                            ; Merged with frame[80][0]        ;
+; frame[17][2]                            ; Merged with frame[17][0]        ;
+; frame[185][2]                           ; Merged with frame[185][0]       ;
+; frame[177][1]                           ; Merged with frame[177][0]       ;
+; frame[173][1]                           ; Merged with frame[173][0]       ;
+; frame[163][1]                           ; Merged with frame[163][0]       ;
+; frame[161][1]                           ; Merged with frame[161][0]       ;
+; frame[154][1]                           ; Merged with frame[154][0]       ;
+; frame[137][1]                           ; Merged with frame[137][0]       ;
+; frame[133][1]                           ; Merged with frame[133][0]       ;
+; frame[131][1]                           ; Merged with frame[131][0]       ;
+; frame[129][1]                           ; Merged with frame[129][0]       ;
+; frame[116][1]                           ; Merged with frame[116][0]       ;
+; frame[89][1]                            ; Merged with frame[89][0]        ;
+; frame[79][1]                            ; Merged with frame[79][0]        ;
+; frame[77][1]                            ; Merged with frame[77][0]        ;
+; frame[75][1]                            ; Merged with frame[75][0]        ;
+; frame[73][1]                            ; Merged with frame[73][0]        ;
+; frame[44][1]                            ; Merged with frame[44][0]        ;
+; frame[187][1]                           ; Merged with frame[187][0]       ;
+; frame[178][1]                           ; Merged with frame[178][0]       ;
+; frame[176][1]                           ; Merged with frame[176][0]       ;
+; frame[172][1]                           ; Merged with frame[172][0]       ;
+; frame[162][1]                           ; Merged with frame[162][0]       ;
+; frame[160][1]                           ; Merged with frame[160][0]       ;
+; frame[150][1]                           ; Merged with frame[150][0]       ;
+; frame[135][1]                           ; Merged with frame[135][0]       ;
+; frame[130][1]                           ; Merged with frame[130][0]       ;
+; frame[128][1]                           ; Merged with frame[128][0]       ;
+; frame[126][1]                           ; Merged with frame[126][0]       ;
+; frame[124][1]                           ; Merged with frame[124][0]       ;
+; frame[76][1]                            ; Merged with frame[76][0]        ;
+; frame[74][1]                            ; Merged with frame[74][0]        ;
+; frame[71][1]                            ; Merged with frame[71][0]        ;
+; frame[69][1]                            ; Merged with frame[69][0]        ;
+; frame[67][1]                            ; Merged with frame[67][0]        ;
+; frame[65][1]                            ; Merged with frame[65][0]        ;
+; frame[36][1]                            ; Merged with frame[36][0]        ;
+; frame[184][1]                           ; Merged with frame[184][0]       ;
+; frame[174][2]                           ; Merged with frame[174][0]       ;
+; frame[159][1]                           ; Merged with frame[159][0]       ;
+; frame[157][1]                           ; Merged with frame[157][0]       ;
+; frame[147][1]                           ; Merged with frame[147][0]       ;
+; frame[132][1]                           ; Merged with frame[132][0]       ;
+; frame[127][1]                           ; Merged with frame[127][0]       ;
+; frame[122][1]                           ; Merged with frame[122][0]       ;
+; frame[120][1]                           ; Merged with frame[120][0]       ;
+; frame[118][1]                           ; Merged with frame[118][0]       ;
+; frame[104][1]                           ; Merged with frame[104][0]       ;
+; frame[72][1]                            ; Merged with frame[72][0]        ;
+; frame[70][1]                            ; Merged with frame[70][0]        ;
+; frame[64][1]                            ; Merged with frame[64][0]        ;
+; frame[62][1]                            ; Merged with frame[62][0]        ;
+; frame[60][1]                            ; Merged with frame[60][0]        ;
+; frame[58][1]                            ; Merged with frame[58][0]        ;
+; frame[56][1]                            ; Merged with frame[56][0]        ;
+; frame[26][1]                            ; Merged with frame[26][0]        ;
+; frame[166][1]                           ; Merged with frame[166][0]       ;
+; frame[158][1]                           ; Merged with frame[158][0]       ;
+; frame[155][1]                           ; Merged with frame[155][0]       ;
+; frame[125][1]                           ; Merged with frame[125][0]       ;
+; frame[119][1]                           ; Merged with frame[119][0]       ;
+; frame[117][1]                           ; Merged with frame[117][0]       ;
+; frame[114][1]                           ; Merged with frame[114][0]       ;
+; frame[98][1]                            ; Merged with frame[98][0]        ;
+; frame[83][1]                            ; Merged with frame[83][0]        ;
+; frame[66][1]                            ; Merged with frame[66][0]        ;
+; frame[63][1]                            ; Merged with frame[63][0]        ;
+; frame[61][1]                            ; Merged with frame[61][0]        ;
+; frame[55][1]                            ; Merged with frame[55][0]        ;
+; frame[53][1]                            ; Merged with frame[53][0]        ;
+; frame[51][1]                            ; Merged with frame[51][0]        ;
+; frame[49][1]                            ; Merged with frame[49][0]        ;
+; frame[47][1]                            ; Merged with frame[47][0]        ;
+; frame[16][1]                            ; Merged with frame[16][0]        ;
+; frame[180][1]                           ; Merged with frame[180][0]       ;
+; frame[156][1]                           ; Merged with frame[156][0]       ;
+; frame[151][1]                           ; Merged with frame[151][0]       ;
+; frame[115][1]                           ; Merged with frame[115][0]       ;
+; frame[113][1]                           ; Merged with frame[113][0]       ;
+; frame[111][1]                           ; Merged with frame[111][0]       ;
+; frame[68][1]                            ; Merged with frame[68][0]        ;
+; frame[52][1]                            ; Merged with frame[52][0]        ;
+; frame[50][1]                            ; Merged with frame[50][0]        ;
+; frame[45][1]                            ; Merged with frame[45][0]        ;
+; frame[42][1]                            ; Merged with frame[42][0]        ;
+; frame[40][1]                            ; Merged with frame[40][0]        ;
+; frame[38][1]                            ; Merged with frame[38][0]        ;
+; frame[7][1]                             ; Merged with frame[7][0]         ;
+; frame[152][1]                           ; Merged with frame[152][0]       ;
+; frame[149][1]                           ; Merged with frame[149][0]       ;
+; frame[123][1]                           ; Merged with frame[123][0]       ;
+; frame[112][1]                           ; Merged with frame[112][0]       ;
+; frame[109][1]                           ; Merged with frame[109][0]       ;
+; frame[107][1]                           ; Merged with frame[107][0]       ;
+; frame[81][1]                            ; Merged with frame[81][0]        ;
+; frame[78][1]                            ; Merged with frame[78][0]        ;
+; frame[59][1]                            ; Merged with frame[59][0]        ;
+; frame[46][1]                            ; Merged with frame[46][0]        ;
+; frame[43][1]                            ; Merged with frame[43][0]        ;
+; frame[41][1]                            ; Merged with frame[41][0]        ;
+; frame[35][1]                            ; Merged with frame[35][0]        ;
+; frame[33][1]                            ; Merged with frame[33][0]        ;
+; frame[31][1]                            ; Merged with frame[31][0]        ;
+; frame[0][1]                             ; Merged with frame[0][0]         ;
+; frame[148][1]                           ; Merged with frame[148][0]       ;
+; frame[121][1]                           ; Merged with frame[121][0]       ;
+; frame[106][1]                           ; Merged with frame[106][0]       ;
+; frame[102][1]                           ; Merged with frame[102][0]       ;
+; frame[48][1]                            ; Merged with frame[48][0]        ;
+; frame[32][1]                            ; Merged with frame[32][0]        ;
+; frame[30][1]                            ; Merged with frame[30][0]        ;
+; frame[28][1]                            ; Merged with frame[28][0]        ;
+; frame[25][1]                            ; Merged with frame[25][0]        ;
+; frame[23][1]                            ; Merged with frame[23][0]        ;
+; frame[21][1]                            ; Merged with frame[21][0]        ;
+; frame[108][1]                           ; Merged with frame[108][0]       ;
+; frame[105][1]                           ; Merged with frame[105][0]       ;
+; frame[100][1]                           ; Merged with frame[100][0]       ;
+; frame[37][1]                            ; Merged with frame[37][0]        ;
+; frame[34][1]                            ; Merged with frame[34][0]        ;
+; frame[22][1]                            ; Merged with frame[22][0]        ;
+; frame[19][1]                            ; Merged with frame[19][0]        ;
+; frame[17][1]                            ; Merged with frame[17][0]        ;
+; frame[15][1]                            ; Merged with frame[15][0]        ;
+; frame[103][1]                           ; Merged with frame[103][0]       ;
+; frame[101][1]                           ; Merged with frame[101][0]       ;
+; frame[27][1]                            ; Merged with frame[27][0]        ;
+; frame[20][1]                            ; Merged with frame[20][0]        ;
+; frame[18][1]                            ; Merged with frame[18][0]        ;
+; frame[14][1]                            ; Merged with frame[14][0]        ;
+; frame[12][1]                            ; Merged with frame[12][0]        ;
+; frame[99][1]                            ; Merged with frame[99][0]        ;
+; frame[57][1]                            ; Merged with frame[57][0]        ;
+; frame[54][1]                            ; Merged with frame[54][0]        ;
+; frame[39][1]                            ; Merged with frame[39][0]        ;
+; frame[29][1]                            ; Merged with frame[29][0]        ;
+; frame[13][1]                            ; Merged with frame[13][0]        ;
+; frame[11][1]                            ; Merged with frame[11][0]        ;
+; frame[9][1]                             ; Merged with frame[9][0]         ;
+; frame[96][1]                            ; Merged with frame[96][0]        ;
+; frame[6][1]                             ; Merged with frame[6][0]         ;
+; frame[4][1]                             ; Merged with frame[4][0]         ;
+; frame[8][1]                             ; Merged with frame[8][0]         ;
+; frame[5][1]                             ; Merged with frame[5][0]         ;
+; frame[3][1]                             ; Merged with frame[3][0]         ;
+; frame[1][1]                             ; Merged with frame[1][0]         ;
+; frame[10][1]                            ; Merged with frame[10][0]        ;
+; frame[2][1]                             ; Merged with frame[2][0]         ;
+; input_pixel[1]~reg0                     ; Merged with input_pixel[0]~reg0 ;
+; input_pixel[2]~reg0                     ; Merged with input_pixel[0]~reg0 ;
+; input_pixel[3]~reg0                     ; Merged with input_pixel[0]~reg0 ;
+; Total Number of Removed Registers = 591 ;                                 ;
++-----------------------------------------+---------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 217   ;
+; Number of registers using Synchronous Clear  ; 207   ;
+; Number of registers using Synchronous Load   ; 1     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 212   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |touch_frame_adapter|input_pixel_index[6]~reg0 ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |touch_frame_adapter|stream_index[6]           ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |touch_frame_adapter|mapped_y[2]               ;
+; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |touch_frame_adapter|mapped_x[1]               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:02     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II 64-Bit Analysis & Synthesis
+    Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
+    Info: Processing started: Sat Oct 03 15:39:45 2026
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off touch_frame_adapter -c touch_frame_adapter
+Info (20032): Parallel compilation is enabled and will use up to 2 processors
+Info (12021): Found 1 design units, including 1 entities, in source file touch_frame_adapter.sv
+    Info (12023): Found entity 1: touch_frame_adapter
+Info (12127): Elaborating entity "touch_frame_adapter" for the top level hierarchy
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 616 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 23 input pins
+    Info (21059): Implemented 16 output pins
+    Info (21061): Implemented 577 logic cells
+Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 0 warnings
+    Info: Peak virtual memory: 4600 megabytes
+    Info: Processing ended: Sat Oct 03 15:39:50 2026
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:04
+
+

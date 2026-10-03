@@ -1,0 +1,11 @@
+# ModelSim working library and local transcripts
+verification/work/
+verification/transcript
+verification/*.wlf
+
+# Quartus temporary databases; synthesis reports and programming images remain
+# tracked as milestone evidence unless intentionally removed in a later commit.
+rtl/db/
+rtl/incremental_db/
+rtl/*.qws
+rtl/*.qarlog
