@@ -12,7 +12,8 @@ one reusable classifier boundary.
 - [x] Replace coordinate division with threshold mapping to reduce logic.
 - [x] Implement a standalone Nios-free XPT2046 raw SPI reader.
 - [x] Add a self-checking XPT2046 protocol testbench with known X/Y response words.
-- [ ] Connect the raw reader to calibrated coordinates and the adapter.
+- [x] Implement and verify a standalone raw-to-LCD calibration block.
+- [ ] Connect the raw reader and calibrator to the frame adapter.
 - [ ] Connect the stream to the reusable ML core.
 
 ## Verification rule for each implementation step
@@ -31,7 +32,7 @@ The current evidence is:
 | 1 | Coordinate to 14×14 adapter | `verification/touch_frame_adapter_tb.sv` plus Quartus fit/timing | Complete |
 | 2 | Threshold mapping replaces division | Quartus resource/timing comparison | Complete |
 | 3 | Raw XPT2046 SPI reader | `verification/xpt2046_reader_tb.sv` plus standalone Quartus fit/timing | Complete: simulation and synthesis pass |
-| 4 | Calibration and frame connection | Test raw-to-screen mapping and streamed pixels | Not started |
+| 4 | Calibration and frame connection | Test raw-to-screen mapping and streamed pixels | Calibration block complete; wiring to adapter pending |
 | 5 | ML-core connection | End-to-end known-frame prediction test | Not started |
 
 ## A. Confirm the touch source
@@ -118,6 +119,23 @@ transactions and emits the expected 12-bit values. ModelSim now passes this
 test. The original mismatch was caused by the RTL appending `touch_miso`
 again on the falling edge even though the final bit had already been sampled
 on the preceding rising edge. Removing that second shift fixed the alignment.
+
+## Third synthesis result: calibration block
+
+`rtl/xpt2046_calibrator.sv` converts the raw range used by the working Nios
+application (`200..3900`) into fourteen fixed raw bins. Each bin emits the
+centre coordinate of one 14×14 LCD cell. This avoids division and keeps the
+frame adapter contract unchanged.
+
+| Module | Logic cells | Timing result | Verification |
+|---|---:|---|---|
+| `xpt2046_calibrator.sv` | 129 | Quartus compile successful; isolated wrapper has no registered setup paths | ModelSim PASS |
+
+The test is
+[`verification/xpt2046_calibrator_tb.sv`](../verification/xpt2046_calibrator_tb.sv).
+It checks low, middle, and high raw coordinates and verifies the emitted point
+valid pulse. This is still an isolated module; it has no physical pin
+assignments and must not be downloaded as a board design.
 
 LCD drawing/viewer UI remains separate from classifier RTL. Reading arbitrary
 pixels already displayed by the LCD is not assumed: touchscreen strokes are

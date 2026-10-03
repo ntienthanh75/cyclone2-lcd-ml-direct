@@ -77,6 +77,16 @@ ModelSim passes the two-transaction sequence and expected X/Y values. The
 original one-bit mismatch was fixed by using the already-sampled final bit
 instead of appending `touch_miso` a second time on the falling edge.
 
+## Third implementation milestone: calibration
+
+[`rtl/xpt2046_calibrator.sv`](rtl/xpt2046_calibrator.sv) converts raw
+XPT2046 values from the working Nios range `200..3900` into the centre of one
+of fourteen LCD coordinate bins. Its testbench is
+[`verification/xpt2046_calibrator_tb.sv`](verification/xpt2046_calibrator_tb.sv),
+which passes low, middle, and high coordinate checks. Quartus synthesis uses
+129 logic cells. The block is verified in isolation and is not yet connected
+to the board-level touch reader or frame adapter.
+
 ## Target
 
 - Board: Waveshare/CoreEP2C5
