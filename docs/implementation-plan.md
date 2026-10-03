@@ -14,7 +14,7 @@ one reusable classifier boundary.
 - [x] Add a self-checking XPT2046 protocol testbench with known X/Y response words.
 - [x] Implement and verify a standalone raw-to-LCD calibration block.
 - [x] Connect the raw reader and calibrator to the frame adapter.
-- [ ] Connect the stream to the reusable ML core.
+- [x] Connect the stream to the reusable ML core boundary.
 
 ## Verification rule for each implementation step
 
@@ -33,7 +33,7 @@ The current evidence is:
 | 2 | Threshold mapping replaces division | Quartus resource/timing comparison | Complete |
 | 3 | Raw XPT2046 SPI reader | `verification/xpt2046_reader_tb.sv` plus standalone Quartus fit/timing | Complete: simulation and synthesis pass |
 | 4 | Calibration and frame connection | Test raw-to-screen mapping and streamed pixels | Complete in simulation/synthesis; board pins pending |
-| 5 | ML-core connection | End-to-end known-frame prediction test | Not started |
+| 5 | ML-core connection | End-to-end known-frame prediction test plus Quartus fit/timing | Functional simulation and fit pass; 50 MHz timing fails |
 
 ## A. Confirm the touch source
 
@@ -156,6 +156,41 @@ ModelSim passes the integration test. Quartus synthesis for EP2C5T144C8 uses
 824 logic cells and reports +3.349 ns worst-case setup slack at 50 MHz.
 The design still has unassigned top-level pins, so this remains a
 simulation/synthesis milestone and is not a hardware-download image.
+
+## Fifth implementation step: reusable ML integration
+
+`rtl/touch_ml_top.sv` instantiates the authoritative
+`rtl/touch_capture_top.sv` boundary and the reusable
+`../../cyclone2-handwriting-ml/rtl/ml_inference.sv` source. The 196 pixels,
+pixel index, frame-last, and reset/clock-enable contract are connected
+directly; no Nios processor or LCD display path is added. The result boundary
+exports `result_valid`, `result_accepted`, digit, confidence, margin, and
+cycle count.
+
+The local `artifacts/` directory contains copies of the four required MIF
+files so Quartus can package the same trained weights. The testbench
+`verification/touch_ml_top_tb.sv` injects the known XPT2046 response, waits
+for the 196-pixel stream, and waits for the classifier result. ModelSim passes
+with the real weights:
+
+```text
+PASS: touch-to-ML integration; digit=7 confidence=71 margin=20 cycles=13411 accepted=1
+```
+
+The first simulation attempt used an incorrect working directory and loaded
+no MIF files; it was rejected as evidence. Running ModelSim from the original
+ML project's verification directory resolves the shared core's existing
+`../../artifacts` path and loads the real weights.
+
+Quartus full compile for `rtl/touch_ml_top.qsf` succeeds through synthesis,
+fit, assembly, and timing analysis. The fitted design uses 3,661 logic
+elements (79%), 55,888 memory bits (47%), and 5 embedded multipliers (19%).
+The temporary 50 MHz constraint reports worst-case setup slack `-71.005 ns`
+and hold slack `+0.499 ns`. This means the integration is not timing-closed
+at 50 MHz and must not be downloaded as a claimed working hardware image.
+The next design milestone is to reduce or pipeline the ML critical path and
+repeat timing at the selected clock, while keeping the passing functional
+integration test unchanged.
 
 ## F. Validation set
 

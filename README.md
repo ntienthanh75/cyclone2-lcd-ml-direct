@@ -97,6 +97,32 @@ Quartus synthesis uses 824 logic cells with +3.349 ns worst-case setup slack
 at 50 MHz. The top level still has no physical pin assignments, so it has not
 been downloaded to the board.
 
+## Fifth implementation milestone: touch stream to ML core
+
+[`rtl/touch_ml_top.sv`](rtl/touch_ml_top.sv) is a thin SystemVerilog
+boundary. It reuses `ml_inference.sv` from the separate
+`cyclone2-handwriting-ml` repository; it does not create a second classifier.
+The integrated path is:
+
+```text
+XPT2046 touch SPI -> raw reader -> calibration -> 14x14/196-pixel stream
+                  -> reusable 196-to-32-to-10 ML core -> result fields
+```
+
+The four MIF files under `artifacts/` are the synthesis inputs for this
+project. The integration smoke test is
+[`verification/touch_ml_top_tb.sv`](verification/touch_ml_top_tb.sv). It
+injects the known X/Y SPI response, starts one 196-pixel frame, and waits for
+the ML result. With the real trained weights it passes with `digit=7`,
+`confidence=71`, `margin=20`, and `13,411` clock cycles. This is functional
+simulation evidence, not a hardware result.
+
+Quartus II 13.0 SP1 fits the reduced external boundary on EP2C5T144C8:
+3,661 logic elements (79%), 55,888 memory bits (47%), and 5 embedded
+multipliers. At the temporary 50 MHz constraint, setup timing fails with
+`-71.005 ns` worst-case slack. The fit also reports unassigned physical pins,
+so this image is not yet a valid 50 MHz hardware download.
+
 ## Target
 
 - Board: Waveshare/CoreEP2C5

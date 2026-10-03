@@ -242,6 +242,16 @@ path and all 196 streamed pixels, and Quartus reports 824 logic cells with
 the real CoreEP2C5 pin table has not yet been assigned and no hardware test
 has been run.
 
-Milestone 4 status: **NO-GO for hardware**, **GO for the next RTL milestone**.
-The next task is to review the actual board pin table and add the ML-core
-boundary, while preserving the existing integration test as a regression.
+Milestone 4 status: **NO-GO for hardware**, **GO for RTL integration**.
+
+Milestone 6 status: the touch-to-ML functional boundary is simulation-verified
+with the real trained MIF weights. The bounded test reports one result after
+13,411 cycles (`digit=7`, confidence `71`, margin `20`). Quartus fit succeeds
+at EP2C5T144C8 with 3,661 logic elements, 55,888 memory bits, and 5 embedded
+multipliers, but 50 MHz timing is **NO-GO** because setup slack is
+`-71.005 ns` (hold slack `+0.499 ns`). Physical pin assignments are still
+missing, so no hardware download or board result has been claimed.
+
+Before the next milestone, check this file and record the timing-repair
+choice. The next task is to reduce or pipeline the ML critical path, rerun the
+same integration test, and repeat synthesis/timing at the selected clock.
