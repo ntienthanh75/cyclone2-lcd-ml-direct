@@ -17,6 +17,8 @@ one reusable classifier boundary.
 - [x] Connect the stream to the reusable ML core boundary.
 - [x] Sweep the integrated design at 25 MHz, 10 MHz, and 5 MHz and record
       resource/timing results before choosing an operating point.
+- [ ] Compare three timing-repair variants against the 5 MHz baseline:
+      baseline, layer-boundary registers, and deeper MAC pipelining.
 
 ## Verification rule for each implementation step
 
@@ -203,6 +205,21 @@ that only the clock period changes. Store each report under
 multipliers, setup slack, hold slack, and Fmax. A lower frequency may make the
 design usable, but it does not repair the long combinational ML path; that
 remains a separate pipeline/resource tradeoff.
+
+## Seventh implementation step: pipeline trade-off experiment
+
+Keep the current `ml_inference.sv` unchanged as the baseline. Evaluate three
+separate variants using the same trained weights and 14×14 input contract:
+
+1. Baseline sequential MAC, constrained at 5 MHz and 10 MHz.
+2. Add registers at the hidden-layer/output-layer boundary.
+3. Add a deeper registered MAC path, accepting extra latency if timing and
+   logic/RAM/DSP use improve.
+
+For every variant, run the existing functional ML verification first, then
+compile at 5 MHz and 10 MHz. Record logic elements, registers, memory bits,
+multipliers, latency cycles, setup slack, and Fmax. Do not replace the
+baseline or claim hardware readiness until the comparison is complete.
 
 ### Sweep result
 

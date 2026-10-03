@@ -265,3 +265,8 @@ is 5 MHz for margin; 10 MHz is the fastest tested passing constraint. Before
 the next milestone, check this result and decide whether to keep 5 MHz or
 start a pipelined ML experiment. Hardware remains NO-GO until pins are
 assigned and the board is tested.
+
+The next milestone is the pipeline trade-off experiment. Preserve the
+5 MHz baseline and compare: (1) the current sequential MAC, (2) registers at
+the hidden/output layer boundary, and (3) a deeper registered MAC path. Each
+variant requires functional regression evidence before synthesis comparison.
