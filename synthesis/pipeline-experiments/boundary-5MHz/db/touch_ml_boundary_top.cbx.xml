@@ -1,0 +1,13 @@
+<?xml version="1.0" ?>
+<LOG_ROOT>
+	<PROJECT NAME="touch_ml_boundary_top">
+		<CBX_INST_ENTRY INSTANCE_NAME="|touch_ml_boundary_top|ml_inference_boundary:ml_path|altsyncram:b2_rom" CBX_FILE_NAME="altsyncram_hct.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|touch_ml_boundary_top|ml_inference_boundary:ml_path|altsyncram:l2_rom" CBX_FILE_NAME="altsyncram_pnt.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|touch_ml_boundary_top|ml_inference_boundary:ml_path|lpm_mult:Mult1" CBX_FILE_NAME="mult_vvs.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|touch_ml_boundary_top|ml_inference_boundary:ml_path|altsyncram:b1_rom" CBX_FILE_NAME="altsyncram_mct.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|touch_ml_boundary_top|ml_inference_boundary:ml_path|altsyncram:hidden_rtl_0" CBX_FILE_NAME="altsyncram_sng1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|touch_ml_boundary_top|ml_inference_boundary:ml_path|altsyncram:input_mem_rtl_0" CBX_FILE_NAME="altsyncram_mog1.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|touch_ml_boundary_top|ml_inference_boundary:ml_path|altsyncram:l1_rom" CBX_FILE_NAME="altsyncram_vqt.tdf"/>
+		<CBX_INST_ENTRY INSTANCE_NAME="|touch_ml_boundary_top|ml_inference_boundary:ml_path|lpm_mult:Mult0" CBX_FILE_NAME="mult_fus.tdf"/>
+	</PROJECT>
+</LOG_ROOT>

@@ -1,0 +1,5 @@
+v1
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ml_inference_boundary:ml_path|lpm_mult:Mult1|mult_vvs:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ml_inference_boundary:ml_path|lpm_mult:Mult0|mult_fus:auto_generated|mac_out2,
+DSP_BALANCING_IMPLEMENTATION,DSP_BLOCKS,ml_inference_boundary:ml_path|lpm_mult:Mult1|mult_vvs:auto_generated|mac_out4,
+PORT_SWAPPING,PORT_SWAP_TYPE_DSPMULT,ml_inference_boundary:ml_path|lpm_mult:Mult0|mult_fus:auto_generated|mac_mult1,

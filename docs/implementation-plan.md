@@ -273,6 +273,29 @@ The complete synthesis projects and reports are stored under
 `verification/touch_ml_scanpipe_top_tb.sv`, run by
 `verification/scanpipe_run.do`.
 
+### Pipeline experiment result 2: registered score boundary control
+
+The second variant is `rtl/experiments/ml_inference_boundary.sv`. It copies all
+ten completed scores into an explicit `boundary_scores` register bank before
+running the original ten-way FINISH scan. This adds a real register boundary,
+but does not serialize the ranking logic.
+
+ModelSim with the real MIF weights passed:
+
+```text
+PASS: touch-to-ML integration; digit=7 confidence=71 margin=20 cycles=13412 accepted=1
+```
+
+| Variant / constraint | Logic elements | Memory bits | Multipliers | Setup slack | Hold slack | Interpretation |
+|---|---:|---:|---:|---:|---:|---|
+| Registered boundary, 5 MHz | 3,894 (85%) | 55,888 (47%) | 5 (19%) | +69.569 ns | +0.499 ns | Pass, but larger |
+| Registered boundary, 10 MHz | 3,841 (83%) | 55,888 (47%) | 5 (19%) | +1.119 ns | +0.499 ns | Narrow pass |
+
+The worst path still runs from a score register through the ten-score scan to
+the result margin. This option is rejected as the primary repair: it costs
+roughly 250–300 logic elements and one cycle while leaving the root critical
+path essentially intact. The serialized scan remains preferred.
+
 ## F. Validation set
 
 - [ ] Collect at least 20 drawings for each digit `0..9`.

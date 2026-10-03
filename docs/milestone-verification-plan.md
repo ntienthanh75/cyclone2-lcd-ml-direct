@@ -285,3 +285,10 @@ memory bits, and 5 multipliers at both 5 MHz and 10 MHz; setup slack is
 `+172.323 ns` at 5 MHz and `+70.647 ns` at 10 MHz. The baseline remains stored
 under `synthesis/frequency-sweep/` for comparison. The scan-pipeline variant
 is not hardware-approved because pin assignments remain unresolved.
+
+The second control variant adds an explicit ten-word registered score boundary
+before the original FINISH scan. It also passes functional verification
+(`digit=7`, confidence 71, margin 20, 13,412 cycles), but uses 3,894 LEs at
+5 MHz and 3,841 LEs at 10 MHz. Setup slack is only `+1.119 ns` at 10 MHz,
+because the ten-way scan remains. This variant is rejected; it is retained as
+measured evidence that a boundary register alone is not the right fix.

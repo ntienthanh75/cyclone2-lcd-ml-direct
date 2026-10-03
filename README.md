@@ -178,6 +178,14 @@ using [`verification/scanpipe_run.do`](verification/scanpipe_run.do).
 This is still simulation/synthesis evidence only; do not download it until
 the actual EP2C5T144C8 pin table is assigned and reviewed.
 
+The measured control experiment is also retained under
+[`synthesis/pipeline-experiments`](synthesis/pipeline-experiments): an
+explicit register bank before the original score-ranking scan. It passes the
+same functional test with `digit=7` and adds one cycle, but uses 3,894 LEs at
+5 MHz and 3,841 LEs at 10 MHz. Its 10 MHz setup slack is only `+1.119 ns`,
+showing that a register boundary alone does not break the long ranking path.
+It is therefore rejected in favor of the serialized score scan.
+
 ## Target
 
 - Board: Waveshare/CoreEP2C5
