@@ -193,6 +193,8 @@ The board-level wrapper milestone is documented in
 The complete joystick direction map is in
 [`docs/joystick-pin-map.md`](docs/joystick-pin-map.md).
 For a visual map, run `python tools/joystick_map_ui.py`.
+For a live LED direction test, use the separate diagnostic project
+`rtl/cyclone2_joystick_diag.qpf`; its SOF temporarily replaces the ML image.
 It records the exact CoreEP2C5 pin assignments, the real 50 MHz input clock,
 the derived 5 MHz processing clock, and the Quartus timing/resource results.
 

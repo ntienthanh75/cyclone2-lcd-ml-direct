@@ -24,6 +24,16 @@ RIGHT, and PRESS remain available for a later UI/control milestone and must be
 added to the top-level port list, QSF assignments, synchronizers, and
 verification test before use.
 
+The separate diagnostic design
+`rtl/output_files_joystick_diag/cyclone2_joystick_diag.sof` maps each control
+to a physical LED: LED0=UP, LED1=DOWN, LED2=LEFT, LED3=RIGHT, and PRESS=all
+four LEDs. It is a temporary direction-test image, not the ML image.
+
+The diagnostic SOF was downloaded successfully to the EP2C5 on 2026-10-04.
+Quartus Programmer reported one configured device and checksum `0x00070C25`.
+After testing, reload
+`rtl/output_files_hw/cyclone2_lcd_ml_hw.sof` to return to the ML design.
+
 ## Physical test
 
 With the board powered and the wrapper SOF loaded, use a multimeter or a

@@ -1,0 +1,26 @@
+set_global_assignment -name FAMILY "Cyclone II"
+set_global_assignment -name DEVICE EP2C5T144C8
+set_global_assignment -name TOP_LEVEL_ENTITY cyclone2_joystick_diag
+set_global_assignment -name SYSTEMVERILOG_FILE cyclone2_joystick_diag.sv
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 13.0
+set_global_assignment -name LAST_QUARTUS_VERSION "13.0 SP1"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files_joystick_diag
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
+set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
+
+set_location_assignment PIN_139 -to joystick_up_n
+set_location_assignment PIN_143 -to joystick_down_n
+set_location_assignment PIN_142 -to joystick_left_n
+set_location_assignment PIN_141 -to joystick_right_n
+set_location_assignment PIN_137 -to joystick_press_n
+set_location_assignment PIN_8   -to led[0]
+set_location_assignment PIN_9   -to led[1]
+set_location_assignment PIN_24  -to led[2]
+set_location_assignment PIN_25  -to led[3]
+set_location_assignment PIN_4   -to buzzer_n
+
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_up_n
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_down_n
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_left_n
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_right_n
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_press_n
