@@ -210,7 +210,9 @@ Before downloading, complete these items in order:
 4. Review the exact `set_location_assignment` entries in the board wrapper.
 5. Recompile and inspect timing, pin, and fitter reports. **Done for the
    current wrapper.**
-6. Download the resulting `.sof` and perform the first board test.
+6. Download the resulting `.sof`. **Done:** the board accepted
+   `rtl/output_files_hw/cyclone2_lcd_ml_hw.sof` over USB-Blaster.
+7. Perform and record the first touch/joystick/LED board test.
 
 ## Target
 

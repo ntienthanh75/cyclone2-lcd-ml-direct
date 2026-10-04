@@ -55,5 +55,20 @@ joystick DOWN, and the LED digit output one at a time.
 - [x] Add the wrapper smoke-test source and run command file.
 - [x] Run the wrapper smoke test in ModelSim: `PASS: hardware wrapper; proc
   clock divider, controls, LEDs, buzzer mute`.
-- [ ] Download the candidate SOF to the physical FPGA.
+- [x] Download the candidate SOF to the physical FPGA over USB-Blaster JTAG.
+  Quartus Programmer reported one EP2C5T144@1 device configured successfully
+  with SOF checksum `0x002933CB`.
 - [ ] Verify touch capture and digit display on the board.
+
+## First hardware test after programming
+
+1. The buzzer must remain silent.
+2. Press joystick DOWN once; the captured 14x14 frame is cleared and LEDs
+   should show the inactive value.
+3. Touch several points on the LCD. This design reads the XPT2046 touch
+   controller; it does not redraw pixels on the LCD.
+4. Release the touch panel and press joystick UP once. The ML transaction
+   takes roughly 2.7 ms at 5 MHz; the result digit is then latched on the four
+   LEDs using the board's active-low LED polarity.
+5. Repeat with a simple digit-shaped drawing. Record whether touch SPI pins
+   toggle and whether the LED pattern changes.
