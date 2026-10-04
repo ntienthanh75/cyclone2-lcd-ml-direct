@@ -190,6 +190,8 @@ It is therefore rejected in favor of the serialized score scan.
 
 The board-level wrapper milestone is documented in
 [`docs/hardware-wrapper-milestone.md`](docs/hardware-wrapper-milestone.md).
+The complete joystick direction map is in
+[`docs/joystick-pin-map.md`](docs/joystick-pin-map.md).
 It records the exact CoreEP2C5 pin assignments, the real 50 MHz input clock,
 the derived 5 MHz processing clock, and the Quartus timing/resource results.
 

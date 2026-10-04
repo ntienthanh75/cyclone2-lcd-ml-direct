@@ -62,6 +62,11 @@ joystick DOWN, and the LED digit output one at a time.
 
 ## First hardware test after programming
 
+The complete joystick mapping is documented in
+[`docs/joystick-pin-map.md`](joystick-pin-map.md). The current wrapper uses
+UP (`PIN_139`) and DOWN (`PIN_143`); LEFT (`PIN_142`), RIGHT (`PIN_141`), and
+PRESS (`PIN_137`) are reserved.
+
 1. The buzzer must remain silent.
 2. Press joystick DOWN once; the captured 14x14 frame is cleared and LEDs
    should show the inactive value.
