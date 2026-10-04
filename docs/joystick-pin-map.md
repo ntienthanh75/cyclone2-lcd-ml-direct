@@ -2,6 +2,12 @@
 
 Source: `D:\fpga\EP2C5-pin-conf.txt`.
 
+For a visual orientation guide, run:
+
+```powershell
+python D:\fpga\cyclone2-lcd-ml-direct\tools\joystick_map_ui.py
+```
+
 The joystick switches are documented as active-low: an unpressed switch reads
 `1`; pressing it connects the input to ground and reads `0`.
 
