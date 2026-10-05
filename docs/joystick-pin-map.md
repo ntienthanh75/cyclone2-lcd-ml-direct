@@ -37,15 +37,14 @@ This mapping is loaded in the current diagnostic SOF (checksum `0x00070D15`):
 | Physical action | FPGA input pin | Board indicator |
 |---|---:|---|
 | Push UP | `PIN_139` | LED1 |
-| Push DOWN | `PIN_137` | LED2 |
+| Push DOWN | `PIN_141` | LED4 |
 | Push LEFT | `PIN_142` | LED3 |
-| Push RIGHT | `PIN_141` | LED4 |
+| Push RIGHT | `PIN_137` | LED2 |
 | Press joystick center | `PIN_143` | LED1, LED2, LED3, LED4 |
 
-The DOWN and PRESS assignments are intentionally swapped relative to the
-original pin-reference text because the hardware test showed that the center
-press arrived on `PIN_143` and the direction that was previously mapped as
-PRESS arrived on `PIN_137`.
+The mapping was corrected from the original pin-reference text using the
+observed opposite LED pairs: UP/DOWN are LED1/LED4 and LEFT/RIGHT are
+LED3/LED2. The center press is on `PIN_143`.
 
 ### Permanent diagnostic rule
 
