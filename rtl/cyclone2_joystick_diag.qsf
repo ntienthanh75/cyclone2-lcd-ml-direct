@@ -9,9 +9,9 @@ set_global_assignment -name RESERVE_ALL_UNUSED_PINS "AS INPUT TRI-STATED"
 set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-STATED"
 
 set_location_assignment PIN_139 -to joystick_up_n
-set_location_assignment PIN_141 -to joystick_down_n
+set_location_assignment PIN_137 -to joystick_down_n
 set_location_assignment PIN_142 -to joystick_left_n
-set_location_assignment PIN_137 -to joystick_right_n
+set_location_assignment PIN_141 -to joystick_right_n
 set_location_assignment PIN_143 -to joystick_press_n
 set_location_assignment PIN_8   -to led[0]
 set_location_assignment PIN_9   -to led[1]

@@ -1,5 +1,5 @@
 TimeQuest Timing Analyzer report for cyclone2_joystick_diag
-Mon Oct 05 15:58:09 2026
+Mon Oct 05 16:06:39 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -91,7 +91,7 @@ applicable agreement for further details.
 +----------------------------+--------+--------------------------+
 ; SDC File Path              ; Status ; Read at                  ;
 +----------------------------+--------+--------------------------+
-; cyclone2_joystick_diag.sdc ; OK     ; Mon Oct 05 15:58:09 2026 ;
+; cyclone2_joystick_diag.sdc ; OK     ; Mon Oct 05 16:06:39 2026 ;
 +----------------------------+--------+--------------------------+
 
 
@@ -142,14 +142,14 @@ No paths to report.
 +------------------+-------------+--------+----+----+--------+
 ; Input Port       ; Output Port ; RR     ; RF ; FR ; FF     ;
 +------------------+-------------+--------+----+----+--------+
-; joystick_down_n  ; led[1]      ; 11.449 ;    ;    ; 11.449 ;
-; joystick_left_n  ; led[2]      ; 11.773 ;    ;    ; 11.773 ;
-; joystick_press_n ; led[0]      ; 11.457 ;    ;    ; 11.457 ;
-; joystick_press_n ; led[1]      ; 11.750 ;    ;    ; 11.750 ;
-; joystick_press_n ; led[2]      ; 12.039 ;    ;    ; 12.039 ;
-; joystick_press_n ; led[3]      ; 11.747 ;    ;    ; 11.747 ;
-; joystick_right_n ; led[3]      ; 12.058 ;    ;    ; 12.058 ;
-; joystick_up_n    ; led[0]      ; 11.771 ;    ;    ; 11.771 ;
+; joystick_down_n  ; led[1]      ; 11.314 ;    ;    ; 11.314 ;
+; joystick_left_n  ; led[2]      ; 11.679 ;    ;    ; 11.679 ;
+; joystick_press_n ; led[0]      ; 11.409 ;    ;    ; 11.409 ;
+; joystick_press_n ; led[1]      ; 11.409 ;    ;    ; 11.409 ;
+; joystick_press_n ; led[2]      ; 11.335 ;    ;    ; 11.335 ;
+; joystick_press_n ; led[3]      ; 11.324 ;    ;    ; 11.324 ;
+; joystick_right_n ; led[3]      ; 11.711 ;    ;    ; 11.711 ;
+; joystick_up_n    ; led[0]      ; 11.299 ;    ;    ; 11.299 ;
 +------------------+-------------+--------+----+----+--------+
 
 
@@ -158,14 +158,14 @@ No paths to report.
 +------------------+-------------+--------+----+----+--------+
 ; Input Port       ; Output Port ; RR     ; RF ; FR ; FF     ;
 +------------------+-------------+--------+----+----+--------+
-; joystick_down_n  ; led[1]      ; 11.449 ;    ;    ; 11.449 ;
-; joystick_left_n  ; led[2]      ; 11.773 ;    ;    ; 11.773 ;
-; joystick_press_n ; led[0]      ; 11.457 ;    ;    ; 11.457 ;
-; joystick_press_n ; led[1]      ; 11.750 ;    ;    ; 11.750 ;
-; joystick_press_n ; led[2]      ; 12.039 ;    ;    ; 12.039 ;
-; joystick_press_n ; led[3]      ; 11.747 ;    ;    ; 11.747 ;
-; joystick_right_n ; led[3]      ; 12.058 ;    ;    ; 12.058 ;
-; joystick_up_n    ; led[0]      ; 11.771 ;    ;    ; 11.771 ;
+; joystick_down_n  ; led[1]      ; 11.314 ;    ;    ; 11.314 ;
+; joystick_left_n  ; led[2]      ; 11.679 ;    ;    ; 11.679 ;
+; joystick_press_n ; led[0]      ; 11.409 ;    ;    ; 11.409 ;
+; joystick_press_n ; led[1]      ; 11.409 ;    ;    ; 11.409 ;
+; joystick_press_n ; led[2]      ; 11.335 ;    ;    ; 11.335 ;
+; joystick_press_n ; led[3]      ; 11.324 ;    ;    ; 11.324 ;
+; joystick_right_n ; led[3]      ; 11.711 ;    ;    ; 11.711 ;
+; joystick_up_n    ; led[0]      ; 11.299 ;    ;    ; 11.299 ;
 +------------------+-------------+--------+----+----+--------+
 
 
@@ -204,14 +204,14 @@ No paths to report.
 +------------------+-------------+-------+----+----+-------+
 ; Input Port       ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------------+-------------+-------+----+----+-------+
-; joystick_down_n  ; led[1]      ; 5.286 ;    ;    ; 5.286 ;
-; joystick_left_n  ; led[2]      ; 5.468 ;    ;    ; 5.468 ;
-; joystick_press_n ; led[0]      ; 5.332 ;    ;    ; 5.332 ;
-; joystick_press_n ; led[1]      ; 5.388 ;    ;    ; 5.388 ;
-; joystick_press_n ; led[2]      ; 5.546 ;    ;    ; 5.546 ;
-; joystick_press_n ; led[3]      ; 5.490 ;    ;    ; 5.490 ;
-; joystick_right_n ; led[3]      ; 5.512 ;    ;    ; 5.512 ;
-; joystick_up_n    ; led[0]      ; 5.357 ;    ;    ; 5.357 ;
+; joystick_down_n  ; led[1]      ; 5.229 ;    ;    ; 5.229 ;
+; joystick_left_n  ; led[2]      ; 5.434 ;    ;    ; 5.434 ;
+; joystick_press_n ; led[0]      ; 5.288 ;    ;    ; 5.288 ;
+; joystick_press_n ; led[1]      ; 5.285 ;    ;    ; 5.285 ;
+; joystick_press_n ; led[2]      ; 5.337 ;    ;    ; 5.337 ;
+; joystick_press_n ; led[3]      ; 5.331 ;    ;    ; 5.331 ;
+; joystick_right_n ; led[3]      ; 5.432 ;    ;    ; 5.432 ;
+; joystick_up_n    ; led[0]      ; 5.223 ;    ;    ; 5.223 ;
 +------------------+-------------+-------+----+----+-------+
 
 
@@ -220,14 +220,14 @@ No paths to report.
 +------------------+-------------+-------+----+----+-------+
 ; Input Port       ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------------+-------------+-------+----+----+-------+
-; joystick_down_n  ; led[1]      ; 5.286 ;    ;    ; 5.286 ;
-; joystick_left_n  ; led[2]      ; 5.468 ;    ;    ; 5.468 ;
-; joystick_press_n ; led[0]      ; 5.332 ;    ;    ; 5.332 ;
-; joystick_press_n ; led[1]      ; 5.388 ;    ;    ; 5.388 ;
-; joystick_press_n ; led[2]      ; 5.546 ;    ;    ; 5.546 ;
-; joystick_press_n ; led[3]      ; 5.490 ;    ;    ; 5.490 ;
-; joystick_right_n ; led[3]      ; 5.512 ;    ;    ; 5.512 ;
-; joystick_up_n    ; led[0]      ; 5.357 ;    ;    ; 5.357 ;
+; joystick_down_n  ; led[1]      ; 5.229 ;    ;    ; 5.229 ;
+; joystick_left_n  ; led[2]      ; 5.434 ;    ;    ; 5.434 ;
+; joystick_press_n ; led[0]      ; 5.288 ;    ;    ; 5.288 ;
+; joystick_press_n ; led[1]      ; 5.285 ;    ;    ; 5.285 ;
+; joystick_press_n ; led[2]      ; 5.337 ;    ;    ; 5.337 ;
+; joystick_press_n ; led[3]      ; 5.331 ;    ;    ; 5.331 ;
+; joystick_right_n ; led[3]      ; 5.432 ;    ;    ; 5.432 ;
+; joystick_up_n    ; led[0]      ; 5.223 ;    ;    ; 5.223 ;
 +------------------+-------------+-------+----+----+-------+
 
 
@@ -246,14 +246,14 @@ No paths to report.
 +------------------+-------------+--------+----+----+--------+
 ; Input Port       ; Output Port ; RR     ; RF ; FR ; FF     ;
 +------------------+-------------+--------+----+----+--------+
-; joystick_down_n  ; led[1]      ; 11.449 ;    ;    ; 11.449 ;
-; joystick_left_n  ; led[2]      ; 11.773 ;    ;    ; 11.773 ;
-; joystick_press_n ; led[0]      ; 11.457 ;    ;    ; 11.457 ;
-; joystick_press_n ; led[1]      ; 11.750 ;    ;    ; 11.750 ;
-; joystick_press_n ; led[2]      ; 12.039 ;    ;    ; 12.039 ;
-; joystick_press_n ; led[3]      ; 11.747 ;    ;    ; 11.747 ;
-; joystick_right_n ; led[3]      ; 12.058 ;    ;    ; 12.058 ;
-; joystick_up_n    ; led[0]      ; 11.771 ;    ;    ; 11.771 ;
+; joystick_down_n  ; led[1]      ; 11.314 ;    ;    ; 11.314 ;
+; joystick_left_n  ; led[2]      ; 11.679 ;    ;    ; 11.679 ;
+; joystick_press_n ; led[0]      ; 11.409 ;    ;    ; 11.409 ;
+; joystick_press_n ; led[1]      ; 11.409 ;    ;    ; 11.409 ;
+; joystick_press_n ; led[2]      ; 11.335 ;    ;    ; 11.335 ;
+; joystick_press_n ; led[3]      ; 11.324 ;    ;    ; 11.324 ;
+; joystick_right_n ; led[3]      ; 11.711 ;    ;    ; 11.711 ;
+; joystick_up_n    ; led[0]      ; 11.299 ;    ;    ; 11.299 ;
 +------------------+-------------+--------+----+----+--------+
 
 
@@ -262,14 +262,14 @@ No paths to report.
 +------------------+-------------+-------+----+----+-------+
 ; Input Port       ; Output Port ; RR    ; RF ; FR ; FF    ;
 +------------------+-------------+-------+----+----+-------+
-; joystick_down_n  ; led[1]      ; 5.286 ;    ;    ; 5.286 ;
-; joystick_left_n  ; led[2]      ; 5.468 ;    ;    ; 5.468 ;
-; joystick_press_n ; led[0]      ; 5.332 ;    ;    ; 5.332 ;
-; joystick_press_n ; led[1]      ; 5.388 ;    ;    ; 5.388 ;
-; joystick_press_n ; led[2]      ; 5.546 ;    ;    ; 5.546 ;
-; joystick_press_n ; led[3]      ; 5.490 ;    ;    ; 5.490 ;
-; joystick_right_n ; led[3]      ; 5.512 ;    ;    ; 5.512 ;
-; joystick_up_n    ; led[0]      ; 5.357 ;    ;    ; 5.357 ;
+; joystick_down_n  ; led[1]      ; 5.229 ;    ;    ; 5.229 ;
+; joystick_left_n  ; led[2]      ; 5.434 ;    ;    ; 5.434 ;
+; joystick_press_n ; led[0]      ; 5.288 ;    ;    ; 5.288 ;
+; joystick_press_n ; led[1]      ; 5.285 ;    ;    ; 5.285 ;
+; joystick_press_n ; led[2]      ; 5.337 ;    ;    ; 5.337 ;
+; joystick_press_n ; led[3]      ; 5.331 ;    ;    ; 5.331 ;
+; joystick_right_n ; led[3]      ; 5.432 ;    ;    ; 5.432 ;
+; joystick_up_n    ; led[0]      ; 5.223 ;    ;    ; 5.223 ;
 +------------------+-------------+-------+----+----+-------+
 
 
@@ -311,7 +311,7 @@ No dedicated SERDES Receiver circuitry present in device or used in design
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit TimeQuest Timing Analyzer
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Mon Oct 05 15:58:08 2026
+    Info: Processing started: Mon Oct 05 16:06:38 2026
 Info: Command: quartus_sta cyclone2_joystick_diag -c cyclone2_joystick_diag
 Info: qsta_default_script.tcl version: #1
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
@@ -343,7 +343,7 @@ Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus II 64-Bit TimeQuest Timing Analyzer was successful. 0 errors, 2 warnings
     Info: Peak virtual memory: 4568 megabytes
-    Info: Processing ended: Mon Oct 05 15:58:09 2026
+    Info: Processing ended: Mon Oct 05 16:06:39 2026
     Info: Elapsed time: 00:00:01
     Info: Total CPU time (on all processors): 00:00:01
 

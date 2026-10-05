@@ -39,9 +39,9 @@ def main():
 
     directions = [
         (cx, 45, "UP", "PIN_139 · LED1", USED, "diagnostic LED1"),
-        (cx, 275, "DOWN", "PIN_141 · LED4", USED, "diagnostic LED4"),
+        (cx, 275, "DOWN", "PIN_137 · LED2", USED, "diagnostic LED2"),
         (90, cy, "LEFT", "PIN_142 · LED3", RESERVED, "diagnostic LED3"),
-        (410, cy, "RIGHT", "PIN_137 · LED2", RESERVED, "diagnostic LED2"),
+        (410, cy, "RIGHT", "PIN_141 · LED4", RESERVED, "diagnostic LED4"),
     ]
     for x, y, direction, pin, color, use in directions:
         if direction == "UP":
