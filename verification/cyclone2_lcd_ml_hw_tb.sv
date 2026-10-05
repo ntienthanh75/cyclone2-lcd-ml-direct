@@ -53,6 +53,7 @@ module cyclone2_lcd_ml_hw_tb;
         joystick_1_n = 1'b1;
         repeat (4) @(posedge dut.proc_clk);
         if (dut.start_stream !== 1'b0) failures = failures + 1;
+        if (dut.submit_ack_count == 0) failures = failures + 1;
 
         // Channel 2 clears; channel 3 is also a clear/cancel input.
         joystick_2_n = 1'b0;

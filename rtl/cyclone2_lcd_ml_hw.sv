@@ -86,6 +86,8 @@ module cyclone2_lcd_ml_hw (
     logic [15:0] result_margin;
     logic [31:0] result_cycles;
     logic [3:0] displayed_digit;
+    logic [20:0] submit_ack_count;
+    logic [21:0] result_ack_count;
 
     // CLOCK_DIV=3 gives approximately 833 kHz touch SCLK in the 5 MHz
     // processing domain, within the XPT2046 reader's intended range.
@@ -113,19 +115,42 @@ module cyclone2_lcd_ml_hw (
     );
 
     always_ff @(posedge proc_clk or negedge reset_n) begin
-        if (!reset_n)
+        if (!reset_n) begin
             displayed_digit <= 4'd0;
-        else if (result_valid)
-            displayed_digit <= result_digit;
+            submit_ack_count <= 21'd0;
+            result_ack_count <= 22'd0;
+        end else begin
+            if (start_stream)
+                submit_ack_count <= 21'd1_000_000; // 200 ms at 5 MHz
+            else if (submit_ack_count != 0)
+                submit_ack_count <= submit_ack_count - 1'b1;
+
+            if (result_valid) begin
+                displayed_digit <= result_digit;
+                result_ack_count <= 22'd2_500_000; // 500 ms at 5 MHz
+            end else if (result_ack_count != 0) begin
+                result_ack_count <= result_ack_count - 1'b1;
+            end
+        end
     end
 
-    // Keep LED1..LED4 as live channel indicators while a joystick channel is
-    // pressed. Otherwise show the recognized digit (active-low LED pins).
+    // LED status protocol, all active-low:
+    //   pressed channel: matching LED
+    //   submit accepted: LED1 + LED4 for 200 ms
+    //   ML busy:         LED1 + LED3
+    //   result accepted: LED2 + LED4 for 500 ms
+    //   otherwise:       recognized digit
     always_comb begin
         if (!press_sync)
             led = 4'b0000;
         else if (joy_sync != 4'b1111)
             led = joy_sync;
+        else if (ml_busy)
+            led = 4'b1010;
+        else if (result_ack_count != 0)
+            led = 4'b0101;
+        else if (submit_ack_count != 0)
+            led = 4'b0110;
         else
             led = ~displayed_digit;
     end

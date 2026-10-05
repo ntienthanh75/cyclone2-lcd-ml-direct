@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Mon Oct 05 17:20:41 2026
+Analysis & Synthesis Status : Successful - Mon Oct 05 22:31:23 2026
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : cyclone2_lcd_ml_hw
 Top-level Entity Name : cyclone2_lcd_ml_hw
 Family : Cyclone II
-Total logic elements : 2,153
-    Total combinational functions : 1,798
-    Dedicated logic registers : 931
-Total registers : 931
+Total logic elements : 2,221
+    Total combinational functions : 1,866
+    Dedicated logic registers : 974
+Total registers : 974
 Total pins : 17
 Total virtual pins : 0
 Total memory bits : 55,888

@@ -37,6 +37,18 @@ The hardware wrapper uses the same neutral channel numbers:
 
 LED1–LED4 continue to show the active channel while a channel is pressed.
 
+## LCD/ML status indicators
+
+The integrated wrapper gives visible confirmation of the submission path:
+
+| Status | LEDs |
+|---|---|
+| Channel press | The matching channel LED |
+| Submit accepted | LED1 + LED4 for about 200 ms |
+| ML busy | LED1 + LED3 |
+| Result accepted | LED2 + LED4 for about 500 ms |
+| Idle | Recognized digit, if available |
+
 The separate diagnostic design
 `rtl/output_files_joystick_diag/cyclone2_joystick_diag.sof` maps each control
 to the verified board mapping below. Internally the RTL vector is zero-based
