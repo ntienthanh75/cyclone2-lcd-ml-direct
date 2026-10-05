@@ -51,11 +51,14 @@ The current evidence is:
 
 - [ ] Start a new drawing buffer when the user begins touching the LCD.
 - [ ] Append touch points while the finger or stylus is down.
+- [ ] Render each valid touch point immediately on the LCD so the user sees
+      the stroke while drawing; do not wait for channel 1 submission.
 - [ ] Join consecutive points into anti-aliased or one-pixel strokes.
-- [ ] Use joystick UP as the end-of-writing command.
+- [ ] Use joystick channel 1 as the end-of-writing/submit command.
 - [ ] Save the captured drawing to a PNG or PGM file on the PC for inspection.
-- [ ] Clear the LCD and prepare the next drawing.
-- [ ] Use joystick DOWN as the documented shutdown/stop command.
+- [ ] Use joystick channel 2 to clear the LCD and prepare the next drawing.
+- [ ] Use joystick channel 3 to cancel/reset the current capture.
+- [ ] Use joystick channel 4 as the documented shutdown/stop command.
 
 ## C. Normalize for the classifier
 
