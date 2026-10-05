@@ -8,8 +8,11 @@
 module cyclone2_lcd_ml_hw (
     input  logic       clk50,
     input  logic       reset_n,
-    input  logic       joystick_up_n,
-    input  logic       joystick_down_n,
+    input  logic       joystick_1_n,
+    input  logic       joystick_2_n,
+    input  logic       joystick_3_n,
+    input  logic       joystick_4_n,
+    input  logic       joystick_press_n,
     input  logic       touch_irq_n,
     input  logic       touch_miso,
     output logic       touch_cs_n,
@@ -49,28 +52,33 @@ module cyclone2_lcd_ml_hw (
         end
     end
 
-    logic up_meta, up_sync, up_prev;
-    logic down_meta, down_sync, down_prev;
+    logic [3:0] joy_meta, joy_sync, joy_prev;
+    logic press_meta, press_sync;
     logic start_stream, clear_frame;
+    logic shutdown_latched;
+    logic pipeline_reset_n;
     always_ff @(posedge proc_clk or negedge reset_n) begin
         if (!reset_n) begin
-            up_meta    <= 1'b1;
-            up_sync    <= 1'b1;
-            up_prev    <= 1'b1;
-            down_meta  <= 1'b1;
-            down_sync  <= 1'b1;
-            down_prev  <= 1'b1;
+            joy_meta         <= 4'b1111;
+            joy_sync         <= 4'b1111;
+            joy_prev         <= 4'b1111;
+            press_meta       <= 1'b1;
+            press_sync       <= 1'b1;
+            shutdown_latched <= 1'b0;
         end else begin
-            up_meta    <= joystick_up_n;
-            up_sync    <= up_meta;
-            up_prev    <= up_sync;
-            down_meta  <= joystick_down_n;
-            down_sync  <= down_meta;
-            down_prev  <= down_sync;
+            joy_meta   <= {joystick_4_n, joystick_3_n, joystick_2_n, joystick_1_n};
+            joy_sync   <= joy_meta;
+            joy_prev   <= joy_sync;
+            press_meta <= joystick_press_n;
+            press_sync <= press_meta;
+            if (joy_prev[3] && !joy_sync[3])
+                shutdown_latched <= 1'b1;
         end
     end
-    assign start_stream = up_prev && !up_sync;
-    assign clear_frame  = down_prev && !down_sync;
+    assign start_stream  = joy_prev[0] && !joy_sync[0];
+    assign clear_frame   = (joy_prev[1] && !joy_sync[1]) ||
+                           (joy_prev[2] && !joy_sync[2]);
+    assign pipeline_reset_n = reset_n && !shutdown_latched;
 
     logic       ml_busy, result_valid, result_accepted;
     logic [3:0] result_digit;
@@ -87,7 +95,7 @@ module cyclone2_lcd_ml_hw (
         .MARGIN_THRESHOLD(0)
     ) pipeline (
         .clk(proc_clk),
-        .reset_n(reset_n),
+        .reset_n(pipeline_reset_n),
         .clear_frame(clear_frame),
         .start_stream(start_stream),
         .touch_irq_n(irq_sync),
@@ -111,8 +119,15 @@ module cyclone2_lcd_ml_hw (
             displayed_digit <= result_digit;
     end
 
-    // The board LEDs are active-low.  A recognized digit is displayed as a
-    // four-bit active-high value, then inverted at the physical pins.
-    assign led      = ~displayed_digit;
+    // Keep LED1..LED4 as live channel indicators while a joystick channel is
+    // pressed. Otherwise show the recognized digit (active-low LED pins).
+    always_comb begin
+        if (!press_sync)
+            led = 4'b0000;
+        else if (joy_sync != 4'b1111)
+            led = joy_sync;
+        else
+            led = ~displayed_digit;
+    end
     assign buzzer_n = 1'b1; // active-low buzzer: permanently muted
 endmodule

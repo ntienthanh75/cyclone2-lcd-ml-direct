@@ -22,8 +22,11 @@ set_global_assignment -name RESERVE_ALL_UNUSED_PINS_NO_OUTPUT_GND "AS INPUT TRI-
 
 set_location_assignment PIN_17  -to clk50
 set_location_assignment PIN_88  -to reset_n
-set_location_assignment PIN_139 -to joystick_up_n
-set_location_assignment PIN_143 -to joystick_down_n
+set_location_assignment PIN_139 -to joystick_1_n
+set_location_assignment PIN_137 -to joystick_2_n
+set_location_assignment PIN_142 -to joystick_3_n
+set_location_assignment PIN_141 -to joystick_4_n
+set_location_assignment PIN_143 -to joystick_press_n
 set_location_assignment PIN_129 -to touch_irq_n
 set_location_assignment PIN_135 -to touch_miso
 set_location_assignment PIN_134 -to touch_cs_n
@@ -35,6 +38,9 @@ set_location_assignment PIN_24  -to led[2]
 set_location_assignment PIN_25  -to led[3]
 set_location_assignment PIN_4   -to buzzer_n
 
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_up_n
-set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_down_n
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_1_n
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_2_n
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_3_n
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_4_n
+set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to joystick_press_n
 set_instance_assignment -name WEAK_PULL_UP_RESISTOR ON -to touch_irq_n

@@ -6,8 +6,11 @@
 module cyclone2_lcd_ml_hw_tb;
     reg clk50 = 1'b0;
     reg reset_n = 1'b0;
-    reg joystick_up_n = 1'b1;
-    reg joystick_down_n = 1'b1;
+    reg joystick_1_n = 1'b1;
+    reg joystick_2_n = 1'b1;
+    reg joystick_3_n = 1'b1;
+    reg joystick_4_n = 1'b1;
+    reg joystick_press_n = 1'b1;
     reg touch_irq_n = 1'b1;
     reg touch_miso = 1'b0;
     wire touch_cs_n, touch_sclk, touch_mosi;
@@ -29,7 +32,9 @@ module cyclone2_lcd_ml_hw_tb;
 
     cyclone2_lcd_ml_hw dut (
         .clk50(clk50), .reset_n(reset_n),
-        .joystick_up_n(joystick_up_n), .joystick_down_n(joystick_down_n),
+        .joystick_1_n(joystick_1_n), .joystick_2_n(joystick_2_n),
+        .joystick_3_n(joystick_3_n), .joystick_4_n(joystick_4_n),
+        .joystick_press_n(joystick_press_n),
         .touch_irq_n(touch_irq_n), .touch_miso(touch_miso),
         .touch_cs_n(touch_cs_n), .touch_sclk(touch_sclk),
         .touch_mosi(touch_mosi), .led(led), .buzzer_n(buzzer_n)
@@ -42,19 +47,36 @@ module cyclone2_lcd_ml_hw_tb;
         reset_n = 1'b1;
         repeat (30) @(posedge clk50);
 
-        // A short active-low UP press must become one processing-domain pulse.
-        joystick_up_n = 1'b0;
+        // A short active-low channel-1 press must become one start pulse.
+        joystick_1_n = 1'b0;
         repeat (4) @(posedge dut.proc_clk);
-        joystick_up_n = 1'b1;
+        joystick_1_n = 1'b1;
         repeat (4) @(posedge dut.proc_clk);
         if (dut.start_stream !== 1'b0) failures = failures + 1;
 
-        // DOWN is also edge-triggered and must not affect the mute default.
-        joystick_down_n = 1'b0;
+        // Channel 2 clears; channel 3 is also a clear/cancel input.
+        joystick_2_n = 1'b0;
         repeat (4) @(posedge dut.proc_clk);
-        joystick_down_n = 1'b1;
+        joystick_2_n = 1'b1;
+        joystick_3_n = 1'b0;
+        repeat (4) @(posedge dut.proc_clk);
+        joystick_3_n = 1'b1;
         repeat (4) @(posedge dut.proc_clk);
         if (buzzer_n !== 1'b1) failures = failures + 1;
+
+        // Center press drives all physical LEDs on the active-low board.
+        joystick_press_n = 1'b0;
+        repeat (2) @(posedge dut.proc_clk);
+        #1;
+        if (led !== 4'b0000) failures = failures + 1;
+        joystick_press_n = 1'b1;
+
+        // Channel 4 latches the pipeline shutdown request.
+        joystick_4_n = 1'b0;
+        repeat (4) @(posedge dut.proc_clk);
+        joystick_4_n = 1'b1;
+        repeat (2) @(posedge dut.proc_clk);
+        if (dut.shutdown_latched !== 1'b1) failures = failures + 1;
 
         if (proc_edges < 10) failures = failures + 1;
         if (failures == 0)

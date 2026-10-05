@@ -23,6 +23,20 @@ This diagnostic intentionally does not claim which physical channel is UP,
 DOWN, LEFT, or RIGHT. The channel-to-LED relationship is the only verified
 requirement at this stage.
 
+## LCD/ML integration channel actions
+
+The hardware wrapper uses the same neutral channel numbers:
+
+| Channel | Action |
+|---|---|
+| Joystick 1 | Submit the captured LCD frame to the ML pipeline |
+| Joystick 2 | Clear the captured frame |
+| Joystick 3 | Cancel/reset the current capture by clearing the frame |
+| Joystick 4 | Latch a shutdown request for the processing pipeline |
+| Center press | Light LED1–LED4 for physical confirmation |
+
+LED1–LED4 continue to show the active channel while a channel is pressed.
+
 The separate diagnostic design
 `rtl/output_files_joystick_diag/cyclone2_joystick_diag.sof` maps each control
 to the verified board mapping below. Internally the RTL vector is zero-based
