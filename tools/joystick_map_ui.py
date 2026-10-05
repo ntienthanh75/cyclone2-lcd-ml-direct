@@ -28,7 +28,7 @@ def main():
                           font=("Segoe UI", 18, "bold"))
 
     ttk.Label(root, text="CoreEP2C5 joystick direction map", style="Title.TLabel").pack(pady=(16, 4))
-    ttk.Label(root, text="Press the physical joystick in the direction shown by each arrow.",
+    ttk.Label(root, text="Activate one joystick channel at a time; the matching LED identifies it.",
               style="TLabel").pack()
 
     canvas = tk.Canvas(root, width=500, height=330, bg=BG, highlightthickness=0)
@@ -38,30 +38,30 @@ def main():
     canvas.create_oval(cx - 25, cy - 25, cx + 25, cy + 25, fill="#414957", outline=TEXT, width=2)
 
     directions = [
-        (cx, 45, "UP", "PIN_139 · LED1", USED, "diagnostic LED1"),
-        (cx, 275, "DOWN", "PIN_137 · LED2", USED, "diagnostic LED2"),
-        (90, cy, "LEFT", "PIN_142 · LED3", RESERVED, "diagnostic LED3"),
-        (410, cy, "RIGHT", "PIN_141 · LED4", RESERVED, "diagnostic LED4"),
+        (cx, 45, "J1", "PIN_139 · LED1", USED, "channel 1"),
+        (cx, 275, "J2", "PIN_137 · LED2", USED, "channel 2"),
+        (90, cy, "J3", "PIN_142 · LED3", RESERVED, "channel 3"),
+        (410, cy, "J4", "PIN_141 · LED4", RESERVED, "channel 4"),
     ]
     for x, y, direction, pin, color, use in directions:
-        if direction == "UP":
+        if direction == "J1":
             canvas.create_line(cx, cy - 70, x, y + 25, fill=color, width=4, arrow=tk.LAST)
-        elif direction == "DOWN":
+        elif direction == "J2":
             canvas.create_line(cx, cy + 70, x, y - 25, fill=color, width=4, arrow=tk.LAST)
-        elif direction == "LEFT":
+        elif direction == "J3":
             canvas.create_line(cx - 70, cy, x + 38, y, fill=color, width=4, arrow=tk.LAST)
         else:
             canvas.create_line(cx + 70, cy, x - 38, y, fill=color, width=4, arrow=tk.LAST)
-        label(canvas, x, y - 18 if direction in ("UP", "DOWN") else y - 30,
+        label(canvas, x, y - 18 if direction in ("J1", "J2") else y - 30,
               direction, color, 15, "bold")
-        label(canvas, x, y + 5 if direction in ("UP", "DOWN") else y,
+        label(canvas, x, y + 5 if direction in ("J1", "J2") else y,
               pin, TEXT, 11, "bold")
-        label(canvas, x, y + 25 if direction in ("UP", "DOWN") else y + 30,
+        label(canvas, x, y + 25 if direction in ("J1", "J2") else y + 30,
               use, MUTED, 10)
 
     canvas.create_oval(cx - 18, cy - 18, cx + 18, cy + 18, fill=RESERVED, outline=TEXT)
     label(canvas, cx, cy, "PRESS", TEXT, 9, "bold")
-    label(canvas, cx, cy + 35, "PIN_143 · PRESS = LED1–LED4", MUTED, 10)
+    label(canvas, cx, cy + 35, "PIN_143 · CENTER = LED1–LED4", MUTED, 10)
 
     info = tk.Frame(root, bg=PANEL, padx=14, pady=10)
     info.pack(fill="x", padx=24, pady=(0, 12))

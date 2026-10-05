@@ -200,11 +200,11 @@ RESERVED_INPUT               : 133       :        :                   :         
 RESERVED_INPUT               : 134       :        :                   :         : 2         :                
 RESERVED_INPUT               : 135       :        :                   :         : 2         :                
 RESERVED_INPUT               : 136       :        :                   :         : 2         :                
-joystick_down_n              : 137       : input  : 3.3-V LVTTL       :         : 2         : Y              
+joystick_2_n                 : 137       : input  : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : 138       : power  :                   : 3.3V    : 2         :                
-joystick_up_n                : 139       : input  : 3.3-V LVTTL       :         : 2         : Y              
+joystick_1_n                 : 139       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND                          : 140       : gnd    :                   :         :           :                
-joystick_right_n             : 141       : input  : 3.3-V LVTTL       :         : 2         : Y              
-joystick_left_n              : 142       : input  : 3.3-V LVTTL       :         : 2         : Y              
+joystick_4_n                 : 141       : input  : 3.3-V LVTTL       :         : 2         : Y              
+joystick_3_n                 : 142       : input  : 3.3-V LVTTL       :         : 2         : Y              
 joystick_press_n             : 143       : input  : 3.3-V LVTTL       :         : 2         : Y              
 RESERVED_INPUT               : 144       :        :                   :         : 2         :                
