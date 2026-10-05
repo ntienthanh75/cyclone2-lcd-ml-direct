@@ -1,5 +1,5 @@
 Fitter report for cyclone2_joystick_diag
-Sun Oct 04 14:38:32 2026
+Mon Oct 05 15:12:45 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -59,7 +59,7 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Fitter Summary                                                                       ;
 +------------------------------------+-------------------------------------------------+
-; Fitter Status                      ; Successful - Sun Oct 04 14:38:32 2026           ;
+; Fitter Status                      ; Successful - Mon Oct 05 15:12:45 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; cyclone2_joystick_diag                          ;
 ; Top-level Entity Name              ; cyclone2_joystick_diag                          ;
@@ -307,9 +307,9 @@ The pin-out file can be found in D:/fpga/cyclone2-lcd-ml-direct/rtl/output_files
 +------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
 ; Name             ; Pin # ; I/O Bank ; X coordinate ; Y coordinate ; Cell number ; Combinational Fan-Out ; Registered Fan-Out ; Global ; Input Register ; Power Up High ; PCI I/O Enabled ; Bus Hold ; Weak Pull Up ; I/O Standard ; Termination ; Location assigned by ;
 +------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
-; joystick_down_n  ; 143   ; 2        ; 1            ; 14           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVTTL  ; Off         ; User                 ;
+; joystick_down_n  ; 137   ; 2        ; 3            ; 14           ; 2           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; joystick_left_n  ; 142   ; 2        ; 1            ; 14           ; 1           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVTTL  ; Off         ; User                 ;
-; joystick_press_n ; 137   ; 2        ; 3            ; 14           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVTTL  ; Off         ; User                 ;
+; joystick_press_n ; 143   ; 2        ; 1            ; 14           ; 2           ; 4                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; joystick_right_n ; 141   ; 2        ; 1            ; 14           ; 0           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVTTL  ; Off         ; User                 ;
 ; joystick_up_n    ; 139   ; 2        ; 3            ; 14           ; 3           ; 1                     ; 0                  ; no     ; no             ; no            ; no              ; no       ; On           ; 3.3-V LVTTL  ; Off         ; User                 ;
 +------------------+-------+----------+--------------+--------------+-------------+-----------------------+--------------------+--------+----------------+---------------+-----------------+----------+--------------+--------------+-------------+----------------------+
@@ -481,13 +481,13 @@ The pin-out file can be found in D:/fpga/cyclone2-lcd-ml-direct/rtl/output_files
 ; 134      ; 155        ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 135      ; 162        ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 ; 136      ; 163        ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
-; 137      ; 164        ; 2        ; joystick_press_n                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; On           ;
+; 137      ; 164        ; 2        ; joystick_down_n                          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; On           ;
 ; 138      ;            ; 2        ; VCCIO2                                   ; power  ;              ; 3.3V    ; --         ;                 ; --       ; --           ;
 ; 139      ; 165        ; 2        ; joystick_up_n                            ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; On           ;
 ; 140      ;            ;          ; GND                                      ; gnd    ;              ;         ; --         ;                 ; --       ; --           ;
 ; 141      ; 166        ; 2        ; joystick_right_n                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; On           ;
 ; 142      ; 167        ; 2        ; joystick_left_n                          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; On           ;
-; 143      ; 168        ; 2        ; joystick_down_n                          ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; On           ;
+; 143      ; 168        ; 2        ; joystick_press_n                         ; input  ; 3.3-V LVTTL  ;         ; Column I/O ; Y               ; no       ; On           ;
 ; 144      ; 169        ; 2        ; RESERVED_INPUT                           ;        ;              ;         ; Column I/O ;                 ; no       ; Off          ;
 +----------+------------+----------+------------------------------------------+--------+--------------+---------+------------+-----------------+----------+--------------+
 Note: Pin directions (input, output or bidir) are based on device operating in user mode.
@@ -740,7 +740,7 @@ Info (170194): Fitter routing operations ending: elapsed time is 00:00:00
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
     Info (170200): Optimizations that may affect the design's timing were skipped
-Info (11888): Total time spent on timing analysis during the Fitter is 0.14 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 0.13 seconds.
 Info (306004): Started post-fitting delay annotation
 Warning (306006): Found 5 output pins without output pin load capacitance assignment
     Info (306007): Pin "led[0]" has no specified output pin load capacitance -- assuming default load capacitance of 0 pF for timing analysis
@@ -754,8 +754,8 @@ Info (306005): Delay annotation completed successfully
 Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
 Info (144001): Generated suppressed messages file D:/fpga/cyclone2-lcd-ml-direct/rtl/output_files_joystick_diag/cyclone2_joystick_diag.fit.smsg
 Info: Quartus II 64-Bit Fitter was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 5284 megabytes
-    Info: Processing ended: Sun Oct 04 14:38:32 2026
+    Info: Peak virtual memory: 5292 megabytes
+    Info: Processing ended: Mon Oct 05 15:12:45 2026
     Info: Elapsed time: 00:00:02
     Info: Total CPU time (on all processors): 00:00:03
 

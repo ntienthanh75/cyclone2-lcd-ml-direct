@@ -26,11 +26,37 @@ verification test before use.
 
 The separate diagnostic design
 `rtl/output_files_joystick_diag/cyclone2_joystick_diag.sof` maps each control
-to a physical LED: LED0=UP, LED1=DOWN, LED2=LEFT, LED3=RIGHT, and PRESS=all
-four LEDs. It is a temporary direction-test image, not the ML image.
+to the verified board mapping below. Internally the RTL vector is zero-based
+(`led[0]` through `led[3]`), but the board labels are LED1 through LED4.
+It is a temporary direction-test image, not the ML image.
 
-The diagnostic SOF was downloaded successfully to the EP2C5 on 2026-10-04.
-Quartus Programmer reported one configured device and checksum `0x00070C25`.
+## Verified joystick direction mapping
+
+This mapping is loaded in the current diagnostic SOF (checksum `0x00070D15`):
+
+| Physical action | FPGA input pin | Board indicator |
+|---|---:|---|
+| Push UP | `PIN_139` | LED1 |
+| Push DOWN | `PIN_137` | LED2 |
+| Push LEFT | `PIN_142` | LED3 |
+| Push RIGHT | `PIN_141` | LED4 |
+| Press joystick center | `PIN_143` | LED1, LED2, LED3, LED4 |
+
+The DOWN and PRESS assignments are intentionally swapped relative to the
+original pin-reference text because the hardware test showed that the center
+press arrived on `PIN_143` and the direction that was previously mapped as
+PRESS arrived on `PIN_137`.
+
+### Permanent diagnostic rule
+
+Keep LED1–LED4 connected to the four directional outputs whenever testing the
+joystick. The LEDs are the hardware direction indicators and must accompany
+the joystick so the physical direction can be identified without relying on
+the PC UI. Do not repurpose these LEDs until the joystick mapping is fully
+verified.
+
+The diagnostic SOF was downloaded successfully to the EP2C5 on 2026-10-05.
+Quartus Programmer reported one configured device and checksum `0x00070D15`.
 After testing, reload
 `rtl/output_files_hw/cyclone2_lcd_ml_hw.sof` to return to the ML design.
 

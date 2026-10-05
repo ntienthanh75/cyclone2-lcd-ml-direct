@@ -10,7 +10,8 @@ module cyclone2_joystick_diag (
     output logic [3:0] led,
     output logic       buzzer_n
 );
-    // UP, DOWN, LEFT, RIGHT each have one LED. PRESS lights all LEDs.
+    // Verified board wiring: UP=139, DOWN=137, LEFT=142, RIGHT=141,
+    // PRESS=143. Keep one LED per direction; PRESS lights all LEDs.
     always_comb begin
         if (!joystick_press_n)
             led = 4'b0000;

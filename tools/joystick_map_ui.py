@@ -38,10 +38,10 @@ def main():
     canvas.create_oval(cx - 25, cy - 25, cx + 25, cy + 25, fill="#414957", outline=TEXT, width=2)
 
     directions = [
-        (cx, 45, "UP", "PIN_139", USED, "starts recognition"),
-        (cx, 275, "DOWN", "PIN_143", USED, "clears frame"),
-        (90, cy, "LEFT", "PIN_142", RESERVED, "reserved"),
-        (410, cy, "RIGHT", "PIN_141", RESERVED, "reserved"),
+        (cx, 45, "UP", "PIN_139 · LED1", USED, "diagnostic LED1"),
+        (cx, 275, "DOWN", "PIN_137 · LED2", USED, "diagnostic LED2"),
+        (90, cy, "LEFT", "PIN_142 · LED3", RESERVED, "diagnostic LED3"),
+        (410, cy, "RIGHT", "PIN_141 · LED4", RESERVED, "diagnostic LED4"),
     ]
     for x, y, direction, pin, color, use in directions:
         if direction == "UP":
@@ -61,7 +61,7 @@ def main():
 
     canvas.create_oval(cx - 18, cy - 18, cx + 18, cy + 18, fill=RESERVED, outline=TEXT)
     label(canvas, cx, cy, "PRESS", TEXT, 9, "bold")
-    label(canvas, cx, cy + 35, "PIN_137 · reserved", MUTED, 10)
+    label(canvas, cx, cy + 35, "PIN_143 · PRESS = LED1–LED4", MUTED, 10)
 
     info = tk.Frame(root, bg=PANEL, padx=14, pady=10)
     info.pack(fill="x", padx=24, pady=(0, 12))
@@ -69,7 +69,7 @@ def main():
              bg=PANEL, fg=TEXT, font=("Segoe UI", 11, "bold")).pack(anchor="w")
     tk.Label(info, text="Green = connected to the current downloaded ML wrapper. Gray = documented but unused.",
              bg=PANEL, fg=MUTED, font=("Segoe UI", 10)).pack(anchor="w", pady=(4, 0))
-    tk.Label(info, text="This UI is a map, not a live hardware reader; the current SOF only exposes UP and DOWN.",
+    tk.Label(info, text="This UI is a map, not a live hardware reader; keep LED1–LED4 connected during joystick tests.",
              bg=PANEL, fg=MUTED, font=("Segoe UI", 10)).pack(anchor="w", pady=(2, 0))
 
     root.mainloop()
