@@ -231,6 +231,13 @@ known-good initialization sequence from `D:\fpga\lcd_photo_hdl`, clears the
 panel, and writes each calibrated point as a 5x5 black square without Nios.
 Its self-checking test is `verification/lcd_live_writer_tb.sv`.
 
+The first hardware attempt did not produce the expected white panel. Before
+the second download, the clear-address path was corrected from a truncated
+9-bit X coordinate to a full 10-bit 0..319 coordinate, and LCD CS was kept
+asserted during reset/initialization to match `lcd_photo_hdl`. The corrected
+SOF was compiled and downloaded successfully; hardware display behavior is
+still awaiting visual confirmation.
+
 LED1+LED3 means that the serialized ML core is processing the submitted
 196-pixel frame; it is not an LCD acknowledgement. The expected sequence is
 submit indication, brief ML-busy indication, result indication, then the

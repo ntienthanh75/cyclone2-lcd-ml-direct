@@ -58,6 +58,11 @@ pixel writes, and subsequent point traffic. This is simulation evidence only.
 The hardware checkpoint is passed only when the programmed panel first becomes
 white and then shows a black 5x5 mark at the touch location.
 
+The first hardware attempt failed the white-screen observation. The immediate
+RTL fixes were a full 10-bit LCD X clear address and CS asserted during reset
+and initialization. The corrected SOF was downloaded; visual confirmation is
+still required.
+
 ## B. Capture one drawing
 
 - [ ] Start a new drawing buffer when the user begins touching the LCD.

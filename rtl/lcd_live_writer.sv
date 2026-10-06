@@ -49,13 +49,17 @@ module lcd_live_writer #(
     logic [31:0] delay_count;
     logic [7:0] init_index;
     logic [16:0] clear_index;
+    logic [9:0] clear_x;
+    logic [8:0] clear_y;
     logic [8:0] draw_x, draw_y;
     logic [2:0] draw_dx, draw_dy;
     logic [15:0] bus_data;
     logic bus_oe;
 
     assign lcd_data = bus_oe ? bus_data : 16'hzzzz;
-    assign lcd_cs_n = (state == S_RESET || state == S_IDLE) ? 1'b1 : 1'b0;
+    // Match the proven VHDL driver: keep CS asserted during reset and all
+    // initialization/clear traffic, and release it only in the idle state.
+    assign lcd_cs_n = (state == S_IDLE) ? 1'b1 : 1'b0;
     assign lcd_rs = (state == S_INIT_PULSE) ? init_index[0] :
                     (state == S_CLEAR_XP ||
                      state == S_CLEAR_YP || state == S_CLEAR_RAMP ||
@@ -88,8 +92,8 @@ module lcd_live_writer #(
         endcase
         if (state == S_INIT_PULSE || state == S_INIT_NEXT || state == S_INIT_GAP)
             bus_data = SETUP[init_index];
-        if (state == S_CLEAR_XP) bus_data = {7'd0, clear_index[8:0]};
-        if (state == S_CLEAR_YP) bus_data = {7'd0, clear_index / 320};
+        if (state == S_CLEAR_XP) bus_data = {6'd0, clear_x};
+        if (state == S_CLEAR_YP) bus_data = {7'd0, clear_y};
         if (state == S_CLEAR_RAMP) bus_data = 16'hFFFF;
         if (state == S_DRAW_XP) bus_data = {7'd0, draw_x + draw_dx};
         if (state == S_DRAW_YP) bus_data = {7'd0, draw_y + draw_dy};
@@ -99,6 +103,7 @@ module lcd_live_writer #(
     always_ff @(posedge clk or negedge reset_n) begin
         if (!reset_n) begin
             state <= S_RESET; delay_count <= 0; init_index <= 0; clear_index <= 0;
+            clear_x <= 0; clear_y <= 0;
             draw_x <= 0; draw_y <= 0; draw_dx <= 0; draw_dy <= 0;
         end else begin
             case (state)
@@ -106,7 +111,7 @@ module lcd_live_writer #(
                 S_INIT_LOAD: state <= S_INIT_PULSE;
                 S_INIT_PULSE: state <= S_INIT_NEXT;
                 S_INIT_NEXT: begin
-                    if (init_index == SETUP_WORDS-1) begin clear_index <= 0; state <= S_CLEAR_X; end
+                    if (init_index == SETUP_WORDS-1) begin clear_index <= 0; clear_x <= 0; clear_y <= 0; state <= S_CLEAR_X; end
                     else if (init_index[0]) begin delay_count <= 0; state <= S_INIT_GAP; end
                     else begin init_index <= init_index + 1'b1; state <= S_INIT_LOAD; end
                 end
@@ -117,7 +122,12 @@ module lcd_live_writer #(
                 S_CLEAR_YP: state <= S_CLEAR_RAM;
                 S_CLEAR_RAM: state <= S_CLEAR_RAMP;
                 S_CLEAR_RAMP: state <= S_CLEAR_NEXT;
-                S_CLEAR_NEXT: if (clear_index == CLEAR_PIXEL_COUNT-1) state <= S_IDLE; else begin clear_index <= clear_index + 1'b1; state <= S_CLEAR_X; end
+                S_CLEAR_NEXT: if (clear_index == CLEAR_PIXEL_COUNT-1) state <= S_IDLE; else begin
+                    clear_index <= clear_index + 1'b1;
+                    if (clear_x == 319) begin clear_x <= 0; clear_y <= clear_y + 1'b1; end
+                    else clear_x <= clear_x + 1'b1;
+                    state <= S_CLEAR_X;
+                end
                 S_IDLE: if (point_valid) begin draw_x <= (point_x > 315) ? 315 : point_x; draw_y <= (point_y > 235) ? 235 : point_y; draw_dx <= 0; draw_dy <= 0; state <= S_DRAW_X; end
                 S_DRAW_X: state <= S_DRAW_XP;
                 S_DRAW_XP: state <= S_DRAW_Y;
