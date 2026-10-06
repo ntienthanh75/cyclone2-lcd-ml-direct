@@ -84,6 +84,14 @@ fits; hardware confirmation remains a separate required milestone.
 
 ## B. Capture one drawing
 
+The latest hardware capture still showed vertical stripes and horizontal
+bands. That symptom is consistent with incomplete LCD bus writes, not only
+touch-coordinate displacement. The writer now holds `WR` low for four
+processing-clock cycles, matching the proven VHDL writer timing. ModelSim
+passes and the new Quartus build has positive setup slack; the hardware
+checkpoint remains open until the panel is visually uniform and touch marks
+appear at the touch location.
+
 - [ ] Start a new drawing buffer when the user begins touching the LCD.
 - [ ] Append touch points while the finger or stylus is down.
 - [ ] Render each valid touch point immediately on the LCD so the user sees

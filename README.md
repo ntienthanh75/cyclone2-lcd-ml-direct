@@ -57,6 +57,12 @@ The corrected writer passes ModelSim and Quartus compilation. The bitstream
 must still be downloaded and checked on hardware; a passing simulation does
 not prove the panel wiring or physical touch calibration.
 
+The first hardware download still showed vertical stripes and horizontal
+bands. This indicates incomplete LCD bus writes rather than only a touch
+coordinate offset. The writer now holds `WR` low for four processing-clock
+cycles, matching the proven VHDL driver. ModelSim still passes, and the new
+Quartus build has positive setup slack (`18.502 ns` on `clk50`).
+
 ## First implementation milestone
 
 The first RTL step is now present in

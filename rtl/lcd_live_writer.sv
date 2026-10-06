@@ -6,7 +6,8 @@ module lcd_live_writer #(
     parameter integer RESET_HOLD_CYCLES = 100000,
     parameter integer INIT_GAP_CYCLES = 125000,
     parameter integer CLEAR_PIXEL_COUNT = 76800,
-    parameter integer INIT_DONE_DELAY_CYCLES = 600000
+    parameter integer INIT_DONE_DELAY_CYCLES = 600000,
+    parameter integer WRITE_HOLD_CYCLES = 4
 ) (
     input  logic        clk,
     input  logic        reset_n,
@@ -115,8 +116,12 @@ module lcd_live_writer #(
         end else begin
             case (state)
                 S_RESET: if (delay_count == RESET_HOLD_CYCLES-1) begin delay_count <= 0; state <= S_INIT_LOAD; end else delay_count <= delay_count + 1'b1;
-                S_INIT_LOAD: state <= S_INIT_PULSE;
-                S_INIT_PULSE: state <= S_INIT_NEXT;
+                S_INIT_LOAD: begin delay_count <= 0; state <= S_INIT_PULSE; end
+                // Match the proven VHDL driver: WR remains low for four
+                // processing-clock cycles while data is stable.
+                S_INIT_PULSE: if (delay_count == WRITE_HOLD_CYCLES-1) begin
+                    delay_count <= 0; state <= S_INIT_NEXT;
+                end else delay_count <= delay_count + 1'b1;
                 S_INIT_NEXT: begin
                     if (init_index == SETUP_WORDS-1) begin delay_count <= 0; clear_index <= 0; state <= S_INIT_DONE_WAIT; end
                     else if (init_index[0]) begin delay_count <= 0; state <= S_INIT_GAP; end
@@ -126,20 +131,28 @@ module lcd_live_writer #(
                 S_INIT_DONE_WAIT: if (delay_count == INIT_DONE_DELAY_CYCLES-1) begin
                     delay_count <= 0; clear_index <= 0; clear_x <= 0; clear_y <= 319; state <= S_CLEAR_X;
                 end else delay_count <= delay_count + 1'b1;
-                S_CLEAR_X: state <= S_CLEAR_XP;
-                S_CLEAR_XP: state <= S_CLEAR_Y;
-                S_CLEAR_Y: state <= S_CLEAR_YP;
-                S_CLEAR_YP: state <= S_CLEAR_RAM;
-                S_CLEAR_RAM: state <= S_CLEAR_RAMP;
-                S_CLEAR_RAMP: state <= S_CLEAR_NEXT;
+                S_CLEAR_X: begin delay_count <= 0; state <= S_CLEAR_XP; end
+                S_CLEAR_XP: if (delay_count == WRITE_HOLD_CYCLES-1) begin
+                    delay_count <= 0; state <= S_CLEAR_Y;
+                end else delay_count <= delay_count + 1'b1;
+                S_CLEAR_Y: begin delay_count <= 0; state <= S_CLEAR_YP; end
+                S_CLEAR_YP: if (delay_count == WRITE_HOLD_CYCLES-1) begin
+                    delay_count <= 0; state <= S_CLEAR_RAM;
+                end else delay_count <= delay_count + 1'b1;
+                S_CLEAR_RAM: begin delay_count <= 0; state <= S_CLEAR_RAMP; end
+                S_CLEAR_RAMP: if (delay_count == WRITE_HOLD_CYCLES-1) begin
+                    delay_count <= 0; state <= S_CLEAR_NEXT;
+                end else delay_count <= delay_count + 1'b1;
                 S_CLEAR_NEXT: if (clear_index == CLEAR_PIXEL_COUNT-1) state <= S_IDLE; else begin
                     clear_index <= clear_index + 1'b1;
                     if (clear_x == 319) begin clear_x <= 0; clear_y <= clear_y + 1'b1; end
                     else clear_x <= clear_x + 1'b1;
                     state <= S_CLEAR_X;
                 end
-                S_FILL_SETUP: state <= S_FILL_PULSE;
-                S_FILL_PULSE: state <= S_FILL_NEXT;
+                S_FILL_SETUP: begin delay_count <= 0; state <= S_FILL_PULSE; end
+                S_FILL_PULSE: if (delay_count == WRITE_HOLD_CYCLES-1) begin
+                    delay_count <= 0; state <= S_FILL_NEXT;
+                end else delay_count <= delay_count + 1'b1;
                 S_FILL_NEXT: if (clear_index == CLEAR_PIXEL_COUNT-1) state <= S_IDLE; else begin clear_index <= clear_index + 1'b1; state <= S_FILL_SETUP; end
                 // DISP_ORIENTATION=90 from the original LCD32 driver:
                 // logical (x,y) -> LCD GRAM (x_hw,y_hw) = (y,319-x).
@@ -149,12 +162,18 @@ module lcd_live_writer #(
                     draw_y <= (point_x > 315) ? 0 : (315 - point_x);
                     draw_dx <= 0; draw_dy <= 0; state <= S_DRAW_X;
                 end
-                S_DRAW_X: state <= S_DRAW_XP;
-                S_DRAW_XP: state <= S_DRAW_Y;
-                S_DRAW_Y: state <= S_DRAW_YP;
-                S_DRAW_YP: state <= S_DRAW_RAM;
-                S_DRAW_RAM: state <= S_DRAW_RAMP;
-                S_DRAW_RAMP: state <= S_DRAW_NEXT;
+                S_DRAW_X: begin delay_count <= 0; state <= S_DRAW_XP; end
+                S_DRAW_XP: if (delay_count == WRITE_HOLD_CYCLES-1) begin
+                    delay_count <= 0; state <= S_DRAW_Y;
+                end else delay_count <= delay_count + 1'b1;
+                S_DRAW_Y: begin delay_count <= 0; state <= S_DRAW_YP; end
+                S_DRAW_YP: if (delay_count == WRITE_HOLD_CYCLES-1) begin
+                    delay_count <= 0; state <= S_DRAW_RAM;
+                end else delay_count <= delay_count + 1'b1;
+                S_DRAW_RAM: begin delay_count <= 0; state <= S_DRAW_RAMP; end
+                S_DRAW_RAMP: if (delay_count == WRITE_HOLD_CYCLES-1) begin
+                    delay_count <= 0; state <= S_DRAW_NEXT;
+                end else delay_count <= delay_count + 1'b1;
                 S_DRAW_NEXT: begin
                     if (draw_dx == 4 && draw_dy == 4) begin
                         if (point_valid) begin
