@@ -37,13 +37,16 @@ module xpt2046_calibrator (
     function automatic [8:0] cell_to_x(input logic [3:0] idx);
         begin
             case (idx)
+                // Centers of 14 equal cells over logical X=0..319.
+                // The previous table skipped the 103-pixel center and
+                // shifted every later cell by 11 pixels.
                 4'd0: cell_to_x = 9'd11;  4'd1: cell_to_x = 9'd34;
                 4'd2: cell_to_x = 9'd57;  4'd3: cell_to_x = 9'd80;
-                4'd4: cell_to_x = 9'd114; 4'd5: cell_to_x = 9'd137;
-                4'd6: cell_to_x = 9'd160; 4'd7: cell_to_x = 9'd183;
-                4'd8: cell_to_x = 9'd206; 4'd9: cell_to_x = 9'd229;
-                4'd10: cell_to_x = 9'd251; 4'd11: cell_to_x = 9'd274;
-                4'd12: cell_to_x = 9'd297; default: cell_to_x = 9'd308;
+                4'd4: cell_to_x = 9'd103; 4'd5: cell_to_x = 9'd126;
+                4'd6: cell_to_x = 9'd149; 4'd7: cell_to_x = 9'd171;
+                4'd8: cell_to_x = 9'd194; 4'd9: cell_to_x = 9'd217;
+                4'd10: cell_to_x = 9'd240; 4'd11: cell_to_x = 9'd263;
+                4'd12: cell_to_x = 9'd286; default: cell_to_x = 9'd309;
             endcase
         end
     endfunction

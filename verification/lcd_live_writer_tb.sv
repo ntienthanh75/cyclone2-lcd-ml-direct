@@ -11,11 +11,16 @@ module lcd_live_writer_tb;
         .lcd_rd_n(lcd_rd_n), .lcd_rst_n(lcd_rst_n), .ready(ready));
     always #5 clk = ~clk;
     integer writes = 0, command_writes = 0, data_writes = 0;
+    logic saw_expected_x = 0, saw_expected_y = 0;
     always @(negedge clk) begin
         if (!lcd_cs_n && !lcd_wr_n) begin
             writes = writes + 1;
             if (lcd_rs) data_writes = data_writes + 1;
             else command_writes = command_writes + 1;
+            // For logical point (100,80), orientation 90 must write
+            // GRAM X=80 and GRAM Y=219 before the black pixel.
+            if (lcd_rs && lcd_data === 16'd80) saw_expected_x = 1;
+            if (lcd_rs && lcd_data === 16'd219) saw_expected_y = 1;
         end
     end
     initial begin
@@ -26,7 +31,9 @@ module lcd_live_writer_tb;
         repeat (180) @(posedge clk);
         if (writes < 20 || command_writes == 0 || data_writes == 0)
             $fatal(1, "writer did not produce command/data traffic");
-        $display("PASS: LCD writer init, clear, and point traffic; writes=%0d commands=%0d data=%0d", writes, command_writes, data_writes);
+        if (!saw_expected_x || !saw_expected_y)
+            $fatal(1, "orientation mapping missing: saw_x=%0d saw_y=%0d", saw_expected_x, saw_expected_y);
+        $display("PASS: LCD writer init, clear, and orientation mapping; writes=%0d commands=%0d data=%0d", writes, command_writes, data_writes);
         $finish;
     end
 endmodule

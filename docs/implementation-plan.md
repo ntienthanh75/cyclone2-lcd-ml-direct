@@ -20,6 +20,8 @@ one reusable classifier boundary.
 - [ ] Compare three timing-repair variants against the 5 MHz baseline:
       baseline, layer-boundary registers, and deeper MAC pipelining.
 - [x] Add the Nios-free ILI9325 live LCD writer and its pin assignments.
+- [x] Correct the 14-cell X calibration centers and add an orientation-aware
+      LCD writer assertion for logical `(100,80)` -> GRAM `(80,219)`.
 - [ ] Hardware-test LCD clear and immediate touch-point rendering.
 
 ## Verification rule for each implementation step
@@ -73,6 +75,12 @@ the panel was mostly white but the remaining colored band and touch mark were
 displaced. The original Nios `LCD_SetCursor` implementation was used as the
 reference. The current RTL maps logical `(x,y)` to GRAM `(y,319-x)` and starts
 the clear at GRAM `(0,319)`.
+
+The latest diagnostic found a separate calibration-table defect: the X
+centers after cell 3 were shifted by 11 pixels. The table was corrected and
+the writer test was strengthened to check actual rotated GRAM addresses, not
+merely the presence of bus traffic. ModelSim passes and Quartus compilation
+fits; hardware confirmation remains a separate required milestone.
 
 ## B. Capture one drawing
 

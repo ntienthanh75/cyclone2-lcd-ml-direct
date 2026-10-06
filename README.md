@@ -35,6 +35,28 @@ The former `lcd_touch_ml` planning folder has been consolidated here. This is
 now the single project for direct LCD-touch-to-ML integration; the reusable
 classifier remains in `cyclone2-handwriting-ml`.
 
+## LCD displacement diagnosis (2026-10-06)
+
+The previous side-displaced touch mark was investigated before changing the
+LCD orientation again. The original Nios driver was used as the reference:
+it maps raw touch X to logical LCD X, raw touch Y to logical LCD Y, and for
+`DISP_ORIENTATION=90` writes GRAM coordinates `(x_hw,y_hw)=(logical_y,
+319-logical_x)`.
+
+Two independent issues were found:
+
+1. The HDL 14-cell calibration table had incorrect X centers from cell 4
+   onward. It skipped the 103-pixel center and shifted subsequent cells by
+   11 pixels. The table now uses the equal-cell centers
+   `11,34,57,80,103,126,149,171,194,217,240,263,286,309`.
+2. The LCD writer test only checked that command/data traffic existed. It now
+   checks a known point: logical `(100,80)` must produce GRAM X `80` and GRAM
+   Y `219`.
+
+The corrected writer passes ModelSim and Quartus compilation. The bitstream
+must still be downloaded and checked on hardware; a passing simulation does
+not prove the panel wiring or physical touch calibration.
+
 ## First implementation milestone
 
 The first RTL step is now present in
