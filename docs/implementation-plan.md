@@ -68,6 +68,12 @@ the old driver’s continuous GRAM-write phase. The current image now waits for
 the final initialization delay and streams all 76,800 white pixels from the
 existing GRAM start address. Hardware confirmation is still pending.
 
+The next capture showed the expected symptom of a 90-degree address mismatch:
+the panel was mostly white but the remaining colored band and touch mark were
+displaced. The original Nios `LCD_SetCursor` implementation was used as the
+reference. The current RTL maps logical `(x,y)` to GRAM `(y,319-x)` and starts
+the clear at GRAM `(0,319)`.
+
 ## B. Capture one drawing
 
 - [ ] Start a new drawing buffer when the user begins touching the LCD.

@@ -7,7 +7,7 @@ Slack : 18.487
 TNS   : 0.000
 
 Type  : Slow Model Setup 'proc_clk'
-Slack : 173.009
+Slack : 171.328
 TNS   : 0.000
 
 Type  : Slow Model Hold 'clk50'
@@ -19,11 +19,11 @@ Slack : 0.499
 TNS   : 0.000
 
 Type  : Slow Model Recovery 'proc_clk'
-Slack : 192.953
+Slack : 193.739
 TNS   : 0.000
 
 Type  : Slow Model Removal 'proc_clk'
-Slack : 6.346
+Slack : 5.557
 TNS   : 0.000
 
 Type  : Slow Model Minimum Pulse Width 'clk50'
@@ -39,7 +39,7 @@ Slack : 19.497
 TNS   : 0.000
 
 Type  : Fast Model Setup 'proc_clk'
-Slack : 191.323
+Slack : 191.037
 TNS   : 0.000
 
 Type  : Fast Model Hold 'clk50'
@@ -51,11 +51,11 @@ Slack : 0.215
 TNS   : 0.000
 
 Type  : Fast Model Recovery 'proc_clk'
-Slack : 197.290
+Slack : 197.448
 TNS   : 0.000
 
 Type  : Fast Model Removal 'proc_clk'
-Slack : 2.452
+Slack : 2.294
 TNS   : 0.000
 
 Type  : Fast Model Minimum Pulse Width 'clk50'

@@ -243,6 +243,12 @@ after initialization and its final delay, it streams 76,800 white GRAM writes
 from the existing GRAM start address instead of rewriting X/Y for every pixel.
 This addresses the striped-screen result observed in the first corrected image.
 
+The following hardware capture showed a remaining top band and touch marks
+appearing at the side. The original Nios source confirms
+`DISP_ORIENTATION=90`: logical `(x,y)` maps to GRAM `(y,319-x)`, and logical
+`(0,0)` starts at GRAM `(0,319)`. The current RTL applies this mapping for
+both the white clear start address and the 5x5 touch marks.
+
 LED1+LED3 means that the serialized ML core is processing the submitted
 196-pixel frame; it is not an LCD acknowledgement. The expected sequence is
 submit indication, brief ML-busy indication, result indication, then the
