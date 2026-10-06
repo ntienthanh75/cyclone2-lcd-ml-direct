@@ -20,7 +20,10 @@ module touch_capture_top #(
     output logic       stream_done,
     output logic       sample_valid_debug,
     output logic [11:0] raw_x_debug,
-    output logic [11:0] raw_y_debug
+    output logic [11:0] raw_y_debug,
+    output logic        point_valid_debug,
+    output logic [8:0]  point_x_debug,
+    output logic [8:0]  point_y_debug
 );
     logic reader_busy;
     logic sample_valid;
@@ -54,4 +57,7 @@ module touch_capture_top #(
     assign sample_valid_debug = sample_valid;
     assign raw_x_debug = raw_x;
     assign raw_y_debug = raw_y;
+    assign point_valid_debug = point_valid;
+    assign point_x_debug = point_x;
+    assign point_y_debug = point_y;
 endmodule

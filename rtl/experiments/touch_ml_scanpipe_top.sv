@@ -15,6 +15,9 @@ module touch_ml_scanpipe_top #(
     output logic       touch_cs_n,
     output logic       touch_sclk,
     output logic       touch_mosi,
+    output logic       point_valid,
+    output logic [8:0] point_x,
+    output logic [8:0] point_y,
     output logic       ml_busy,
     output logic       result_valid,
     output logic       result_accepted,
@@ -41,7 +44,8 @@ module touch_ml_scanpipe_top #(
         .input_pixel_index(input_pixel_index), .input_pixel(input_pixel),
         .input_frame_last(input_frame_last), .stream_done(stream_done),
         .sample_valid_debug(sample_valid_debug), .raw_x_debug(raw_x_debug),
-        .raw_y_debug(raw_y_debug)
+        .raw_y_debug(raw_y_debug), .point_valid_debug(point_valid),
+        .point_x_debug(point_x), .point_y_debug(point_y)
     );
 
     ml_inference_scanpipe #(

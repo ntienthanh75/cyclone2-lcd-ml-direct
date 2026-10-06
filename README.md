@@ -215,9 +215,28 @@ Before downloading, complete these items in order:
 4. Review the exact `set_location_assignment` entries in the board wrapper.
 5. Recompile and inspect timing, pin, and fitter reports. **Done for the
    current wrapper.**
-6. Download the resulting `.sof`. **Done:** the board accepted
-   `rtl/output_files_hw/cyclone2_lcd_ml_hw.sof` over USB-Blaster.
+6. Download the resulting `.sof`. The previous image was accepted by the
+   board; the updated LCD-writer image must be tested separately.
 7. Perform and record the first touch/joystick/LED board test.
+8. Perform and record the LCD test: after startup the panel must clear white,
+   then each touch must leave a visible black 5x5 mark immediately. A blank
+   LCD is a failed LCD-writer test, even if Quartus programming succeeds.
+
+## Current LCD and busy diagnosis
+
+The earlier wrapper had the touch reader and ML stream but no LCD data or
+ILI9325 command writer. Touches could therefore be captured internally while
+nothing was sent to the panel. `rtl/lcd_live_writer.sv` now reuses the
+known-good initialization sequence from `D:\fpga\lcd_photo_hdl`, clears the
+panel, and writes each calibrated point as a 5x5 black square without Nios.
+Its self-checking test is `verification/lcd_live_writer_tb.sv`.
+
+LED1+LED3 means that the serialized ML core is processing the submitted
+196-pixel frame; it is not an LCD acknowledgement. The expected sequence is
+submit indication, brief ML-busy indication, result indication, then the
+recognized-digit display. If LED1+LED3 persists after a complete frame should
+have finished, record whether any touch mark appeared and reload the new SOF
+before repeating; this distinguishes LCD initialization from ML behavior.
 
 ## Target
 

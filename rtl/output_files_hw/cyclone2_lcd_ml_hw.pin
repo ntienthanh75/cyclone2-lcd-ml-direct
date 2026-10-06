@@ -156,18 +156,18 @@ GND+                         : 89        :        :                   :         
 GND+                         : 90        :        :                   :         : 3         :                
 GND+                         : 91        :        :                   :         : 3         :                
 RESERVED_INPUT               : 92        :        :                   :         : 3         :                
-RESERVED_INPUT               : 93        :        :                   :         : 3         :                
-RESERVED_INPUT               : 94        :        :                   :         : 3         :                
+lcd_data[0]                  : 93        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
+lcd_data[1]                  : 94        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : 95        : power  :                   : 3.3V    : 3         :                
-RESERVED_INPUT               : 96        :        :                   :         : 3         :                
-RESERVED_INPUT               : 97        :        :                   :         : 3         :                
+lcd_data[2]                  : 96        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
+lcd_data[3]                  : 97        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : 98        : gnd    :                   :         :           :                
-RESERVED_INPUT               : 99        :        :                   :         : 3         :                
-RESERVED_INPUT               : 100       :        :                   :         : 3         :                
-RESERVED_INPUT               : 101       :        :                   :         : 3         :                
+lcd_data[4]                  : 99        : bidir  : 3.3-V LVTTL       :         : 3         : Y              
+lcd_data[5]                  : 100       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
+lcd_data[6]                  : 101       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 VCCIO3                       : 102       : power  :                   : 3.3V    : 3         :                
-RESERVED_INPUT               : 103       :        :                   :         : 3         :                
-RESERVED_INPUT               : 104       :        :                   :         : 3         :                
+lcd_data[7]                  : 103       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
+lcd_data[8]                  : 104       : bidir  : 3.3-V LVTTL       :         : 3         : Y              
 GND                          : 105       : gnd    :                   :         :           :                
 GND_PLL2                     : 106       : gnd    :                   :         :           :                
 VCCD_PLL2                    : 107       : power  :                   : 1.2V    :           :                
@@ -175,27 +175,27 @@ GND_PLL2                     : 108       : gnd    :                   :         
 VCCA_PLL2                    : 109       : power  :                   : 1.2V    :           :                
 GNDA_PLL2                    : 110       : gnd    :                   :         :           :                
 GND                          : 111       : gnd    :                   :         :           :                
-RESERVED_INPUT               : 112       :        :                   :         : 2         :                
-RESERVED_INPUT               : 113       :        :                   :         : 2         :                
-RESERVED_INPUT               : 114       :        :                   :         : 2         :                
-RESERVED_INPUT               : 115       :        :                   :         : 2         :                
+lcd_data[9]                  : 112       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+lcd_data[10]                 : 113       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+lcd_data[11]                 : 114       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+lcd_data[12]                 : 115       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : 116       : power  :                   : 3.3V    : 2         :                
 GND                          : 117       : gnd    :                   :         :           :                
-RESERVED_INPUT               : 118       :        :                   :         : 2         :                
-RESERVED_INPUT               : 119       :        :                   :         : 2         :                
-RESERVED_INPUT               : 120       :        :                   :         : 2         :                
-RESERVED_INPUT               : 121       :        :                   :         : 2         :                
-RESERVED_INPUT               : 122       :        :                   :         : 2         :                
+lcd_data[13]                 : 118       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+lcd_data[14]                 : 119       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+lcd_data[15]                 : 120       : bidir  : 3.3-V LVTTL       :         : 2         : Y              
+lcd_cs_n                     : 121       : output : 3.3-V LVTTL       :         : 2         : Y              
+lcd_rs                       : 122       : output : 3.3-V LVTTL       :         : 2         : Y              
 GND                          : 123       : gnd    :                   :         :           :                
 VCCINT                       : 124       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT               : 125       :        :                   :         : 2         :                
-RESERVED_INPUT               : 126       :        :                   :         : 2         :                
+lcd_wr_n                     : 125       : output : 3.3-V LVTTL       :         : 2         : Y              
+lcd_rd_n                     : 126       : output : 3.3-V LVTTL       :         : 2         : Y              
 VCCIO2                       : 127       : power  :                   : 3.3V    : 2         :                
 GND                          : 128       : gnd    :                   :         :           :                
 touch_irq_n                  : 129       : input  : 3.3-V LVTTL       :         : 2         : Y              
 GND                          : 130       : gnd    :                   :         :           :                
 VCCINT                       : 131       : power  :                   : 1.2V    :           :                
-RESERVED_INPUT               : 132       :        :                   :         : 2         :                
+lcd_rst_n                    : 132       : output : 3.3-V LVTTL       :         : 2         : Y              
 touch_sclk                   : 133       : output : 3.3-V LVTTL       :         : 2         : Y              
 touch_cs_n                   : 134       : output : 3.3-V LVTTL       :         : 2         : Y              
 touch_miso                   : 135       : input  : 3.3-V LVTTL       :         : 2         : Y              

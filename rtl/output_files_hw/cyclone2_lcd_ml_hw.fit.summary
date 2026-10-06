@@ -1,15 +1,15 @@
-Fitter Status : Successful - Mon Oct 05 22:31:33 2026
+Fitter Status : Successful - Tue Oct 06 09:15:39 2026
 Quartus II 64-Bit Version : 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition
 Revision Name : cyclone2_lcd_ml_hw
 Top-level Entity Name : cyclone2_lcd_ml_hw
 Family : Cyclone II
 Device : EP2C5T144C8
 Timing Models : Final
-Total logic elements : 1,995 / 4,608 ( 43 % )
-    Total combinational functions : 1,867 / 4,608 ( 41 % )
-    Dedicated logic registers : 974 / 4,608 ( 21 % )
-Total registers : 974
-Total pins : 17 / 89 ( 19 % )
+Total logic elements : 2,414 / 4,608 ( 52 % )
+    Total combinational functions : 2,285 / 4,608 ( 50 % )
+    Dedicated logic registers : 1,074 / 4,608 ( 23 % )
+Total registers : 1074
+Total pins : 38 / 89 ( 43 % )
 Total virtual pins : 0
 Total memory bits : 55,888 / 119,808 ( 47 % )
 Embedded Multiplier 9-bit elements : 5 / 26 ( 19 % )

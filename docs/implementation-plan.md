@@ -19,6 +19,8 @@ one reusable classifier boundary.
       resource/timing results before choosing an operating point.
 - [ ] Compare three timing-repair variants against the 5 MHz baseline:
       baseline, layer-boundary registers, and deeper MAC pipelining.
+- [x] Add the Nios-free ILI9325 live LCD writer and its pin assignments.
+- [ ] Hardware-test LCD clear and immediate touch-point rendering.
 
 ## Verification rule for each implementation step
 
@@ -46,6 +48,15 @@ The current evidence is:
       stream, or both.
 - [ ] Record screen orientation and map raw coordinates to the 240×320 panel.
 - [ ] Keep the buzzer muted in every hardware image.
+
+## LCD writer verification checkpoint
+
+The live writer has three independently checked phases: ILI9325 register
+initialization, white panel clear, and point rendering. The testbench
+`verification/lcd_live_writer_tb.sv` checks command/data RS levels, white
+pixel writes, and subsequent point traffic. This is simulation evidence only.
+The hardware checkpoint is passed only when the programmed panel first becomes
+white and then shows a black 5x5 mark at the touch location.
 
 ## B. Capture one drawing
 

@@ -18,6 +18,12 @@ module cyclone2_lcd_ml_hw (
     output logic       touch_cs_n,
     output logic       touch_sclk,
     output logic       touch_mosi,
+    inout  wire [15:0] lcd_data,
+    output logic       lcd_cs_n,
+    output logic       lcd_rs,
+    output logic       lcd_wr_n,
+    output logic       lcd_rd_n,
+    output logic       lcd_rst_n,
     output logic [3:0] led,
     output logic       buzzer_n
 );
@@ -85,6 +91,9 @@ module cyclone2_lcd_ml_hw (
     logic [7:0] result_confidence;
     logic [15:0] result_margin;
     logic [31:0] result_cycles;
+    logic point_valid;
+    logic [8:0] point_x, point_y;
+    logic lcd_ready;
     logic [3:0] displayed_digit;
     logic [20:0] submit_ack_count;
     logic [21:0] result_ack_count;
@@ -111,7 +120,16 @@ module cyclone2_lcd_ml_hw (
         .result_digit(result_digit),
         .result_confidence(result_confidence),
         .result_margin(result_margin),
-        .result_cycles(result_cycles)
+        .result_cycles(result_cycles),
+        .point_valid(point_valid), .point_x(point_x), .point_y(point_y)
+    );
+
+    lcd_live_writer lcd_writer (
+        .clk(proc_clk), .reset_n(pipeline_reset_n),
+        .point_valid(point_valid), .point_x(point_x), .point_y(point_y),
+        .lcd_data(lcd_data), .lcd_cs_n(lcd_cs_n), .lcd_rs(lcd_rs),
+        .lcd_wr_n(lcd_wr_n), .lcd_rd_n(lcd_rd_n), .lcd_rst_n(lcd_rst_n),
+        .ready(lcd_ready)
     );
 
     always_ff @(posedge proc_clk or negedge reset_n) begin
