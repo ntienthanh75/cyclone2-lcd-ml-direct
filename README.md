@@ -70,6 +70,13 @@ driver writes the cursor once, writes `0x0022` once, and then streams all
 addresses the repeated bands; touch calibration was not changed in this
 correction.
 
+The uniform-white hardware result proves the LCD clear path, but the first
+touch produced no mark. Root cause: `raw_y` and `sample_valid` were asserted
+on the same clock edge. Because both are registered, the calibrator received
+the previous Y value. The reader now publishes `sample_valid` one clock after
+updating `raw_y`. The XPT2046 simulation passes this handshake, and the full
+design compiles with positive timing.
+
 ## First implementation milestone
 
 The first RTL step is now present in

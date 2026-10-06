@@ -26,9 +26,10 @@ module xpt2046_reader #(
 
     localparam [1:0] S_IDLE = 2'd0;
     localparam [1:0] S_SPI  = 2'd1;
-    localparam [1:0] S_WAIT = 2'd2;
-    localparam [1:0] S_GAP  = 2'd3;
+    localparam [2:0] S_WAIT = 3'd2;
+    localparam [2:0] S_GAP  = 3'd3;
     localparam [2:0] S_START_Y = 3'd4;
+    localparam [2:0] S_PUBLISH = 3'd5;
 
     reg [2:0] state;
     reg       axis_y;
@@ -113,8 +114,11 @@ module xpt2046_reader #(
                                     state <= S_GAP;
                                 end else begin
                                     raw_y <= response_to_adc(rx_shift);
-                                    sample_valid <= 1'b1;
-                                    state <= S_WAIT;
+                                    // raw_y is updated by nonblocking
+                                    // assignment on this edge. Publish the
+                                    // sample one clock later so downstream
+                                    // calibration sees the new X/Y pair.
+                                    state <= S_PUBLISH;
                                 end
                             end else begin
                                 bit_index <= bit_index + 1'b1;
@@ -127,6 +131,12 @@ module xpt2046_reader #(
                     end else begin
                         divider <= divider + 1'b1;
                     end
+                end
+
+                S_PUBLISH: begin
+                    sample_valid <= 1'b1;
+                    busy <= 1'b0;
+                    state <= S_WAIT;
                 end
 
                 S_WAIT: begin

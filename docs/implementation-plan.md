@@ -96,7 +96,13 @@ appear at the touch location.
   the HDL was rewriting GRAM addresses for every clear pixel. The reference
   driver sets the cursor once, selects `0x0022` once, and streams all 76,800
   pixels. The clear path now follows that exact sequence. This correction was
-  simulated and synthesized before hardware programming.
+simulated and synthesized before hardware programming.
+
+The panel then became uniformly white, proving the clear path. No touch mark
+appeared because the reader asserted `sample_valid` on the same edge that it
+registered `raw_y`; the calibrator therefore saw the previous Y value. The
+reader now publishes the sample one clock later. The XPT2046 testbench passes
+and the full design compiles; hardware touch confirmation remains open.
 
 - [ ] Start a new drawing buffer when the user begins touching the LCD.
 - [ ] Append touch points while the finger or stylus is down.
