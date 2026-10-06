@@ -63,6 +63,13 @@ coordinate offset. The writer now holds `WR` low for four processing-clock
 cycles, matching the proven VHDL driver. ModelSim still passes, and the new
 Quartus build has positive setup slack (`18.502 ns` on `clk50`).
 
+The complete reset investigation found the more specific error: the HDL was
+reprogramming GRAM address registers for every clear pixel. The reference
+driver writes the cursor once, writes `0x0022` once, and then streams all
+76,800 pixels. The clear path now follows that exact sequence. This directly
+addresses the repeated bands; touch calibration was not changed in this
+correction.
+
 ## First implementation milestone
 
 The first RTL step is now present in

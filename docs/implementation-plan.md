@@ -92,6 +92,12 @@ passes and the new Quartus build has positive setup slack; the hardware
 checkpoint remains open until the panel is visually uniform and touch marks
 appear at the touch location.
 
+- The complete reset investigation found the more specific clear-path error:
+  the HDL was rewriting GRAM addresses for every clear pixel. The reference
+  driver sets the cursor once, selects `0x0022` once, and streams all 76,800
+  pixels. The clear path now follows that exact sequence. This correction was
+  simulated and synthesized before hardware programming.
+
 - [ ] Start a new drawing buffer when the user begins touching the LCD.
 - [ ] Append touch points while the finger or stylus is down.
 - [ ] Render each valid touch point immediately on the LCD so the user sees

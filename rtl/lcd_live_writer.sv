@@ -143,11 +143,13 @@ module lcd_live_writer #(
                 S_CLEAR_RAMP: if (delay_count == WRITE_HOLD_CYCLES-1) begin
                     delay_count <= 0; state <= S_CLEAR_NEXT;
                 end else delay_count <= delay_count + 1'b1;
+                // The proven Nios/VHDL clear sets the cursor once, selects
+                // GRAM once, then streams every pixel. Do not rewrite the
+                // cursor for every pixel; that breaks the controller's
+                // configured auto-increment direction.
                 S_CLEAR_NEXT: if (clear_index == CLEAR_PIXEL_COUNT-1) state <= S_IDLE; else begin
                     clear_index <= clear_index + 1'b1;
-                    if (clear_x == 319) begin clear_x <= 0; clear_y <= clear_y + 1'b1; end
-                    else clear_x <= clear_x + 1'b1;
-                    state <= S_CLEAR_X;
+                    state <= S_FILL_SETUP;
                 end
                 S_FILL_SETUP: begin delay_count <= 0; state <= S_FILL_PULSE; end
                 S_FILL_PULSE: if (delay_count == WRITE_HOLD_CYCLES-1) begin
