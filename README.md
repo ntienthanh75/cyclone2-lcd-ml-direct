@@ -238,6 +238,11 @@ asserted during reset/initialization to match `lcd_photo_hdl`. The corrected
 SOF was compiled and downloaded successfully; hardware display behavior is
 still awaiting visual confirmation.
 
+The latest image changes the clear operation to match the old driver exactly:
+after initialization and its final delay, it streams 76,800 white GRAM writes
+from the existing GRAM start address instead of rewriting X/Y for every pixel.
+This addresses the striped-screen result observed in the first corrected image.
+
 LED1+LED3 means that the serialized ML core is processing the submitted
 196-pixel frame; it is not an LCD acknowledgement. The expected sequence is
 submit indication, brief ML-busy indication, result indication, then the

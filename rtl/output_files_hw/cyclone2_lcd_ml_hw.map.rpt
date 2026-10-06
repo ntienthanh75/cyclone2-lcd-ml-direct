@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cyclone2_lcd_ml_hw
-Tue Oct 06 09:25:58 2026
+Tue Oct 06 09:30:03 2026
 Quartus II 64-Bit Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
 
 
@@ -78,15 +78,15 @@ applicable agreement for further details.
 +--------------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                         ;
 +------------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 06 09:25:58 2026           ;
+; Analysis & Synthesis Status        ; Successful - Tue Oct 06 09:30:03 2026           ;
 ; Quartus II 64-Bit Version          ; 13.0.1 Build 232 06/12/2013 SP 1 SJ Web Edition ;
 ; Revision Name                      ; cyclone2_lcd_ml_hw                              ;
 ; Top-level Entity Name              ; cyclone2_lcd_ml_hw                              ;
 ; Family                             ; Cyclone II                                      ;
-; Total logic elements               ; 2,566                                           ;
-;     Total combinational functions  ; 2,193                                           ;
-;     Dedicated logic registers      ; 1,093                                           ;
-; Total registers                    ; 1093                                            ;
+; Total logic elements               ; 2,513                                           ;
+;     Total combinational functions  ; 2,144                                           ;
+;     Dedicated logic registers      ; 1,071                                           ;
+; Total registers                    ; 1071                                            ;
 ; Total pins                         ; 38                                              ;
 ; Total virtual pins                 ; 0                                               ;
 ; Total memory bits                  ; 55,888                                          ;
@@ -247,28 +247,28 @@ applicable agreement for further details.
 +---------------------------------------------+----------+
 ; Resource                                    ; Usage    ;
 +---------------------------------------------+----------+
-; Estimated Total logic elements              ; 2,566    ;
+; Estimated Total logic elements              ; 2,513    ;
 ;                                             ;          ;
-; Total combinational functions               ; 2193     ;
+; Total combinational functions               ; 2144     ;
 ; Logic element usage by number of LUT inputs ;          ;
-;     -- 4 input functions                    ; 1329     ;
-;     -- 3 input functions                    ; 473      ;
-;     -- <=2 input functions                  ; 391      ;
+;     -- 4 input functions                    ; 1305     ;
+;     -- 3 input functions                    ; 469      ;
+;     -- <=2 input functions                  ; 370      ;
 ;                                             ;          ;
 ; Logic elements by mode                      ;          ;
-;     -- normal mode                          ; 1717     ;
-;     -- arithmetic mode                      ; 476      ;
+;     -- normal mode                          ; 1685     ;
+;     -- arithmetic mode                      ; 459      ;
 ;                                             ;          ;
-; Total registers                             ; 1093     ;
-;     -- Dedicated logic registers            ; 1093     ;
+; Total registers                             ; 1071     ;
+;     -- Dedicated logic registers            ; 1071     ;
 ;     -- I/O registers                        ; 0        ;
 ;                                             ;          ;
 ; I/O pins                                    ; 38       ;
 ; Total memory bits                           ; 55888    ;
 ; Embedded Multiplier 9-bit elements          ; 5        ;
 ; Maximum fan-out node                        ; proc_clk ;
-; Maximum fan-out                             ; 1214     ;
-; Total fan-out                               ; 12558    ;
+; Maximum fan-out                             ; 1192     ;
+; Total fan-out                               ; 12304    ;
 ; Average fan-out                             ; 3.64     ;
 +---------------------------------------------+----------+
 
@@ -278,10 +278,10 @@ applicable agreement for further details.
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
 ; Compilation Hierarchy Node                   ; LC Combinationals ; LC Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                           ; Library Name ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
-; |cyclone2_lcd_ml_hw                          ; 2193 (84)         ; 1093 (70)    ; 55888       ; 5            ; 1       ; 2         ; 38   ; 0            ; |cyclone2_lcd_ml_hw                                                                                                                           ; work         ;
-;    |lcd_live_writer:lcd_writer|              ; 328 (328)         ; 119 (119)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer                                                                                                ; work         ;
-;    |touch_ml_scanpipe_top:pipeline|          ; 1781 (0)          ; 904 (0)      ; 55888       ; 5            ; 1       ; 2         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline                                                                                            ; work         ;
-;       |ml_inference_scanpipe:ml_path|        ; 1062 (1017)       ; 598 (597)    ; 55888       ; 5            ; 1       ; 2         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path                                                              ; work         ;
+; |cyclone2_lcd_ml_hw                          ; 2144 (84)         ; 1071 (70)    ; 55888       ; 5            ; 1       ; 2         ; 38   ; 0            ; |cyclone2_lcd_ml_hw                                                                                                                           ; work         ;
+;    |lcd_live_writer:lcd_writer|              ; 283 (283)         ; 97 (97)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer                                                                                                ; work         ;
+;    |touch_ml_scanpipe_top:pipeline|          ; 1777 (0)          ; 904 (0)      ; 55888       ; 5            ; 1       ; 2         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline                                                                                            ; work         ;
+;       |ml_inference_scanpipe:ml_path|        ; 1057 (1012)       ; 598 (597)    ; 55888       ; 5            ; 1       ; 2         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path                                                              ; work         ;
 ;          |altsyncram:b1_rom|                 ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|altsyncram:b1_rom                                            ; work         ;
 ;             |altsyncram_mct:auto_generated|  ; 0 (0)             ; 0 (0)        ; 1024        ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|altsyncram:b1_rom|altsyncram_mct:auto_generated              ; work         ;
 ;          |altsyncram:b2_rom|                 ; 0 (0)             ; 0 (0)        ; 320         ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|altsyncram:b2_rom                                            ; work         ;
@@ -299,8 +299,8 @@ applicable agreement for further details.
 ;             |mult_fus:auto_generated|        ; 0 (0)             ; 0 (0)        ; 0           ; 1            ; 1       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|lpm_mult:Mult0|mult_fus:auto_generated                       ; work         ;
 ;          |lpm_mult:Mult1|                    ; 37 (0)            ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|lpm_mult:Mult1                                               ; work         ;
 ;             |mult_vvs:auto_generated|        ; 37 (37)           ; 0 (0)        ; 0           ; 4            ; 0       ; 2         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|lpm_mult:Mult1|mult_vvs:auto_generated                       ; work         ;
-;       |touch_capture_top:touch_path|         ; 719 (0)           ; 306 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path                                                               ; work         ;
-;          |touch_frame_adapter:frame|         ; 502 (502)         ; 216 (216)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|touch_frame_adapter:frame                                     ; work         ;
+;       |touch_capture_top:touch_path|         ; 720 (0)           ; 306 (0)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path                                                               ; work         ;
+;          |touch_frame_adapter:frame|         ; 503 (503)         ; 216 (216)    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|touch_frame_adapter:frame                                     ; work         ;
 ;          |xpt2046_calibrator:calibrator|     ; 123 (123)         ; 18 (18)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_calibrator:calibrator                                 ; work         ;
 ;          |xpt2046_reader:reader|             ; 94 (94)           ; 72 (72)      ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader                                         ; work         ;
 +----------------------------------------------+-------------------+--------------+-------------+--------------+---------+-----------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------------------------+--------------+
@@ -340,32 +340,36 @@ Note: number of Embedded Multiplier Blocks used is only available after a succes
 
 
 Encoding Type:  One-Hot
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|state                                                                                                                                                                                                                                                                                                                                       ;
-+--------------------+-------------------+-------------------+------------------+-----------------+----------------+-----------------+----------------+--------------+--------------------+--------------------+-------------------+------------------+-----------------+------------------+-----------------+------------------+-------------------+--------------------+-------------------+---------------+
-; Name               ; state.S_DRAW_NEXT ; state.S_DRAW_RAMP ; state.S_DRAW_RAM ; state.S_DRAW_YP ; state.S_DRAW_Y ; state.S_DRAW_XP ; state.S_DRAW_X ; state.S_IDLE ; state.S_CLEAR_NEXT ; state.S_CLEAR_RAMP ; state.S_CLEAR_RAM ; state.S_CLEAR_YP ; state.S_CLEAR_Y ; state.S_CLEAR_XP ; state.S_CLEAR_X ; state.S_INIT_GAP ; state.S_INIT_NEXT ; state.S_INIT_PULSE ; state.S_INIT_LOAD ; state.S_RESET ;
-+--------------------+-------------------+-------------------+------------------+-----------------+----------------+-----------------+----------------+--------------+--------------------+--------------------+-------------------+------------------+-----------------+------------------+-----------------+------------------+-------------------+--------------------+-------------------+---------------+
-; state.S_RESET      ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 0             ;
-; state.S_INIT_LOAD  ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 1                 ; 1             ;
-; state.S_INIT_PULSE ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 1                  ; 0                 ; 1             ;
-; state.S_INIT_NEXT  ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 1                 ; 0                  ; 0                 ; 1             ;
-; state.S_INIT_GAP   ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 1                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_CLEAR_X    ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 1               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_CLEAR_XP   ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 1                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_CLEAR_Y    ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 1               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_CLEAR_YP   ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 1                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_CLEAR_RAM  ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 1                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_CLEAR_RAMP ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 1                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_CLEAR_NEXT ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 1                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_IDLE       ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 1            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_DRAW_X     ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 1              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_DRAW_XP    ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 1               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_DRAW_Y     ; 0                 ; 0                 ; 0                ; 0               ; 1              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_DRAW_YP    ; 0                 ; 0                 ; 0                ; 1               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_DRAW_RAM   ; 0                 ; 0                 ; 1                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_DRAW_RAMP  ; 0                 ; 1                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-; state.S_DRAW_NEXT  ; 1                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
-+--------------------+-------------------+-------------------+------------------+-----------------+----------------+-----------------+----------------+--------------+--------------------+--------------------+-------------------+------------------+-----------------+------------------+-----------------+------------------+-------------------+--------------------+-------------------+---------------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|state                                                                                                                                                                                                                                                                                                                                                                                                                                  ;
++------------------------+-------------------+-------------------+------------------+-----------------+----------------+-----------------+----------------+--------------+------------------------+-------------------+--------------------+--------------------+--------------------+--------------------+-------------------+------------------+-----------------+------------------+-----------------+------------------+-------------------+--------------------+-------------------+---------------+
+; Name                   ; state.S_DRAW_NEXT ; state.S_DRAW_RAMP ; state.S_DRAW_RAM ; state.S_DRAW_YP ; state.S_DRAW_Y ; state.S_DRAW_XP ; state.S_DRAW_X ; state.S_IDLE ; state.S_INIT_DONE_WAIT ; state.S_FILL_NEXT ; state.S_FILL_PULSE ; state.S_FILL_SETUP ; state.S_CLEAR_NEXT ; state.S_CLEAR_RAMP ; state.S_CLEAR_RAM ; state.S_CLEAR_YP ; state.S_CLEAR_Y ; state.S_CLEAR_XP ; state.S_CLEAR_X ; state.S_INIT_GAP ; state.S_INIT_NEXT ; state.S_INIT_PULSE ; state.S_INIT_LOAD ; state.S_RESET ;
++------------------------+-------------------+-------------------+------------------+-----------------+----------------+-----------------+----------------+--------------+------------------------+-------------------+--------------------+--------------------+--------------------+--------------------+-------------------+------------------+-----------------+------------------+-----------------+------------------+-------------------+--------------------+-------------------+---------------+
+; state.S_RESET          ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 0             ;
+; state.S_INIT_LOAD      ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 1                 ; 1             ;
+; state.S_INIT_PULSE     ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 1                  ; 0                 ; 1             ;
+; state.S_INIT_NEXT      ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 1                 ; 0                  ; 0                 ; 1             ;
+; state.S_INIT_GAP       ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 1                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_CLEAR_X        ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 1               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_CLEAR_XP       ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 1                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_CLEAR_Y        ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 1               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_CLEAR_YP       ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 1                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_CLEAR_RAM      ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 1                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_CLEAR_RAMP     ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 1                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_CLEAR_NEXT     ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 1                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_FILL_SETUP     ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 1                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_FILL_PULSE     ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 1                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_FILL_NEXT      ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 1                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_INIT_DONE_WAIT ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 1                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_IDLE           ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 1            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_DRAW_X         ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 1              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_DRAW_XP        ; 0                 ; 0                 ; 0                ; 0               ; 0              ; 1               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_DRAW_Y         ; 0                 ; 0                 ; 0                ; 0               ; 1              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_DRAW_YP        ; 0                 ; 0                 ; 0                ; 1               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_DRAW_RAM       ; 0                 ; 0                 ; 1                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_DRAW_RAMP      ; 0                 ; 1                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
+; state.S_DRAW_NEXT      ; 1                 ; 0                 ; 0                ; 0               ; 0              ; 0               ; 0              ; 0            ; 0                      ; 0                 ; 0                  ; 0                  ; 0                  ; 0                  ; 0                 ; 0                ; 0               ; 0                ; 0               ; 0                ; 0                 ; 0                  ; 0                 ; 1             ;
++------------------------+-------------------+-------------------+------------------+-----------------+----------------+-----------------+----------------+--------------+------------------------+-------------------+--------------------+--------------------+--------------------+--------------------+-------------------+------------------+-----------------+------------------+-----------------+------------------+-------------------+--------------------+-------------------+---------------+
 
 
 Encoding Type:  One-Hot
@@ -1088,31 +1092,47 @@ Encoding Type:  One-Hot
 ; touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|input_mem_rtl_0_bypass[18..20]             ; Merged with touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|input_mem_rtl_0_bypass[17]              ;
 ; touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|state.FINISH                               ; Lost fanout                                                                                                      ;
 ; touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|state.REJECT_FRAME                         ; Lost fanout                                                                                                      ;
-; lcd_live_writer:lcd_writer|state~4                                                                      ; Lost fanout                                                                                                      ;
 ; lcd_live_writer:lcd_writer|state~5                                                                      ; Lost fanout                                                                                                      ;
 ; lcd_live_writer:lcd_writer|state~6                                                                      ; Lost fanout                                                                                                      ;
 ; lcd_live_writer:lcd_writer|state~7                                                                      ; Lost fanout                                                                                                      ;
 ; lcd_live_writer:lcd_writer|state~8                                                                      ; Lost fanout                                                                                                      ;
+; lcd_live_writer:lcd_writer|state~9                                                                      ; Lost fanout                                                                                                      ;
 ; touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|state~14                                   ; Lost fanout                                                                                                      ;
 ; touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|state~15                                   ; Lost fanout                                                                                                      ;
 ; touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|state~16                                   ; Lost fanout                                                                                                      ;
 ; touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|state~17                                   ; Lost fanout                                                                                                      ;
 ; touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|state~9               ; Lost fanout                                                                                                      ;
 ; touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|state~10              ; Lost fanout                                                                                                      ;
+; lcd_live_writer:lcd_writer|state.S_CLEAR_Y                                                              ; Stuck at GND due to stuck port data_in                                                                           ;
+; lcd_live_writer:lcd_writer|state.S_CLEAR_YP                                                             ; Stuck at GND due to stuck port data_in                                                                           ;
+; lcd_live_writer:lcd_writer|state.S_CLEAR_RAM                                                            ; Stuck at GND due to stuck port data_in                                                                           ;
+; lcd_live_writer:lcd_writer|state.S_CLEAR_RAMP                                                           ; Stuck at GND due to stuck port data_in                                                                           ;
+; lcd_live_writer:lcd_writer|state.S_CLEAR_NEXT                                                           ; Stuck at GND due to stuck port data_in                                                                           ;
+; lcd_live_writer:lcd_writer|clear_x[0..9]                                                                ; Stuck at GND due to stuck port clock_enable                                                                      ;
+; lcd_live_writer:lcd_writer|state.S_CLEAR_X                                                              ; Stuck at GND due to stuck port data_in                                                                           ;
+; lcd_live_writer:lcd_writer|clear_y[0..8]                                                                ; Stuck at GND due to stuck port clock_enable                                                                      ;
+; lcd_live_writer:lcd_writer|state.S_CLEAR_XP                                                             ; Stuck at GND due to stuck port data_in                                                                           ;
 ; lcd_live_writer:lcd_writer|draw_y[8]                                                                    ; Stuck at GND due to stuck port data_in                                                                           ;
 ; touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|hidden_rtl_0_bypass[0]                     ; Merged with touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|state.H_NEXT                            ;
-; Total Number of Removed Registers = 706                                                                 ;                                                                                                                  ;
+; Total Number of Removed Registers = 732                                                                 ;                                                                                                                  ;
 +---------------------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------------------+
 
 
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                               ;
-+------------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------+
-; Register name                                                                                        ; Reason for Removal        ; Registers Removed due to This Register ;
-+------------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------+
-; touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_calibrator:calibrator|point_y[8] ; Stuck at GND              ; lcd_live_writer:lcd_writer|draw_y[8]   ;
-;                                                                                                      ; due to stuck port data_in ;                                        ;
-+------------------------------------------------------------------------------------------------------+---------------------------+----------------------------------------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                                                ;
++------------------------------------------------------------------------------------------------------+--------------------------------+------------------------------------------------------------------------------------+
+; Register name                                                                                        ; Reason for Removal             ; Registers Removed due to This Register                                             ;
++------------------------------------------------------------------------------------------------------+--------------------------------+------------------------------------------------------------------------------------+
+; lcd_live_writer:lcd_writer|clear_x[0]                                                                ; Stuck at GND                   ; lcd_live_writer:lcd_writer|clear_x[6], lcd_live_writer:lcd_writer|clear_x[8],      ;
+;                                                                                                      ; due to stuck port clock_enable ; lcd_live_writer:lcd_writer|clear_y[2], lcd_live_writer:lcd_writer|clear_y[3],      ;
+;                                                                                                      ;                                ; lcd_live_writer:lcd_writer|clear_y[4], lcd_live_writer:lcd_writer|clear_y[6],      ;
+;                                                                                                      ;                                ; lcd_live_writer:lcd_writer|clear_y[7], lcd_live_writer:lcd_writer|clear_y[8]       ;
+; lcd_live_writer:lcd_writer|state.S_CLEAR_NEXT                                                        ; Stuck at GND                   ; lcd_live_writer:lcd_writer|state.S_CLEAR_X, lcd_live_writer:lcd_writer|clear_y[0], ;
+;                                                                                                      ; due to stuck port data_in      ; lcd_live_writer:lcd_writer|clear_y[1], lcd_live_writer:lcd_writer|clear_y[5],      ;
+;                                                                                                      ;                                ; lcd_live_writer:lcd_writer|state.S_CLEAR_XP                                        ;
+; touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_calibrator:calibrator|point_y[8] ; Stuck at GND                   ; lcd_live_writer:lcd_writer|draw_y[8]                                               ;
+;                                                                                                      ; due to stuck port data_in      ;                                                                                    ;
++------------------------------------------------------------------------------------------------------+--------------------------------+------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -1120,12 +1140,12 @@ Encoding Type:  One-Hot
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 1093  ;
-; Number of registers using Synchronous Clear  ; 370   ;
-; Number of registers using Synchronous Load   ; 51    ;
-; Number of registers using Asynchronous Clear ; 261   ;
+; Total registers                              ; 1071  ;
+; Number of registers using Synchronous Clear  ; 350   ;
+; Number of registers using Synchronous Load   ; 52    ;
+; Number of registers using Asynchronous Clear ; 239   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 909   ;
+; Number of registers using Clock Enable       ; 888   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -1233,40 +1253,38 @@ Encoding Type:  One-Hot
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                     ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+--------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_calibrator:calibrator|point_x[7]       ;
-; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|submit_ack_count[18]                                                                                       ;
-; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|result_ack_count[21]                                                                                       ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|touch_frame_adapter:frame|input_pixel_index[0] ;
-; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|scan_best[5]                                  ;
-; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|clear_index[8]                                                                  ;
-; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|touch_frame_adapter:frame|stream_index[0]      ;
-; 6:1                ; 7 bits    ; 28 LEs        ; 0 LEs                ; 28 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|init_index[2]                                                                   ;
-; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|draw_dy[0]                                                                      ;
+; 3:1                ; 17 bits   ; 34 LEs        ; 17 LEs               ; 17 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_calibrator:calibrator|point_y[5]       ;
+; 3:1                ; 21 bits   ; 42 LEs        ; 21 LEs               ; 21 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|submit_ack_count[1]                                                                                        ;
+; 3:1                ; 22 bits   ; 44 LEs        ; 22 LEs               ; 22 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|result_ack_count[12]                                                                                       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|touch_frame_adapter:frame|input_pixel_index[4] ;
+; 4:1                ; 33 bits   ; 66 LEs        ; 33 LEs               ; 33 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|scan_best[9]                                  ;
+; 6:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|touch_frame_adapter:frame|stream_index[5]      ;
+; 6:1                ; 7 bits    ; 28 LEs        ; 0 LEs                ; 28 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|init_index[6]                                                                   ;
+; 5:1                ; 17 bits   ; 51 LEs        ; 17 LEs               ; 34 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|clear_index[10]                                                                 ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|draw_dy[2]                                                                      ;
 ; 5:1                ; 3 bits    ; 9 LEs         ; 3 LEs                ; 6 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|draw_dx[0]                                                                      ;
-; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|acc[27]                                       ;
-; 6:1                ; 9 bits    ; 36 LEs        ; 9 LEs                ; 27 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|clear_y[7]                                                                      ;
-; 6:1                ; 10 bits   ; 40 LEs        ; 10 LEs               ; 30 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|clear_x[9]                                                                      ;
-; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|draw_x[5]                                                                       ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|draw_y[0]                                                                       ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|acc[36]                                       ;
-; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|output_n[30]                                  ;
-; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|acc[4]                                        ;
-; 8:1                ; 32 bits   ; 160 LEs       ; 32 LEs               ; 128 LEs                ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|delay_count[6]                                                                  ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|acc[0]                                        ;
-; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|command[0]               ;
-; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[1]             ;
-; 9:1                ; 15 bits   ; 90 LEs        ; 15 LEs               ; 75 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|rx_shift[13]             ;
-; 9:1                ; 24 bits   ; 144 LEs       ; 24 LEs               ; 120 LEs                ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|pixel_idx[22]                                 ;
-; 10:1               ; 27 bits   ; 162 LEs       ; 27 LEs               ; 135 LEs                ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|neuron[19]                                    ;
-; 32:1               ; 33 bits   ; 693 LEs       ; 231 LEs              ; 462 LEs                ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|Mux8                                          ;
+; 6:1                ; 30 bits   ; 120 LEs       ; 60 LEs               ; 60 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|acc[12]                                       ;
+; 5:1                ; 9 bits    ; 27 LEs        ; 9 LEs                ; 18 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|draw_x[6]                                                                       ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 8 LEs                ; 16 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|draw_y[1]                                                                       ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|acc[38]                                       ;
+; 7:1                ; 32 bits   ; 128 LEs       ; 32 LEs               ; 96 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|output_n[21]                                  ;
+; 7:1                ; 3 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|acc[6]                                        ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 12 LEs               ; 8 LEs                  ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|acc[1]                                        ;
+; 8:1                ; 3 bits    ; 15 LEs        ; 3 LEs                ; 12 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|command[4]               ;
+; 8:1                ; 5 bits    ; 25 LEs        ; 5 LEs                ; 20 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|bit_index[0]             ;
+; 9:1                ; 15 bits   ; 90 LEs        ; 15 LEs               ; 75 LEs                 ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|rx_shift[3]              ;
+; 10:1               ; 32 bits   ; 192 LEs       ; 32 LEs               ; 160 LEs                ; Yes        ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|delay_count[25]                                                                 ;
+; 9:1                ; 24 bits   ; 144 LEs       ; 24 LEs               ; 120 LEs                ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|pixel_idx[13]                                 ;
+; 10:1               ; 27 bits   ; 162 LEs       ; 27 LEs               ; 135 LEs                ; Yes        ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|neuron[5]                                     ;
+; 32:1               ; 33 bits   ; 693 LEs       ; 231 LEs              ; 462 LEs                ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|Mux20                                         ;
 ; 6:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |cyclone2_lcd_ml_hw|led                                                                                                        ;
-; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|bus_data[11]                                                                    ;
-; 8:1                ; 9 bits    ; 45 LEs        ; 36 LEs               ; 9 LEs                  ; No         ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|bus_data[5]                                                                     ;
-; 9:1                ; 2 bits    ; 12 LEs        ; 8 LEs                ; 4 LEs                  ; No         ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|Selector50                                                                      ;
+; 8:1                ; 4 bits    ; 20 LEs        ; 16 LEs               ; 4 LEs                  ; No         ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|bus_data[13]                                                                    ;
+; 8:1                ; 9 bits    ; 45 LEs        ; 36 LEs               ; 9 LEs                  ; No         ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|bus_data[1]                                                                     ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 6 LEs                ; 12 LEs                 ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|state                                         ;
 ; 9:1                ; 2 bits    ; 12 LEs        ; 4 LEs                ; 8 LEs                  ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|Selector52               ;
 ; 9:1                ; 8 bits    ; 48 LEs        ; 16 LEs               ; 32 LEs                 ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|pixel_idx                                     ;
-; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|Selector50               ;
+; 10:1               ; 2 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_reader:reader|Selector53               ;
+; 11:1               ; 2 bits    ; 14 LEs        ; 8 LEs                ; 6 LEs                  ; No         ; |cyclone2_lcd_ml_hw|lcd_live_writer:lcd_writer|Selector50                                                                      ;
 ; 10:1               ; 5 bits    ; 30 LEs        ; 10 LEs               ; 20 LEs                 ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|neuron                                        ;
 ; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_calibrator:calibrator|raw_to_cell      ;
 ; 12:1               ; 2 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; No         ; |cyclone2_lcd_ml_hw|touch_ml_scanpipe_top:pipeline|touch_capture_top:touch_path|xpt2046_calibrator:calibrator|raw_to_cell      ;
@@ -1618,13 +1636,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 
 +-------------------------------------------------------------------------+
 ; Parameter Settings for User Entity Instance: lcd_live_writer:lcd_writer ;
-+-------------------+--------+--------------------------------------------+
-; Parameter Name    ; Value  ; Type                                       ;
-+-------------------+--------+--------------------------------------------+
-; RESET_HOLD_CYCLES ; 100000 ; Signed Integer                             ;
-; INIT_GAP_CYCLES   ; 125000 ; Signed Integer                             ;
-; CLEAR_PIXEL_COUNT ; 76800  ; Signed Integer                             ;
-+-------------------+--------+--------------------------------------------+
++------------------------+--------+---------------------------------------+
+; Parameter Name         ; Value  ; Type                                  ;
++------------------------+--------+---------------------------------------+
+; RESET_HOLD_CYCLES      ; 100000 ; Signed Integer                        ;
+; INIT_GAP_CYCLES        ; 125000 ; Signed Integer                        ;
+; CLEAR_PIXEL_COUNT      ; 76800  ; Signed Integer                        ;
+; INIT_DONE_DELAY_CYCLES ; 600000 ; Signed Integer                        ;
++------------------------+--------+---------------------------------------+
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
@@ -1994,7 +2013,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus II 64-Bit Analysis & Synthesis
     Info: Version 13.0.1 Build 232 06/12/2013 Service Pack 1 SJ Web Edition
-    Info: Processing started: Tue Oct 06 09:25:47 2026
+    Info: Processing started: Tue Oct 06 09:29:52 2026
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cyclone2_lcd_ml_hw -c cyclone2_lcd_ml_hw
 Info (20032): Parallel compilation is enabled and will use up to 2 processors
 Info (12021): Found 1 design units, including 1 entities, in source file cyclone2_lcd_ml_hw.sv
@@ -2088,9 +2107,9 @@ Info (12021): Found 1 design units, including 1 entities, in source file db/alts
     Info (12023): Found entity 1: altsyncram_hct
 Info (12128): Elaborating entity "altsyncram_hct" for hierarchy "touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|altsyncram:b2_rom|altsyncram_hct:auto_generated"
 Info (12128): Elaborating entity "lcd_live_writer" for hierarchy "lcd_live_writer:lcd_writer"
-Info (10264): Verilog HDL Case Statement information at lcd_live_writer.sv(79): all case item expressions in this case statement are onehot
-Warning (10230): Verilog HDL assignment warning at lcd_live_writer.sv(131): truncated value with size 32 to match size of target (9)
+Info (10264): Verilog HDL Case Statement information at lcd_live_writer.sv(83): all case item expressions in this case statement are onehot
 Warning (10230): Verilog HDL assignment warning at lcd_live_writer.sv(140): truncated value with size 32 to match size of target (9)
+Warning (10230): Verilog HDL assignment warning at lcd_live_writer.sv(149): truncated value with size 32 to match size of target (9)
 Warning (276020): Inferred RAM node "touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|hidden_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Warning (276020): Inferred RAM node "touch_ml_scanpipe_top:pipeline|ml_inference_scanpipe:ml_path|input_mem_rtl_0" from synchronous design logic.  Pass-through logic has been added to match the read-during-write behavior of the original design.
 Info (19000): Inferred 2 megafunctions from design logic
@@ -2204,16 +2223,16 @@ Info (17049): 13 registers lost all their fanouts during netlist optimizations.
 Info (144001): Generated suppressed messages file D:/fpga/cyclone2-lcd-ml-direct/rtl/output_files_hw/cyclone2_lcd_ml_hw.map.smsg
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 2819 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2764 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 9 input pins
     Info (21059): Implemented 13 output pins
     Info (21060): Implemented 16 bidirectional pins
-    Info (21061): Implemented 2652 logic cells
+    Info (21061): Implemented 2597 logic cells
     Info (21064): Implemented 124 RAM segments
     Info (21062): Implemented 5 DSP elements
 Info: Quartus II 64-Bit Analysis & Synthesis was successful. 0 errors, 15 warnings
-    Info: Peak virtual memory: 4625 megabytes
-    Info: Processing ended: Tue Oct 06 09:25:58 2026
+    Info: Peak virtual memory: 4627 megabytes
+    Info: Processing ended: Tue Oct 06 09:30:03 2026
     Info: Elapsed time: 00:00:11
     Info: Total CPU time (on all processors): 00:00:10
 

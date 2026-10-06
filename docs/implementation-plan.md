@@ -63,6 +63,11 @@ RTL fixes were a full 10-bit LCD X clear address and CS asserted during reset
 and initialization. The corrected SOF was downloaded; visual confirmation is
 still required.
 
+The subsequent striped-screen capture showed that the panel protocol needed
+the old driver’s continuous GRAM-write phase. The current image now waits for
+the final initialization delay and streams all 76,800 white pixels from the
+existing GRAM start address. Hardware confirmation is still pending.
+
 ## B. Capture one drawing
 
 - [ ] Start a new drawing buffer when the user begins touching the LCD.
